@@ -11,7 +11,6 @@ on:
       spreadsheetId:
         description: "Daily run spreadsheet ID"
         required: true
-        default: "1aL1AvIcmQWH6kKDc4FuGGkRQYIfAGi3PtDLbPzkoP8w"
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
