@@ -2,11 +2,16 @@ name: Deploy Gatsby site to Pages
 
 on:
   # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
+  # push:
+  #   branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      spreadsheetId:
+        description: "Daily run spreadsheet ID"
+        required: true
+        default: "1aL1AvIcmQWH6kKDc4FuGGkRQYIfAGi3PtDLbPzkoP8w"
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -75,6 +80,7 @@ jobs:
           PREFIX_PATHS: "true"
           CLIENT_EMAIL: ${{ secrets.GOOGLE_CLIENT_EMAIL }}
           PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
+          SHEET_ID: ${{ github.event.inputs.spreadsheetId }}
         run: ${{ steps.detect-package-manager.outputs.manager }} run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
