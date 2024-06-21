@@ -25,7 +25,7 @@ const config: GatsbyConfig = {
   }, {
     resolve: "gatsby-source-google-spreadsheet",
     options: {
-      spreadsheetId: "1fFsyQ_2gx-jZ6DiiQdziq82Eor7j5TAVoWhS73oSDX8",
+      spreadsheetId: "1xd5T6KoyQJ5wWUx0--7xAo3lv6KaR1Gx-yW4SOEJzrE",
       typePrefix: "GoogleSpreadsheet",
       credentials: {
         client_email: process.env.CLIENT_EMAIL,
