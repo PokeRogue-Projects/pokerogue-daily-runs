@@ -1,4 +1,5 @@
 import type { GatsbyConfig } from "gatsby";
+import 'dotenv/config'
 
 const config: GatsbyConfig = {
   siteMetadata: {
@@ -21,6 +22,16 @@ const config: GatsbyConfig = {
       "path": "./src/pages/"
     },
     __key: "pages"
+  }, {
+    resolve: "gatsby-source-google-spreadsheet",
+    options: {
+      spreadsheetId: "1fFsyQ_2gx-jZ6DiiQdziq82Eor7j5TAVoWhS73oSDX8",
+      typePrefix: "GoogleSpreadsheet",
+      credentials: {
+        client_email: process.env.CLIENT_EMAIL,
+        private_key: (process.env.PRIVATE_KEY || "").replace(/(\\r)|(\\n)/g, '\n')
+      }
+    }
   }]
 };
 
