@@ -62,15 +62,6 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
               >
                 Pokémon
               </th>
-              <th
-                style={{
-                  borderBottom: "1px solid #ccc",
-                  padding: "10px",
-                  textAlign: "center",
-                }}
-              >
-                Nature
-              </th>
             </tr>
           </thead>
           <tbody>
@@ -104,15 +95,29 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
                           }}
                         >
                           <div>{edge.node.name}</div>
-                          <img
-                            src={pokemonImageUrl}
-                            alt={edge.node.name}
-                            style={{ height: "50px" }}
-                          />
+                          <div className="pokemon-card">
+                            <div className="pokemon-sprite">
+                              <img
+                                src={pokemonImageUrl}
+                                alt={edge.node.name}
+                                style={{ height: "50px" }}
+                              />
+                            </div>
+                            <div className="pokemon-ivs"></div>
+                            <div className="pokemon-details">
+                              {edge.node.nature} <br />
+                              {edge.node.biome} <br />
+                              {edge.node.abilityDropDown
+                                .split("_")
+                                .map(
+                                  (word: any) =>
+                                    word.charAt(0).toUpperCase() +
+                                    word.slice(1).toLowerCase()
+                                )
+                                .join(" ")}
+                            </div>
+                          </div>
                         </div>
-                      </td>
-                      <td style={{ padding: "10px", textAlign: "center" }}>
-                        {edge.node.nature}
                       </td>
                     </tr>
                   );
@@ -134,6 +139,8 @@ export const query = graphql`
           name
           stage
           nature
+          biome
+          abilityDropDown
         }
       }
     }
