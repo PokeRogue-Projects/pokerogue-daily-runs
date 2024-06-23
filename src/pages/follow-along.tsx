@@ -29,7 +29,7 @@ const FollowAlongPage: React.FC<{ data: any }> = ({ data }) => {
               return (
                 <li key={index} style={{ ...style, marginBottom: "10px" }}>
                   {content.startsWith("Wave") ? (
-                    <strong>{content}</strong>
+                    <strong>{"Stage" + content.slice(4)}</strong>
                   ) : (
                     <>
                       <input type="checkbox" id={`checkbox-${index}`} />
