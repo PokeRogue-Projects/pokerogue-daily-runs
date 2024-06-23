@@ -11,6 +11,7 @@ exports.onPreBootstrap = async ({ reporter }) => {
         scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
     
+    // We need to copy data to a new sheet as daily sheet causes issues as it is
     const doc = new GoogleSpreadsheet(process.env.DEV_SHEET_ID, serviceAccountAuth);
     await doc.loadInfo();
 
@@ -26,11 +27,31 @@ exports.onPreBootstrap = async ({ reporter }) => {
     followAlongA2.formula = `=IMPORTRANGE("https://docs.google.com/spreadsheets/d/${process.env.DAILY_SHEET_ID}", "'Follow Along'!B:B")`
     await followAlongA2.save()
 
+
     const detailed = doc.sheetsByTitle["Detailed"]
     await detailed.loadCells("A1")
     const detailedA1 = detailed.getCellByA1('A1');
     detailedA1.formula = `=IMPORTRANGE("https://docs.google.com/spreadsheets/d/${process.env.DAILY_SHEET_ID}", "'Detailed Daily Guide'!A2:JE237")`
     await detailedA1.save()
+
+    const sprites = doc.sheetsByTitle["Sprites"]
+    await sprites.loadCells("A1:C2")
+
+    const spritesA1 = sprites.getCellByA1('A1');
+    spritesA1.value = "name"
+    await spritesA1.save()
+
+    const spritesB1 = sprites.getCellByA1('B1');
+    spritesB1.value = "pokemon-id"
+    await spritesB1.save()
+
+    const spritesC1 = sprites.getCellByA1('C1');
+    spritesC1.value = "sprite"
+    await spritesC1.save()
+
+    const spritesA2 = sprites.getCellByA1('A2');
+    spritesA2.formula = `=IMPORTRANGE("https://docs.google.com/spreadsheets/d/${process.env.SPRITE_SHEET_ID}", "'Pokémon Data'!A1:C")`
+    await spritesA2.save()
 
     reporter.info('Updated dev Google Sheet successfully');
   } catch (error) {
