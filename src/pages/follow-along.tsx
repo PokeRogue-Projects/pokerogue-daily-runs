@@ -1,6 +1,7 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 import Navigation from "../components/Navigation";
+import { determineStyle } from "../utils/styleUtils";
 
 const FollowAlongPage: React.FC<{ data: any }> = ({ data }) => {
   return (
@@ -19,12 +20,7 @@ const FollowAlongPage: React.FC<{ data: any }> = ({ data }) => {
           {data.allGoogleSpreadsheetFollowAlong.edges.map(
             (edge: any, index: any) => {
               const content = edge.node.wave;
-              let style = {};
-              if (content === "RELOAD YOUR GAME (F5)") {
-                style = { color: "red", textDecoration: "underline" };
-              } else if (content.startsWith("Shop :")) {
-                style = { color: "red" };
-              }
+              const style = determineStyle(content);
 
               return (
                 <li key={index} style={{ ...style, marginBottom: "10px" }}>

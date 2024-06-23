@@ -1,6 +1,7 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 import Navigation from "../components/Navigation";
+import { determineStyle } from "../utils/styleUtils";
 
 const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
   const stageToWaveMap: { [key: string]: string[] } = {};
@@ -48,7 +49,7 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
                   const steps =
                     stageToWaveMap[edge.node.stage]?.map((wave) => (
                       <React.Fragment key={wave}>
-                        {wave}
+                        <span style={determineStyle(wave)}>{wave}</span>
                         <br />
                       </React.Fragment>
                     )) || null;
