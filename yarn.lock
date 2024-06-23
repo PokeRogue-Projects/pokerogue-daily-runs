@@ -5691,6 +5691,11 @@ gatsby-plugin-postcss@^6.13.1:
     "@babel/runtime" "^7.20.13"
     postcss-loader "^7.3.3"
 
+gatsby-plugin-remove-serviceworker@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-remove-serviceworker/-/gatsby-plugin-remove-serviceworker-1.0.0.tgz#9fb433bc8bd766e14e1d3711c4ac6f051e1dff7c"
+  integrity sha512-8uQ/6PiM718BTZAgmQeEO6ULrJgLugmDVAkUGv5xxF0luBNrbboDgpsG0z1fbsotSDTzLWyULR0zzGNfWZaY7w==
+
 gatsby-plugin-typescript@^5.13.1:
   version "5.13.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-typescript/-/gatsby-plugin-typescript-5.13.1.tgz#4544000239e7801eb0ab7636d7de27c18a90672d"
