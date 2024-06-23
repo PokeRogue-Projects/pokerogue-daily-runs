@@ -6,6 +6,7 @@ import { determineStyle } from "../utils/styleUtils";
 import caughtImage from "../images/caught.png";
 // @ts-ignore
 import uncaughtImage from "../images/uncaught.png";
+import PokemonCard from "../components/PokemonCard";
 
 const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
   const stageToWaveMap: { [key: string]: string[] } = {};
@@ -50,7 +51,6 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
   if (currentGroup.length > 0) {
     groupedEdges.push(currentGroup);
   }
-  console.log(groupedEdges[10]);
 
   return (
     <div>
@@ -139,65 +139,15 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
                         </React.Fragment>
                       ))}
                     </td>
-                    <td style={{ padding: "10px", textAlign: "center" }}>
-                      <div
-                        style={{
-                          display: "flex",
-                          flexDirection: "column",
-                          alignItems: "center",
-                        }}
-                      >
-                        <div>{group[0].node.name}</div>
-                        <div className="pokemon-card">
-                          <div className="pokemon-sprite">
-                            <img
-                              src={`https://wiki.pokerogue.net/_media/starters:sprites:${
-                                pokemonIdMap[group[0].node.name]
-                              }.png`}
-                              alt={group[0].node.name}
-                              style={{ height: "50px" }}
-                            />
-                          </div>
-                          <div className="pokemon-ivs"></div>
-                          <div className="pokemon-details">
-                            {group[0].node.nature} <br />
-                            {group[0].node.biome} <br />
-                            {group[0].node.abilityDropDown
-                              .split("_")
-                              .map(
-                                (word: any) =>
-                                  word.charAt(0).toUpperCase() +
-                                  word.slice(1).toLowerCase()
-                              )
-                              .join(" ")}
-                          </div>
-                        </div>
-                        <div>{group[1].node.name}</div>
-                        <div className="pokemon-card">
-                          <div className="pokemon-sprite">
-                            <img
-                              src={`https://wiki.pokerogue.net/_media/starters:sprites:${
-                                pokemonIdMap[group[1].node.name]
-                              }.png`}
-                              alt={group[1].node.name}
-                              style={{ height: "50px" }}
-                            />
-                          </div>
-                          <div className="pokemon-ivs"></div>
-                          <div className="pokemon-details">
-                            {group[1].node.nature} <br />
-                            {group[1].node.biome} <br />
-                            {group[1].node.abilityDropDown
-                              .split("_")
-                              .map(
-                                (word: any) =>
-                                  word.charAt(0).toUpperCase() +
-                                  word.slice(1).toLowerCase()
-                              )
-                              .join(" ")}
-                          </div>
-                        </div>
-                      </div>
+                    <td>
+                      <PokemonCard
+                        node={group[0].node}
+                        pokemonIdMap={pokemonIdMap}
+                      />
+                      <PokemonCard
+                        node={group[1].node}
+                        pokemonIdMap={pokemonIdMap}
+                      />
                     </td>
                   </tr>
                 );
@@ -230,40 +180,11 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
                         </React.Fragment>
                       )) || null}
                     </td>
-                    <td style={{ padding: "10px", textAlign: "center" }}>
-                      <div
-                        style={{
-                          display: "flex",
-                          flexDirection: "column",
-                          alignItems: "center",
-                        }}
-                      >
-                        <div>{edge.node.name}</div>
-                        <div className="pokemon-card">
-                          <div className="pokemon-sprite">
-                            <img
-                              src={`https://wiki.pokerogue.net/_media/starters:sprites:${
-                                pokemonIdMap[edge.node.name]
-                              }.png`}
-                              alt={edge.node.name}
-                              style={{ height: "50px" }}
-                            />
-                          </div>
-                          <div className="pokemon-ivs"></div>
-                          <div className="pokemon-details">
-                            {edge.node.nature} <br />
-                            {edge.node.biome} <br />
-                            {edge.node.abilityDropDown
-                              .split("_")
-                              .map(
-                                (word: any) =>
-                                  word.charAt(0).toUpperCase() +
-                                  word.slice(1).toLowerCase()
-                              )
-                              .join(" ")}
-                          </div>
-                        </div>
-                      </div>
+                    <td>
+                      <PokemonCard
+                        node={edge.node}
+                        pokemonIdMap={pokemonIdMap}
+                      />
                     </td>
                   </tr>
                 ));
