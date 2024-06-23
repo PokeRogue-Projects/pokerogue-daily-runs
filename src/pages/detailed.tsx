@@ -5,6 +5,13 @@ import { determineStyle } from "../utils/styleUtils";
 
 const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
   const stageToWaveMap: { [key: string]: string[] } = {};
+  const pokemonIdMap: { [name: string]: string } = {};
+
+  data.allGoogleSpreadsheetSprites.edges.forEach((edge: any) => {
+    const { name, pokemonId } = edge.node;
+    pokemonIdMap[name] = pokemonId;
+  });
+
   data.allGoogleSpreadsheetFollowAlong.edges.forEach((edge: any) => {
     const { wave, waveNumber } = edge.node;
     if (!wave.startsWith("Wave")) {
@@ -53,7 +60,7 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
                   textAlign: "center",
                 }}
               >
-                Name
+                Pokémon
               </th>
               <th
                 style={{
@@ -77,6 +84,9 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
                         <br />
                       </React.Fragment>
                     )) || null;
+                  const pokemonImageUrl = `https://wiki.pokerogue.net/_media/starters:sprites:${
+                    pokemonIdMap[edge.node.name]
+                  }.png`;
                   return (
                     <tr key={index} style={{ borderBottom: "1px solid #ccc" }}>
                       <td style={{ padding: "10px", textAlign: "center" }}>
@@ -86,7 +96,20 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
                         {steps}
                       </td>
                       <td style={{ padding: "10px", textAlign: "center" }}>
-                        {edge.node.name}
+                        <div
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                          }}
+                        >
+                          <div>{edge.node.name}</div>
+                          <img
+                            src={pokemonImageUrl}
+                            alt={edge.node.name}
+                            style={{ height: "50px" }}
+                          />
+                        </div>
                       </td>
                       <td style={{ padding: "10px", textAlign: "center" }}>
                         {edge.node.nature}
@@ -111,6 +134,14 @@ export const query = graphql`
           name
           stage
           nature
+        }
+      }
+    }
+    allGoogleSpreadsheetSprites {
+      edges {
+        node {
+          name
+          pokemonId
         }
       }
     }
