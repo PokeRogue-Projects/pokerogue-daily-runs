@@ -32,6 +32,9 @@ const config: GatsbyConfig = {
         client_email: process.env.CLIENT_EMAIL,
         private_key: (process.env.PRIVATE_KEY || "").replace(/(\\r)|(\\n)/g, '\n')
       },
+      filterNode: (node: any) => {
+        return node.wave || node.name;
+      },
       mapNode: (node: any) => {
         if(node.hide) {
           node.caught = node.hide.toLowerCase() === "true";
