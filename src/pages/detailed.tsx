@@ -13,27 +13,38 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
           alignItems: "center",
         }}
       >
-        <ul
-          style={{ listStyleType: "none", paddingLeft: 0, textAlign: "left" }}
-        >
-          {data.allGoogleSpreadsheetDetailed.edges.map(
-            (edge: any, index: any) => {
-              if (edge.node.name) {
-                return (
-                  <li key={index} style={{ marginBottom: "10px" }}>
-                    <strong>Name:</strong> {edge.node.name}
-                    <br />
-                    <strong>Stage:</strong> {edge.node.stage}
-                    <br />
-                    <strong>Nature:</strong> {edge.node.nature}
-                    <br />
-                    <strong>Steps:</strong> {edge.node.steps__Guide}
-                  </li>
-                );
+        <table style={{ width: "80%", borderCollapse: "collapse" }}>
+          <thead>
+            <tr>
+              <th style={{ borderBottom: "1px solid #ccc", padding: "10px" }}>
+                Stage
+              </th>
+              <th style={{ borderBottom: "1px solid #ccc", padding: "10px" }}>
+                Steps
+              </th>
+              <th style={{ borderBottom: "1px solid #ccc", padding: "10px" }}>
+                Name
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.allGoogleSpreadsheetDetailed.edges.map(
+              (edge: any, index: any) => {
+                if (edge.node.name) {
+                  return (
+                    <tr key={index}>
+                      <td style={{ padding: "10px" }}>{edge.node.stage}</td>
+                      <td style={{ padding: "10px" }}>
+                        {edge.node.steps__Guide}
+                      </td>
+                      <td style={{ padding: "10px" }}>{edge.node.name}</td>
+                    </tr>
+                  );
+                }
               }
-            }
-          )}
-        </ul>
+            )}
+          </tbody>
+        </table>
       </div>
     </div>
   );
