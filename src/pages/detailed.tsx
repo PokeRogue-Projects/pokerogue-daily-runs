@@ -28,16 +28,40 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
         <table style={{ width: "80%", borderCollapse: "collapse" }}>
           <thead>
             <tr>
-              <th style={{ borderBottom: "1px solid #ccc", padding: "10px" }}>
+              <th
+                style={{
+                  borderBottom: "1px solid #ccc",
+                  padding: "10px",
+                  textAlign: "center",
+                }}
+              >
                 Stage
               </th>
-              <th style={{ borderBottom: "1px solid #ccc", padding: "10px" }}>
+              <th
+                style={{
+                  borderBottom: "1px solid #ccc",
+                  padding: "10px",
+                  textAlign: "center",
+                }}
+              >
                 Steps
               </th>
-              <th style={{ borderBottom: "1px solid #ccc", padding: "10px" }}>
+              <th
+                style={{
+                  borderBottom: "1px solid #ccc",
+                  padding: "10px",
+                  textAlign: "center",
+                }}
+              >
                 Name
               </th>
-              <th style={{ borderBottom: "1px solid #ccc", padding: "10px" }}>
+              <th
+                style={{
+                  borderBottom: "1px solid #ccc",
+                  padding: "10px",
+                  textAlign: "center",
+                }}
+              >
                 Nature
               </th>
             </tr>
@@ -55,10 +79,18 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
                     )) || null;
                   return (
                     <tr key={index}>
-                      <td style={{ padding: "10px" }}>{edge.node.stage}</td>
-                      <td style={{ padding: "10px" }}>{steps}</td>
-                      <td style={{ padding: "10px" }}>{edge.node.name}</td>
-                      <td style={{ padding: "10px" }}>{edge.node.nature}</td>
+                      <td style={{ padding: "10px", textAlign: "center" }}>
+                        {edge.node.stage}
+                      </td>
+                      <td style={{ padding: "10px", textAlign: "center" }}>
+                        {steps}
+                      </td>
+                      <td style={{ padding: "10px", textAlign: "center" }}>
+                        {edge.node.name}
+                      </td>
+                      <td style={{ padding: "10px", textAlign: "center" }}>
+                        {edge.node.nature}
+                      </td>
                     </tr>
                   );
                 }
