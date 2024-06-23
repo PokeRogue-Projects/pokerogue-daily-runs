@@ -78,7 +78,7 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
                       </React.Fragment>
                     )) || null;
                   return (
-                    <tr key={index}>
+                    <tr key={index} style={{ borderBottom: "1px solid #ccc" }}>
                       <td style={{ padding: "10px", textAlign: "center" }}>
                         {edge.node.stage}
                       </td>
