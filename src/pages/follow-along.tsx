@@ -18,7 +18,7 @@ const FollowAlongPage: React.FC<{ data: any }> = ({ data }) => {
         >
           {data.allGoogleSpreadsheetFollowAlong.edges.map(
             (edge: any, index: any) => {
-              const content = edge.node.wave1;
+              const content = edge.node.wave;
               let style = {};
               if (content === "RELOAD YOUR GAME (F5)") {
                 style = { color: "red", textDecoration: "underline" };
@@ -56,7 +56,7 @@ export const query = graphql`
     allGoogleSpreadsheetFollowAlong {
       edges {
         node {
-          wave1
+          wave
         }
       }
     }

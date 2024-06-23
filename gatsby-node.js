@@ -15,11 +15,16 @@ exports.onPreBootstrap = async ({ reporter }) => {
     await doc.loadInfo();
 
     const followAlong = doc.sheetsByTitle["Follow Along"]
-    await followAlong.loadCells("A1")
+    await followAlong.loadCells("A1:A2")
 
+    // need to set A1 to Wave as this is being assumed as the column name
     const followAlongA1 = followAlong.getCellByA1('A1');
-    followAlongA1.formula = `=IMPORTRANGE("https://docs.google.com/spreadsheets/d/${process.env.DAILY_SHEET_ID}", "'Follow Along'!B:B")`
+    followAlongA1.value = "Wave"
     await followAlongA1.save()
+
+    const followAlongA2 = followAlong.getCellByA1('A2');
+    followAlongA2.formula = `=IMPORTRANGE("https://docs.google.com/spreadsheets/d/${process.env.DAILY_SHEET_ID}", "'Follow Along'!B:B")`
+    await followAlongA2.save()
 
     const detailed = doc.sheetsByTitle["Detailed"]
     await detailed.loadCells("A1")

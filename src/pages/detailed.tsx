@@ -25,6 +25,9 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
               <th style={{ borderBottom: "1px solid #ccc", padding: "10px" }}>
                 Name
               </th>
+              <th style={{ borderBottom: "1px solid #ccc", padding: "10px" }}>
+                Nature
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -38,6 +41,7 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
                         {edge.node.steps__Guide}
                       </td>
                       <td style={{ padding: "10px" }}>{edge.node.name}</td>
+                      <td style={{ padding: "10px" }}>{edge.node.nature}</td>
                     </tr>
                   );
                 }

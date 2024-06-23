@@ -1,6 +1,8 @@
 import type { GatsbyConfig } from "gatsby";
 import 'dotenv/config'
 
+let wave = 0
+
 const config: GatsbyConfig = {
   pathPrefix: "/pokerogue-daily-runs",
   siteMetadata: {
@@ -29,6 +31,15 @@ const config: GatsbyConfig = {
       credentials: {
         client_email: process.env.CLIENT_EMAIL,
         private_key: (process.env.PRIVATE_KEY || "").replace(/(\\r)|(\\n)/g, '\n')
+      },
+      mapNode: (node: any) => {
+        if(node.wave) {
+          if(node.wave.startsWith("Wave")) {
+            wave++;
+          }
+          node.waveNumber = wave;
+        }
+        return node;
       }
     }
   }]
