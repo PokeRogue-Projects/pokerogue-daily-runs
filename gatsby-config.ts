@@ -33,6 +33,9 @@ const config: GatsbyConfig = {
         private_key: (process.env.PRIVATE_KEY || "").replace(/(\\r)|(\\n)/g, '\n')
       },
       mapNode: (node: any) => {
+        if(node.hide) {
+          node.caught = node.hide.toLowerCase() === "true";
+        }
         if(node.wave) {
           if(node.wave.startsWith("Wave")) {
             wave++;

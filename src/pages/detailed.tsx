@@ -2,6 +2,10 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import Navigation from "../components/Navigation";
 import { determineStyle } from "../utils/styleUtils";
+// @ts-ignore
+import caughtImage from "../images/caught.png";
+// @ts-ignore
+import uncaughtImage from "../images/uncaught.png";
 
 const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
   const stageToWaveMap: { [key: string]: string[] } = {};
@@ -81,7 +85,22 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
                   return (
                     <tr key={index} style={{ borderBottom: "1px solid #ccc" }}>
                       <td style={{ padding: "10px", textAlign: "center" }}>
-                        {edge.node.stage}
+                        <div
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
+                        >
+                          <span style={{ marginRight: "10px" }}>
+                            {edge.node.stage}
+                          </span>
+                          <img
+                            src={edge.node.caught ? caughtImage : uncaughtImage}
+                            alt={edge.node.caught ? "Caught" : "Uncaught"}
+                            style={{ height: "50px" }}
+                          />
+                        </div>
                       </td>
                       <td style={{ padding: "10px", textAlign: "center" }}>
                         {steps}
@@ -141,6 +160,7 @@ export const query = graphql`
           nature
           biome
           abilityDropDown
+          caught
         }
       }
     }
