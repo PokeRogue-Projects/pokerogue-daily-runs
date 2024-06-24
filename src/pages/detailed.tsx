@@ -7,6 +7,7 @@ import caughtImage from "../images/caught.png";
 // @ts-ignore
 import uncaughtImage from "../images/uncaught.png";
 import PokemonCard from "../components/PokemonCard";
+import TrainerCard from "../components/TrainerCard";
 
 type EdgeNode = {
   node: {
@@ -16,6 +17,8 @@ type EdgeNode = {
     biome?: string;
     abilityDropDown?: string;
     caught?: boolean;
+    trainerId?: string;
+    trainerType?: string;
   };
 };
 
@@ -64,24 +67,11 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
     groupedEdges.push(currentGroup);
   }
 
-  // Define the stages to be inserted and their respective positions
-  const stagesToInsert = [
-    { index: 4, stage: "5" },
-    { index: 14, stage: "15" },
-    { index: 19, stage: "20" },
-    { index: 24, stage: "25" },
-    { index: 29, stage: "30" },
-    { index: 34, stage: "35" },
-    { index: 39, stage: "40" },
-    { index: 44, stage: "45" },
-  ];
-
-  stagesToInsert.forEach((insertion) => {
-    groupedEdges.splice(insertion.index, 0, [
+  data.allGoogleSpreadsheetTrainers.edges.forEach((edge: EdgeNode) => {
+    const index = parseInt(edge.node.stage) - 1;
+    groupedEdges.splice(index, 0, [
       {
-        node: {
-          stage: insertion.stage,
-        },
+        node: edge.node,
       },
     ]);
   });
@@ -130,6 +120,32 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
           </thead>
           <tbody>
             {groupedEdges.map((group, groupIndex) => {
+              if (group[0].node.trainerId && group[0].node.trainerType) {
+                return (
+                  <tr
+                    key={groupIndex}
+                    style={{ borderBottom: "1px solid #ccc" }}
+                  >
+                    <td style={{ padding: "10px", textAlign: "center" }}>
+                      {group[0].node.stage}
+                    </td>
+                    <td style={{ padding: "10px", textAlign: "center" }}>
+                      {stageToWaveMap[group[0].node.stage]?.map((wave, idx) => (
+                        <React.Fragment key={idx}>
+                          <span style={determineStyle(wave)}>{wave}</span>
+                          <br />
+                        </React.Fragment>
+                      ))}
+                    </td>
+                    <td>
+                      <TrainerCard
+                        trainerId={group[0].node.trainerId}
+                        trainerType={group[0].node.trainerType}
+                      />
+                    </td>
+                  </tr>
+                );
+              }
               if (group.length === 2) {
                 // Double battle
                 return (
@@ -258,6 +274,15 @@ export const query = graphql`
         node {
           wave
           waveNumber
+        }
+      }
+    }
+    allGoogleSpreadsheetTrainers {
+      edges {
+        node {
+          stage
+          trainerId
+          trainerType
         }
       }
     }

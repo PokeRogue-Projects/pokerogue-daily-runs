@@ -34,7 +34,7 @@ const config: GatsbyConfig = {
       },
       // If column names change this needs to be changed
       filterNode: (node: any) => {
-        return node.wave || node.name || node.steps;
+        return node.wave || node.name || node.trainerId;
       },
       mapNode: (node: any) => {
         if(node.hide) {

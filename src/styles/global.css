@@ -22,6 +22,22 @@
     background-color: white;
 }
 
+.trainer-card {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100px;
+  background-color: #94C1FA;
+}
+
+.leader-card {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100px;
+  background-color: #E394DC;
+}
+
 .pokemon-sprite, .pokemon-ivs, .pokemon-details {
     margin-bottom: 10px;
 }

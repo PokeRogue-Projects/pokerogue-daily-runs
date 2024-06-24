@@ -2,6 +2,19 @@ require('dotenv').config();
 const { GoogleSpreadsheet } = require('google-spreadsheet');
 const { JWT } = require('google-auth-library');
 
+function copyCellValue(sourceSheet, targetSheet, sourceAddress, targetAddress) {
+    const sourceCell = sourceSheet.getCellByA1(sourceAddress);
+    const targetCell = targetSheet.getCellByA1(targetAddress);
+    targetCell.value = sourceCell.value;
+}
+
+function copyStageValues(sourceSheet, targetSheet, sourceRow, targetRow) {
+    const columns = ['A', 'F', 'I', 'O'];
+    columns.forEach(column => {
+        copyCellValue(sourceSheet, targetSheet, `${column}${sourceRow}`, `${column}${targetRow}`);
+    });
+}
+
 exports.onPreBootstrap = async ({ reporter }) => {
   try {
     const serviceAccountAuth = new JWT({
@@ -44,43 +57,36 @@ exports.onPreBootstrap = async ({ reporter }) => {
     trainersF1.value = "Steps"
 
     const trainersI1 = trainers.getCellByA1('I1');
-    trainersI1.value = "trainer-id"
+    trainersI1.value = "trainerId"
 
     const trainersO1 = trainers.getCellByA1('O1');
-    trainersO1.value = "trainer-type"
+    trainersO1.value = "trainerType"
 
-    const rowDetails = [
-      { cell: 'A2', range: 'A23:JE23' },
-      { cell: 'A3', range: 'A71:JE71' },
-      { cell: 'A4', range: 'A94:JE94' },
-      { cell: 'A5', range: 'A117:JE117' },
-      { cell: 'A6', range: 'A140:JE140' },
-      { cell: 'A7', range: 'A163:JE163' },
-      { cell: 'A8', range: 'A186:JE186' },
-      { cell: 'A9', range: 'A209:JE209' },
-    ];
+    await detailed.loadCells("A22:208")
 
-    for (const { cell, range } of rowDetails) {
-      const trainerCell = trainers.getCellByA1(cell);
-      trainerCell.formula = `=IMPORTRANGE("https://docs.google.com/spreadsheets/d/${process.env.DAILY_SHEET_ID}", "'Detailed Daily Guide'!${range}")`;
-    }
+    // Copy values from detailed for each trainer stage
+    copyStageValues(detailed, trainers, 22, 2);  // Stage 5
+    copyStageValues(detailed, trainers, 70, 3);  // Stage 15
+    copyStageValues(detailed, trainers, 93, 4);  // Stage 20
+    copyStageValues(detailed, trainers, 116, 5);  // Stage 25
+    copyStageValues(detailed, trainers, 139, 6);  // Stage 30
+    copyStageValues(detailed, trainers, 162, 7);  // Stage 35
+    copyStageValues(detailed, trainers, 185, 8);  // Stage 40
+    copyStageValues(detailed, trainers, 208, 9);  // Stage 45
 
     await trainers.saveUpdatedCells();
 
     const sprites = doc.sheetsByTitle["Sprites"]
-    await sprites.loadCells("A1:C2")
+    await sprites.loadCells("A1:B2")
 
     const spritesA1 = sprites.getCellByA1('A1');
     spritesA1.value = "name"
 
     const spritesB1 = sprites.getCellByA1('B1');
-    spritesB1.value = "pokemon-id"
-
-    const spritesC1 = sprites.getCellByA1('C1');
-    spritesC1.value = "sprite"
+    spritesB1.value = "pokemonId"
 
     const spritesA2 = sprites.getCellByA1('A2');
-    spritesA2.formula = `=IMPORTRANGE("https://docs.google.com/spreadsheets/d/${process.env.SPRITE_SHEET_ID}", "'Pokémon Data'!A1:C")`
+    spritesA2.formula = `=IMPORTRANGE("https://docs.google.com/spreadsheets/d/${process.env.SPRITE_SHEET_ID}", "'Pokémon Data'!A1:B")`
 
     await sprites.saveUpdatedCells();
 
