@@ -8,6 +8,17 @@ import caughtImage from "../images/caught.png";
 import uncaughtImage from "../images/uncaught.png";
 import PokemonCard from "../components/PokemonCard";
 
+type EdgeNode = {
+  node: {
+    name?: string;
+    stage: string;
+    nature?: string;
+    biome?: string;
+    abilityDropDown?: string;
+    caught?: boolean;
+  };
+};
+
 const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
   const stageToWaveMap: { [key: string]: string[] } = {};
   const pokemonIdMap: { [name: string]: string } = {};
@@ -27,12 +38,12 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
     }
   });
 
-  // double battle grouping
-  const groupedEdges = [];
-  let currentGroup: any[] = [];
+  const groupedEdges: EdgeNode[][] = [];
+  let currentGroup: EdgeNode[] = [];
   data.allGoogleSpreadsheetDetailed.edges.forEach(
     (edge: any, index: number) => {
       const hasSteps = stageToWaveMap[edge.node.stage]?.length > 0;
+      // double battle grouping
       if (edge.node.name && !hasSteps) {
         if (currentGroup.length > 0) {
           currentGroup.push(edge);
@@ -40,6 +51,7 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
           groupedEdges.push([edge]);
         }
       } else {
+        // single battle
         if (currentGroup.length > 0) {
           groupedEdges.push(currentGroup);
           currentGroup = [];
@@ -51,6 +63,28 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
   if (currentGroup.length > 0) {
     groupedEdges.push(currentGroup);
   }
+
+  // Define the stages to be inserted and their respective positions
+  const stagesToInsert = [
+    { index: 4, stage: "5" },
+    { index: 14, stage: "15" },
+    { index: 19, stage: "20" },
+    { index: 24, stage: "25" },
+    { index: 29, stage: "30" },
+    { index: 34, stage: "35" },
+    { index: 39, stage: "40" },
+    { index: 44, stage: "45" },
+  ];
+
+  stagesToInsert.forEach((insertion) => {
+    groupedEdges.splice(insertion.index, 0, [
+      {
+        node: {
+          stage: insertion.stage,
+        },
+      },
+    ]);
+  });
 
   return (
     <div>
