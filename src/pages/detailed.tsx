@@ -16,6 +16,7 @@ type EdgeNode = {
     nature?: string;
     biome?: string;
     abilityDropDown?: string;
+    passive?: string;
     caught?: boolean;
     trainerId?: string;
     trainerType?: string;
@@ -258,6 +259,7 @@ export const query = graphql`
           biome
           abilityDropDown
           caught
+          passive
         }
       }
     }

@@ -1,6 +1,7 @@
 import * as React from "react";
 
 const PokemonCard: React.FC<{
+  //TODO: make partial node type for Pokemon from detailed page
   node: any;
   pokemonIdMap: { [name: string]: string };
 }> = ({ node, pokemonIdMap }) => {
@@ -37,6 +38,8 @@ const PokemonCard: React.FC<{
                   )
                   .join(" ")
               : ""}
+            <br />
+            {node.passive}
           </div>
         </div>
       </div>
