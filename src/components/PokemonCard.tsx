@@ -29,6 +29,7 @@ const PokemonCard: React.FC<{
           <div className="pokemon-details">
             {node.nature} <br />
             {node.biome} <br />
+            {node.passive} <br />
             {node.abilityDropDown
               ? node.abilityDropDown
                   .split("_")
@@ -38,8 +39,6 @@ const PokemonCard: React.FC<{
                   )
                   .join(" ")
               : ""}
-            <br />
-            {node.passive}
           </div>
         </div>
       </div>
