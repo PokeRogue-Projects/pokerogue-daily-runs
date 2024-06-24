@@ -29,12 +29,14 @@ const PokemonCard: React.FC<{
             {node.nature} <br />
             {node.biome} <br />
             {node.abilityDropDown
-              .split("_")
-              .map(
-                (word: any) =>
-                  word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-              )
-              .join(" ")}
+              ? node.abilityDropDown
+                  .split("_")
+                  .map(
+                    (word: any) =>
+                      word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+                  )
+                  .join(" ")
+              : ""}
           </div>
         </div>
       </div>
