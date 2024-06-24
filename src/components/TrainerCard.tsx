@@ -24,6 +24,10 @@ const TrainerCard: React.FC<{
           <div>
             <img
               src={`https://wiki.pokerogue.net/_media/trainers:${trainerId}.png`}
+              onError={(e) =>
+                (e.currentTarget.src =
+                  "https://raw.githubusercontent.com/pagefaultgames/pokerogue/main/public/images/trainer/unknown_m.png")
+              }
               alt={trainerId}
               style={{ height: "100px" }}
             />
