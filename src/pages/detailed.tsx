@@ -152,6 +152,7 @@ export const query = graphql`
           abilityDropDown
           caught
           passive
+          gender
         }
       }
     }

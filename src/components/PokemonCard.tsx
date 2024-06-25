@@ -9,6 +9,17 @@ const PokemonCard: React.FC<{
   node: any;
   pokemonIdMap: { [name: string]: string };
 }> = ({ node: pokemon, pokemonIdMap }) => {
+  const getGenderCircleStyle = (gender: string) => {
+    switch (gender) {
+      case "♂":
+        return { backgroundColor: "#228DF2" };
+      case "♀":
+        return { backgroundColor: "#EF737E" };
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className="flex flex-col justify-between h-full">
       <div className="flex items-center justify-between">
@@ -33,6 +44,22 @@ const PokemonCard: React.FC<{
           alt={pokemon.name}
           style={{ height: "200px" }}
         />
+        {(pokemon.gender === "♂" || pokemon.gender === "♀") && (
+          <div
+            style={{
+              ...getGenderCircleStyle(pokemon.gender),
+              width: "50px",
+              height: "50px",
+              borderRadius: "100%",
+              display: "inline-flex",
+              justifyContent: "center",
+              alignItems: "center",
+              marginLeft: "5px",
+            }}
+          >
+            {pokemon.gender}
+          </div>
+        )}
         <img
           src={pokemon.caught ? caughtImage : uncaughtImage}
           alt={pokemon.caught ? "Caught" : "Uncaught"}
@@ -48,7 +75,7 @@ const PokemonCard: React.FC<{
             <div className="title-card">
               <h2 className="title-text">Biome</h2>
             </div>
-            <div className=" p-2 rounded-lg mt-2">
+            <div className="rounded-lg mt-2">
               {pokemon.biome != "???" ? (
                 <img
                   src={`https://wiki.pokerogue.net/_media/en:biomes:en_${pokemon.biome}_bg.png`}
