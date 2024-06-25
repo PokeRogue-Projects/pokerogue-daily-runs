@@ -10,7 +10,7 @@ const PokemonCard: React.FC<{
   pokemonIdMap: { [name: string]: string };
 }> = ({ node: pokemon, pokemonIdMap }) => {
   return (
-    <div className="bg-gray-800 p-4 rounded-lg max-w-3xl mx-auto flex flex-col justify-between h-full">
+    <div className="flex flex-col justify-between h-full">
       <div className="flex items-center justify-between">
         <div className="flex-1 flex justify-center">
           <h1 className="bg-white text-black px-2 py-1 rounded-full font-bold">

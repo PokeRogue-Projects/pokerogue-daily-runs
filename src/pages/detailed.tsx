@@ -76,114 +76,52 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
   return (
     <div>
       <Navigation />
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <table style={{ width: "80%", borderCollapse: "collapse" }}>
-          <thead>
-            <tr>
-              <th
-                style={{
-                  borderBottom: "1px solid #ccc",
-                  padding: "10px",
-                  textAlign: "center",
-                }}
-              >
-                Steps
-              </th>
-              <th
-                style={{
-                  borderBottom: "1px solid #ccc",
-                  padding: "10px",
-                  textAlign: "center",
-                }}
-              >
-                Pokémon
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {groupedEdges.map((group, groupIndex) => {
-              if (group[0].node.trainerId && group[0].node.trainerType) {
-                return (
-                  <tr
-                    key={groupIndex}
-                    style={{ borderBottom: "1px solid #ccc" }}
-                  >
-                    <td style={{ padding: "10px", textAlign: "center" }}>
-                      {group[0].node.stage}
-                    </td>
-                    <td style={{ padding: "10px", textAlign: "center" }}>
-                      {stageToWaveMap[group[0].node.stage]?.map((wave, idx) => (
-                        <React.Fragment key={idx}>
-                          <span style={determineStyle(wave)}>{wave}</span>
-                          <br />
-                        </React.Fragment>
-                      ))}
-                    </td>
-                    <td>
-                      <TrainerCard
-                        trainerId={group[0].node.trainerId}
-                        trainerType={group[0].node.trainerType}
-                      />
-                    </td>
-                  </tr>
-                );
-              }
-              if (group.length === 2) {
-                // Double battle
-                return (
-                  <tr
-                    key={groupIndex}
-                    style={{ borderBottom: "1px solid #ccc" }}
-                  >
-                    <td style={{ padding: "10px", textAlign: "center" }}>
-                      {stageToWaveMap[group[0].node.stage]?.map((wave, idx) => (
-                        <React.Fragment key={idx}>
-                          <span style={determineStyle(wave)}>{wave}</span>
-                          <br />
-                        </React.Fragment>
-                      ))}
-                    </td>
-                    <td>
-                      <PokemonCard
-                        node={group[0].node}
-                        pokemonIdMap={pokemonIdMap}
-                      />
-                      <PokemonCard
-                        node={group[1].node}
-                        pokemonIdMap={pokemonIdMap}
-                      />
-                    </td>
-                  </tr>
-                );
-              } else {
-                return group.map((edge: any, index: number) => (
-                  <tr key={index} style={{ borderBottom: "1px solid #ccc" }}>
-                    <td style={{ padding: "10px", textAlign: "center" }}>
-                      {stageToWaveMap[edge.node.stage]?.map((wave) => (
-                        <React.Fragment key={wave}>
-                          <span style={determineStyle(wave)}>{wave}</span>
-                          <br />
-                        </React.Fragment>
-                      )) || null}
-                    </td>
-                    <td>
-                      <PokemonCard
-                        node={edge.node}
-                        pokemonIdMap={pokemonIdMap}
-                      />
-                    </td>
-                  </tr>
-                ));
-              }
-            })}
-          </tbody>
-        </table>
+      <div className="detailed-page-container">
+        {groupedEdges.map((group, groupIndex) => (
+          <div
+            key={groupIndex}
+            className="group-container bg-gray-800 p-4 rounded-lg max-w-3xl mx-auto mb-8"
+          >
+            <div className="wave-info mr-4">
+              {stageToWaveMap[group[0].node.stage]?.map((wave, idx) => (
+                <span
+                  key={idx}
+                  style={determineStyle(wave)}
+                  className="wave-text block mb-2 bg-white text-black px-2 py-1 rounded-full font-bold"
+                >
+                  {wave}
+                </span>
+              ))}
+            </div>
+            <div className="card-container flex-grow">
+              {group[0].node.trainerId && group[0].node.trainerType ? (
+                <TrainerCard
+                  trainerId={group[0].node.trainerId}
+                  trainerType={group[0].node.trainerType}
+                />
+              ) : group.length === 2 ? (
+                <>
+                  <PokemonCard
+                    node={group[0].node}
+                    pokemonIdMap={pokemonIdMap}
+                  />
+                  <PokemonCard
+                    node={group[1].node}
+                    pokemonIdMap={pokemonIdMap}
+                  />
+                </>
+              ) : (
+                group.map((edge: any, index: number) => (
+                  <PokemonCard
+                    key={index}
+                    node={edge.node}
+                    pokemonIdMap={pokemonIdMap}
+                  />
+                ))
+              )}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
