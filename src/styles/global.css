@@ -77,12 +77,6 @@
   justify-content: center;
 }
 
-.nature-title {
-  font-size: 16px;
-  color: #333;
-  margin-bottom: 5px;
-}
-
 .nature-name, .nature-modifiers {
   display: inline-flex; 
   align-items: center;
@@ -104,5 +98,54 @@
 
 .increase-stat, .decrease-stat {
   font-size: 14px;
-  color: #666;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+    "biome ability nature"
+    "biome passive nature";
+  gap: 10px;
+}
+
+.info-card {
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.title-card {
+  background-color: #e2e8f0;
+  padding: 5px;
+  margin-bottom: 5px;
+  border-radius: 1.5rem;
+}
+
+.grid-item-card {
+  background-color: #9CA3AF;
+  padding: 0.5rem;
+  border-radius: 1.5rem;
+}
+
+.title-text {
+  color: #000;
+  font-weight: 700;
+  text-align: center;
+}
+
+.ability-passive-text {
+  color: #000;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.nature-items {
+  @apply title-card;
+  padding: 25px;
+  margin-top: 10px;
 }

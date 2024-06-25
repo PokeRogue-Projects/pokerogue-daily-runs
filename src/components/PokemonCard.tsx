@@ -40,22 +40,25 @@ const PokemonCard: React.FC<{
           <div className="hexagon">IVs</div>
         </div>
       </div>
-      <div>
-        <div className="grid grid-cols-2 gap-4 mt-4">
-          <div className="bg-gray-200 p-2 rounded-lg">
-            <h2 className="text-black font-bold">Biome</h2>
-            <div className="bg-gray-400 p-2 rounded-lg mt-2">
+      <div className="info-card">
+        <div className="grid grid-container mt-4">
+          <div className="grid-item-card" style={{ gridArea: "biome" }}>
+            <div className="title-card">
+              <h2 className="title-text">Biome</h2>
+            </div>
+            <div className=" p-2 rounded-lg mt-2">
               <img
                 src="/placeholder.svg"
                 alt={pokemon.biome}
                 className="w-full h-12 object-cover rounded-lg"
               />
-              <p className="text-white text-center mt-1">{pokemon.biome}</p>
             </div>
           </div>
-          <div className="bg-gray-200 p-2 rounded-lg">
-            <h2 className="text-black font-bold">Ability</h2>
-            <p className="text-black mt-2">
+          <div className="grid-item-card" style={{ gridArea: "ability" }}>
+            <div className="title-card">
+              <h2 className="title-text">Ability</h2>
+            </div>
+            <p className="ability-passive-text">
               {pokemon.abilityDropDown
                 ? pokemon.abilityDropDown
                     .split("_")
@@ -68,21 +71,24 @@ const PokemonCard: React.FC<{
                 : ""}
             </p>
           </div>
-          <div className="bg-gray-200 p-2 rounded-lg">
-            <h2 className="text-black font-bold">Passive</h2>
-            <p className="text-black mt-2">{pokemon.passive}</p>
+          <div className="grid-item-card" style={{ gridArea: "passive" }}>
+            <div className="title-card">
+              <h2 className="title-text">Passive</h2>
+            </div>
+            <p className="ability-passive-text">{pokemon.passive}</p>
           </div>
-          <div className="bg-gray-200 p-2 rounded-lg">
-            <h2 className="text-black font-bold">Nature</h2>
+          <div className="grid-item-card" style={{ gridArea: "nature" }}>
+            <div className="title-card">
+              <h2 className="title-text">Nature</h2>
+            </div>
             {pokemon.nature && (
               <div className="flex items-center">
-                <div className="nature-name">
+                <div className="nature-name nature-items">
                   {pokemon.nature.split(/\s+/)[0]}
                 </div>
-                <div className="nature-modifiers">
+                <div className="nature-modifiers nature-items">
                   <div className="increase-stat">
                     {pokemon.nature.split(/\s+/)[1] +
-                      " " +
                       pokemon.nature.split(/\s+/)[2]}
                   </div>
                   <div className="decrease-stat">
