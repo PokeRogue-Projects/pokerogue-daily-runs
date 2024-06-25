@@ -12,7 +12,7 @@ const PokemonCard: React.FC<{
   return (
     <div className="bg-gray-800 p-4 rounded-lg max-w-3xl mx-auto flex flex-col justify-between h-full">
       <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-2">
+        <div className="flex-1 flex justify-center">
           <h1 className="bg-white text-black px-2 py-1 rounded-full font-bold">
             {pokemon.name}
           </h1>
@@ -23,13 +23,13 @@ const PokemonCard: React.FC<{
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center mt-4">
+      <div className="flex justify-start items-center mt-4">
         <img
           src={`https://wiki.pokerogue.net/_media/starters:sprites:${
             pokemonIdMap[pokemon.name]
           }.png`}
           alt={pokemon.name}
-          style={{ height: "100px" }}
+          style={{ height: "200px" }}
         />
         <img
           src={pokemon.caught ? caughtImage : uncaughtImage}
