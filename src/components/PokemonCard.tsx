@@ -36,6 +36,9 @@ const PokemonCard: React.FC<{
           alt={pokemon.caught ? "Caught" : "Uncaught"}
           style={{ height: "50px", marginLeft: "10px" }}
         />
+        <div className="hexagon-wrapper">
+          <div className="hexagon">IVs</div>
+        </div>
       </div>
       <div>
         <div className="grid grid-cols-2 gap-4 mt-4">
