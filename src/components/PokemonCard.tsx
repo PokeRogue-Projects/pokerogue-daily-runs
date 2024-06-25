@@ -47,11 +47,15 @@ const PokemonCard: React.FC<{
               <h2 className="title-text">Biome</h2>
             </div>
             <div className=" p-2 rounded-lg mt-2">
-              <img
-                src="/placeholder.svg"
-                alt={pokemon.biome}
-                className="w-full h-12 object-cover rounded-lg"
-              />
+              {pokemon.biome != "???" ? (
+                <img
+                  src={`https://wiki.pokerogue.net/_media/en:biomes:en_${pokemon.biome}_bg.png`}
+                  alt={pokemon.biome}
+                  className="w-full object-cover rounded-lg"
+                />
+              ) : (
+                <p className="text-center">???</p>
+              )}
             </div>
           </div>
           <div className="grid-item-card" style={{ gridArea: "ability" }}>
