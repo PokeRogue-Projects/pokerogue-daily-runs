@@ -76,3 +76,33 @@
   display: flex;
   justify-content: center;
 }
+
+.nature-title {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.nature-name, .nature-modifiers {
+  display: inline-flex; 
+  align-items: center;
+}
+
+.nature-name {
+  margin-right: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.nature-modifiers {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.increase-stat, .decrease-stat {
+  font-size: 14px;
+  color: #666;
+}

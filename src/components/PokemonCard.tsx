@@ -74,10 +74,25 @@ const PokemonCard: React.FC<{
           </div>
           <div className="bg-gray-200 p-2 rounded-lg">
             <h2 className="text-black font-bold">Nature</h2>
-            <div className="flex items-center justify-between mt-2">
-              <p className="text-black">{pokemon.nature}</p>
-              <div className="flex items-center space-x-1"></div>
-            </div>
+            {pokemon.nature && (
+              <div className="flex items-center">
+                <div className="nature-name">
+                  {pokemon.nature.split(/\s+/)[0]}
+                </div>
+                <div className="nature-modifiers">
+                  <div className="increase-stat">
+                    {pokemon.nature.split(/\s+/)[1] +
+                      " " +
+                      pokemon.nature.split(/\s+/)[2]}
+                  </div>
+                  <div className="decrease-stat">
+                    {pokemon.nature.split(/\s+/)[3] +
+                      " " +
+                      pokemon.nature.split(/\s+/)[4]}
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
