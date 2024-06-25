@@ -18,9 +18,11 @@ const PokemonCard: React.FC<{
           </h1>
         </div>
         <div className="flex items-center space-x-2">
-          <div className="bg-gray-200 text-black text-xl font-bold px-3 py-1 rounded-full">
-            {pokemon.stage}
-          </div>
+          {pokemon.stage ? (
+            <div className="bg-gray-200 text-black text-xl font-bold px-3 py-1 rounded-full">
+              {pokemon.stage}
+            </div>
+          ) : null}
         </div>
       </div>
       <div className="flex items-center" style={{ marginTop: "-50px" }}>

@@ -91,18 +91,22 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
             key={groupIndex}
             className="group-container bg-gray-800 p-4 rounded-lg max-w-3xl mx-auto mb-8"
           >
-            <div className="wave-info mr-4">
-              {stageToWaveMap[group[0].node.stage]?.map((wave, idx) => (
-                <span
-                  key={idx}
-                  style={determineStyle(wave)}
-                  className="wave-text block mb-2 bg-white text-black px-2 py-1 rounded-full font-bold"
-                >
-                  {wave}
-                </span>
-              ))}
-            </div>
-            <div className="card-container flex-grow">
+            {stageToWaveMap[group[0].node.stage] && (
+              <div className="wave-info-card">
+                <div className="wave-group">
+                  {stageToWaveMap[group[0].node.stage].map((wave, idx) => (
+                    <span
+                      key={idx}
+                      style={determineStyle(wave)}
+                      className="text-black font-bold block mb-2"
+                    >
+                      {wave}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+            <div className="card-container">
               {group[0].node.trainerId && group[0].node.trainerType ? (
                 <TrainerCard
                   trainerId={group[0].node.trainerId}

@@ -111,10 +111,8 @@
 }
 
 .info-card {
-  border: 2px solid #ccc;
   border-radius: 8px;
   padding: 10px;
-  background-color: #f9f9f9;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
@@ -159,25 +157,36 @@
 
 .group-container {
   display: flex;
+  flex-direction: row;
   width: 100%;
   margin-bottom: 20px;
   align-items: flex-start;
+  gap: 20px;
 }
 
-.wave-info {
+.wave-info-card {
+  background-color: #e2e8f0;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  width: 400px;
+  flex-shrink: 0;
+}
+
+.wave-group {
   display: flex;
   flex-direction: column;
-  min-width: 100px;
 }
 
 .wave-text {
-  margin-bottom: 5px;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .card-container {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  flex-grow: 1;
 }
 
 .battle-container {
