@@ -4,7 +4,7 @@ import 'dotenv/config'
 let wave = 0
 
 const config: GatsbyConfig = {
-  pathPrefix: "/pokerogue-daily-runs",
+  pathPrefix: "pokerogue-daily-runs",
   siteMetadata: {
     title: `PokeRogue Daily Runs`,
     siteUrl: `https://pokerogue-projects.github.io/pokerogue-daily-runs`
@@ -48,6 +48,18 @@ const config: GatsbyConfig = {
         }
         return node;
       }
+    }
+  }, {
+    resolve: `gatsby-plugin-manifest`,
+    options: {
+      name: "PokeRogue Daily Runs",
+      short_name: "PokeRogue Daily Runs",
+      start_url: "/",
+      background_color: "#6b37bf",
+      theme_color: "#6b37bf",
+      display: "standalone",
+      icon: "src/images/icon.png",
+      crossOrigin: `use-credentials`,
     }
   }]
 };
