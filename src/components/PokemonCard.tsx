@@ -23,7 +23,7 @@ const PokemonCard: React.FC<{
           </div>
         </div>
       </div>
-      <div className="flex justify-start items-center mt-4">
+      <div className="flex items-center" style={{ marginTop: "-50px" }}>
         <img
           src={`https://wiki.pokerogue.net/_media/starters:sprites:${
             pokemonIdMap[pokemon.name]
@@ -34,44 +34,47 @@ const PokemonCard: React.FC<{
         <img
           src={pokemon.caught ? caughtImage : uncaughtImage}
           alt={pokemon.caught ? "Caught" : "Uncaught"}
-          style={{ height: "50px" }}
+          style={{ height: "50px", marginLeft: "10px" }}
         />
       </div>
-      <div className="grid grid-cols-2 gap-4 mt-4">
-        <div className="bg-gray-200 p-2 rounded-lg">
-          <h2 className="text-black font-bold">Biome</h2>
-          <div className="bg-gray-400 p-2 rounded-lg mt-2">
-            <img
-              src="/placeholder.svg"
-              alt={pokemon.biome}
-              className="w-full h-12 object-cover rounded-lg"
-            />
-            <p className="text-white text-center mt-1">{pokemon.biome}</p>
+      <div>
+        <div className="grid grid-cols-2 gap-4 mt-4">
+          <div className="bg-gray-200 p-2 rounded-lg">
+            <h2 className="text-black font-bold">Biome</h2>
+            <div className="bg-gray-400 p-2 rounded-lg mt-2">
+              <img
+                src="/placeholder.svg"
+                alt={pokemon.biome}
+                className="w-full h-12 object-cover rounded-lg"
+              />
+              <p className="text-white text-center mt-1">{pokemon.biome}</p>
+            </div>
           </div>
-        </div>
-        <div className="bg-gray-200 p-2 rounded-lg">
-          <h2 className="text-black font-bold">Ability</h2>
-          <p className="text-black mt-2">
-            {pokemon.abilityDropDown
-              ? pokemon.abilityDropDown
-                  .split("_")
-                  .map(
-                    (word: any) =>
-                      word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-                  )
-                  .join(" ")
-              : ""}
-          </p>
-        </div>
-        <div className="bg-gray-200 p-2 rounded-lg">
-          <h2 className="text-black font-bold">Passive</h2>
-          <p className="text-black mt-2">{pokemon.passive}</p>
-        </div>
-        <div className="bg-gray-200 p-2 rounded-lg">
-          <h2 className="text-black font-bold">Nature</h2>
-          <div className="flex items-center justify-between mt-2">
-            <p className="text-black">{pokemon.nature}</p>
-            <div className="flex items-center space-x-1"></div>
+          <div className="bg-gray-200 p-2 rounded-lg">
+            <h2 className="text-black font-bold">Ability</h2>
+            <p className="text-black mt-2">
+              {pokemon.abilityDropDown
+                ? pokemon.abilityDropDown
+                    .split("_")
+                    .map(
+                      (word: any) =>
+                        word.charAt(0).toUpperCase() +
+                        word.slice(1).toLowerCase()
+                    )
+                    .join(" ")
+                : ""}
+            </p>
+          </div>
+          <div className="bg-gray-200 p-2 rounded-lg">
+            <h2 className="text-black font-bold">Passive</h2>
+            <p className="text-black mt-2">{pokemon.passive}</p>
+          </div>
+          <div className="bg-gray-200 p-2 rounded-lg">
+            <h2 className="text-black font-bold">Nature</h2>
+            <div className="flex items-center justify-between mt-2">
+              <p className="text-black">{pokemon.nature}</p>
+              <div className="flex items-center space-x-1"></div>
+            </div>
           </div>
         </div>
       </div>
