@@ -2,10 +2,6 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import Navigation from "../components/Navigation";
 import { determineStyle } from "../utils/styleUtils";
-// @ts-ignore
-import caughtImage from "../images/caught.png";
-// @ts-ignore
-import uncaughtImage from "../images/uncaught.png";
 import PokemonCard from "../components/PokemonCard";
 import TrainerCard from "../components/TrainerCard";
 
@@ -97,15 +93,6 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
                   textAlign: "center",
                 }}
               >
-                Stage
-              </th>
-              <th
-                style={{
-                  borderBottom: "1px solid #ccc",
-                  padding: "10px",
-                  textAlign: "center",
-                }}
-              >
                 Steps
               </th>
               <th
@@ -155,34 +142,6 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
                     style={{ borderBottom: "1px solid #ccc" }}
                   >
                     <td style={{ padding: "10px", textAlign: "center" }}>
-                      <div
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                        }}
-                      >
-                        <span style={{ marginRight: "10px" }}>
-                          {group[0].node.stage}
-                        </span>
-                        <img
-                          src={
-                            group[0].node.caught ? caughtImage : uncaughtImage
-                          }
-                          alt={group[0].node.caught ? "Caught" : "Uncaught"}
-                          style={{ height: "50px" }}
-                        />
-                        <img
-                          src={
-                            group[1].node.caught ? caughtImage : uncaughtImage
-                          }
-                          alt={group[1].node.caught ? "Caught" : "Uncaught"}
-                          style={{ height: "50px" }}
-                        />
-                      </div>
-                    </td>
-
-                    <td style={{ padding: "10px", textAlign: "center" }}>
                       {stageToWaveMap[group[0].node.stage]?.map((wave, idx) => (
                         <React.Fragment key={idx}>
                           <span style={determineStyle(wave)}>{wave}</span>
@@ -205,24 +164,6 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
               } else {
                 return group.map((edge: any, index: number) => (
                   <tr key={index} style={{ borderBottom: "1px solid #ccc" }}>
-                    <td style={{ padding: "10px", textAlign: "center" }}>
-                      <div
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                        }}
-                      >
-                        <span style={{ marginRight: "10px" }}>
-                          {edge.node.stage}
-                        </span>
-                        <img
-                          src={edge.node.caught ? caughtImage : uncaughtImage}
-                          alt={edge.node.caught ? "Caught" : "Uncaught"}
-                          style={{ height: "50px" }}
-                        />
-                      </div>
-                    </td>
                     <td style={{ padding: "10px", textAlign: "center" }}>
                       {stageToWaveMap[edge.node.stage]?.map((wave) => (
                         <React.Fragment key={wave}>
