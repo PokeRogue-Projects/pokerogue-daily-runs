@@ -41,7 +41,7 @@ The following is a set of guidelines for contributing to this project on GitHub.
 1. Clone your fork to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/PokeRogue-Projects/pokerogue-daily-runs.git
    ```
 
 2. Navigate into the cloned directory:
