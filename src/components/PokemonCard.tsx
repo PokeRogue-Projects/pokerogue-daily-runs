@@ -4,7 +4,7 @@ import caughtImage from "../images/caught.png";
 // @ts-ignore
 import uncaughtImage from "../images/uncaught.png";
 
-export function createPoly(health: number, attack: number, defense: number, sp_atk: number, sp_def: number, speed: number): string {
+function createPoly(health: number, attack: number, defense: number, sp_atk: number, sp_def: number, speed: number): string {
   return "polygon(50% " + (50 - Math.floor(health/31*50)) + "%, " + (50 + Math.floor(attack/31*50)) + "% " + (50 - Math.floor(attack/31*25)) + "%, " + (50 + Math.floor(defense/31*50)) + "% " + (50 + Math.floor(defense/31*25)) + "%, 50% " + (50 + Math.floor(speed/31*50)) + "%, " + (50 - Math.floor(sp_def/31*50)) + "% " + (50 + Math.floor(sp_def/31*25)) + "%, " + (50 - Math.floor(sp_atk/31*50)) + "% " + (50 - Math.floor(sp_atk/31*25)) + "%)"
 }
 
