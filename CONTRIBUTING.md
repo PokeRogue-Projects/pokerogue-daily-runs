@@ -47,7 +47,7 @@ The following is a set of guidelines for contributing to this project on GitHub.
 2. Navigate into the cloned directory:
 
    ```bash
-   cd your-repo-name
+   cd pokerogue-daily-runs
    ```
 
 ### Create a Branch
