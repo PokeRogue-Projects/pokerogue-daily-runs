@@ -2,7 +2,7 @@
 
 Run this before releasing sheet to public or make a copy otherwise not all the data will show up or the text will say loading.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for more contributing your changes.
+See the [contributing guide](CONTRIBUTING.md) if you're interested in making changes.
 
 ## Development
 
