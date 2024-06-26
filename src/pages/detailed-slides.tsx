@@ -5,22 +5,6 @@ import Navigation from "../components/Navigation";
 import { determineStyle } from "../utils/styleUtils";
 import PokemonCard from "../components/PokemonCard";
 import TrainerCard from "../components/TrainerCard";
-import ImageGallery from "react-image-gallery";
-
-const images = [
-  {
-    original: "https://picsum.photos/id/1018/1000/600/",
-    thumbnail: "https://picsum.photos/id/1018/250/150/",
-  },
-  {
-    original: "https://picsum.photos/id/1015/1000/600/",
-    thumbnail: "https://picsum.photos/id/1015/250/150/",
-  },
-  {
-    original: "https://picsum.photos/id/1019/1000/600/",
-    thumbnail: "https://picsum.photos/id/1019/250/150/",
-  },
-];
 
 type EdgeNode = {
   node: {
@@ -94,7 +78,6 @@ const DetailedSlidesPage: React.FC<{ data: any }> = ({ data }) => {
   return (
     <div>
       <Navigation currentPage="detailed-slides" />
-      <ImageGallery items={images} />
       {toggle ? <p>Dark Mode</p> : <p>Light Mode</p>}
       <div className="detailed-page-container">
         {groupedEdges.map((group, groupIndex) => (
