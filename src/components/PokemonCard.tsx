@@ -4,8 +4,37 @@ import caughtImage from "../images/caught.png";
 // @ts-ignore
 import uncaughtImage from "../images/uncaught.png";
 
-function createPoly(health: number, attack: number, defense: number, sp_atk: number, sp_def: number, speed: number): string {
-  return "polygon(50% " + (50 - Math.floor(health/31*50)) + "%, " + (50 + Math.floor(attack/31*50)) + "% " + (50 - Math.floor(attack/31*25)) + "%, " + (50 + Math.floor(defense/31*50)) + "% " + (50 + Math.floor(defense/31*25)) + "%, 50% " + (50 + Math.floor(speed/31*50)) + "%, " + (50 - Math.floor(sp_def/31*50)) + "% " + (50 + Math.floor(sp_def/31*25)) + "%, " + (50 - Math.floor(sp_atk/31*50)) + "% " + (50 - Math.floor(sp_atk/31*25)) + "%)"
+function createPoly(
+  health: number,
+  attack: number,
+  defense: number,
+  spAtk: number,
+  spDef: number,
+  speed: number
+): string {
+  return (
+    "polygon(50% " +
+    (50 - Math.floor((health / 31) * 50)) +
+    "%, " +
+    (50 + Math.floor((attack / 31) * 50)) +
+    "% " +
+    (50 - Math.floor((attack / 31) * 25)) +
+    "%, " +
+    (50 + Math.floor((defense / 31) * 50)) +
+    "% " +
+    (50 + Math.floor((defense / 31) * 25)) +
+    "%, 50% " +
+    (50 + Math.floor((speed / 31) * 50)) +
+    "%, " +
+    (50 - Math.floor((spDef / 31) * 50)) +
+    "% " +
+    (50 + Math.floor((spDef / 31) * 25)) +
+    "%, " +
+    (50 - Math.floor((spAtk / 31) * 50)) +
+    "% " +
+    (50 - Math.floor((spAtk / 31) * 25)) +
+    "%)"
+  );
 }
 
 const PokemonCard: React.FC<{
@@ -71,7 +100,19 @@ const PokemonCard: React.FC<{
         />
         <div className="hexagon-wrapper">
           <div className="hexagon">
-            <div className="ivgon" style={{ clipPath: createPoly(pokemon.hp, pokemon.atk, pokemon.def, pokemon.spAtk, pokemon.spDef, pokemon.speed) }}></div>
+            <div
+              className="ivgon"
+              style={{
+                clipPath: createPoly(
+                  pokemon.hp,
+                  pokemon.attack,
+                  pokemon.defense,
+                  pokemon.spAtk,
+                  pokemon.spDef,
+                  pokemon.speed
+                ),
+              }}
+            ></div>
           </div>
         </div>
       </div>

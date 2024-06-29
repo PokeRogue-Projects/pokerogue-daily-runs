@@ -17,6 +17,12 @@ type EdgeNode = {
     caught?: boolean;
     trainerId?: string;
     trainerType?: string;
+    hp?: string;
+    attack?: string;
+    defense?: string;
+    spAtk?: string;
+    spDef?: string;
+    speed?: string;
   };
 };
 
@@ -153,6 +159,12 @@ export const query = graphql`
           caught
           passive
           gender
+          hp
+          attack
+          defense
+          spAtk
+          spDef
+          speed
         }
       }
     }
