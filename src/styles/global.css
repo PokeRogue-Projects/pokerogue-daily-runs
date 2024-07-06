@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
 .active-link {
   color: #007acc;
   text-decoration: underline;
@@ -66,6 +68,14 @@
   height: 100px;
   background-color: #f0f0f0;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ivgon {
+  width: 90px;
+  height: 100px;
+  background-color: #9ccdfa;
   display: flex;
   justify-content: center;
   align-items: center;

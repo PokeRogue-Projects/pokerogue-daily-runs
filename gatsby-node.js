@@ -41,9 +41,14 @@ exports.onPreBootstrap = async ({ reporter }) => {
     await followAlong.saveUpdatedCells();
 
     const detailed = doc.sheetsByTitle["Detailed"]
-    await detailed.loadCells("A1")
+    await detailed.loadCells("A1:T2")
+
     const detailedA1 = detailed.getCellByA1('A1');
-    detailedA1.formula = `=IMPORTRANGE("https://docs.google.com/spreadsheets/d/${process.env.DAILY_SHEET_ID}", "'Detailed Daily Guide'!A2:JE237")`
+    detailedA1.formula = `=IMPORTRANGE("https://docs.google.com/spreadsheets/d/${process.env.DAILY_SHEET_ID}", "'Detailed Daily Guide'!A2:S237")`
+    const detailedIVHeaders = detailed.getCellByA1('T1');
+    detailedIVHeaders.formula = `=IMPORTRANGE("https://docs.google.com/spreadsheets/d/${process.env.DAILY_SHEET_ID}", "'Detailed Daily Guide'!T2:JE2")`
+    const detailedIVData = detailed.getCellByA1('T2');
+    detailedIVData.formula = `=IMPORTRANGE("https://docs.google.com/spreadsheets/d/${process.env.DAILY_SHEET_ID}", "'Detailed Daily Guide'!T4:JE237")`
 
     await detailed.saveUpdatedCells();
 

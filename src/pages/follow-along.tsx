@@ -6,7 +6,7 @@ import { determineStyle } from "../utils/styleUtils";
 const FollowAlongPage: React.FC<{ data: any }> = ({ data }) => {
   return (
     <div>
-      <Navigation />
+      <Navigation currentPage="follow-along" />
       <div
         style={{
           display: "flex",

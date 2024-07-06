@@ -4,6 +4,39 @@ import caughtImage from "../images/caught.png";
 // @ts-ignore
 import uncaughtImage from "../images/uncaught.png";
 
+function createPoly(
+  health: number,
+  attack: number,
+  defense: number,
+  spAtk: number,
+  spDef: number,
+  speed: number
+): string {
+  return (
+    "polygon(50% " +
+    (50 - Math.floor((health / 31) * 50)) +
+    "%, " +
+    (50 + Math.floor((attack / 31) * 50)) +
+    "% " +
+    (50 - Math.floor((attack / 31) * 25)) +
+    "%, " +
+    (50 + Math.floor((defense / 31) * 50)) +
+    "% " +
+    (50 + Math.floor((defense / 31) * 25)) +
+    "%, 50% " +
+    (50 + Math.floor((speed / 31) * 50)) +
+    "%, " +
+    (50 - Math.floor((spDef / 31) * 50)) +
+    "% " +
+    (50 + Math.floor((spDef / 31) * 25)) +
+    "%, " +
+    (50 - Math.floor((spAtk / 31) * 50)) +
+    "% " +
+    (50 - Math.floor((spAtk / 31) * 25)) +
+    "%)"
+  );
+}
+
 const PokemonCard: React.FC<{
   //TODO: make partial node type for Pokemon from detailed page
   node: any;
@@ -66,7 +99,21 @@ const PokemonCard: React.FC<{
           style={{ height: "50px", marginLeft: "10px" }}
         />
         <div className="hexagon-wrapper">
-          <div className="hexagon">IVs</div>
+          <div className="hexagon">
+            <div
+              className="ivgon"
+              style={{
+                clipPath: createPoly(
+                  pokemon.hp,
+                  pokemon.attack,
+                  pokemon.defense,
+                  pokemon.spAtk,
+                  pokemon.spDef,
+                  pokemon.speed
+                ),
+              }}
+            ></div>
+          </div>
         </div>
       </div>
       <div className="info-card">

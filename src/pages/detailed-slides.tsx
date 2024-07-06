@@ -20,7 +20,7 @@ type EdgeNode = {
   };
 };
 
-const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
+const DetailedSlidesPage: React.FC<{ data: any }> = ({ data }) => {
   const [toggle, setToggle] = useState(false);
   const stageToWaveMap: { [key: string]: string[] } = {};
   const pokemonIdMap: { [name: string]: string } = {};
@@ -77,13 +77,7 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
 
   return (
     <div>
-      <Navigation />
-      <button
-        style={{ border: "1px solid black", padding: "10px" }}
-        onClick={() => setToggle(!toggle)}
-      >
-        Dark Mode Toggle
-      </button>
+      <Navigation currentPage="detailed-slides" />
       {toggle ? <p>Dark Mode</p> : <p>Light Mode</p>}
       <div className="detailed-page-container">
         {groupedEdges.map((group, groupIndex) => (
@@ -184,4 +178,4 @@ export const query = graphql`
   }
 `;
 
-export default DetailedPage;
+export default DetailedSlidesPage;
