@@ -14,25 +14,25 @@ function createPoly(
 ): string {
   return (
     "polygon(50% " +
-    (50 - Math.floor((health / 31) * 50)) +
+    (50 - Math.floor((Math.max(2, health + 2) / 33) * 50)) +
     "%, " +
-    (50 + Math.floor((attack / 31) * 50)) +
+    (50 + Math.floor((Math.max(2, attack + 2) / 33) * 50)) +
     "% " +
-    (50 - Math.floor((attack / 31) * 25)) +
+    (50 - Math.floor((Math.max(2, attack + 2) / 33) * 25)) +
     "%, " +
-    (50 + Math.floor((defense / 31) * 50)) +
+    (50 + Math.floor((Math.max(2, defense + 2) / 33) * 50)) +
     "% " +
-    (50 + Math.floor((defense / 31) * 25)) +
+    (50 + Math.floor((Math.max(2, defense + 2) / 33) * 25)) +
     "%, 50% " +
-    (50 + Math.floor((speed / 31) * 50)) +
+    (50 + Math.floor((Math.max(2, speed + 2) / 33) * 50)) +
     "%, " +
-    (50 - Math.floor((spDef / 31) * 50)) +
+    (50 - Math.floor((Math.max(2, spDef + 2) / 33) * 50)) +
     "% " +
-    (50 + Math.floor((spDef / 31) * 25)) +
+    (50 + Math.floor((Math.max(2, spDef + 2) / 33) * 25)) +
     "%, " +
-    (50 - Math.floor((spAtk / 31) * 50)) +
+    (50 - Math.floor((Math.max(2, spAtk + 2) / 33) * 50)) +
     "% " +
-    (50 - Math.floor((spAtk / 31) * 25)) +
+    (50 - Math.floor((Math.max(2, spAtk + 2) / 33) * 25)) +
     "%)"
   );
 }
