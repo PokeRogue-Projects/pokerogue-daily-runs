@@ -6,18 +6,8 @@ const Navigation: React.FC<{ currentPage: string }> = ({ currentPage }) => {
     <nav className="bg-gray-100 py-4">
       <ul className="flex justify-center space-x-6">
         <li>
-          <NavLink to="/follow-along" currentPage={currentPage}>
-            Follow Along
-          </NavLink>
-        </li>
-        <li>
           <NavLink to="/" currentPage={currentPage}>
-            Detailed
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/detailed-slides" currentPage={currentPage}>
-            Slides
+            Home
           </NavLink>
         </li>
       </ul>
@@ -31,8 +21,7 @@ const NavLink: React.FC<{
   children: React.ReactNode;
 }> = ({ to, currentPage, children }) => {
   const currentPath = "/" + currentPage;
-  const isActive =
-    currentPath === to || (to === "/" && currentPage === "detailed");
+  const isActive = currentPath === to;
   return (
     <Link
       to={to}

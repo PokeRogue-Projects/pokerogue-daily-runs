@@ -1,146 +1,51 @@
 import * as React from "react";
-import { useState } from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import Navigation from "../components/Navigation";
-import { determineStyle } from "../utils/styleUtils";
-import PokemonCard from "../components/PokemonCard";
-import TrainerCard from "../components/TrainerCard";
 
-type EdgeNode = {
+type DrpdEdge = {
   node: {
-    name?: string;
-    stage: string;
-    nature?: string;
-    biome?: string;
-    abilityDropDown?: string;
-    passive?: string;
-    caught?: boolean;
-    trainerId?: string;
-    trainerType?: string;
-    hp?: string;
-    attack?: string;
-    defense?: string;
-    spAtk?: string;
-    spDef?: string;
-    speed?: string;
+    parent: {
+      name: string;
+    };
+    title: string;
+    date: string;
+    authors: string[];
   };
 };
 
-const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
-  const [toggle, setToggle] = useState(false);
-  const stageToWaveMap: { [key: string]: string[] } = {};
-  const pokemonIdMap: { [name: string]: string } = {};
-
-  data.allGoogleSpreadsheetSprites.edges.forEach((edge: any) => {
-    const { name, pokemonId } = edge.node;
-    pokemonIdMap[name] = pokemonId;
-  });
-
-  data.allGoogleSpreadsheetFollowAlong.edges.forEach((edge: any) => {
-    const { wave, waveNumber } = edge.node;
-    if (!wave.startsWith("Wave")) {
-      if (!stageToWaveMap[waveNumber]) {
-        stageToWaveMap[waveNumber] = [];
-      }
-      stageToWaveMap[waveNumber].push(wave);
-    }
-  });
-
-  const groupedEdges: EdgeNode[][] = [];
-  let currentGroup: EdgeNode[] = [];
-  data.allGoogleSpreadsheetDetailed.edges.forEach(
-    (edge: any, index: number) => {
-      const hasSteps = stageToWaveMap[edge.node.stage]?.length > 0;
-      // double battle grouping
-      if (edge.node.name && !hasSteps) {
-        if (currentGroup.length > 0) {
-          currentGroup.push(edge);
-        } else {
-          groupedEdges.push([edge]);
-        }
-      } else {
-        // single battle
-        if (currentGroup.length > 0) {
-          groupedEdges.push(currentGroup);
-          currentGroup = [];
-        }
-        currentGroup.push(edge);
-      }
-    }
-  );
-  if (currentGroup.length > 0) {
-    groupedEdges.push(currentGroup);
-  }
-
-  data.allGoogleSpreadsheetTrainers.edges.forEach((edge: EdgeNode) => {
-    const index = parseInt(edge.node.stage) - 1;
-    groupedEdges.splice(index, 0, [
-      {
-        node: edge.node,
-      },
-    ]);
-  });
+const IndexPage: React.FC<{ data: { allDrpdJson: { edges: DrpdEdge[] } } }> = ({
+  data,
+}) => {
+  const drpdPages = data.allDrpdJson.edges;
 
   return (
     <div>
-      <Navigation currentPage="detailed" />
-      <button
-        style={{ border: "1px solid black", padding: "10px" }}
-        onClick={() => setToggle(!toggle)}
-      >
-        Dark Mode Toggle
-      </button>
-      {toggle ? <p>Dark Mode</p> : <p>Light Mode</p>}
-      <div className="detailed-page-container">
-        {groupedEdges.map((group, groupIndex) => (
-          <div
-            key={groupIndex}
-            className="group-container bg-gray-800 p-4 rounded-lg max-w-3xl mx-auto mb-8"
-          >
-            {stageToWaveMap[group[0].node.stage] && (
-              <div className="wave-info-card">
-                <div className="wave-group">
-                  {stageToWaveMap[group[0].node.stage].map((wave, idx) => (
-                    <span
-                      key={idx}
-                      style={determineStyle(wave)}
-                      className="text-black font-bold block mb-2"
-                    >
-                      {wave}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-            <div className="card-container">
-              {group[0].node.trainerId && group[0].node.trainerType ? (
-                <TrainerCard
-                  trainerId={group[0].node.trainerId}
-                  trainerType={group[0].node.trainerType}
-                />
-              ) : group.length === 2 ? (
-                <>
-                  <PokemonCard
-                    node={group[0].node}
-                    pokemonIdMap={pokemonIdMap}
-                  />
-                  <PokemonCard
-                    node={group[1].node}
-                    pokemonIdMap={pokemonIdMap}
-                  />
-                </>
-              ) : (
-                group.map((edge: any, index: number) => (
-                  <PokemonCard
-                    key={index}
-                    node={edge.node}
-                    pokemonIdMap={pokemonIdMap}
-                  />
-                ))
-              )}
-            </div>
-          </div>
-        ))}
+      <Navigation currentPage="" />
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Available DRPD Pages</h1>
+        <ul className="space-y-4">
+          {drpdPages.map(({ node }, index) => (
+            <li key={index} className="bg-gray-100 p-4 rounded-lg shadow">
+              <p className="text-xl font-semibold">{node.title}</p>
+              <Link
+                to={`/${node.parent.name.replace(/_/g, "-")}/detailed`}
+                className="text-blue-600 hover:text-blue-800 mr-4"
+              >
+                Detailed
+              </Link>
+              <Link
+                to={`/${node.parent.name.replace(/_/g, "-")}/follow-along`}
+                className="text-blue-600 hover:text-blue-800"
+              >
+                Follow Along
+              </Link>
+              <p className="text-gray-600 mt-2">Date: {node.date}</p>
+              <p className="text-gray-600">
+                Authors: {node.authors.join(", ")}
+              </p>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
@@ -148,52 +53,21 @@ const DetailedPage: React.FC<{ data: any }> = ({ data }) => {
 
 export const query = graphql`
   query {
-    allGoogleSpreadsheetDetailed {
+    allDrpdJson {
       edges {
         node {
-          name
-          stage
-          nature
-          biome
-          abilityDropDown
-          caught
-          passive
-          gender
-          hp
-          attack
-          defense
-          spAtk
-          spDef
-          speed
-        }
-      }
-    }
-    allGoogleSpreadsheetSprites {
-      edges {
-        node {
-          name
-          pokemonId
-        }
-      }
-    }
-    allGoogleSpreadsheetFollowAlong {
-      edges {
-        node {
-          wave
-          waveNumber
-        }
-      }
-    }
-    allGoogleSpreadsheetTrainers {
-      edges {
-        node {
-          stage
-          trainerId
-          trainerType
+          parent {
+            ... on File {
+              name
+            }
+          }
+          title
+          date
+          authors
         }
       }
     }
   }
 `;
 
-export default DetailedPage;
+export default IndexPage;

@@ -3,7 +3,8 @@ import * as React from "react";
 const TrainerCard: React.FC<{
   trainerId: string;
   trainerType: string;
-}> = ({ trainerId, trainerType }) => {
+  name?: string;
+}> = ({ trainerId, trainerType, name }) => {
   return (
     <div style={{ padding: "10px", textAlign: "center" }}>
       <div
@@ -15,7 +16,7 @@ const TrainerCard: React.FC<{
       >
         {trainerType.includes("Trainer") && <p>Trainer</p>}
         {trainerType.includes("Gym") && <p>Gym Leader</p>}
-        {trainerId}
+        {name || trainerId}
         <div
           className={
             trainerType.includes("Trainer") ? "trainer-card" : "leader-card"
@@ -28,7 +29,7 @@ const TrainerCard: React.FC<{
                 (e.currentTarget.src =
                   "https://raw.githubusercontent.com/pagefaultgames/pokerogue/main/public/images/trainer/unknown_m.png")
               }
-              alt={trainerId}
+              alt={name || trainerId}
               style={{ height: "100px" }}
             />
           </div>

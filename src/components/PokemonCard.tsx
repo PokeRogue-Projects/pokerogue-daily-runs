@@ -38,8 +38,20 @@ function createPoly(
 }
 
 const PokemonCard: React.FC<{
-  //TODO: make partial node type for Pokemon from detailed page
-  node: any;
+  node: {
+    name: string;
+    abilityDropDown: string;
+    caught: boolean;
+    passive: string;
+    nature: string;
+    hp: string;
+    attack: string;
+    defense: string;
+    spAtk: string;
+    spDef: string;
+    speed: string;
+    gender: string;
+  };
   pokemonIdMap: { [name: string]: string };
 }> = ({ node: pokemon, pokemonIdMap }) => {
   const getGenderCircleStyle = (gender: string) => {
@@ -62,11 +74,7 @@ const PokemonCard: React.FC<{
           </h1>
         </div>
         <div className="flex items-center space-x-2">
-          {pokemon.stage ? (
-            <div className="bg-gray-200 text-black text-xl font-bold px-3 py-1 rounded-full">
-              {pokemon.stage}
-            </div>
-          ) : null}
+          {/* Remove the stage section as it's not in the new data structure */}
         </div>
       </div>
       <div className="flex items-center" style={{ marginTop: "-50px" }}>
@@ -104,12 +112,12 @@ const PokemonCard: React.FC<{
               className="ivgon"
               style={{
                 clipPath: createPoly(
-                  pokemon.hp,
-                  pokemon.attack,
-                  pokemon.defense,
-                  pokemon.spAtk,
-                  pokemon.spDef,
-                  pokemon.speed
+                  parseInt(pokemon.hp),
+                  parseInt(pokemon.attack),
+                  parseInt(pokemon.defense),
+                  parseInt(pokemon.spAtk),
+                  parseInt(pokemon.spDef),
+                  parseInt(pokemon.speed)
                 ),
               }}
             ></div>
@@ -118,22 +126,7 @@ const PokemonCard: React.FC<{
       </div>
       <div className="info-card">
         <div className="grid grid-container mt-4">
-          <div className="grid-item-card" style={{ gridArea: "biome" }}>
-            <div className="title-card">
-              <h2 className="title-text">Biome</h2>
-            </div>
-            <div className="rounded-lg mt-2">
-              {pokemon.biome != "???" ? (
-                <img
-                  src={`https://wiki.pokerogue.net/_media/en:biomes:en_${pokemon.biome}_bg.png`}
-                  alt={pokemon.biome}
-                  className="w-full object-cover rounded-lg"
-                />
-              ) : (
-                <p className="text-center">???</p>
-              )}
-            </div>
-          </div>
+          {/* Remove the biome section as it's not in the new data structure */}
           <div className="grid-item-card" style={{ gridArea: "ability" }}>
             <div className="title-card">
               <h2 className="title-text">Ability</h2>
@@ -143,7 +136,7 @@ const PokemonCard: React.FC<{
                 ? pokemon.abilityDropDown
                     .split("_")
                     .map(
-                      (word: any) =>
+                      (word: string) =>
                         word.charAt(0).toUpperCase() +
                         word.slice(1).toLowerCase()
                     )
