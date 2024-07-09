@@ -1,6 +1,14 @@
 import * as React from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "@/components/Layout";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 type DrpdEdge = {
   node: {
@@ -22,29 +30,37 @@ const IndexPage: React.FC<{ data: { allDrpdJson: { edges: DrpdEdge[] } } }> = ({
     <Layout>
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-6">Available DRPD Pages</h1>
-        <ul className="space-y-4">
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {drpdPages.map(({ node }, index) => (
-            <li key={index} className="bg-gray-100 p-4 rounded-lg shadow">
-              <p className="text-xl font-semibold">{node.title}</p>
-              <Link
-                to={`/${node.parent.name.replace(/_/g, "-")}/detailed`}
-                className="text-blue-600 hover:text-blue-800 mr-4"
-              >
-                Detailed
-              </Link>
-              <Link
-                to={`/${node.parent.name.replace(/_/g, "-")}/follow-along`}
-                className="text-blue-600 hover:text-blue-800"
-              >
-                Follow Along
-              </Link>
-              <p className="text-gray-600 mt-2">Date: {node.date}</p>
-              <p className="text-gray-600">
-                Authors: {node.authors.join(", ")}
-              </p>
-            </li>
+            <Card key={index}>
+              <CardHeader>
+                <CardTitle>{node.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  Date: {node.date}
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  Authors: {node.authors.join(", ")}
+                </p>
+              </CardContent>
+              <CardFooter className="flex justify-between">
+                <Button asChild variant="outline">
+                  <Link to={`/${node.parent.name.replace(/_/g, "-")}/detailed`}>
+                    Detailed
+                  </Link>
+                </Button>
+                <Button asChild variant="outline">
+                  <Link
+                    to={`/${node.parent.name.replace(/_/g, "-")}/follow-along`}
+                  >
+                    Follow Along
+                  </Link>
+                </Button>
+              </CardFooter>
+            </Card>
           ))}
-        </ul>
+        </div>
       </div>
     </Layout>
   );
