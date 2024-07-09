@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Pokemon } from "@/types";
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from "recharts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -8,8 +9,7 @@ import {
   ChartTooltipContent,
 } from "./ui/chart";
 
-// Replace the chartData with Pokemon stats
-const getPokemonChartData = (ivs: PokemonData["ivs"]) => [
+const getPokemonChartData = (ivs: Pokemon["ivs"]) => [
   { stat: "HP", value: ivs.hp },
   { stat: "Attack", value: ivs.atk },
   { stat: "Defense", value: ivs.def },
@@ -18,7 +18,6 @@ const getPokemonChartData = (ivs: PokemonData["ivs"]) => [
   { stat: "Speed", value: ivs.spe },
 ];
 
-// Update the chartConfig
 const chartConfig = {
   value: {
     label: "IV",
@@ -26,30 +25,18 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-type PokemonData = {
-  id: string;
-  name: string;
-  ability: string;
-  captured: boolean;
-  passive: string;
-  nature: string;
-  ivs: {
-    hp: number;
-    atk: number;
-    def: number;
-    spatk: number;
-    spdef: number;
-    spe: number;
-  };
-  gender: string;
-};
-
 const PokemonCard: React.FC<{
-  pokemon: PokemonData;
+  pokemon: Pokemon;
   biome: string;
-}> = ({ pokemon, biome }) => {
+  waveNumber?: number;
+}> = ({ pokemon, biome, waveNumber }) => {
   return (
-    <Card className="w-full max-w-3xl">
+    <Card className="w-full max-w-3xl relative">
+      {waveNumber !== undefined && (
+        <div className="absolute top-2 right-2 bg-primary text-primary-foreground rounded-full w-8 h-8 flex items-center justify-center font-bold">
+          {waveNumber}
+        </div>
+      )}
       <CardHeader className="pb-2">
         <CardTitle className="text-2xl font-bold">{pokemon.name}</CardTitle>
       </CardHeader>

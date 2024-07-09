@@ -1,47 +1,10 @@
 import * as React from "react";
-import { useState } from "react";
 import { graphql } from "gatsby";
 import PokemonCard from "@/components/PokemonCard";
 import TrainerCard from "@/components/TrainerCard";
 import Layout from "@/components/Layout";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
-type Pokemon = {
-  id: string;
-  name: string;
-  ability: string;
-  captured: boolean;
-  gender: string;
-  isHiddenAbility: boolean;
-  items: Array<{ id: string; name: string; quantity: number }>;
-  ivs: {
-    atk: number;
-    def: number;
-    hp: number;
-    spatk: number;
-    spdef: number;
-    spe: number;
-  };
-  level: number;
-  nature: string;
-  passive: string;
-  rarity: string;
-};
-
-type Wave = {
-  action: string;
-  biome: string;
-  double: boolean;
-  id: string;
-  pokemon: Pokemon[];
-  reload: boolean;
-  trainer?: {
-    id: string;
-    name: string;
-    type: string;
-  };
-  type: string;
-};
+import { Pokemon, Wave } from "@/types";
+import WaveInfoCard from "@/components/WaveInfoCard";
 
 type DrpdData = {
   drpdJson: {
@@ -54,50 +17,22 @@ type DrpdData = {
   };
 };
 
-const WaveInfoCard: React.FC<{ wave: Wave; waveIndex: number }> = ({
-  wave,
-  waveIndex,
-}) => (
-  <Card className="h-fit">
-    <CardHeader>
-      <CardTitle className="text-2xl font-bold">
-        Wave {waveIndex + 1}: {wave.action}
-      </CardTitle>
-    </CardHeader>
-    <CardContent>
-      <div className="space-y-4">
-        <div>
-          <p className="font-semibold">Biome:</p>
-          <p>{wave.biome}</p>
-        </div>
-        <div>
-          <p className="font-semibold">Type:</p>
-          <p>{wave.type}</p>
-        </div>
-        {wave.double && (
-          <div>
-            <p className="font-semibold">Double:</p>
-            <p>Yes</p>
-          </div>
-        )}
-        {wave.reload && (
-          <div>
-            <p className="font-semibold">Reload:</p>
-            <p>Yes</p>
-          </div>
-        )}
-      </div>
-    </CardContent>
-  </Card>
-);
-
 const DetailedPage: React.FC<{ data: DrpdData; params: any }> = ({ data }) => {
   const { drpdJson } = data;
 
-  const renderPokemonCards = (pokemon: Pokemon[], biome: string) => (
+  const renderPokemonCards = (
+    pokemon: Pokemon[],
+    biome: string,
+    waveIndex: number
+  ) => (
     <div className="space-y-6">
       {pokemon.map((p, index) => (
-        <PokemonCard key={index} pokemon={p} biome={biome} />
+        <PokemonCard
+          key={index}
+          pokemon={p}
+          biome={biome}
+          waveNumber={index === 0 ? waveIndex + 1 : undefined}
+        />
       ))}
     </div>
   );
@@ -116,6 +51,8 @@ const DetailedPage: React.FC<{ data: DrpdData; params: any }> = ({ data }) => {
                   <TrainerCard
                     trainerId={wave.trainer.id}
                     trainerType={wave.trainer.type}
+                    name={wave.trainer.name}
+                    waveNumber={waveIndex + 1}
                   />
                 </div>
               </div>
@@ -125,7 +62,7 @@ const DetailedPage: React.FC<{ data: DrpdData; params: any }> = ({ data }) => {
                   <WaveInfoCard wave={wave} waveIndex={waveIndex} />
                 </div>
                 <div className="lg:w-2/3">
-                  {renderPokemonCards(wave.pokemon, wave.biome)}
+                  {renderPokemonCards(wave.pokemon, wave.biome, waveIndex)}
                 </div>
               </div>
             ) : (
@@ -135,8 +72,7 @@ const DetailedPage: React.FC<{ data: DrpdData; params: any }> = ({ data }) => {
                 </div>
                 <div className="lg:w-2/3">
                   <div className="flex flex-col gap-6">
-                    {renderPokemonCards([wave.pokemon[0]], wave.biome)}
-                    {renderPokemonCards([wave.pokemon[1]], wave.biome)}
+                    {renderPokemonCards(wave.pokemon, wave.biome, waveIndex)}
                   </div>
                 </div>
               </div>
