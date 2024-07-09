@@ -120,18 +120,8 @@ const PokemonCard: React.FC<{
               </CardHeader>
               <CardContent className="p-3 pt-0">
                 {pokemon.nature && (
-                  <div className="text-xs text-center">
-                    <p className="font-medium">
-                      {pokemon.nature.split(/\s+/)[0]}
-                    </p>
-                    <p className="text-green-600">
-                      +{pokemon.nature.split(/\s+/)[1]}{" "}
-                      {pokemon.nature.split(/\s+/)[2]}
-                    </p>
-                    <p className="text-red-600">
-                      -{pokemon.nature.split(/\s+/)[3]}{" "}
-                      {pokemon.nature.split(/\s+/)[4]}
-                    </p>
+                  <div className="text-md text-center">
+                    <p className="font-medium">{pokemon.nature}</p>
                   </div>
                 )}
               </CardContent>
