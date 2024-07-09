@@ -24,6 +24,7 @@
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "gatsby-source-filesystem": "^5.13.1",
     "gatsby-source-google-spreadsheet": "^2.0.0",
+    "gatsby-transformer-json": "^5.13.1",
     "gatsby-transformer-remark": "^6.13.1",
     "google-auth-library": "^9.11.0",
     "google-spreadsheet": "^4.1.2",
