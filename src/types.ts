@@ -20,7 +20,7 @@ export type Pokemon = {
 };
 
 export type Wave = {
-    action: string;
+    action: string[];
     biome: string;
     double: boolean;
     id: string;

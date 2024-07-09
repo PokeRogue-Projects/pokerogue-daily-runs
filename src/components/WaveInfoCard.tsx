@@ -7,27 +7,19 @@ const WaveInfoCard: React.FC<{ wave: Wave; waveIndex: number }> = ({
   waveIndex,
 }) => (
   <Card className="h-fit">
-    <CardHeader>
-      <CardTitle className="text-2xl font-bold">
-        Wave {waveIndex + 1}: {wave.action}
-      </CardTitle>
-    </CardHeader>
     <CardContent>
       <div className="space-y-4">
         <div>
-          <p className="font-semibold">Biome:</p>
-          <p>{wave.biome}</p>
+          {Array.isArray(wave.action) ? (
+            wave.action.map((action, index) => (
+              <p key={index} className="whitespace-pre-line">
+                {action}
+              </p>
+            ))
+          ) : (
+            <p>{wave.action}</p>
+          )}
         </div>
-        <div>
-          <p className="font-semibold">Type:</p>
-          <p>{wave.type}</p>
-        </div>
-        {wave.double && (
-          <div>
-            <p className="font-semibold">Double:</p>
-            <p>Yes</p>
-          </div>
-        )}
         {wave.reload && (
           <div>
             <p className="font-semibold">Reload:</p>
