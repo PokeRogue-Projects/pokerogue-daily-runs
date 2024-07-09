@@ -1,6 +1,6 @@
 import * as React from "react";
 import { graphql, Link } from "gatsby";
-import Navigation from "../components/Navigation";
+import Layout from "@/components/Layout";
 
 type DrpdEdge = {
   node: {
@@ -19,8 +19,7 @@ const IndexPage: React.FC<{ data: { allDrpdJson: { edges: DrpdEdge[] } } }> = ({
   const drpdPages = data.allDrpdJson.edges;
 
   return (
-    <div>
-      <Navigation currentPage="" />
+    <Layout>
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-6">Available DRPD Pages</h1>
         <ul className="space-y-4">
@@ -47,7 +46,7 @@ const IndexPage: React.FC<{ data: { allDrpdJson: { edges: DrpdEdge[] } } }> = ({
           ))}
         </ul>
       </div>
-    </div>
+    </Layout>
   );
 };
 

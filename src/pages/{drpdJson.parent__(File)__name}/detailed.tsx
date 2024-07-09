@@ -1,10 +1,10 @@
 import * as React from "react";
 import { useState } from "react";
 import { graphql } from "gatsby";
-import Navigation from "@/components/Navigation";
 import { determineStyle } from "../../utils/styleUtils";
 import PokemonCard from "@/components/PokemonCard";
 import TrainerCard from "@/components/TrainerCard";
+import Layout from "@/components/Layout";
 
 type Pokemon = {
   id: string;
@@ -65,15 +65,7 @@ const DetailedPage: React.FC<{ data: DrpdData; params: any }> = ({ data }) => {
   };
 
   return (
-    <div>
-      <Navigation currentPage="detailed" />
-      <button
-        style={{ border: "1px solid black", padding: "10px" }}
-        onClick={() => setToggle(!toggle)}
-      >
-        Dark Mode Toggle
-      </button>
-      {toggle ? <p>Dark Mode</p> : <p>Light Mode</p>}
+    <Layout>
       <div className="detailed-page-container">
         {drpdJson.waves.map((wave, waveIndex) => (
           <div
@@ -103,7 +95,7 @@ const DetailedPage: React.FC<{ data: DrpdData; params: any }> = ({ data }) => {
           </div>
         ))}
       </div>
-    </div>
+    </Layout>
   );
 };
 

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import Navigation from "../../components/Navigation";
+import Layout from "@/components/Layout";
 import { determineStyle } from "../../utils/styleUtils";
 
 type Wave = {
@@ -24,8 +24,7 @@ const FollowAlongPage: React.FC<{ data: DrpdData }> = ({ data }) => {
   const allWaves = data.allDrpdJson.edges.flatMap((edge) => edge.node.waves);
 
   return (
-    <div>
-      <Navigation currentPage="follow-along" />
+    <Layout>
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-6">Follow Along</h1>
         <ul className="space-y-4">
@@ -53,7 +52,7 @@ const FollowAlongPage: React.FC<{ data: DrpdData }> = ({ data }) => {
           })}
         </ul>
       </div>
-    </div>
+    </Layout>
   );
 };
 
