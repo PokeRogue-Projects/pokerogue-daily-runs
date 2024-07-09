@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Card, CardContent } from "@/components/ui/card";
 
 const TrainerCard: React.FC<{
   trainerId: string;
@@ -6,36 +7,29 @@ const TrainerCard: React.FC<{
   name?: string;
 }> = ({ trainerId, trainerType, name }) => {
   return (
-    <div style={{ padding: "10px", textAlign: "center" }}>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        {trainerType.includes("Trainer") && <p>Trainer</p>}
-        {trainerType.includes("Gym") && <p>Gym Leader</p>}
-        {name || trainerId}
+    <Card className="w-full max-w-sm mx-auto">
+      <CardContent className="flex flex-col items-center p-6">
+        <p className="text-lg font-semibold mb-2">
+          {trainerType.includes("Gym") ? "Gym Leader" : "Trainer"}
+        </p>
+        <p className="text-xl font-bold mb-4">{name || trainerId}</p>
         <div
-          className={
-            trainerType.includes("Trainer") ? "trainer-card" : "leader-card"
-          }
+          className={`rounded-lg p-4 ${
+            trainerType.includes("Gym") ? "bg-purple-100" : "bg-blue-100"
+          }`}
         >
-          <div>
-            <img
-              src={`https://wiki.pokerogue.net/_media/trainers:${trainerId}.png`}
-              onError={(e) =>
-                (e.currentTarget.src =
-                  "https://raw.githubusercontent.com/pagefaultgames/pokerogue/main/public/images/trainer/unknown_m.png")
-              }
-              alt={name || trainerId}
-              style={{ height: "100px" }}
-            />
-          </div>
+          <img
+            src={`https://wiki.pokerogue.net/_media/trainers:${trainerId}.png`}
+            onError={(e) =>
+              (e.currentTarget.src =
+                "https://raw.githubusercontent.com/pagefaultgames/pokerogue/main/public/images/trainer/unknown_m.png")
+            }
+            alt={name || trainerId}
+            className="h-32 w-32 object-contain"
+          />
         </div>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 };
 
