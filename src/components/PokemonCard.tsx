@@ -3,6 +3,32 @@ import * as React from "react";
 import caughtImage from "../images/caught.png";
 // @ts-ignore
 import uncaughtImage from "../images/uncaught.png";
+import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from "recharts";
+
+import {
+  ChartConfig,
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "./ui/chart";
+
+// Replace the chartData with Pokemon stats
+const getPokemonChartData = (ivs: PokemonData["ivs"]) => [
+  { stat: "HP", value: ivs.hp },
+  { stat: "Attack", value: ivs.atk },
+  { stat: "Defense", value: ivs.def },
+  { stat: "Sp. Atk", value: ivs.spatk },
+  { stat: "Sp. Def", value: ivs.spdef },
+  { stat: "Speed", value: ivs.spe },
+];
+
+// Update the chartConfig
+const chartConfig = {
+  value: {
+    label: "IV",
+    color: "hsl(var(--chart-1))",
+  },
+} satisfies ChartConfig;
 
 function createPoly(
   health: number,
@@ -61,9 +87,9 @@ const PokemonCard: React.FC<{
 }> = ({ pokemon, biome }) => {
   const getGenderCircleStyle = (gender: string) => {
     switch (gender) {
-      case "♂":
+      case "male":
         return { backgroundColor: "#228DF2" };
-      case "♀":
+      case "female":
         return { backgroundColor: "#EF737E" };
       default:
         return null;
@@ -79,50 +105,47 @@ const PokemonCard: React.FC<{
           </h1>
         </div>
       </div>
-      <div className="flex items-center" style={{ marginTop: "-50px" }}>
-        <img
-          src={`https://wiki.pokerogue.net/_media/starters:sprites:${pokemon.id}.png`}
-          alt={pokemon.name}
-          style={{ height: "200px" }}
-        />
-        {(pokemon.gender === "♂" || pokemon.gender === "♀") && (
-          <div
-            style={{
-              ...getGenderCircleStyle(pokemon.gender),
-              width: "50px",
-              height: "50px",
-              borderRadius: "100%",
-              display: "inline-flex",
-              justifyContent: "center",
-              alignItems: "center",
-              marginLeft: "5px",
-            }}
-          >
-            {pokemon.gender}
-          </div>
-        )}
-        <img
-          src={pokemon.captured ? caughtImage : uncaughtImage}
-          alt={pokemon.captured ? "Caught" : "Uncaught"}
-          style={{ height: "50px", marginLeft: "10px" }}
-        />
-        <div className="hexagon-wrapper">
-          <div className="hexagon">
+      <div className="flex flex-col items-center">
+        <div className="flex items-center">
+          <img
+            src={`https://wiki.pokerogue.net/_media/starters:sprites:${pokemon.id}.png`}
+            alt={pokemon.name}
+            style={{ height: "200px" }}
+          />
+          {(pokemon.gender === "♂" || pokemon.gender === "♀") && (
             <div
-              className="ivgon"
               style={{
-                clipPath: createPoly(
-                  pokemon.ivs.hp,
-                  pokemon.ivs.atk,
-                  pokemon.ivs.def,
-                  pokemon.ivs.spatk,
-                  pokemon.ivs.spdef,
-                  pokemon.ivs.spe
-                ),
+                ...getGenderCircleStyle(pokemon.gender),
+                width: "50px",
+                height: "50px",
+                borderRadius: "100%",
+                display: "inline-flex",
+                justifyContent: "center",
+                alignItems: "center",
+                marginLeft: "5px",
               }}
-            ></div>
-          </div>
+            >
+              {pokemon.gender}
+            </div>
+          )}
+          <img
+            src={pokemon.captured ? caughtImage : uncaughtImage}
+            alt={pokemon.captured ? "Caught" : "Uncaught"}
+            style={{ height: "50px", marginLeft: "10px" }}
+          />
         </div>
+
+        <ChartContainer
+          config={chartConfig}
+          className="w-full aspect-square h-[200px] mt-4"
+        >
+          <RadarChart data={getPokemonChartData(pokemon.ivs)}>
+            <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+            <PolarAngleAxis dataKey="stat" />
+            <PolarGrid />
+            <Radar dataKey="value" fill="#234998" fillOpacity={1} />
+          </RadarChart>
+        </ChartContainer>
       </div>
       <div className="info-card">
         <div className="grid grid-container mt-4">

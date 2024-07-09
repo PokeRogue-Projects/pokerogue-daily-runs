@@ -70,9 +70,9 @@
           "level": 20,
           "items": [],
           "ivs": {
-            "hp": 15,
-            "atk": 10,
-            "def": 16,
+            "hp": 30,
+            "atk": 30,
+            "def": 30,
             "spatk": 2,
             "spdef": 30,
             "spe": 25
