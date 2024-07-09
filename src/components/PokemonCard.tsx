@@ -69,16 +69,16 @@ const PokemonCard: React.FC<{
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Biome</CardTitle>
+            <Card className="h-full flex flex-col">
+              <CardHeader className="p-3 text-center">
+                <CardTitle className="text-md">Biome</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="p-3 pt-0 flex-grow flex items-center justify-center">
                 {biome !== "???" ? (
                   <img
                     src={`https://wiki.pokerogue.net/_media/en:biomes:en_${biome}_bg.png`}
                     alt={biome}
-                    className="w-full h-20 object-cover rounded-md"
+                    className="w-full h-auto max-h-24 object-cover rounded-md"
                   />
                 ) : (
                   <p className="text-center">???</p>
@@ -86,13 +86,13 @@ const PokemonCard: React.FC<{
               </CardContent>
             </Card>
 
-            <div className="flex flex-col space-y-4">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">Ability</CardTitle>
+            <div className="flex flex-col space-y-2">
+              <Card className="flex-1">
+                <CardHeader className="p-3 text-center">
+                  <CardTitle className="text-md">Ability</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p>
+                <CardContent className="p-3 pt-0">
+                  <p className="text-xs text-center">
                     {pokemon.ability
                       .split("_")
                       .map(
@@ -104,31 +104,31 @@ const PokemonCard: React.FC<{
                   </p>
                 </CardContent>
               </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">Passive</CardTitle>
+              <Card className="flex-1">
+                <CardHeader className="p-3 text-center">
+                  <CardTitle className="text-md">Passive</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p>{pokemon.passive}</p>
+                <CardContent className="p-3 pt-0">
+                  <p className="text-xs text-center">{pokemon.passive}</p>
                 </CardContent>
               </Card>
             </div>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Nature</CardTitle>
+            <Card className="h-full">
+              <CardHeader className="p-3 text-center">
+                <CardTitle className="text-md">Nature</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="p-3 pt-0">
                 {pokemon.nature && (
-                  <div>
+                  <div className="text-xs text-center">
                     <p className="font-medium">
                       {pokemon.nature.split(/\s+/)[0]}
                     </p>
-                    <p className="text-sm text-green-600">
+                    <p className="text-green-600">
                       +{pokemon.nature.split(/\s+/)[1]}{" "}
                       {pokemon.nature.split(/\s+/)[2]}
                     </p>
-                    <p className="text-sm text-red-600">
+                    <p className="text-red-600">
                       -{pokemon.nature.split(/\s+/)[3]}{" "}
                       {pokemon.nature.split(/\s+/)[4]}
                     </p>
