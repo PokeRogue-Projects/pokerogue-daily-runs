@@ -58,25 +58,9 @@ const DetailedPage: React.FC<{ data: DrpdData; params: any }> = ({ data }) => {
   const [toggle, setToggle] = useState(false);
   const { drpdJson } = data;
 
-  const renderPokemonCards = (pokemon: Pokemon[]) => {
+  const renderPokemonCards = (pokemon: Pokemon[], biome: string) => {
     return pokemon.map((p, index) => (
-      <PokemonCard
-        key={index}
-        node={{
-          name: p.name,
-          abilityDropDown: p.ability,
-          caught: p.captured,
-          passive: p.passive,
-          nature: p.nature,
-          hp: p.ivs.hp.toString(),
-          attack: p.ivs.atk.toString(),
-          defense: p.ivs.def.toString(),
-          spAtk: p.ivs.spatk.toString(),
-          spDef: p.ivs.spdef.toString(),
-          speed: p.ivs.spe.toString(),
-        }}
-        pokemonIdMap={{ [p.name]: p.id }}
-      />
+      <PokemonCard key={index} pokemon={p} biome={biome} />
     ));
   };
 
@@ -104,9 +88,6 @@ const DetailedPage: React.FC<{ data: DrpdData; params: any }> = ({ data }) => {
                 >
                   {wave.action}
                 </span>
-                <span className="text-white font-bold block mb-2">
-                  Biome: {wave.biome}
-                </span>
               </div>
             </div>
             <div className="card-container">
@@ -116,7 +97,7 @@ const DetailedPage: React.FC<{ data: DrpdData; params: any }> = ({ data }) => {
                   trainerType={wave.trainer.type}
                 />
               ) : (
-                renderPokemonCards(wave.pokemon)
+                renderPokemonCards(wave.pokemon, wave.biome)
               )}
             </div>
           </div>

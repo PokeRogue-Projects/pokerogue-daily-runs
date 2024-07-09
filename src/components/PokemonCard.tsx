@@ -37,23 +37,28 @@ function createPoly(
   );
 }
 
-const PokemonCard: React.FC<{
-  node: {
-    name: string;
-    abilityDropDown: string;
-    caught: boolean;
-    passive: string;
-    nature: string;
-    hp: string;
-    attack: string;
-    defense: string;
-    spAtk: string;
-    spDef: string;
-    speed: string;
-    gender: string;
+type PokemonData = {
+  id: string;
+  name: string;
+  ability: string;
+  captured: boolean;
+  passive: string;
+  nature: string;
+  ivs: {
+    hp: number;
+    atk: number;
+    def: number;
+    spatk: number;
+    spdef: number;
+    spe: number;
   };
-  pokemonIdMap: { [name: string]: string };
-}> = ({ node: pokemon, pokemonIdMap }) => {
+  gender: string;
+};
+
+const PokemonCard: React.FC<{
+  pokemon: PokemonData;
+  biome: string;
+}> = ({ pokemon, biome }) => {
   const getGenderCircleStyle = (gender: string) => {
     switch (gender) {
       case "♂":
@@ -73,15 +78,10 @@ const PokemonCard: React.FC<{
             {pokemon.name}
           </h1>
         </div>
-        <div className="flex items-center space-x-2">
-          {/* Remove the stage section as it's not in the new data structure */}
-        </div>
       </div>
       <div className="flex items-center" style={{ marginTop: "-50px" }}>
         <img
-          src={`https://wiki.pokerogue.net/_media/starters:sprites:${
-            pokemonIdMap[pokemon.name]
-          }.png`}
+          src={`https://wiki.pokerogue.net/_media/starters:sprites:${pokemon.id}.png`}
           alt={pokemon.name}
           style={{ height: "200px" }}
         />
@@ -102,8 +102,8 @@ const PokemonCard: React.FC<{
           </div>
         )}
         <img
-          src={pokemon.caught ? caughtImage : uncaughtImage}
-          alt={pokemon.caught ? "Caught" : "Uncaught"}
+          src={pokemon.captured ? caughtImage : uncaughtImage}
+          alt={pokemon.captured ? "Caught" : "Uncaught"}
           style={{ height: "50px", marginLeft: "10px" }}
         />
         <div className="hexagon-wrapper">
@@ -112,12 +112,12 @@ const PokemonCard: React.FC<{
               className="ivgon"
               style={{
                 clipPath: createPoly(
-                  parseInt(pokemon.hp),
-                  parseInt(pokemon.attack),
-                  parseInt(pokemon.defense),
-                  parseInt(pokemon.spAtk),
-                  parseInt(pokemon.spDef),
-                  parseInt(pokemon.speed)
+                  pokemon.ivs.hp,
+                  pokemon.ivs.atk,
+                  pokemon.ivs.def,
+                  pokemon.ivs.spatk,
+                  pokemon.ivs.spdef,
+                  pokemon.ivs.spe
                 ),
               }}
             ></div>
@@ -126,14 +126,29 @@ const PokemonCard: React.FC<{
       </div>
       <div className="info-card">
         <div className="grid grid-container mt-4">
-          {/* Remove the biome section as it's not in the new data structure */}
+          <div className="grid-item-card" style={{ gridArea: "biome" }}>
+            <div className="title-card">
+              <h2 className="title-text">Biome</h2>
+            </div>
+            <div className="rounded-lg mt-2">
+              {biome != "???" ? (
+                <img
+                  src={`https://wiki.pokerogue.net/_media/en:biomes:en_${biome}_bg.png`}
+                  alt={biome}
+                  className="w-full object-cover rounded-lg"
+                />
+              ) : (
+                <p className="text-center">???</p>
+              )}
+            </div>
+          </div>
           <div className="grid-item-card" style={{ gridArea: "ability" }}>
             <div className="title-card">
               <h2 className="title-text">Ability</h2>
             </div>
             <p className="ability-passive-text">
-              {pokemon.abilityDropDown
-                ? pokemon.abilityDropDown
+              {pokemon.ability
+                ? pokemon.ability
                     .split("_")
                     .map(
                       (word: string) =>
