@@ -1,10 +1,10 @@
 import * as React from "react";
 import { useState } from "react";
 import { graphql } from "gatsby";
-import Navigation from "../../components/Navigation";
+import Navigation from "@/components/Navigation";
 import { determineStyle } from "../../utils/styleUtils";
-import PokemonCard from "../../components/PokemonCard";
-import TrainerCard from "../../components/TrainerCard";
+import PokemonCard from "@/components/PokemonCard";
+import TrainerCard from "@/components/TrainerCard";
 
 type Pokemon = {
   id: string;
