@@ -44,7 +44,7 @@ const DetailedPage: React.FC<{ data: DrpdData; params: any }> = ({ data }) => {
           <div key={waveIndex} className="mb-12">
             {wave.trainer ? (
               <div className="flex flex-col lg:flex-row gap-6">
-                <div className="lg:w-1/3">
+                <div className="lg:w-1/3 flex items-center">
                   <WaveInfoCard wave={wave} waveIndex={waveIndex} />
                 </div>
                 <div className="lg:w-2/3">
@@ -56,24 +56,13 @@ const DetailedPage: React.FC<{ data: DrpdData; params: any }> = ({ data }) => {
                   />
                 </div>
               </div>
-            ) : wave.pokemon.length === 1 ? (
-              <div className="flex flex-col lg:flex-row gap-6">
-                <div className="lg:w-1/3">
-                  <WaveInfoCard wave={wave} waveIndex={waveIndex} />
-                </div>
-                <div className="lg:w-2/3">
-                  {renderPokemonCards(wave.pokemon, wave.biome, waveIndex)}
-                </div>
-              </div>
             ) : (
               <div className="flex flex-col lg:flex-row gap-6">
                 <div className="lg:w-1/3 flex items-center">
                   <WaveInfoCard wave={wave} waveIndex={waveIndex} />
                 </div>
                 <div className="lg:w-2/3">
-                  <div className="flex flex-col gap-6">
-                    {renderPokemonCards(wave.pokemon, wave.biome, waveIndex)}
-                  </div>
+                  {renderPokemonCards(wave.pokemon, wave.biome, waveIndex)}
                 </div>
               </div>
             )}
