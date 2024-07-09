@@ -50,11 +50,24 @@ const PokemonCard: React.FC<{
               alt={pokemon.name}
               className="w-32 h-32 object-contain"
             />
-            <img
-              src={pokemon.captured ? capturedImage : uncapturedImage}
-              alt={pokemon.captured ? "captured" : "uncaptured"}
-              className="w-16 h-16 object-contain"
-            />
+            <div className="flex items-center space-x-2">
+              <img
+                src={pokemon.captured ? capturedImage : uncapturedImage}
+                alt={pokemon.captured ? "captured" : "uncaptured"}
+                className="w-16 h-16 object-contain"
+              />
+              <div
+                className={`w-8 h-8 rounded-full flex items-center justify-center ${
+                  pokemon.gender === "male" ? "bg-blue-500" : "bg-pink-500"
+                }`}
+              >
+                {pokemon.gender === "male" ? (
+                  <p className="text-white font-medium">♂</p>
+                ) : (
+                  <p className="text-white font-medium">♀</p>
+                )}
+              </div>
+            </div>
             <ChartContainer
               config={chartConfig}
               className="w-48 h-48 md:w-64 md:h-64"
