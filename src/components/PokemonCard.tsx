@@ -96,6 +96,17 @@ const PokemonCard: React.FC<{
     }
   };
 
+  const getGenderSymbol = (gender: string) => {
+    switch (gender) {
+      case "male":
+        return "♂";
+      case "female":
+        return "♀";
+      default:
+        return "";
+    }
+  };
+
   return (
     <div className="flex flex-col justify-between h-full">
       <div className="flex items-center justify-between">
@@ -105,45 +116,44 @@ const PokemonCard: React.FC<{
           </h1>
         </div>
       </div>
-      <div className="flex flex-col items-center">
-        <div className="flex items-center">
+      <div className="flex items-start justify-between mt-4">
+        <div className="flex flex-col items-center">
           <img
             src={`https://wiki.pokerogue.net/_media/starters:sprites:${pokemon.id}.png`}
             alt={pokemon.name}
-            style={{ height: "200px" }}
+            style={{ height: "150px" }}
           />
-          {(pokemon.gender === "♂" || pokemon.gender === "♀") && (
-            <div
-              style={{
-                ...getGenderCircleStyle(pokemon.gender),
-                width: "50px",
-                height: "50px",
-                borderRadius: "100%",
-                display: "inline-flex",
-                justifyContent: "center",
-                alignItems: "center",
-                marginLeft: "5px",
-              }}
-            >
-              {pokemon.gender}
-            </div>
-          )}
-          <img
-            src={pokemon.captured ? caughtImage : uncaughtImage}
-            alt={pokemon.captured ? "Caught" : "Uncaught"}
-            style={{ height: "50px", marginLeft: "10px" }}
-          />
+          <div className="flex items-center mt-2">
+            {(pokemon.gender === "male" || pokemon.gender === "female") && (
+              <div
+                style={{
+                  ...getGenderCircleStyle(pokemon.gender),
+                  width: "30px",
+                  height: "30px",
+                  borderRadius: "100%",
+                  display: "inline-flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  marginRight: "5px",
+                }}
+              >
+                {getGenderSymbol(pokemon.gender)}
+              </div>
+            )}
+            <img
+              src={pokemon.captured ? caughtImage : uncaughtImage}
+              alt={pokemon.captured ? "Caught" : "Uncaught"}
+              style={{ height: "30px" }}
+            />
+          </div>
         </div>
 
-        <ChartContainer
-          config={chartConfig}
-          className="w-full aspect-square h-[200px] mt-4"
-        >
+        <ChartContainer config={chartConfig} className="w-[200px] h-[200px]">
           <RadarChart data={getPokemonChartData(pokemon.ivs)}>
             <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
             <PolarAngleAxis dataKey="stat" />
             <PolarGrid />
-            <Radar dataKey="value" fill="#234998" fillOpacity={1} />
+            <Radar dataKey="value" fill="#234998" fillOpacity={0.95} />
           </RadarChart>
         </ChartContainer>
       </div>
