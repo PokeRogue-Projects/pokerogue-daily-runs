@@ -8,6 +8,8 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "./ui/chart";
+import capturedImage from "../images/captured.png";
+import uncapturedImage from "../images/uncaptured.png";
 
 const getPokemonChartData = (ivs: Pokemon["ivs"]) => [
   { stat: "HP", value: ivs.hp },
@@ -47,6 +49,11 @@ const PokemonCard: React.FC<{
               src={`https://wiki.pokerogue.net/_media/starters:sprites:${pokemon.id}.png`}
               alt={pokemon.name}
               className="w-32 h-32 object-contain"
+            />
+            <img
+              src={pokemon.captured ? capturedImage : uncapturedImage}
+              alt={pokemon.captured ? "captured" : "uncaptured"}
+              className="w-16 h-16 object-contain"
             />
             <ChartContainer
               config={chartConfig}
