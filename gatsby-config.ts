@@ -24,6 +24,13 @@ const config: GatsbyConfig = {
     },
     __key: "pages"
   }, {
+    resolve: `gatsby-transformer-json`,
+  }, {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      path: `${__dirname}/drpd/`,
+    },
+  }, {
     resolve: "gatsby-source-google-spreadsheet",
     options: {
       spreadsheetId: process.env.DEV_SHEET_ID,
