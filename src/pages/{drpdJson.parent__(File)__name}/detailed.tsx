@@ -39,33 +39,26 @@ const DetailedPage: React.FC<{ data: DrpdData; params: any }> = ({ data }) => {
 
   return (
     <Layout>
-      <div className="container mx-auto px-4 py-8">
+      <div className="container md:w-[1000px] max-w-full mx-auto px-4 py-8">
         {drpdJson.waves.map((wave, waveIndex) => (
           <div key={waveIndex} className="mb-12">
-            {wave.trainer ? (
-              <div className="flex flex-col lg:flex-row gap-6">
-                <div className="lg:w-1/3 flex items-center">
-                  <WaveInfoCard wave={wave} waveIndex={waveIndex} />
-                </div>
-                <div className="lg:w-2/3">
+            <div className="flex flex-col md:flex-row gap-6">
+              <div className="md:w-1/2 flex items-center">
+                <WaveInfoCard wave={wave} waveIndex={waveIndex} />
+              </div>
+              <div className="md:w-1/2">
+                {wave.trainer ? (
                   <TrainerCard
                     trainerId={wave.trainer.id}
                     trainerType={wave.trainer.type}
                     name={wave.trainer.name}
                     waveNumber={waveIndex + 1}
                   />
-                </div>
+                  ) : (
+                  renderPokemonCards(wave.pokemon, wave.biome, waveIndex)
+                )}
               </div>
-            ) : (
-              <div className="flex flex-col lg:flex-row gap-6">
-                <div className="lg:w-1/3 flex items-center">
-                  <WaveInfoCard wave={wave} waveIndex={waveIndex} />
-                </div>
-                <div className="lg:w-2/3">
-                  {renderPokemonCards(wave.pokemon, wave.biome, waveIndex)}
-                </div>
-              </div>
-            )}
+            </div>
           </div>
         ))}
       </div>

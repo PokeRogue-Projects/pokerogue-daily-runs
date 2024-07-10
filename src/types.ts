@@ -31,5 +31,6 @@ export type Wave = {
         name: string;
         type: string;
     };
+    shop: boolean | string;
     type: string;
 };

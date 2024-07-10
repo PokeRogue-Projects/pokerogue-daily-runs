@@ -10,6 +10,7 @@ import {
 } from "./ui/chart";
 import capturedImage from "../images/captured.png";
 import uncapturedImage from "../images/uncaptured.png";
+import { cn } from "./lib/utils";
 
 const getPokemonChartData = (ivs: Pokemon["ivs"]) => [
   { stat: "HP", value: ivs.hp },
@@ -40,37 +41,40 @@ const PokemonCard: React.FC<{
         </div>
       )}
       <CardHeader className="pb-2">
-        <CardTitle className="text-2xl font-bold">{pokemon.name}</CardTitle>
+        <CardTitle className="text-2xl font-bold">
+          <div className="flex items-center">
+            <div>{pokemon.name}</div>
+            <div
+              className={cn(
+                "w-8 h-8 ml-2 rounded-full flex items-center justify-center",
+                pokemon.gender === "male" ? "bg-blue-500" : "bg-pink-500"
+              )}
+            >
+              {pokemon.gender === "male" ? (
+                <p className="text-white font-medium">♂</p>
+              ) : (
+                <p className="text-white font-medium">♀</p>
+              )}
+            </div>
+            <img
+              src={pokemon.captured ? capturedImage : uncapturedImage}
+              alt={pokemon.captured ? "captured" : "uncaptured"}
+              className="w-10 h-10 object-contain translate-y-[2px]"
+            />
+          </div>
+        </CardTitle>
       </CardHeader>
       <CardContent>
         <div className="flex flex-col space-y-6">
-          <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6">
+          <div className="flex flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6">
             <img
               src={`https://wiki.pokerogue.net/_media/starters:sprites:${pokemon.id}.png`}
               alt={pokemon.name}
-              className="w-32 h-32 object-contain"
+              className="w-2/5 object-contain self-center"
             />
-            <div className="flex items-center space-x-2">
-              <img
-                src={pokemon.captured ? capturedImage : uncapturedImage}
-                alt={pokemon.captured ? "captured" : "uncaptured"}
-                className="w-16 h-16 object-contain"
-              />
-              <div
-                className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                  pokemon.gender === "male" ? "bg-blue-500" : "bg-pink-500"
-                }`}
-              >
-                {pokemon.gender === "male" ? (
-                  <p className="text-white font-medium">♂</p>
-                ) : (
-                  <p className="text-white font-medium">♀</p>
-                )}
-              </div>
-            </div>
             <ChartContainer
               config={chartConfig}
-              className="w-48 h-48 md:w-64 md:h-64"
+              className="w-3/5 min-h-32"
             >
               <RadarChart data={getPokemonChartData(pokemon.ivs)}>
                 <ChartTooltip
@@ -88,7 +92,7 @@ const PokemonCard: React.FC<{
             </ChartContainer>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-4">
             <Card className="h-full flex flex-col">
               <CardHeader className="p-3 text-center">
                 <CardTitle className="text-md">Biome</CardTitle>
