@@ -1,36 +1,56 @@
-export type Pokemon = {
+export interface DrpdData {
+    version: string;
+    title?: string;
+    authors?: string[];
+    date: string;
+    waves: WaveData[];
+    starters: PokemonData[];
+}
+
+export interface WaveData {
+    id: string;
+    reload: boolean;
+    type: string;
+    double: boolean;
+    action: string[];
+    shop?: string;
+    biome: string;
+    trainer?: TrainerData;
+    pokemon?: PokemonData[];
+};
+
+export interface PokemonData {
     id: string;
     name: string;
     ability: string;
-    captured: boolean;
+    isHiddenAbility: boolean;
     passive: string;
     nature: string;
-    ivs: {
-        hp: number;
-        atk: number;
-        def: number;
-        spatk: number;
-        spdef: number;
-        spe: number;
-    };
     gender: string;
-    isHiddenAbility: boolean;
-    level: number;
     rarity: string;
+    captured: boolean;
+    level: number;
+    items: ItemData[];
+    ivs: IvData;
 };
 
-export type Wave = {
-    action: string[];
-    biome: string;
-    double: boolean;
-    id: string;
-    pokemon: Pokemon[];
-    reload: boolean;
-    trainer?: {
-        id: string;
-        name: string;
-        type: string;
-    };
-    shop: boolean | string;
-    type: string;
+export interface IvData {
+    hp: number;
+    atk: number;
+    def: number;
+    spatk: number;
+    spdef: number;
+    spe: number;
 };
+
+export type TrainerData = {
+    id: string;
+    name: string;
+    type: string;
+}
+
+export type ItemData = {
+    id: string;
+    name: string;
+    quantity: string;
+}

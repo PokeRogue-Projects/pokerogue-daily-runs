@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Pokemon } from "@/types";
+import { PokemonData } from "@/types";
 import * as React from "react";
 import capturedImage from "../images/captured.png";
 import uncapturedImage from "../images/uncaptured.png";
@@ -9,7 +9,7 @@ import { getDecreaseStat, getIncreaseStat, Nature } from "@/utils/nature";
 import { toEnumValue } from "@/utils/enumUtils";
 
 const PokemonCard: React.FC<{
-  pokemon: Pokemon;
+  pokemon: PokemonData;
   biome: string;
   waveNumber?: number;
 }> = ({ pokemon, biome, waveNumber }) => {

@@ -3,17 +3,17 @@ import { graphql } from "gatsby";
 import PokemonCard from "@/components/PokemonCard";
 import TrainerCard from "@/components/TrainerCard";
 import Layout from "@/components/Layout";
-import { Pokemon, Wave } from "@/types";
+import { PokemonData, WaveData } from "@/types";
 import WaveInfoCard from "@/components/WaveInfoCard";
 
 type DrpdData = {
   drpdJson: {
     authors: string[];
     date: string;
-    starters: Pokemon[];
+    starters: PokemonData[];
     title: string;
     version: string;
-    waves: Wave[];
+    waves: WaveData[];
   };
 };
 
@@ -21,7 +21,7 @@ const DetailedPage: React.FC<{ data: DrpdData; params: any }> = ({ data }) => {
   const { drpdJson } = data;
 
   const renderPokemonCards = (
-    pokemon: Pokemon[],
+    pokemon: PokemonData[],
     biome: string,
     waveIndex: number
   ) => (

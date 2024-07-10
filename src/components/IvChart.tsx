@@ -1,10 +1,10 @@
+import { IvData } from "@/types";
+import { toEnumValue } from "@/utils/enumUtils";
+import { isDecreaseStat, isIncreaseStat, Nature } from "@/utils/nature";
+import { getStatIv, Stat, stats } from "@/utils/stat";
 import * as React from "react";
 import { PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart } from "recharts";
 import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "./ui/chart";
-import { Pokemon } from "@/types";
-import { getStatIv, Stat, stats } from "@/utils/stat";
-import { isDecreaseStat, isIncreaseStat, Nature } from "@/utils/nature";
-import { toEnumValue } from "@/utils/enumUtils";
 
 type CustomTickProps = React.SVGProps<SVGTextElement> & {
   payload: {
@@ -20,7 +20,7 @@ type PokemonChartLabelProps = CustomTickProps & {
 }
 
 type IvChartProps = React.HTMLAttributes<HTMLDivElement> & {
-  ivs: Pokemon["ivs"];
+  ivs: IvData;
   nature: Nature;
 };
 

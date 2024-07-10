@@ -1,8 +1,8 @@
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Wave } from "@/types";
+import { WaveData } from "@/types";
 
-const WaveInfoCard: React.FC<{ wave: Wave; waveIndex: number }> = ({
+const WaveInfoCard: React.FC<{ wave: WaveData; waveIndex: number }> = ({
   wave,
   waveIndex,
 }) => (
