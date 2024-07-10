@@ -5,15 +5,16 @@ import capturedImage from "../images/captured.png";
 import uncapturedImage from "../images/uncaptured.png";
 import { cn } from "./lib/utils";
 import IvChart from "./IvChart";
-import { getDecreaseStat, getIncreaseStat, Nature } from "@/utils/nature";
 import { toEnumValue } from "@/utils/enumUtils";
+import { Stat, statToDisplayString } from "@/utils/stat";
 
 const PokemonCard: React.FC<{
   pokemon: Pokemon;
   biome: string;
   waveNumber?: number;
 }> = ({ pokemon, biome, waveNumber }) => {
-  const nature = toEnumValue(Nature, pokemon.nature.name);
+  const statIncreased = pokemon.nature.increased as Stat;
+  const statDecreased = pokemon.nature.decreased as Stat;
 
   return (
     <Card className="w-full max-w-3xl relative">
@@ -54,7 +55,12 @@ const PokemonCard: React.FC<{
               alt={pokemon.name}
               className="w-2/5 object-contain self-center"
             />
-            <IvChart ivs={pokemon.ivs} nature={toEnumValue(Nature, pokemon.nature.name)} className="w-3/5 min-h-32" />
+            <IvChart 
+              ivs={pokemon.ivs} 
+              statIncreased={statIncreased}
+              statDecreased={statDecreased} 
+              className="w-3/5 min-h-32" 
+            />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -108,15 +114,13 @@ const PokemonCard: React.FC<{
                 <CardTitle className="text-md">Nature</CardTitle>
               </CardHeader>
               <CardContent className="p-3 pt-0">
-                {nature && (
-                  <div className="text-center space-y-3">
-                    <p className="text-md font-medium">{nature}</p>
-                    <div className="space-y-1">
-                      <p className="text-xs">{getIncreaseStat(nature)} ▲</p>
-                      <p className="text-xs">{getDecreaseStat(nature)} ▼</p>
-                    </div>
+                <div className="text-center space-y-3">
+                  <p className="text-md font-medium first-letter:capitalize">{pokemon.nature.name}</p>
+                  <div className="space-y-1">
+                    <p className="text-xs">{statToDisplayString(statIncreased)} ▲</p>
+                    <p className="text-xs">{statToDisplayString(statDecreased)} ▼</p>
                   </div>
-                )}
+                </div>
               </CardContent>
             </Card>
           </div>

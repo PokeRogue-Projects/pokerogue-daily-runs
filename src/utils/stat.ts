@@ -1,30 +1,28 @@
-import { Ivs, Pokemon } from "@/types";
+import { Ivs } from "@/types";
 
-export enum Stat {
-  HP = "HP",
-  ATK = "Attack",
-  DEF = "Defence",
-  SPATK = "Sp. Atk",
-  SPDEF = "Sp. Def",
-  SPE = "Speed"
-};
+export const stats = ["hp", "atk", "def", "spatk", "spdef", "spe"] as const;
+export type Stat = typeof stats[number];
 
-export const stats = [
-  Stat.HP,
-  Stat.ATK,
-  Stat.DEF,
-  Stat.SPATK,
-  Stat.SPDEF,
-  Stat.SPE
-];
-
-export const getStatIv = (stat: Stat, ivs: Ivs) => {
+export const statToDisplayString = (stat: Stat): string => {
   switch (stat) {
-    case Stat.HP: return ivs.hp;
-    case Stat.ATK: return ivs.atk;
-    case Stat.DEF: return ivs.def;
-    case Stat.SPATK: return ivs.spatk;
-    case Stat.SPDEF: return ivs.spdef;
-    case Stat.SPE: return ivs.spe;
+    case "hp": return "HP";
+    case "atk": return "Attack";
+    case "def": return "Defence";
+    case "spatk": return "Sp. Atk";
+    case "spdef": return "Sp. Def";
+    case "spe": return "Speed";
+    default: return "";
+  }
+}
+
+export const getStatIv = (stat: Stat, ivs: Ivs): number => {
+  switch (stat) {
+    case "hp": return ivs.hp;
+    case "atk": return ivs.atk;
+    case "def": return ivs.def;
+    case "spatk": return ivs.spatk;
+    case "spdef": return ivs.spdef;
+    case "spe": return ivs.spe;
+    default: return 0;
   }
 };

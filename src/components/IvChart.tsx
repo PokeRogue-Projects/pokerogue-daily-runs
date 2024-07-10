@@ -1,32 +1,33 @@
 import { Ivs } from "@/types";
 import { toEnumValue } from "@/utils/enumUtils";
-import { isDecreaseStat, isIncreaseStat, Nature } from "@/utils/nature";
-import { getStatIv, Stat, stats } from "@/utils/stat";
 import * as React from "react";
 import { PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart } from "recharts";
 import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "./ui/chart";
+import { getStatIv, Stat, stats, statToDisplayString } from "@/utils/stat";
 
 type CustomTickProps = React.SVGProps<SVGTextElement> & {
   payload: {
     readonly coordinate: number;
     readonly index: number;
     readonly offset: number;
-    readonly value: string;
+    readonly value: Stat;
   }
 }
 
 type PokemonChartLabelProps = CustomTickProps & {
-  readonly nature: Nature;
+  readonly statIncreased: Stat;
+  readonly statDecreased: Stat;
 }
 
 type IvChartProps = React.HTMLAttributes<HTMLDivElement> & {
   readonly ivs: Ivs;
-  readonly nature: Nature;
+  readonly statIncreased: Stat;
+  readonly statDecreased: Stat;
 };
 
-const getChartLabelFill = (stat: Stat, nature: Nature) => 
-  isIncreaseStat(stat, nature) ? "hsl(var(--stat-increase))" : 
-  isDecreaseStat(stat, nature) ? "hsl(var(--stat-decrease))" : 
+const getChartLabelFill = (stat: Stat, statIncreased: Stat, statDecreased: Stat) => 
+  stat == statIncreased ? "hsl(var(--stat-increase))" : 
+  stat == statDecreased ? "hsl(var(--stat-decrease))" : 
   "hsl(var(--stat-neutral))";
 
 const chartConfig = {
@@ -36,15 +37,20 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-const PokemonChartLabel: React.FC<PokemonChartLabelProps> = ({ payload, x, y, textAnchor, nature }) => {
+const PokemonChartLabel: React.FC<PokemonChartLabelProps> = ({ payload: { value: stat }, x, y, textAnchor, statIncreased, statDecreased }) => {
   return (
-    <text x={x} y={y} textAnchor={textAnchor} fill={getChartLabelFill(toEnumValue(Stat, payload.value), nature)}>
-      {payload.value}
+    <text 
+      x={x} 
+      y={y} 
+      textAnchor={textAnchor} 
+      fill={getChartLabelFill(stat, statIncreased, statDecreased)}
+    >
+      {statToDisplayString(stat)}
     </text>
   )
 }
 
-const IvChart: React.FC<IvChartProps> = ({ ivs, nature, className }) => (
+const IvChart: React.FC<IvChartProps> = ({ ivs, statIncreased, statDecreased, className }) => (
   <ChartContainer
     config={chartConfig}
     className={className}
@@ -54,7 +60,12 @@ const IvChart: React.FC<IvChartProps> = ({ ivs, nature, className }) => (
         cursor={false}
         content={<ChartTooltipContent />}
       />
-      <PolarAngleAxis dataKey="stat" tick={(props: CustomTickProps) => <PokemonChartLabel {...props} nature={nature} />} />
+      <PolarAngleAxis
+        dataKey="stat" 
+        tick={(props: CustomTickProps) => 
+          <PokemonChartLabel {...props} statIncreased={statIncreased} statDecreased={statDecreased} />
+        } 
+      />
       <PolarRadiusAxis className="hidden" domain = {[0, 31]} />
       <PolarGrid />
       <Radar
