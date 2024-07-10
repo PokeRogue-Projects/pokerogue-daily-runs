@@ -12,8 +12,8 @@ import {
 import { cn } from "./lib/utils"
  
 type DatePickerProps = React.HTMLAttributes<HTMLDivElement> & {
-  date: Date;
-  onDateChange: (date: Date) => void
+  readonly date: Date;
+  readonly onDateChange: (date: Date) => void
 }
 
 export default function DatePicker({ className, date, onDateChange }: DatePickerProps) {

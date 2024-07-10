@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PokemonData } from "@/types";
+import { Pokemon } from "@/types";
 import * as React from "react";
 import capturedImage from "../images/captured.png";
 import uncapturedImage from "../images/uncaptured.png";
@@ -9,11 +9,11 @@ import { getDecreaseStat, getIncreaseStat, Nature } from "@/utils/nature";
 import { toEnumValue } from "@/utils/enumUtils";
 
 const PokemonCard: React.FC<{
-  pokemon: PokemonData;
+  pokemon: Pokemon;
   biome: string;
   waveNumber?: number;
 }> = ({ pokemon, biome, waveNumber }) => {
-  const nature = toEnumValue(Nature, pokemon.nature);
+  const nature = toEnumValue(Nature, pokemon.nature.name);
 
   return (
     <Card className="w-full max-w-3xl relative">
@@ -54,7 +54,7 @@ const PokemonCard: React.FC<{
               alt={pokemon.name}
               className="w-2/5 object-contain self-center"
             />
-            <IvChart ivs={pokemon.ivs} nature={toEnumValue(Nature, pokemon.nature)} className="w-3/5 min-h-32" />
+            <IvChart ivs={pokemon.ivs} nature={toEnumValue(Nature, pokemon.nature.name)} className="w-3/5 min-h-32" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

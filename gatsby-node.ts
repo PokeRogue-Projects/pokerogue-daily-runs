@@ -1,3 +1,4 @@
+import { GatsbyNode } from "gatsby";
 import * as path from "path";
 
 export const onCreateWebpackConfig = ({ actions }) => {

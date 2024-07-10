@@ -1,4 +1,4 @@
-import { IvData, PokemonData } from "@/types";
+import { Ivs, Pokemon } from "@/types";
 
 export enum Stat {
   HP = "HP",
@@ -18,7 +18,7 @@ export const stats = [
   Stat.SPE
 ];
 
-export const getStatIv = (stat: Stat, ivs: IvData) => {
+export const getStatIv = (stat: Stat, ivs: Ivs) => {
   switch (stat) {
     case Stat.HP: return ivs.hp;
     case Stat.ATK: return ivs.atk;

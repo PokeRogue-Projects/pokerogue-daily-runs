@@ -57,12 +57,12 @@ const FollowAlongPage: React.FC<{ data: DrpdData }> = ({ data }) => {
 };
 
 export const query = graphql`
-  query {
+  query FollowAlongPage {
     allDrpdJson {
       edges {
         node {
           waves {
-            action
+            actions
             biome
             id
           }

@@ -1,27 +1,27 @@
 import * as React from "react";
-import { graphql } from "gatsby";
+import { graphql, PageProps } from "gatsby";
 import PokemonCard from "@/components/PokemonCard";
 import TrainerCard from "@/components/TrainerCard";
 import Layout from "@/components/Layout";
-import { PokemonData, WaveData } from "@/types";
+import { Pokemon, Wave } from "@/types";
 import WaveInfoCard from "@/components/WaveInfoCard";
 
 type DrpdData = {
   drpdJson: {
     authors: string[];
     date: string;
-    starters: PokemonData[];
+    starters: Pokemon[];
     title: string;
     version: string;
-    waves: WaveData[];
+    waves: Wave[];
   };
 };
 
-const DetailedPage: React.FC<{ data: DrpdData; params: any }> = ({ data }) => {
+const DetailedPage: React.FC<{ data: DrpdData }> = ({ data }) => {
   const { drpdJson } = data;
 
   const renderPokemonCards = (
-    pokemon: PokemonData[],
+    pokemon: readonly Pokemon[],
     biome: string,
     waveIndex: number
   ) => (
@@ -54,7 +54,7 @@ const DetailedPage: React.FC<{ data: DrpdData; params: any }> = ({ data }) => {
                     name={wave.trainer.name}
                     waveNumber={waveIndex + 1}
                   />
-                  ) : (
+                ) : (
                   renderPokemonCards(wave.pokemon, wave.biome, waveIndex)
                 )}
               </div>
@@ -67,7 +67,7 @@ const DetailedPage: React.FC<{ data: DrpdData; params: any }> = ({ data }) => {
 };
 
 export const query = graphql`
-  query DrpdQuery($id: String) {
+  query DetailedPage($id: String) {
     drpdJson(id: { eq: $id }) {
       authors
       date
@@ -92,20 +92,23 @@ export const query = graphql`
         }
         name
         level
-        nature
+        nature {
+          name
+          increased
+          decreased
+        }
         passive
         rarity
       }
       title
       version
       waves {
-        action
+        actions
         biome
         double
         id
         pokemon {
           ability
-          capture
           id
           gender
           captured
@@ -125,7 +128,11 @@ export const query = graphql`
           }
           name
           level
-          nature
+          nature {
+            name
+            increased
+            decreased
+          }
           passive
           rarity
         }

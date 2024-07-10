@@ -13,7 +13,7 @@
       "reload": true,
       "type": "wild",
       "double": false,
-      "action": [
+      "actions": [
         "Pokeball",
         "Transfer|Basculin All > Azumarill",
         "Transfer|Diggersby All > Azumarill"
@@ -27,7 +27,11 @@
           "ability": "Frisk",
           "isHiddenAbility": false,
           "passive": "Ripen",
-          "nature": "Careful",
+          "nature": {
+            "name": "adamant",
+            "increased": "atk",
+            "decreased": "spatk"
+          },
           "gender": "female",
           "rarity": "Common",
           "captured": true,
@@ -49,7 +53,7 @@
       "reload": false,
       "type": "wild",
       "double": true,
-      "action": [
+      "actions": [
         "Pokeball",
         "Transfer|Basculin All > Azumarill",
         "Transfer|Diggersby All > Azumarill"
@@ -63,16 +67,20 @@
           "ability": "Frisk",
           "isHiddenAbility": false,
           "passive": "Ripen",
-          "nature": "Careful",
+          "nature": {
+            "name": "adamant",
+            "increased": "atk",
+            "decreased": "spatk"
+          },
           "gender": "female",
           "rarity": "Common",
           "captured": true,
           "level": 20,
           "items": [],
           "ivs": {
-            "hp": 30,
-            "atk": 30,
-            "def": 30,
+            "hp": 15,
+            "atk": 10,
+            "def": 16,
             "spatk": 2,
             "spdef": 30,
             "spe": 25
@@ -84,7 +92,11 @@
           "ability": "Frisk",
           "isHiddenAbility": false,
           "passive": "Ripen",
-          "nature": "Careful",
+          "nature": {
+            "name": "adamant",
+            "increased": "atk",
+            "decreased": "spatk"
+          },
           "gender": "female",
           "rarity": "Common",
           "captured": false,
@@ -106,7 +118,7 @@
       "reload": false,
       "type": "trainer",
       "double": false,
-      "action": [
+      "actions": [
         "Pokeball",
         "Transfer|Basculin All > Azumarill",
         "Transfer|Diggersby All > Azumarill"
@@ -124,7 +136,7 @@
       "reload": false,
       "type": "boss",
       "double": false,
-      "action": [
+      "actions": [
         "Pokeball",
         "Transfer|Basculin All > Azumarill",
         "Transfer|Diggersby All > Azumarill"
@@ -138,10 +150,14 @@
           "ability": "Frisk",
           "isHiddenAbility": false,
           "passive": "Ripen",
-          "nature": "Careful",
+          "nature": {
+            "name": "adamant",
+            "increased": "atk",
+            "decreased": "spatk"
+          },
           "gender": "female",
           "rarity": "Common",
-          "capture": false,
+          "captured": false,
           "level": 20,
           "items": [
             {
@@ -166,11 +182,12 @@
       "reload": false,
       "type": "trainer",
       "double": false,
-      "action": [
+      "actions": [
         "Pokeball",
         "Transfer|Basculin All > Azumarill",
         "Transfer|Diggersby All > Azumarill"
       ],
+      "shop": "",
       "biome": "Graveyard",
       "trainer": {
         "id": 54,
@@ -186,7 +203,11 @@
       "ability": "Frisk",
       "isHiddenAbility": false,
       "passive": "Ripen",
-      "nature": "Careful",
+      "nature": {
+        "name": "serious",
+        "increased": "",
+        "decreased": ""
+      },
       "gender": "female",
       "rarity": "Common",
       "captured": true,
@@ -218,7 +239,11 @@
       "ability": "Frisk",
       "isHiddenAbility": false,
       "passive": "Ripen",
-      "nature": "Careful",
+      "nature": {
+        "name": "serious",
+        "increased": "",
+        "decreased": ""
+      },
       "gender": "female",
       "rarity": "Common",
       "captured": true,
@@ -250,7 +275,11 @@
       "ability": "Frisk",
       "isHiddenAbility": false,
       "passive": "Ripen",
-      "nature": "Careful",
+      "nature": {
+        "name": "serious",
+        "increased": "",
+        "decreased": ""
+      },
       "gender": "female",
       "rarity": "Common",
       "captured": true,

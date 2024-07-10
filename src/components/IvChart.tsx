@@ -1,4 +1,4 @@
-import { IvData } from "@/types";
+import { Ivs } from "@/types";
 import { toEnumValue } from "@/utils/enumUtils";
 import { isDecreaseStat, isIncreaseStat, Nature } from "@/utils/nature";
 import { getStatIv, Stat, stats } from "@/utils/stat";
@@ -8,20 +8,20 @@ import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "
 
 type CustomTickProps = React.SVGProps<SVGTextElement> & {
   payload: {
-    coordinate: number;
-    index: number;
-    offset: number;
-    value: string;
+    readonly coordinate: number;
+    readonly index: number;
+    readonly offset: number;
+    readonly value: string;
   }
 }
 
 type PokemonChartLabelProps = CustomTickProps & {
-  nature: Nature;
+  readonly nature: Nature;
 }
 
 type IvChartProps = React.HTMLAttributes<HTMLDivElement> & {
-  ivs: IvData;
-  nature: Nature;
+  readonly ivs: Ivs;
+  readonly nature: Nature;
 };
 
 const getChartLabelFill = (stat: Stat, nature: Nature) => 

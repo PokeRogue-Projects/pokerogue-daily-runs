@@ -1,8 +1,8 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Wave } from "@/types";
 import React from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { WaveData } from "@/types";
 
-const WaveInfoCard: React.FC<{ wave: WaveData; waveIndex: number }> = ({
+const WaveInfoCard: React.FC<{ readonly wave: Wave; readonly waveIndex: number }> = ({
   wave,
   waveIndex,
 }) => (
@@ -12,14 +12,14 @@ const WaveInfoCard: React.FC<{ wave: WaveData; waveIndex: number }> = ({
         {wave.reload && (
           <p className="font-bold text-red-600">Reload Your Game</p>
         )}
-        {Array.isArray(wave.action) ? (
-          wave.action.map((action, index) => (
+        {Array.isArray(wave.actions) ? (
+          wave.actions.map((action, index) => (
             <p key={index} className="whitespace-pre-line">
               {action}
             </p>
           ))
         ) : (
-          <p>{wave.action}</p>
+          <p>{wave.actions}</p>
         )}
         {wave.shop && (
           <p className="font-bold">Shop: {wave.shop}</p>
