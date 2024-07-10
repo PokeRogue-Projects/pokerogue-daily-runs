@@ -12,6 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import DatePicker from "@/components/DatePicker";
 import { formatDate } from "date-fns";
+import { toZonedTime } from "date-fns-tz";
 
 type DrpdEdge = {
   node: {
@@ -28,7 +29,7 @@ const IndexPage: React.FC<{ data: { allDrpdJson: { edges: DrpdEdge[] } } }> = ({
   data,
 }) => {
   const drpdPages = data.allDrpdJson.edges;
-  const [date, setDate] = useState<Date>(new Date(Date.now()));
+  const [date, setDate] = useState<Date>(toZonedTime(new Date(Date.now()), "UTC"));
 
   return (
     <Layout>
