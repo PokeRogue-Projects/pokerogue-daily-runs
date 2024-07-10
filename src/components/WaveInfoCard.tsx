@@ -9,6 +9,9 @@ const WaveInfoCard: React.FC<{ wave: Wave; waveIndex: number }> = ({
   <Card className="h-fit">
     <CardContent>
       <div className="space-y-4">
+        {wave.reload && (
+          <p className="font-bold text-red-600">Reload Your Game</p>
+        )}
         <div>
           {Array.isArray(wave.action) ? (
             wave.action.map((action, index) => (
@@ -20,12 +23,6 @@ const WaveInfoCard: React.FC<{ wave: Wave; waveIndex: number }> = ({
             <p>{wave.action}</p>
           )}
         </div>
-        {wave.reload && (
-          <div>
-            <p className="font-semibold">Reload:</p>
-            <p>Yes</p>
-          </div>
-        )}
       </div>
     </CardContent>
   </Card>
