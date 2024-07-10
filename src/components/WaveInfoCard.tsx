@@ -21,6 +21,9 @@ const WaveInfoCard: React.FC<{ wave: Wave; waveIndex: number }> = ({
         ) : (
           <p>{wave.action}</p>
         )}
+        {wave.shop && (
+          <p className="font-bold">Shop: {wave.shop}</p>
+        )}
       </div>
     </CardContent>
   </Card>
