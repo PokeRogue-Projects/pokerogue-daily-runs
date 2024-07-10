@@ -1,6 +1,6 @@
 import { Ivs } from "@/types";
 
-export const stats = ["hp", "atk", "def", "spatk", "spdef", "spe"] as const;
+export const stats = ["hp", "atk", "def", "spe", "spdef", "spatk", ] as const;
 export type Stat = typeof stats[number];
 
 export const statToDisplayString = (stat: Stat): string => {
