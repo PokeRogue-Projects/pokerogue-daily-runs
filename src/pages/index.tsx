@@ -38,8 +38,8 @@ const IndexPage: React.FC<{ data: { allDrpdJson: { edges: DrpdEdge[] } } }> = ({
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {drpdPages
             .filter(({ node }) => node.date == formatDate(date, "yyyy-MM-dd"))
-            .map(({ node }, index) => (
-              <Card key={index}>
+            .map(({ node }) => (
+              <Card key={node.parent.name}>
                 <CardHeader>
                   <CardTitle>{node.title}</CardTitle>
                 </CardHeader>
