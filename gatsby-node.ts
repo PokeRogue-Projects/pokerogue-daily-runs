@@ -6,6 +6,7 @@ export const onCreateWebpackConfig = ({ actions }) => {
       alias: {
         "@/components": path.resolve(__dirname, "src/components"),
         "@/lib/utils": path.resolve(__dirname, "src/components/lib/utils"),
+        "@/utils": path.resolve(__dirname, "src/utils"),
       },
     },
   });

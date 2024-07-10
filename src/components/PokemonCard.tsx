@@ -1,38 +1,20 @@
-import * as React from "react";
-import { Pokemon } from "@/types";
-import { PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart } from "recharts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  ChartConfig,
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "./ui/chart";
+import { Pokemon } from "@/types";
+import * as React from "react";
 import capturedImage from "../images/captured.png";
 import uncapturedImage from "../images/uncaptured.png";
 import { cn } from "./lib/utils";
-
-const getPokemonChartData = (ivs: Pokemon["ivs"]) => [
-  { stat: "HP", value: ivs.hp },
-  { stat: "Attack", value: ivs.atk },
-  { stat: "Defense", value: ivs.def },
-  { stat: "Sp. Atk", value: ivs.spatk },
-  { stat: "Sp. Def", value: ivs.spdef },
-  { stat: "Speed", value: ivs.spe },
-];
-
-const chartConfig = {
-  value: {
-    label: "IV",
-    color: "hsl(var(--chart-1))",
-  },
-} satisfies ChartConfig;
+import IvChart from "./IvChart";
+import { getDecreaseStat, getIncreaseStat, Nature } from "@/utils/nature";
+import { toEnumValue } from "@/utils/enumUtils";
 
 const PokemonCard: React.FC<{
   pokemon: Pokemon;
   biome: string;
   waveNumber?: number;
 }> = ({ pokemon, biome, waveNumber }) => {
+  const nature = toEnumValue(Nature, pokemon.nature);
+
   return (
     <Card className="w-full max-w-3xl relative">
       {waveNumber !== undefined && (
@@ -72,28 +54,10 @@ const PokemonCard: React.FC<{
               alt={pokemon.name}
               className="w-2/5 object-contain self-center"
             />
-            <ChartContainer
-              config={chartConfig}
-              className="w-3/5 min-h-32"
-            >
-              <RadarChart data={getPokemonChartData(pokemon.ivs)}>
-                <ChartTooltip
-                  cursor={false}
-                  content={<ChartTooltipContent />}
-                />
-                <PolarAngleAxis dataKey="stat" />
-                <PolarRadiusAxis className="hidden" domain = {[0, 31]} />
-                <PolarGrid />
-                <Radar
-                  dataKey="value"
-                  fill="hsl(var(--primary))"
-                  fillOpacity={0.7}
-                />
-              </RadarChart>
-            </ChartContainer>
+            <IvChart ivs={pokemon.ivs} nature={toEnumValue(Nature, pokemon.nature)} className="w-3/5 min-h-32" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <Card className="h-full flex flex-col">
               <CardHeader className="p-3 text-center">
                 <CardTitle className="text-md">Biome</CardTitle>
@@ -144,9 +108,13 @@ const PokemonCard: React.FC<{
                 <CardTitle className="text-md">Nature</CardTitle>
               </CardHeader>
               <CardContent className="p-3 pt-0">
-                {pokemon.nature && (
-                  <div className="text-md text-center">
-                    <p className="font-medium">{pokemon.nature}</p>
+                {nature && (
+                  <div className="text-center space-y-3">
+                    <p className="text-md font-medium">{nature}</p>
+                    <div className="space-y-1">
+                      <p className="text-xs">{getIncreaseStat(nature)} ▲</p>
+                      <p className="text-xs">{getDecreaseStat(nature)} ▼</p>
+                    </div>
                   </div>
                 )}
               </CardContent>
