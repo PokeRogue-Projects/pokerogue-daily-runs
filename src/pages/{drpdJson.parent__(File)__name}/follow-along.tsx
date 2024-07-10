@@ -1,25 +1,8 @@
-import * as React from "react";
-import { graphql } from "gatsby";
 import Layout from "@/components/Layout";
-import { determineStyle } from "../../utils/styleUtils";
+import { graphql, PageProps } from "gatsby";
+import * as React from "react";
 
-type Wave = {
-  action: string;
-  biome: string;
-  id: string;
-};
-
-type DrpdData = {
-  allDrpdJson: {
-    edges: Array<{
-      node: {
-        waves: Wave[];
-      };
-    }>;
-  };
-};
-
-const FollowAlongPage: React.FC<{ data: DrpdData }> = ({ data }) => {
+const FollowAlongPage: React.FC<PageProps<Queries.FollowAlongPageQuery>> = ({ data }) => {
   // Flatten all waves from all DRPD files
   const allWaves = data.allDrpdJson.edges.flatMap((edge) => edge.node.waves);
 
@@ -29,8 +12,6 @@ const FollowAlongPage: React.FC<{ data: DrpdData }> = ({ data }) => {
         <h1 className="text-3xl font-bold mb-6">Follow Along</h1>
         <ul className="space-y-4">
           {allWaves.map((wave, index) => {
-            // const style = determineStyle(wave.action);
-
             return (
               <li key={wave.id} className="flex items-center">
                 <input
@@ -42,7 +23,7 @@ const FollowAlongPage: React.FC<{ data: DrpdData }> = ({ data }) => {
                   htmlFor={`checkbox-${wave.id}`}
                   //className={`flex-1 p-3 rounded ${style.backgroundColor} ${style.color}`}
                 >
-                  <span className="font-bold">{wave.action}</span>
+                  <span className="font-bold">{wave.actions}</span>
                   {wave.biome && (
                     <span className="ml-2 text-sm">({wave.biome})</span>
                   )}

@@ -1,23 +1,12 @@
-import * as React from "react";
-import { graphql, PageProps } from "gatsby";
+import Layout from "@/components/Layout";
 import PokemonCard from "@/components/PokemonCard";
 import TrainerCard from "@/components/TrainerCard";
-import Layout from "@/components/Layout";
-import { Pokemon, Wave } from "@/types";
 import WaveInfoCard from "@/components/WaveInfoCard";
+import { Pokemon } from "@/types";
+import { graphql, PageProps } from "gatsby";
+import * as React from "react";
 
-type DrpdData = {
-  drpdJson: {
-    authors: string[];
-    date: string;
-    starters: Pokemon[];
-    title: string;
-    version: string;
-    waves: Wave[];
-  };
-};
-
-const DetailedPage: React.FC<{ data: DrpdData }> = ({ data }) => {
+const DetailedPage: React.FC<PageProps<Queries.DetailedPageQuery>> = ({ data }) => {
   const { drpdJson } = data;
 
   const renderPokemonCards = (
