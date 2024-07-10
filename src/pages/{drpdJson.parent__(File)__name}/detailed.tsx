@@ -1,27 +1,16 @@
-import * as React from "react";
-import { graphql } from "gatsby";
+import Layout from "@/components/Layout";
 import PokemonCard from "@/components/PokemonCard";
 import TrainerCard from "@/components/TrainerCard";
-import Layout from "@/components/Layout";
-import { Pokemon, Wave } from "@/types";
 import WaveInfoCard from "@/components/WaveInfoCard";
+import { Pokemon } from "@/types";
+import { graphql, PageProps } from "gatsby";
+import * as React from "react";
 
-type DrpdData = {
-  drpdJson: {
-    authors: string[];
-    date: string;
-    starters: Pokemon[];
-    title: string;
-    version: string;
-    waves: Wave[];
-  };
-};
-
-const DetailedPage: React.FC<{ data: DrpdData; params: any }> = ({ data }) => {
+const DetailedPage: React.FC<PageProps<Queries.DetailedPageQuery>> = ({ data }) => {
   const { drpdJson } = data;
 
   const renderPokemonCards = (
-    pokemon: Pokemon[],
+    pokemon: readonly Pokemon[],
     biome: string,
     waveIndex: number
   ) => (
@@ -39,33 +28,26 @@ const DetailedPage: React.FC<{ data: DrpdData; params: any }> = ({ data }) => {
 
   return (
     <Layout>
-      <div className="container mx-auto px-4 py-8">
+      <div className="container md:w-[1000px] max-w-full mx-auto px-4 py-8">
         {drpdJson.waves.map((wave, waveIndex) => (
           <div key={waveIndex} className="mb-12">
-            {wave.trainer ? (
-              <div className="flex flex-col lg:flex-row gap-6">
-                <div className="lg:w-1/3 flex items-center">
-                  <WaveInfoCard wave={wave} waveIndex={waveIndex} />
-                </div>
-                <div className="lg:w-2/3">
+            <div className="flex flex-col md:flex-row gap-6">
+              <div className="md:w-1/2 flex items-center">
+                <WaveInfoCard wave={wave} waveIndex={waveIndex} />
+              </div>
+              <div className="md:w-1/2">
+                {wave.trainer ? (
                   <TrainerCard
                     trainerId={wave.trainer.id}
                     trainerType={wave.trainer.type}
                     name={wave.trainer.name}
                     waveNumber={waveIndex + 1}
                   />
-                </div>
+                ) : (
+                  renderPokemonCards(wave.pokemon, wave.biome, waveIndex)
+                )}
               </div>
-            ) : (
-              <div className="flex flex-col lg:flex-row gap-6">
-                <div className="lg:w-1/3 flex items-center">
-                  <WaveInfoCard wave={wave} waveIndex={waveIndex} />
-                </div>
-                <div className="lg:w-2/3">
-                  {renderPokemonCards(wave.pokemon, wave.biome, waveIndex)}
-                </div>
-              </div>
-            )}
+            </div>
           </div>
         ))}
       </div>
@@ -74,7 +56,7 @@ const DetailedPage: React.FC<{ data: DrpdData; params: any }> = ({ data }) => {
 };
 
 export const query = graphql`
-  query DrpdQuery($id: String) {
+  query DetailedPage($id: String) {
     drpdJson(id: { eq: $id }) {
       authors
       date
@@ -99,20 +81,23 @@ export const query = graphql`
         }
         name
         level
-        nature
+        nature {
+          name
+          increased
+          decreased
+        }
         passive
         rarity
       }
       title
       version
       waves {
-        action
+        actions
         biome
         double
         id
         pokemon {
           ability
-          capture
           id
           gender
           captured
@@ -132,7 +117,11 @@ export const query = graphql`
           }
           name
           level
-          nature
+          nature {
+            name
+            increased
+            decreased
+          }
           passive
           rarity
         }
@@ -142,6 +131,7 @@ export const query = graphql`
           name
           type
         }
+        shop
         type
       }
     }
