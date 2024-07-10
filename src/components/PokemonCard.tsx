@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Pokemon } from "@/types";
-import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from "recharts";
+import { PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart } from "recharts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   ChartConfig,
@@ -82,6 +82,7 @@ const PokemonCard: React.FC<{
                   content={<ChartTooltipContent />}
                 />
                 <PolarAngleAxis dataKey="stat" />
+                <PolarRadiusAxis className="hidden" domain = {[0, 31]} />
                 <PolarGrid />
                 <Radar
                   dataKey="value"
