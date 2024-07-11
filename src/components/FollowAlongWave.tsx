@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Separator } from "./ui/separator";
-import { Collapsible, CollapsibleTrigger } from "./ui/collapsible";
-import { CollapsibleContent } from "@radix-ui/react-collapsible";
+import { AnimatedCollapsible, AnimatedCollapsibleContent, AnimatedCollapsibleTrigger } from "./ui/animatedCollapsible";
 
 type FollowAlongWaveProps = React.HTMLAttributes<HTMLDivElement> & {
   wave: Queries.FollowAlongPageQuery["drpdJson"]["waves"][number];
@@ -13,18 +12,29 @@ const FollowAlongWave: React.FC<FollowAlongWaveProps> = ({
   waveIndex,
 }) => {
   const [waveOpen, setWaveOpen] = useState(true);
+  const [actionChecks, setActionChecks] = useState(
+    new Array(wave.actions.length).fill(false)
+  );
+
+  const handleActionCheckChange = (checkedIndex: number) => () => {
+    setActionChecks(
+      actionChecks.map((check, index) =>
+        index != checkedIndex ? check : !check
+      )
+    );
+  };
 
   return (
-    <Collapsible
+    <AnimatedCollapsible
       open={waveOpen}
       onOpenChange={setWaveOpen}
     >
-      <CollapsibleTrigger asChild>
+      <AnimatedCollapsibleTrigger asChild>
         <button>
-          <h2 className="font-bold py-1">Wave {waveIndex + 1}</h2>
+          <h3 className="font-bold py-1">Wave {waveIndex + 1}</h3>
         </button>
-      </CollapsibleTrigger>
-      <CollapsibleContent>
+      </AnimatedCollapsibleTrigger>
+      <AnimatedCollapsibleContent>
         <ul className="space-y-1">
           {wave.actions.map((action, actionIndex) => (
             <li key={actionIndex}>
@@ -40,8 +50,9 @@ const FollowAlongWave: React.FC<FollowAlongWaveProps> = ({
           ))}
         </ul>
         {wave.biome && <span className="ml-2 text-sm">({wave.biome})</span>}
-      </CollapsibleContent>
-    </Collapsible>
+        {(waveIndex + 1) % 10 == 0 && <Separator className="mt-4" />}
+      </AnimatedCollapsibleContent>
+    </AnimatedCollapsible>
   );
 };
 
