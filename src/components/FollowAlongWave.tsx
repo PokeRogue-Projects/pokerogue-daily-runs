@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Separator } from "./ui/separator";
 import { AnimatedCollapsible, AnimatedCollapsibleContent, AnimatedCollapsibleTrigger } from "./ui/animatedCollapsible";
+import { Checkbox } from "./ui/checkbox";
 
 type FollowAlongWaveProps = React.HTMLAttributes<HTMLDivElement> & {
   wave: Queries.FollowAlongPageQuery["drpdJson"]["waves"][number];
@@ -8,24 +9,28 @@ type FollowAlongWaveProps = React.HTMLAttributes<HTMLDivElement> & {
 };
 
 const FollowAlongWave: React.FC<FollowAlongWaveProps> = ({
+  className,
   wave,
   waveIndex,
 }) => {
   const [waveOpen, setWaveOpen] = useState(true);
-  const [actionChecks, setActionChecks] = useState(
+  const [actionChecks, setActionChecks] = useState<readonly boolean[]>(
     new Array(wave.actions.length).fill(false)
   );
 
   const handleActionCheckChange = (checkedIndex: number) => () => {
-    setActionChecks(
-      actionChecks.map((check, index) =>
-        index != checkedIndex ? check : !check
-      )
+    const newActionChecks = actionChecks.map((check, index) =>
+      index != checkedIndex ? check : !check
     );
+
+    setActionChecks(newActionChecks);
+    if (newActionChecks.every(Boolean))
+        setWaveOpen(false);
   };
 
   return (
     <AnimatedCollapsible
+      className={className}
       open={waveOpen}
       onOpenChange={setWaveOpen}
     >
@@ -37,11 +42,11 @@ const FollowAlongWave: React.FC<FollowAlongWaveProps> = ({
       <AnimatedCollapsibleContent>
         <ul className="space-y-1">
           {wave.actions.map((action, actionIndex) => (
-            <li key={actionIndex}>
-              <input
-                type="checkbox"
+            <li key={actionIndex} className="ml-1 space-x-2">
+              <Checkbox
                 id={`checkbox-${wave.id}-${actionIndex}`}
-                className="mr-3"
+                checked={actionChecks[actionIndex]}
+                onCheckedChange={handleActionCheckChange(actionIndex)}
               />
               <label htmlFor={`checkbox-${wave.id}-${actionIndex}`}>
                 <span className="font-bold">{action}</span>
@@ -50,7 +55,6 @@ const FollowAlongWave: React.FC<FollowAlongWaveProps> = ({
           ))}
         </ul>
         {wave.biome && <span className="ml-2 text-sm">({wave.biome})</span>}
-        {(waveIndex + 1) % 10 == 0 && <Separator className="mt-4" />}
       </AnimatedCollapsibleContent>
     </AnimatedCollapsible>
   );

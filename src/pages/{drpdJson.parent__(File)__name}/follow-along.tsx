@@ -17,7 +17,7 @@ const FollowAlongPage: React.FC<PageProps<Queries.FollowAlongPageQuery>> = ({
           {data.drpdJson.waves.map((wave, waveIndex) => (
             <li key={waveIndex} className="items-center">
               <FollowAlongWave wave={wave} waveIndex={waveIndex} />
-              {(waveIndex + 1) % 10 == 0 && <Separator className="mt-4" />}
+              {(waveIndex + 1) % 10 === 0 && <Separator className="mt-4" />}
             </li>
           ))}
         </ul>
