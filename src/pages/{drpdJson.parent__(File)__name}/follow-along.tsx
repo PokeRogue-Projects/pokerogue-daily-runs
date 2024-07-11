@@ -14,7 +14,6 @@ const FollowAlongPage: React.FC<PageProps<Queries.FollowAlongPageQuery>> = ({
         <h1 className="text-3xl font-bold mb-6">Follow Along</h1>
         <ul className="space-y-4">
           {data.drpdJson.waves.map((wave, waveIndex) => {
-            console.log(waveIndex % 10 == 0);
             return (
               <li key={waveIndex} className="items-center">
                 <h2 className="font-bold py-1">Wave {waveIndex + 1}</h2>
@@ -35,7 +34,7 @@ const FollowAlongPage: React.FC<PageProps<Queries.FollowAlongPageQuery>> = ({
                 {wave.biome && (
                   <span className="ml-2 text-sm">({wave.biome})</span>
                 )}
-                {(waveIndex + 1) % 10 == 0 && <Separator className="mt-4" />}
+                {(waveIndex + 1) % 10 === 0 && <Separator className="mt-4" />}
               </li>
             );
           })}

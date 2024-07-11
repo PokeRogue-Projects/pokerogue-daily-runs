@@ -38,7 +38,7 @@ const IndexPage: React.FC<{ data: { allDrpdJson: { edges: DrpdEdge[] } } }> = ({
         <DatePicker className="min-w-[300px] w-1/5 mb-3" date={date} onDateChange={setDate} />
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {drpdPages
-            .filter(({ node }) => node.date == formatDate(date, "yyyy-MM-dd"))
+            .filter(({ node }) => node.date === formatDate(date, "yyyy-MM-dd"))
             .map(({ node }) => (
               <Card key={node.parent.name}>
                 <CardHeader>

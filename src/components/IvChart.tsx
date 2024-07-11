@@ -26,8 +26,8 @@ type IvChartProps = React.HTMLAttributes<HTMLDivElement> & {
 };
 
 const getChartLabelFill = (stat: Stat, statIncreased: Stat, statDecreased: Stat) => 
-  stat == statIncreased ? "hsl(var(--stat-increase))" : 
-  stat == statDecreased ? "hsl(var(--stat-decrease))" : 
+  stat === statIncreased ? "hsl(var(--stat-increase))" : 
+  stat === statDecreased ? "hsl(var(--stat-decrease))" : 
   "hsl(var(--stat-neutral))";
 
 const chartConfig = {
