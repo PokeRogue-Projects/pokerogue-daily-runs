@@ -1,31 +1,37 @@
 import React, { useState } from "react";
-import { Separator } from "./ui/separator";
-import { AnimatedCollapsible, AnimatedCollapsibleContent, AnimatedCollapsibleTrigger } from "./ui/animatedCollapsible";
+import {
+  AnimatedCollapsible,
+  AnimatedCollapsibleContent,
+  AnimatedCollapsibleTrigger,
+} from "./ui/animatedCollapsible";
 import { Checkbox } from "./ui/checkbox";
+import { Separator } from "./ui/separator";
 
 type FollowAlongWaveProps = React.HTMLAttributes<HTMLDivElement> & {
   wave: Queries.FollowAlongPageQuery["drpdJson"]["waves"][number];
   waveIndex: number;
+  waveOpen: boolean;
+  setWaveOpen: (value: boolean) => void;
 };
 
 const FollowAlongWave: React.FC<FollowAlongWaveProps> = ({
   className,
   wave,
   waveIndex,
+  waveOpen,
+  setWaveOpen,
 }) => {
-  const [waveOpen, setWaveOpen] = useState(true);
   const [actionChecks, setActionChecks] = useState<readonly boolean[]>(
     new Array(wave.actions.length).fill(false)
   );
 
-  const handleActionCheckChange = (checkedIndex: number) => () => {
+  const handleActionCheckChange = (changeIndex: number) => () => {
     const newActionChecks = actionChecks.map((check, index) =>
-      index != checkedIndex ? check : !check
+      index != changeIndex ? check : !check
     );
 
     setActionChecks(newActionChecks);
-    if (newActionChecks.every(Boolean))
-        setWaveOpen(false);
+    if (newActionChecks.every(Boolean)) setWaveOpen(false);
   };
 
   return (
@@ -40,7 +46,7 @@ const FollowAlongWave: React.FC<FollowAlongWaveProps> = ({
         </button>
       </AnimatedCollapsibleTrigger>
       <AnimatedCollapsibleContent>
-        <ul className="space-y-1">
+        <ul className="space-y-1 my-2 ml-1">
           {wave.actions.map((action, actionIndex) => (
             <li key={actionIndex} className="ml-1 space-x-2">
               <Checkbox
@@ -54,10 +60,71 @@ const FollowAlongWave: React.FC<FollowAlongWaveProps> = ({
             </li>
           ))}
         </ul>
-        {wave.biome && <span className="ml-2 text-sm">({wave.biome})</span>}
       </AnimatedCollapsibleContent>
     </AnimatedCollapsible>
   );
 };
 
-export default FollowAlongWave;
+type FollowAlongWaveGroupProps = React.HTMLAttributes<HTMLDivElement> & {
+  waves: Queries.FollowAlongPageQuery["drpdJson"]["waves"];
+  startIndex: number;
+};
+
+const FollowAlongWaveGroup: React.FC<FollowAlongWaveGroupProps> = ({
+  className,
+  waves,
+  startIndex,
+}) => {
+  const [waveGroupOpen, setWaveGroupOpen] = useState(true);
+  const [waveOpens, setWaveOpens] = useState<readonly boolean[]>(
+    new Array(waves.length).fill(true)
+  );
+
+  const handleWaveOpenChange = (changeIndex: number) => () => {
+    const newWaveOpens = waveOpens.map((waveOpen, index) =>
+      index != changeIndex ? waveOpen : !waveOpen
+    );
+
+    setWaveOpens(newWaveOpens);
+    if (newWaveOpens.every(waveOpen => !waveOpen)) setWaveGroupOpen(false);
+  };
+
+  return (
+    waves.length != 0 && (
+      <AnimatedCollapsible
+        className={className}
+        open={waveGroupOpen}
+        onOpenChange={setWaveGroupOpen}
+      >
+        <AnimatedCollapsibleTrigger asChild>
+          <button>
+            <h2 className="text-xl font-bold mb-3">
+              Wave {startIndex + 1} - {startIndex + waves.length}
+              <span className="ml-2 font-medium text-sm">
+                ({waves[0].biome})
+              </span>
+            </h2>
+          </button>
+        </AnimatedCollapsibleTrigger>
+        <AnimatedCollapsibleContent>
+          <ul className="space-y-1 ml-1">
+            {waves.map((wave, waveIndex) => (
+              <li key={waveIndex} className="items-center">
+                <FollowAlongWave
+                  className="ml-1"
+                  wave={wave}
+                  waveIndex={startIndex + waveIndex}
+                  waveOpen={waveOpens[waveIndex]}
+                  setWaveOpen={handleWaveOpenChange(waveIndex)}
+                />
+              </li>
+            ))}
+          </ul>
+        </AnimatedCollapsibleContent>
+        {waveGroupOpen ? <Separator  className="my-6" /> : <div className="my-1"/>}
+      </AnimatedCollapsible>
+    )
+  );
+};
+
+export { FollowAlongWave, FollowAlongWaveGroup };
