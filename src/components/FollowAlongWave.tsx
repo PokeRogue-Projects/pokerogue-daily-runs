@@ -12,6 +12,7 @@ import {
   WaveActionText,
 } from "./WaveActionText";
 import { CheckedState } from "@radix-ui/react-checkbox";
+import { cn } from "./lib/utils";
 
 type FollowAlongWaveProps = React.HTMLAttributes<HTMLDivElement> & {
   wave: Queries.FollowAlongPageQuery["drpdJson"]["waves"][number];
@@ -87,7 +88,7 @@ const FollowAlongWave: React.FC<FollowAlongWaveProps> = ({
           <h3 className="font-bold py-1">Wave {waveIndex + 1}</h3>
         </button>
       </AnimatedCollapsibleTrigger>
-      <AnimatedCollapsibleContent>
+      <AnimatedCollapsibleContent className="className=data-[state=closed]:animate-[0.2s_50ms_collapsible-up_ease-out]">
         <ul className="space-y-1 my-2 ml-1">
           {wave.reload && (
             <li className="ml-1 space-x-2">
@@ -167,7 +168,7 @@ const FollowAlongWaveGroup: React.FC<FollowAlongWaveGroupProps> = ({
             </h2>
           </button>
         </AnimatedCollapsibleTrigger>
-        <AnimatedCollapsibleContent>
+        <AnimatedCollapsibleContent className="data-[state=closed]:animate-[100s_0.3s_collapsible-up]">
           <ul className="space-y-1 ml-1">
             {waves.map((wave, waveIndex) => (
               <li key={waveIndex} className="items-center">
@@ -181,12 +182,8 @@ const FollowAlongWaveGroup: React.FC<FollowAlongWaveGroupProps> = ({
               </li>
             ))}
           </ul>
+          <div className="py-2" />
         </AnimatedCollapsibleContent>
-        {waveGroupOpen ? (
-          <Separator className="my-6" />
-        ) : (
-          <div className="my-1" />
-        )}
       </AnimatedCollapsible>
     )
   );
