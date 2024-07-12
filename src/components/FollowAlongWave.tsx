@@ -6,12 +6,23 @@ import {
 } from "./ui/animatedCollapsible";
 import { Checkbox } from "./ui/checkbox";
 import { Separator } from "./ui/separator";
+import {
+  ReloadActionText,
+  ShopActionText,
+  WaveActionText,
+} from "./WaveActionText";
+import { CheckedState } from "@radix-ui/react-checkbox";
 
 type FollowAlongWaveProps = React.HTMLAttributes<HTMLDivElement> & {
   wave: Queries.FollowAlongPageQuery["drpdJson"]["waves"][number];
   waveIndex: number;
   waveOpen: boolean;
   setWaveOpen: (value: boolean) => void;
+};
+
+type FollowAlongWaveGroupProps = React.HTMLAttributes<HTMLDivElement> & {
+  waves: Queries.FollowAlongPageQuery["drpdJson"]["waves"];
+  startIndex: number;
 };
 
 const FollowAlongWave: React.FC<FollowAlongWaveProps> = ({
@@ -24,14 +35,45 @@ const FollowAlongWave: React.FC<FollowAlongWaveProps> = ({
   const [actionChecks, setActionChecks] = useState<readonly boolean[]>(
     new Array(wave.actions.length).fill(false)
   );
+  const [reloadCheck, setReloadCheck] = useState<boolean>(false);
+  const [shopCheck, setShopCheck] = useState<boolean>(false);
 
-  const handleActionCheckChange = (changeIndex: number) => () => {
-    const newActionChecks = actionChecks.map((check, index) =>
-      index != changeIndex ? check : !check
-    );
+  const handleActionCheckChange =
+    (changeIndex: number) => (newCheck: CheckedState) => {
+      console.log(newCheck);
+      const newActionChecks: readonly boolean[] = actionChecks.map(
+        (check, index) => (index != changeIndex ? check : newCheck === true)
+      );
 
-    setActionChecks(newActionChecks);
-    if (newActionChecks.every(Boolean)) setWaveOpen(false);
+      updateWaveOpen(newActionChecks, reloadCheck, shopCheck);
+      setActionChecks(newActionChecks);
+    };
+
+  const handleReloadCheckChange = (newCheck: CheckedState) => {
+    const newReloadCheck = newCheck === true;
+
+    updateWaveOpen(actionChecks, newReloadCheck, shopCheck);
+    setReloadCheck(newReloadCheck);
+  };
+
+  const handleShopCheckChange = (newCheck: CheckedState) => {
+    const newShopCheck = newCheck === true;
+
+    updateWaveOpen(actionChecks, reloadCheck, newShopCheck);
+    setShopCheck(newShopCheck);
+  };
+
+  const updateWaveOpen = (
+    newActionChecks: readonly boolean[],
+    newReloadCheck: boolean,
+    newShopCheck: boolean
+  ) => {
+    if (
+      newActionChecks.every(Boolean) &&
+      (!wave.reload || newReloadCheck) &&
+      (wave.shop === "" || newShopCheck)
+    )
+      setWaveOpen(false);
   };
 
   return (
@@ -47,6 +89,18 @@ const FollowAlongWave: React.FC<FollowAlongWaveProps> = ({
       </AnimatedCollapsibleTrigger>
       <AnimatedCollapsibleContent>
         <ul className="space-y-1 my-2 ml-1">
+          {wave.reload && (
+            <li className="ml-1 space-x-2">
+              <Checkbox
+                id={`checkbox-${wave.id}-reload`}
+                checked={reloadCheck}
+                onCheckedChange={handleReloadCheckChange}
+              />
+              <label htmlFor={`checkbox-${wave.id}-reload`}>
+                <ReloadActionText />
+              </label>
+            </li>
+          )}
           {wave.actions.map((action, actionIndex) => (
             <li key={actionIndex} className="ml-1 space-x-2">
               <Checkbox
@@ -55,19 +109,26 @@ const FollowAlongWave: React.FC<FollowAlongWaveProps> = ({
                 onCheckedChange={handleActionCheckChange(actionIndex)}
               />
               <label htmlFor={`checkbox-${wave.id}-${actionIndex}`}>
-                <span className="font-bold">{action}</span>
+                <WaveActionText className="font-semibold" action={action} />
               </label>
             </li>
           ))}
+          {wave.shop !== "" && (
+            <li className="ml-1 space-x-2">
+              <Checkbox
+                id={`checkbox-${wave.id}-shop`}
+                checked={shopCheck}
+                onCheckedChange={handleShopCheckChange}
+              />
+              <label htmlFor={`checkbox-${wave.id}-shop`}>
+                <ShopActionText shop={wave.shop} />
+              </label>
+            </li>
+          )}
         </ul>
       </AnimatedCollapsibleContent>
     </AnimatedCollapsible>
   );
-};
-
-type FollowAlongWaveGroupProps = React.HTMLAttributes<HTMLDivElement> & {
-  waves: Queries.FollowAlongPageQuery["drpdJson"]["waves"];
-  startIndex: number;
 };
 
 const FollowAlongWaveGroup: React.FC<FollowAlongWaveGroupProps> = ({
@@ -86,7 +147,7 @@ const FollowAlongWaveGroup: React.FC<FollowAlongWaveGroupProps> = ({
     );
 
     setWaveOpens(newWaveOpens);
-    if (newWaveOpens.every(waveOpen => !waveOpen)) setWaveGroupOpen(false);
+    if (newWaveOpens.every((waveOpen) => !waveOpen)) setWaveGroupOpen(false);
   };
 
   return (
@@ -121,7 +182,11 @@ const FollowAlongWaveGroup: React.FC<FollowAlongWaveGroupProps> = ({
             ))}
           </ul>
         </AnimatedCollapsibleContent>
-        {waveGroupOpen ? <Separator  className="my-6" /> : <div className="my-1"/>}
+        {waveGroupOpen ? (
+          <Separator className="my-6" />
+        ) : (
+          <div className="my-1" />
+        )}
       </AnimatedCollapsible>
     )
   );
