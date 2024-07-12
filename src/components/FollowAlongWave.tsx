@@ -148,7 +148,8 @@ const FollowAlongWaveGroup: React.FC<FollowAlongWaveGroupProps> = ({
     );
 
     setWaveOpens(newWaveOpens);
-    if (newWaveOpens.every((waveOpen) => !waveOpen)) setWaveGroupOpen(false);
+    if (newWaveOpens.every((waveOpen) => !waveOpen))
+      setTimeout(() => setWaveGroupOpen(false), 250);
   };
 
   return (
@@ -168,7 +169,7 @@ const FollowAlongWaveGroup: React.FC<FollowAlongWaveGroupProps> = ({
             </h2>
           </button>
         </AnimatedCollapsibleTrigger>
-        <AnimatedCollapsibleContent className="data-[state=closed]:animate-[100s_0.3s_collapsible-up]">
+        <AnimatedCollapsibleContent className="data-[state=closed]:animate-[0.4s_50ms_collapsible-up]">
           <ul className="space-y-1 ml-1">
             {waves.map((wave, waveIndex) => (
               <li key={waveIndex} className="items-center">
