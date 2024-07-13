@@ -4,13 +4,15 @@ on:
   workflow_dispatch:
     inputs:
       pastebin_url:
-        description: "Pastebin URL"
+        description: "Pastebin RAW URL"
         required: true
         type: string
 
 jobs:
   download-and-commit:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -22,7 +24,7 @@ jobs:
 
       - name: Commit and push if there are changes
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
           git add drpd/pastebin_content.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "Add drpd JSON" && git push)
