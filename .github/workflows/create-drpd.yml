@@ -14,12 +14,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        with:
-          # TODO: Remove this line to commit to the default branch when ready for production
-          ref: test
 
       - name: Download Pastebin content
         run: |
+          mkdir -p drpd
           curl -s ${{ github.event.inputs.pastebin_url }} | jq -c '.' > drpd/pastebin_content.json
 
       - name: Commit and push if there are changes
@@ -27,4 +25,4 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add drpd/pastebin_content.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Add drpd JSON" && git push origin test)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Add drpd JSON" && git push)
