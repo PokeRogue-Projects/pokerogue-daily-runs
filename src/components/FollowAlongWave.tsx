@@ -149,7 +149,7 @@ const FollowAlongWaveGroup: React.FC<FollowAlongWaveGroupProps> = ({
 
     setWaveOpens(newWaveOpens);
     if (newWaveOpens.every((waveOpen) => !waveOpen))
-      setTimeout(() => setWaveGroupOpen(false), 250);
+      setTimeout(() => setWaveGroupOpen(false), 300);
   };
 
   return (
