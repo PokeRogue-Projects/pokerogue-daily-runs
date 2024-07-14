@@ -26,5 +26,5 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add drpd/pastebin_content.json
+          git add drpd/${PASTE_TITLE}.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "Add drpd JSON" && git push)
