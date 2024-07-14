@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       pastebin_url:
-        description: "Pastebin RAW URL"
+        description: "Pastebin URL"
         required: true
         type: string
 
@@ -19,9 +19,9 @@ jobs:
 
       - name: Download Pastebin content
         run: |
-          mkdir -p drpd
-          curl -s ${{ github.event.inputs.pastebin_url }} | jq -c '.' > drpd/pastebin_content.json
-
+          PASTE_ID=$(echo ${{ github.event.inputs.pastebin_url }} | awk -F'/' '{print $NF}')
+          PASTE_TITLE=$(curl -s ${{ github.event.inputs.pastebin_url }} | grep -o '<title>.*</title>' | sed 's/<title>\(.*\) - Pastebin.com<\/title>/\1/')
+          curl -s https://pastebin.com/raw/${PASTE_ID} | jq '.' > drpd/${PASTE_TITLE}.json
       - name: Commit and push if there are changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
