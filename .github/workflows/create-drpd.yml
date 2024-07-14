@@ -20,7 +20,7 @@ jobs:
       - name: Download Pastebin content
         run: |
           PASTE_ID=$(echo ${{ github.event.inputs.pastebin_url }} | awk -F'/' '{print $NF}')
-          PASTE_TITLE=$(curl -s ${{ github.event.inputs.pastebin_url }} | grep -o '<title>.*</title>' | sed 's/<title>\(.*\) - Pastebin.com<\/title>/\1/')
+          PASTE_TITLE=$(curl -s "${{ github.event.inputs.pastebin_url }}" | grep -o '<title>.*</title>' | sed 's/<title>\(.*\) - Pastebin\.com<\/title>/\1/')
           curl -s https://pastebin.com/raw/${PASTE_ID} | jq '.' > drpd/${PASTE_TITLE}.json
       - name: Commit and push if there are changes
         run: |
