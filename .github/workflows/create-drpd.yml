@@ -21,10 +21,13 @@ jobs:
         run: |
           PASTE_ID=$(echo ${{ github.event.inputs.pastebin_url }} | awk -F'/' '{print $NF}')
           PASTE_TITLE=$(curl -s "${{ github.event.inputs.pastebin_url }}" | grep -o '<title>.*</title>' | sed 's/<title>\(.*\) - Pastebin\.com<\/title>/\1/')
-          curl -s https://pastebin.com/raw/$PASTE_ID | jq '.' > drpd/$PASTE_TITLE.json
+          SANITIZED_TITLE=$(echo "$PASTE_TITLE" | sed 's/[^a-zA-Z0-9._-]/_/g')
+          curl -s https://pastebin.com/raw/$PASTE_ID | jq '.' > "drpd/${SANITIZED_TITLE}.json"
+          echo "SANITIZED_TITLE=$SANITIZED_TITLE" >> $GITHUB_ENV
+
       - name: Commit and push if there are changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add drpd/$PASTE_TITLE.json
+          git add "drpd/$SANITIZED_TITLE.json"
           git diff --quiet && git diff --staged --quiet || (git commit -m "Add drpd JSON" && git push)
