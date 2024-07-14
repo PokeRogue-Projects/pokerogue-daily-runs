@@ -60,11 +60,11 @@ const PokemonCard: React.FC<{
             </CardHeader>
             <CardContent>
                 <div className="flex flex-col space-y-6">
-                    <div className="flex flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6">
+                    <div className="flex flex-row items-center md:items-start space-y-4 justify-around md:space-y-0">
                         <img
                             src={`https://wiki.pokerogue.net/_media/starters:sprites:${pokemon.id}.png`}
                             alt={pokemon.name}
-                            className="w-2/5 object-contain self-center"
+                            className="w-1/5 object-contain self-center"
                         />
                         <IvChart
                             ivs={pokemon.ivs}
@@ -74,8 +74,54 @@ const PokemonCard: React.FC<{
                         />
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <Card className="h-full flex flex-col">
+                    <div className="grid grid-cols-2 gap-4">
+                        <Card>
+                            <CardContent className="p-2 gap-2 flex flex-col justify-center items-center">
+                                <p className="text-md">Ability</p>
+                                <p className="text-xs text-center">
+                                    {pokemon.ability
+                                        .split("_")
+                                        .map(
+                                            (word) =>
+                                                word.charAt(0).toUpperCase() +
+                                                word.slice(1).toLowerCase()
+                                        )
+                                        .join(" ")}
+                                </p>
+                            </CardContent>
+                        </Card>
+
+                        <Card>
+                            <CardContent className="p-2 gap-2 flex flex-col justify-center items-center">
+                                <p className="text-md">Passive</p>
+                                <p className="text-xs text-center">
+                                    {pokemon.passive}
+                                </p>
+                            </CardContent>
+                        </Card>
+
+                        <Card className="col-span-2">
+                            <CardHeader className="p-3 text-center">
+                                <CardTitle className="text-md">
+                                    Nature
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent className="p-3 pt-0 flex justify-center items-baseline gap-6">
+                                <p className="text-md font-medium first-letter:capitalize">
+                                    {pokemon.nature.name}
+                                </p>
+                                <div className="flex gap-2">
+                                    <p className="text-xs">
+                                        {statToDisplayString(statIncreased)} ▲
+                                    </p>
+                                    <p className="text-xs">
+                                        {statToDisplayString(statDecreased)} ▼
+                                    </p>
+                                </div>
+                            </CardContent>
+                        </Card>
+
+                        <Card className="flex flex-col col-span-2">
                             <CardHeader className="p-3 text-center">
                                 <CardTitle className="text-md">Biome</CardTitle>
                             </CardHeader>
@@ -84,72 +130,11 @@ const PokemonCard: React.FC<{
                                     <img
                                         src={`https://wiki.pokerogue.net/_media/en:biomes:en_${biome}_bg.png`}
                                         alt={biome}
-                                        className="w-full h-auto max-h-24 object-cover rounded-md"
+                                        className="w-full object-cover rounded-md"
                                     />
                                 ) : (
                                     <p className="text-center">???</p>
                                 )}
-                            </CardContent>
-                        </Card>
-
-                        <div className="flex flex-col space-y-2">
-                            <Card className="flex-1">
-                                <CardHeader className="p-3 text-center">
-                                    <CardTitle className="text-md">
-                                        Ability
-                                    </CardTitle>
-                                </CardHeader>
-                                <CardContent className="p-3 pt-0">
-                                    <p className="text-xs text-center">
-                                        {pokemon.ability
-                                            .split("_")
-                                            .map(
-                                                (word) =>
-                                                    word
-                                                        .charAt(0)
-                                                        .toUpperCase() +
-                                                    word.slice(1).toLowerCase()
-                                            )
-                                            .join(" ")}
-                                    </p>
-                                </CardContent>
-                            </Card>
-                            <Card className="flex-1">
-                                <CardHeader className="p-3 text-center">
-                                    <CardTitle className="text-md">
-                                        Passive
-                                    </CardTitle>
-                                </CardHeader>
-                                <CardContent className="p-3 pt-0">
-                                    <p className="text-xs text-center">
-                                        {pokemon.passive}
-                                    </p>
-                                </CardContent>
-                            </Card>
-                        </div>
-
-                        <Card className="h-full">
-                            <CardHeader className="p-3 text-center">
-                                <CardTitle className="text-md">
-                                    Nature
-                                </CardTitle>
-                            </CardHeader>
-                            <CardContent className="p-3 pt-0">
-                                <div className="text-center space-y-3">
-                                    <p className="text-md font-medium first-letter:capitalize">
-                                        {pokemon.nature.name}
-                                    </p>
-                                    <div className="space-y-1">
-                                        <p className="text-xs">
-                                            {statToDisplayString(statIncreased)}{" "}
-                                            ▲
-                                        </p>
-                                        <p className="text-xs">
-                                            {statToDisplayString(statDecreased)}{" "}
-                                            ▼
-                                        </p>
-                                    </div>
-                                </div>
                             </CardContent>
                         </Card>
                     </div>
