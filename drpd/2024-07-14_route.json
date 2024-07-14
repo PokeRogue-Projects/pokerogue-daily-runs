@@ -33,7 +33,7 @@
           },
           "gender": "Female",
           "rarity": "[Unknown]",
-          "captured": false,
+          "captured": true,
           "level": 21,
           "items": [],
           "ivs": {
@@ -74,7 +74,7 @@
           },
           "gender": "Genderless",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 20,
           "items": [],
           "ivs": {
@@ -113,7 +113,7 @@
           },
           "gender": "Female",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 20,
           "items": [],
           "ivs": {
@@ -136,8 +136,7 @@
         "Psybeam",
         "Psybeam",
         "Poké Ball",
-        "Release Mareanie",
-        "Release [5] Staryu"
+        "Release Mareanie"
       ],
       "shop": "Potion → Porygon-Z",
       "biome": "Beach",
@@ -155,7 +154,7 @@
           },
           "gender": "Male",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 23,
           "items": [
             {
@@ -203,8 +202,7 @@
       "double": false,
       "actions": [
         "Poké Ball",
-        "Release Staryu",
-        "Release [5] Binacle"
+        "Release Staryu"
       ],
       "shop": "Potion → Porygon-Z",
       "biome": "Beach",
@@ -222,7 +220,7 @@
           },
           "gender": "Female",
           "rarity": "Uncommon",
-          "captured": false,
+          "captured": true,
           "level": 22,
           "items": [],
           "ivs": {
@@ -244,7 +242,6 @@
       "actions": [
         "Poké Ball",
         "Release Binacle",
-        "Release [5] Sandygast",
         "[3] Psyduck | Replace Water Pulse with Aqua Tail",
         "[4] Mareanie | Skip Pin Missile"
       ],
@@ -264,7 +261,7 @@
           },
           "gender": "Male",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 24,
           "items": [],
           "ivs": {
@@ -303,7 +300,7 @@
           },
           "gender": "Male",
           "rarity": "Uncommon",
-          "captured": false,
+          "captured": true,
           "level": 25,
           "items": [],
           "ivs": {
@@ -344,7 +341,7 @@
           },
           "gender": "Male",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 26,
           "items": [],
           "ivs": {
@@ -387,7 +384,7 @@
           },
           "gender": "Male",
           "rarity": "Rare",
-          "captured": false,
+          "captured": true,
           "level": 26,
           "items": [
             {
@@ -446,7 +443,7 @@
           },
           "gender": "Male",
           "rarity": "Uncommon",
-          "captured": false,
+          "captured": true,
           "level": 29,
           "items": [],
           "ivs": {
@@ -512,7 +509,7 @@
           },
           "gender": "Female",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 28,
           "items": [
             {
@@ -558,7 +555,7 @@
           },
           "gender": "Male",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 29,
           "items": [],
           "ivs": {
@@ -598,7 +595,7 @@
           },
           "gender": "Male",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 28,
           "items": [
             {
@@ -673,7 +670,7 @@
           },
           "gender": "Male",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 33,
           "items": [],
           "ivs": {
@@ -740,7 +737,7 @@
           },
           "gender": "Male",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 33,
           "items": [],
           "ivs": {
@@ -783,7 +780,7 @@
           },
           "gender": "Female",
           "rarity": "Uncommon",
-          "captured": false,
+          "captured": true,
           "level": 34,
           "items": [],
           "ivs": {
@@ -829,7 +826,7 @@
           },
           "gender": "Female",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 35,
           "items": [],
           "ivs": {
@@ -926,7 +923,7 @@
           },
           "gender": "Male",
           "rarity": "Uncommon",
-          "captured": false,
+          "captured": true,
           "level": 38,
           "items": [],
           "ivs": {
@@ -967,7 +964,7 @@
           },
           "gender": "Female",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 35,
           "items": [
             {
@@ -1014,7 +1011,7 @@
           },
           "gender": "Female",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 39,
           "items": [],
           "ivs": {
@@ -1056,7 +1053,7 @@
           },
           "gender": "Male",
           "rarity": "Uncommon",
-          "captured": false,
+          "captured": true,
           "level": 37,
           "items": [],
           "ivs": {
@@ -1116,7 +1113,7 @@
           },
           "gender": "Female",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 43,
           "items": [],
           "ivs": {
@@ -1182,7 +1179,7 @@
           },
           "gender": "Male",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 41,
           "items": [],
           "ivs": {
@@ -1222,7 +1219,7 @@
           },
           "gender": "Male",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 41,
           "items": [],
           "ivs": {
@@ -1264,7 +1261,7 @@
           },
           "gender": "Female",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 42,
           "items": [],
           "ivs": {
@@ -1335,7 +1332,7 @@
           },
           "gender": "Male",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 44,
           "items": [
             {
@@ -1382,7 +1379,7 @@
           },
           "gender": "Female",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 45,
           "items": [],
           "ivs": {
@@ -1426,7 +1423,7 @@
           },
           "gender": "Male",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 48,
           "items": [],
           "ivs": {
@@ -1468,7 +1465,7 @@
           },
           "gender": "Female",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 50,
           "items": [],
           "ivs": {
@@ -1536,7 +1533,7 @@
           },
           "gender": "Female",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 48,
           "items": [],
           "ivs": {
@@ -1577,7 +1574,7 @@
           },
           "gender": "Male",
           "rarity": "Uncommon",
-          "captured": false,
+          "captured": true,
           "level": 53,
           "items": [
             {
@@ -1625,7 +1622,7 @@
           },
           "gender": "Male",
           "rarity": "Uncommon",
-          "captured": false,
+          "captured": true,
           "level": 52,
           "items": [],
           "ivs": {
@@ -1665,7 +1662,7 @@
           },
           "gender": "Male",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 54,
           "items": [
             {
@@ -1747,7 +1744,7 @@
           },
           "gender": "Female",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 57,
           "items": [
             {
@@ -1819,7 +1816,7 @@
           },
           "gender": "Female",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 52,
           "items": [],
           "ivs": {
@@ -1861,7 +1858,7 @@
           },
           "gender": "Female",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 59,
           "items": [],
           "ivs": {
@@ -1902,7 +1899,7 @@
           },
           "gender": "Female",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 59,
           "items": [
             {
@@ -2001,7 +1998,7 @@
           },
           "gender": "Female",
           "rarity": "Rare",
-          "captured": false,
+          "captured": true,
           "level": 61,
           "items": [
             {
@@ -2052,7 +2049,7 @@
           },
           "gender": "Female",
           "rarity": "Uncommon",
-          "captured": false,
+          "captured": true,
           "level": 62,
           "items": [],
           "ivs": {
@@ -2093,7 +2090,7 @@
           },
           "gender": "Genderless",
           "rarity": "Rare",
-          "captured": false,
+          "captured": true,
           "level": 60,
           "items": [
             {
@@ -2144,7 +2141,7 @@
           },
           "gender": "Male",
           "rarity": "Common",
-          "captured": false,
+          "captured": true,
           "level": 65,
           "items": [],
           "ivs": {
