@@ -1,0 +1,2266 @@
+{
+    "version": "1.0.0a",
+    "title": "07/13/24 Daily Run",
+    "authors": ["DeepDiver", "GameBoypro"],
+    "date": "2024-07-13",
+    "starters": [],
+    "waves": [
+      {
+        "id": 1,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Flame Wheel",
+          "Flame Wheel",
+          "Poké Ball"
+        ],
+        "shop": "5x Poké Ball",
+        "biome": "Graveyard",
+        "pokemon": [
+          {
+            "id": 104,
+            "name": "Cubone",
+            "ability": "Lightning Rod",
+            "isHiddenAbility": false,
+            "passive": "Parental Bond",
+            "nature": 
+              {
+                "name": "Relaxed",
+                "increased": "def",
+                "decreased": "spe"
+              },
+            "gender": "Female",
+            "rarity": "[Unknown]",
+            "captured": false,
+            "level": 18,
+            "items": [],
+            "ivs": {
+              "hp": 13,
+              "atk": 8,
+              "def": 15,
+              "spatk": 23,
+              "spdef": 25,
+              "spe": 12
+            }
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Flame Wheel",
+          "Flame Wheel",
+          "Poké Ball",
+          "Poké Ball",
+          "Poké Ball",
+          "Transfer [3] Drilbur (Charcoal) → [1] Magby",
+          "Transfer [2] Spidops (Charcoal) → [1] Magby"
+        ],
+        "shop": "Focus Band → Magby",
+        "biome": "Graveyard",
+        "pokemon": [
+          {
+            "id": 562,
+            "name": "Yamask",
+            "ability": "Mummy",
+            "isHiddenAbility": false,
+            "passive": "Purifying Salt",
+            "nature": 
+              {
+                "name": "Adamant",
+                "increased": "atk",
+                "decreased": "spatk"
+              },
+            "gender": "Female",
+            "rarity": "Uncommon",
+            "captured": false,
+            "level": 19,
+            "items": [],
+            "ivs": {
+              "hp": 29,
+              "atk": 24,
+              "def": 12,
+              "spatk": 6,
+              "spdef": 27,
+              "spe": 11
+            }
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "[5] Yamask | Skip Crafty Shield",
+          "Poké Ball"
+        ],
+        "shop": "Thick Club → Cubone",
+        "biome": "Graveyard",
+        "pokemon": [
+          {
+            "id": 92,
+            "name": "Gastly",
+            "ability": "Levitate",
+            "isHiddenAbility": false,
+            "passive": "Shadow Shield",
+            "nature": 
+              {
+                "name": "Bold",
+                "increased": "def",
+                "decreased": "atk"
+              },
+            "gender": "Female",
+            "rarity": "Common",
+            "captured": false,
+            "level": 20,
+            "items": [],
+            "ivs": {
+              "hp": 27,
+              "atk": 29,
+              "def": 17,
+              "spatk": 13,
+              "spdef": 29,
+              "spe": 13
+            }
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Flame Wheel",
+          "Flame Wheel",
+          "Poké Ball",
+          "[4] Cubone | Skip Fling (N)",
+          "Poké Ball"
+        ],
+        "shop": "Nugget",
+        "biome": "Graveyard",
+        "pokemon": [
+          {
+            "id": 607,
+            "name": "Litwick",
+            "ability": "Flame Body",
+            "isHiddenAbility": false,
+            "passive": "Soul-Heart",
+            "nature": 
+              {
+                "name": "Hasty",
+                "increased": "spe",
+                "decreased": "def"
+              },
+            "gender": "Female",
+            "rarity": "Common",
+            "captured": false,
+            "level": 23,
+            "items": [],
+            "ivs": {
+              "hp": 25,
+              "atk": 14,
+              "def": 5,
+              "spatk": 6,
+              "spdef": 28,
+              "spe": 21
+            }
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "reload": false,
+        "type": "trainer",
+        "double": false,
+        "actions": [
+          "Flame Wheel",
+          "Flame Wheel",
+          "[1] Magby | Skip Scary Face",
+          "[6] Litwick | Replace Confuse Ray with Fire Spin",
+          "Flame Wheel",
+          "Flame Wheel",
+          "[3] Drilbur | Replace Frustration with Crush Claw",
+          "Flame Wheel"
+        ],
+        "shop": "Potion → Magby",
+        "biome": "Graveyard",
+        "trainer": {
+          "id": "34",
+          "name": "Gilbert",
+          "type": "Psychic"
+        }
+      },
+      {
+        "id": 6,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "[2] Spidops | Replace Sunny Day with Counter",
+          "[5] Gastly | Replace Spite with Hex",
+          "Poké Ball"
+        ],
+        "shop": "Hyper Potion → Litwick",
+        "biome": "Graveyard",
+        "pokemon": [
+          {
+            "id": 353,
+            "name": "Shuppet",
+            "ability": "Insomnia",
+            "isHiddenAbility": false,
+            "passive": "Shadow Shield",
+            "nature": 
+              {
+                "name": "Hasty",
+                "increased": "spe",
+                "decreased": "def"
+              },
+            "gender": "Female",
+            "rarity": "Common",
+            "captured": false,
+            "level": 25,
+            "items": [],
+            "ivs": {
+              "hp": 19,
+              "atk": 5,
+              "def": 5,
+              "spatk": 6,
+              "spdef": 15,
+              "spe": 18
+            }
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Flame Wheel",
+          "Poké Ball",
+          "Poké Ball"
+        ],
+        "shop": "5x Great Ball",
+        "biome": "Graveyard",
+        "pokemon": [
+          {
+            "id": 562,
+            "name": "Yamask",
+            "ability": "Mummy",
+            "isHiddenAbility": false,
+            "passive": "Purifying Salt",
+            "nature": 
+              {
+                "name": "Lax",
+                "increased": "def",
+                "decreased": "spdef"
+              },
+            "gender": "Male",
+            "rarity": "Uncommon",
+            "captured": false,
+            "level": 25,
+            "items": [],
+            "ivs": {
+              "hp": 19,
+              "atk": 22,
+              "def": 5,
+              "spatk": 21,
+              "spdef": 7,
+              "spe": 17
+            }
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Pre-switch  to [6] Litwick",
+          "Hex",
+          "[4] Cubone | Replace Growl with Stomping Tantrum",
+          "Evolve Gastly",
+          "[5] Haunter | Replace Payback with Shadow Punch",
+          "Great Ball"
+        ],
+        "shop": "Potion → Magby",
+        "biome": "Graveyard",
+        "pokemon": [
+          {
+            "id": 425,
+            "name": "Drifloon",
+            "ability": "Aftermath",
+            "isHiddenAbility": false,
+            "passive": "Magic Guard",
+            "nature": 
+              {
+                "name": "Mild",
+                "increased": "spatk",
+                "decreased": "def"
+              },
+            "gender": "Female",
+            "rarity": "Common",
+            "captured": false,
+            "level": 25,
+            "items": [],
+            "ivs": {
+              "hp": 11,
+              "atk": 31,
+              "def": 31,
+              "spatk": 23,
+              "spdef": 15,
+              "spe": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "reload": false,
+        "type": "wild",
+        "double": true,
+        "actions": [
+          "Pre-switch  to [6] Magby",
+          "Pre-switch  to [3] Drilbur",
+          "[1] Magby | Replace Flame Wheel with Fire Punch",
+          "Flame Wheel | Sand Tomb",
+          "Fire Punch | Switch [2] Drilbur to [3] Spidops",
+          "Great Ball",
+          "Reroll"
+        ],
+        "shop": "Super Potion → Magby",
+        "biome": "Graveyard",
+        "pokemon": [
+          {
+            "id": 425,
+            "name": "Drifloon",
+            "ability": "Aftermath",
+            "isHiddenAbility": false,
+            "passive": "Magic Guard",
+            "nature": 
+              {
+                "name": "Brave",
+                "increased": "atk",
+                "decreased": "spe"
+              },
+            "gender": "Male",
+            "rarity": "Common",
+            "captured": false,
+            "level": 26,
+            "items": [],
+            "ivs": {
+              "hp": 31,
+              "atk": 28,
+              "def": 20,
+              "spatk": 31,
+              "spdef": 13,
+              "spe": 2
+            }
+          },
+          {
+            "id": 855,
+            "name": "Polteageist",
+            "ability": "Weak Armor",
+            "isHiddenAbility": false,
+            "passive": "Shadow Shield",
+            "nature": 
+              {
+                "name": "Adamant",
+                "increased": "atk",
+                "decreased": "spatk"
+              },
+            "gender": "Genderless",
+            "rarity": "Uncommon",
+            "captured": false,
+            "level": 24,
+            "items": [],
+            "ivs": {
+              "hp": 19,
+              "atk": 12,
+              "def": 21,
+              "spatk": 14,
+              "spdef": 24,
+              "spe": 4
+            }
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "reload": false,
+        "type": "boss",
+        "double": false,
+        "actions": [
+          "Pre-switch  to [3] Drilbur",
+          "Crush Claw",
+          "Crush Claw",
+          "Switchin [3] Magby",
+          "Fire Punch",
+          "Protect",
+          "Confuse Ray",
+          "Switchin [5] Haunter",
+          "Hypnosis",
+          "Hypnosis",
+          "Great Ball"
+        ],
+        "shop": "",
+        "biome": "Graveyard",
+        "pokemon": [
+          {
+            "id": 910,
+            "name": "Crocalor",
+            "ability": "Blaze",
+            "isHiddenAbility": false,
+            "passive": "Punk Rock",
+            "nature": 
+              {
+                "name": "Quirky",
+                "increased": "",
+                "decreased": ""
+              },
+            "gender": "Male",
+            "rarity": "Rare",
+            "captured": false,
+            "level": 26,
+            "items": [
+              {
+                "id": "StatBooster:ATK",
+                "name": "Protein",
+                "quantity": 1
+              },            {
+                "id": "MoveBooster:NORMAL",
+                "name": "Silk Scarf",
+                "quantity": 1
+              }
+            ],
+            "ivs": {
+              "hp": 24,
+              "atk": 19,
+              "def": 9,
+              "spatk": 24,
+              "spdef": 7,
+              "spe": 10
+            }
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Pre-switch  to [5] Magby",
+          "Fire Punch",
+          "Evolve Magby",
+          "[6] Crocalor | Skip Roar",
+          "Great Ball"
+        ],
+        "shop": "Apicot Berry → Magmar",
+        "biome": "Abyss",
+        "pokemon": [
+          {
+            "id": 828,
+            "name": "Thievul",
+            "ability": "Run Away",
+            "isHiddenAbility": false,
+            "passive": "Magician",
+            "nature": 
+              {
+                "name": "Lonely",
+                "increased": "atk",
+                "decreased": "def"
+              },
+            "gender": "Male",
+            "rarity": "Common",
+            "captured": false,
+            "level": 29,
+            "items": [],
+            "ivs": {
+              "hp": 3,
+              "atk": 7,
+              "def": 14,
+              "spatk": 30,
+              "spdef": 6,
+              "spe": 6
+            }
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Pre-switch  to [6] Crocalor",
+          "Incinerate",
+          "Yawn",
+          "Incinerate",
+          "[2] Spidops | Replace Feint with Headbutt",
+          "[3] Drilbur | Replace Rest with Rock Slide",
+          "Evolve Cubone",
+          "Great Ball",
+          "Reroll"
+        ],
+        "shop": "5x Poké Ball",
+        "biome": "Abyss",
+        "pokemon": [
+          {
+            "id": 302,
+            "name": "Sableye",
+            "ability": "Keen Eye",
+            "isHiddenAbility": false,
+            "passive": "Unnerve",
+            "nature": 
+              {
+                "name": "Careful",
+                "increased": "spdef",
+                "decreased": "spatk"
+              },
+            "gender": "Male",
+            "rarity": "Uncommon",
+            "captured": false,
+            "level": 30,
+            "items": [],
+            "ivs": {
+              "hp": 15,
+              "atk": 27,
+              "def": 31,
+              "spatk": 7,
+              "spdef": 19,
+              "spe": 1
+            }
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Pre-switch  to [4] Marowak",
+          "Headbutt",
+          "[5] Haunter | Replace Shadow Punch with Night Shade",
+          "Poké Ball"
+        ],
+        "shop": "Super Potion → Crocalor",
+        "biome": "Abyss",
+        "pokemon": [
+          {
+            "id": 229,
+            "name": "Houndoom",
+            "ability": "Flash Fire",
+            "isHiddenAbility": false,
+            "passive": "Drought",
+            "nature": 
+              {
+                "name": "Lonely",
+                "increased": "atk",
+                "decreased": "def"
+              },
+            "gender": "Male",
+            "rarity": "Common",
+            "captured": false,
+            "level": 29,
+            "items": [],
+            "ivs": {
+              "hp": 1,
+              "atk": 16,
+              "def": 30,
+              "spatk": 6,
+              "spdef": 7,
+              "spe": 28
+            }
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Headbutt",
+          "Headbutt",
+          "Poké Ball"
+        ],
+        "shop": "5x Poké Ball",
+        "biome": "Abyss",
+        "pokemon": [
+          {
+            "id": 624,
+            "name": "Pawniard",
+            "ability": "Inner Focus",
+            "isHiddenAbility": false,
+            "passive": "Sword of Ruin",
+            "nature": 
+              {
+                "name": "Hardy",
+                "increased": "",
+                "decreased": ""
+              },
+            "gender": "Female",
+            "rarity": "Uncommon",
+            "captured": false,
+            "level": 27,
+            "items": [],
+            "ivs": {
+              "hp": 19,
+              "atk": 3,
+              "def": 25,
+              "spatk": 4,
+              "spdef": 30,
+              "spe": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "reload": false,
+        "type": "trainer",
+        "double": false,
+        "actions": [
+          "Switch [1] Marowak to [4] Crocalor",
+          "Yawn",
+          "Switch [1] Crocalor to [5] Haunter",
+          "Hex",
+          "Hex",
+          "[4] Marowak | Replace Retaliate (P) with Bone Rush",
+          "[5] Crocalor | Replace Round (P) with Flamethrower",
+          "Hex",
+          "Hex",
+          "Hex",
+          "Evolve Drilbur",
+          "[3] Excadrill | Skip Horn Drill",
+          "Hex",
+          "Hex"
+        ],
+        "shop": "Potion → Crocalor",
+        "biome": "Abyss",
+        "trainer": {
+          "id": "1",
+          "name": "Reena",
+          "type": "Ace Trainer Female"
+        }
+      },
+      {
+        "id": 16,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Pre-switch  to [5] Crocalor",
+          "Incinerate",
+          "Bite",
+          "Bite",
+          "[6] Magmar | Replace Confide with Lava Plume",
+          "Poké Ball"
+        ],
+        "shop": "Potion → Crocalor",
+        "biome": "Abyss",
+        "pokemon": [
+          {
+            "id": 510,
+            "name": "Liepard",
+            "ability": "Unburden (N)",
+            "isHiddenAbility": false,
+            "passive": "Pickup",
+            "nature": 
+              {
+                "name": "Impish",
+                "increased": "def",
+                "decreased": "spatk"
+              },
+            "gender": "Male",
+            "rarity": "Common",
+            "captured": false,
+            "level": 32,
+            "items": [],
+            "ivs": {
+              "hp": 5,
+              "atk": 4,
+              "def": 1,
+              "spatk": 17,
+              "spdef": 4,
+              "spe": 31
+            }
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Pre-switch  to [3] Excadrill",
+          "Sand Tomb",
+          "Sandstorm",
+          "Sandstorm",
+          "Sandstorm",
+          "Poké Ball"
+        ],
+        "shop": "5x Great Ball",
+        "biome": "Abyss",
+        "pokemon": [
+          {
+            "id": 624,
+            "name": "Pawniard",
+            "ability": "Inner Focus",
+            "isHiddenAbility": false,
+            "passive": "Sword of Ruin",
+            "nature": 
+              {
+                "name": "Docile",
+                "increased": "",
+                "decreased": ""
+              },
+            "gender": "Female",
+            "rarity": "Common",
+            "captured": false,
+            "level": 31,
+            "items": [
+              {
+                "id": "Berry:SITRUS",
+                "name": "Sitrus Berry",
+                "quantity": 1
+              }
+            ],
+            "ivs": {
+              "hp": 27,
+              "atk": 9,
+              "def": 21,
+              "spatk": 18,
+              "spdef": 22,
+              "spe": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "reload": false,
+        "type": "wild",
+        "double": true,
+        "actions": [
+          "Pre-switch  to [6] Magmar",
+          "[6] Spidops | Replace Block with Sticky Web",
+          "Rock Slide | Fire Punch",
+          "[1] Excadrill | Replace Sandstorm with Dig",
+          "Poké Ball"
+        ],
+        "shop": "Hyper Potion → Crocalor",
+        "biome": "Abyss",
+        "pokemon": [
+          {
+            "id": 624,
+            "name": "Pawniard",
+            "ability": "Defiant",
+            "isHiddenAbility": false,
+            "passive": "Sword of Ruin",
+            "nature": 
+              {
+                "name": "Lonely",
+                "increased": "atk",
+                "decreased": "def"
+              },
+            "gender": "Female",
+            "rarity": "Common",
+            "captured": false,
+            "level": 35,
+            "items": [],
+            "ivs": {
+              "hp": 19,
+              "atk": 15,
+              "def": 7,
+              "spatk": 28,
+              "spdef": 12,
+              "spe": 31
+            }
+          },
+          {
+            "id": 302,
+            "name": "Sableye",
+            "ability": "Keen Eye",
+            "isHiddenAbility": false,
+            "passive": "Unnerve",
+            "nature": 
+              {
+                "name": "Modest",
+                "increased": "spatk",
+                "decreased": "atk"
+              },
+            "gender": "Male",
+            "rarity": "Common",
+            "captured": false,
+            "level": 33,
+            "items": [],
+            "ivs": {
+              "hp": 25,
+              "atk": 10,
+              "def": 20,
+              "spatk": 19,
+              "spdef": 1,
+              "spe": 9
+            }
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "reload": false,
+        "type": "wild",
+        "double": true,
+        "actions": [
+          "Pre-switch  to [6] Spidops",
+          "Evolve Crocalor",
+          "[3] Skeledirge | Replace Incinerate with Torch Song",
+          "Rock Slide | Bug Bite",
+          "Crush Claw | Headbutt",
+          "Poké Ball",
+          "Poké Ball"
+        ],
+        "shop": "X Attack",
+        "biome": "Abyss",
+        "pokemon": [
+          {
+            "id": 828,
+            "name": "Thievul",
+            "ability": "Run Away",
+            "isHiddenAbility": false,
+            "passive": "Magician",
+            "nature": 
+              {
+                "name": "Hasty",
+                "increased": "spe",
+                "decreased": "def"
+              },
+            "gender": "Male",
+            "rarity": "Common",
+            "captured": false,
+            "level": 34,
+            "items": [],
+            "ivs": {
+              "hp": 1,
+              "atk": 2,
+              "def": 26,
+              "spatk": 16,
+              "spdef": 9,
+              "spe": 12
+            }
+          },
+          {
+            "id": 624,
+            "name": "Pawniard",
+            "ability": "Inner Focus",
+            "isHiddenAbility": false,
+            "passive": "Sword of Ruin",
+            "nature": 
+              {
+                "name": "Lonely",
+                "increased": "atk",
+                "decreased": "def"
+              },
+            "gender": "Female",
+            "rarity": "Uncommon",
+            "captured": false,
+            "level": 33,
+            "items": [],
+            "ivs": {
+              "hp": 19,
+              "atk": 21,
+              "def": 29,
+              "spatk": 7,
+              "spdef": 23,
+              "spe": 25
+            }
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "reload": false,
+        "type": "trainer",
+        "double": false,
+        "actions": [
+          "Dig",
+          "Dig",
+          "Dig",
+          "Switchin [6] Magmar",
+          "Confuse Ray",
+          "[4] Marowak | Skip Focus Energy",
+          "[5] Haunter | Replace Night Shade with Sucker Punch",
+          "Lava Plume",
+          "Switchin [4] Marowak",
+          "[2] Spidops | Skip Gastro Acid",
+          "[3] Skeledirge | Replace Bite with Shadow Ball",
+          "Stomping Tantrum",
+          "Stomping Tantrum"
+        ],
+        "shop": "",
+        "biome": "Abyss",
+        "trainer": {
+          "id": "264",
+          "name": "",
+          "type": "Marnie"
+        }
+      },
+      {
+        "id": 21,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Pre-switch  to [2] Spidops",
+          "Bug Bite",
+          "Great Ball"
+        ],
+        "shop": "Nugget",
+        "biome": "Cave",
+        "pokemon": [
+          {
+            "id": 528,
+            "name": "Swoobat",
+            "ability": "Klutz (N)",
+            "isHiddenAbility": false,
+            "passive": "Opportunist",
+            "nature": 
+              {
+                "name": "Mild",
+                "increased": "spatk",
+                "decreased": "def"
+              },
+            "gender": "Male",
+            "rarity": "Common",
+            "captured": false,
+            "level": 35,
+            "items": [],
+            "ivs": {
+              "hp": 1,
+              "atk": 1,
+              "def": 3,
+              "spatk": 7,
+              "spdef": 20,
+              "spe": 21
+            }
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Pre-switch  to [4] Magmar",
+          "Lava Plume",
+          "[1] Magmar | Replace Confuse Ray with Low Kick",
+          "[2] Marowak | Replace Tail Whip with Endeavor",
+          "[3] Skeledirge | Skip Hyper Voice",
+          "Poké Ball"
+        ],
+        "shop": "Potion → Magmar",
+        "biome": "Cave",
+        "pokemon": [
+          {
+            "id": 169,
+            "name": "Crobat",
+            "ability": "Inner Focus",
+            "isHiddenAbility": false,
+            "passive": "Intimidate",
+            "nature": 
+              {
+                "name": "Adamant",
+                "increased": "atk",
+                "decreased": "spatk"
+              },
+            "gender": "Female",
+            "rarity": "Common",
+            "captured": false,
+            "level": 39,
+            "items": [],
+            "ivs": {
+              "hp": 19,
+              "atk": 12,
+              "def": 10,
+              "spatk": 22,
+              "spdef": 7,
+              "spe": 22
+            }
+          }
+        ]
+      },
+      {
+        "id": 23,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Pre-switch  to [3] Skeledirge",
+          "Yawn",
+          "Shadow Ball",
+          "[4] Haunter | Skip Dark Pulse",
+          "[6] Crobat | Replace Mean Look with Haze",
+          "Poké Ball"
+        ],
+        "shop": "Potion → Skeledirge",
+        "biome": "Cave",
+        "pokemon": [
+          {
+            "id": 75,
+            "name": "Graveler",
+            "ability": "Sturdy",
+            "isHiddenAbility": false,
+            "passive": "Dry Skin (P)",
+            "nature": 
+              {
+                "name": "Jolly",
+                "increased": "spe",
+                "decreased": "spatk"
+              },
+            "gender": "Male",
+            "rarity": "Uncommon",
+            "captured": false,
+            "level": 35,
+            "items": [],
+            "ivs": {
+              "hp": 5,
+              "atk": 11,
+              "def": 9,
+              "spatk": 18,
+              "spdef": 8,
+              "spe": 14
+            }
+          }
+        ]
+      },
+      {
+        "id": 24,
+        "reload": false,
+        "type": "wild",
+        "double": true,
+        "actions": [
+          "Shadow Ball | Headbutt",
+          "Great Ball"
+        ],
+        "shop": "Potion → Skeledirge",
+        "biome": "Cave",
+        "pokemon": [
+          {
+            "id": 528,
+            "name": "Swoobat",
+            "ability": "Klutz (N)",
+            "isHiddenAbility": false,
+            "passive": "Opportunist",
+            "nature": 
+              {
+                "name": "Naughty",
+                "increased": "atk",
+                "decreased": "spdef"
+              },
+            "gender": "Male",
+            "rarity": "Common",
+            "captured": false,
+            "level": 39,
+            "items": [],
+            "ivs": {
+              "hp": 15,
+              "atk": 30,
+              "def": 21,
+              "spatk": 0,
+              "spdef": 20,
+              "spe": 6
+            }
+          },
+          {
+            "id": 47,
+            "name": "Parasect",
+            "ability": "Effect Spore",
+            "isHiddenAbility": false,
+            "passive": "Triage",
+            "nature": 
+              {
+                "name": "Docile",
+                "increased": "",
+                "decreased": ""
+              },
+            "gender": "Male",
+            "rarity": "Common",
+            "captured": false,
+            "level": 38,
+            "items": [],
+            "ivs": {
+              "hp": 31,
+              "atk": 29,
+              "def": 29,
+              "spatk": 13,
+              "spdef": 13,
+              "spe": 12
+            }
+          }
+        ]
+      },
+      {
+        "id": 25,
+        "reload": false,
+        "type": "trainer",
+        "double": false,
+        "actions": [
+          "Torch Song",
+          "[5] Excadrill | Replace Sand Tomb with Swords Dance",
+          "Shadow Ball",
+          "Torch Song",
+          "[1] Skeledirge | Skip Will-O-Wisp",
+          "[1] Skeledirge | Skip Hex",
+          "Torch Song",
+          "[3] Magmar | Replace Lava Plume with Flamethrower",
+          "Flamethrower",
+          "Flamethrower",
+          "Switchin [5] Excadrill",
+          "Dig",
+          "[2] Marowak | Replace Bone Rush with Bonemerang",
+          "Dig"
+        ],
+        "shop": "Super Potion → Crobat",
+        "biome": "Cave",
+        "trainer": {
+          "id": "19",
+          "name": "Phillip",
+          "type": "Hiker"
+        }
+      },
+      {
+        "id": 26,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Pre-switch  to [4] Haunter",
+          "Hypnosis",
+          "Sucker Punch",
+          "Sucker Punch",
+          "Hex",
+          "Hypnosis",
+          "Sucker Punch",
+          "Great Ball",
+          "[1] Haunter | Replace Hex with Shadow Ball",
+          "[4] Excadrill | Replace Dig with Drill Run",
+          "Great Ball"
+        ],
+        "shop": "Reviver Seed → Skeledirge",
+        "biome": "Cave",
+        "pokemon": [
+          {
+            "id": 768,
+            "name": "Golisopod",
+            "ability": "Emergency Exit (N)",
+            "isHiddenAbility": false,
+            "passive": "Regenerator",
+            "nature": 
+              {
+                "name": "Adamant",
+                "increased": "atk",
+                "decreased": "spatk"
+              },
+            "gender": "Male",
+            "rarity": "Uncommon",
+            "captured": false,
+            "level": 41,
+            "items": [
+              {
+                "id": "StatBooster:SPATK",
+                "name": "Calcium",
+                "quantity": 1
+              }
+            ],
+            "ivs": {
+              "hp": 25,
+              "atk": 0,
+              "def": 29,
+              "spatk": 5,
+              "spdef": 4,
+              "spe": 19
+            }
+          }
+        ]
+      },
+      {
+        "id": 27,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Shadow Ball",
+          "Hypnosis",
+          "Hypnosis",
+          "Hypnosis",
+          "Poké Ball"
+        ],
+        "shop": "EXP. All",
+        "biome": "Cave",
+        "pokemon": [
+          {
+            "id": 768,
+            "name": "Golisopod",
+            "ability": "Emergency Exit (N)",
+            "isHiddenAbility": false,
+            "passive": "Regenerator",
+            "nature": 
+              {
+                "name": "Bashful",
+                "increased": "",
+                "decreased": ""
+              },
+            "gender": "Male",
+            "rarity": "Uncommon",
+            "captured": false,
+            "level": 39,
+            "items": [
+              {
+                "id": "StatBooster:DEF",
+                "name": "Iron",
+                "quantity": 1
+              }
+            ],
+            "ivs": {
+              "hp": 21,
+              "atk": 1,
+              "def": 3,
+              "spatk": 21,
+              "spdef": 4,
+              "spe": 21
+            }
+          }
+        ]
+      },
+      {
+        "id": 28,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Pre-switch  to [6] Crobat",
+          "Cross Poison",
+          "Cross Poison",
+          "Switch [1] Crobat to [6] Haunter",
+          "Hypnosis",
+          "[6] Crobat | Skip Venoshock",
+          "Great Ball"
+        ],
+        "shop": "Super Potion → Haunter",
+        "biome": "Cave",
+        "pokemon": [
+          {
+            "id": 47,
+            "name": "Parasect",
+            "ability": "Effect Spore",
+            "isHiddenAbility": false,
+            "passive": "Triage",
+            "nature": 
+              {
+                "name": "Impish",
+                "increased": "def",
+                "decreased": "spatk"
+              },
+            "gender": "Male",
+            "rarity": "Common",
+            "captured": false,
+            "level": 42,
+            "items": [],
+            "ivs": {
+              "hp": 7,
+              "atk": 23,
+              "def": 30,
+              "spatk": 13,
+              "spdef": 8,
+              "spe": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": 29,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Pre-switch  to [2] Marowak",
+          "Stomping Tantrum",
+          "Stomping Tantrum",
+          "Stomping Tantrum",
+          "Stomping Tantrum"
+        ],
+        "shop": "Potion → Marowak",
+        "biome": "Cave",
+        "pokemon": [
+          {
+            "id": 525,
+            "name": "Boldore",
+            "ability": "Weak Armor",
+            "isHiddenAbility": false,
+            "passive": "Solid Rock",
+            "nature": 
+              {
+                "name": "Brave",
+                "increased": "atk",
+                "decreased": "spe"
+              },
+            "gender": "Male",
+            "rarity": "Common",
+            "captured": false,
+            "level": 43,
+            "items": [],
+            "ivs": {
+              "hp": 11,
+              "atk": 11,
+              "def": 17,
+              "spatk": 11,
+              "spdef": 16,
+              "spe": 26
+            }
+          }
+        ]
+      },
+      {
+        "id": 30,
+        "reload": false,
+        "type": "trainer",
+        "double": false,
+        "actions": [
+          "Bonemerang",
+          "Bonemerang",
+          "Bonemerang",
+          "Switchin [4] Excadrill",
+          "Drill Run",
+          "[3] Magmar | Skip Sunny Day",
+          "Drill Run",
+          "Drill Run",
+          "Switchin [3] Magmar",
+          "Low Kick",
+          "Flamethrower",
+          "Flamethrower"
+        ],
+        "shop": "",
+        "biome": "Cave",
+        "trainer": {
+          "id": "200",
+          "name": "",
+          "type": "Brock"
+        }
+      },
+      {
+        "id": 31,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Pre-switch  to [2] Haunter",
+          "[3] Excadrill | Replace Crush Claw with Earthquake",
+          "Shadow Ball"
+        ],
+        "shop": "5x Poké Ball",
+        "biome": "Lake",
+        "pokemon": [
+          {
+            "id": 80,
+            "name": "Slowbro",
+            "ability": "Oblivious",
+            "isHiddenAbility": false,
+            "passive": "Unaware",
+            "nature": 
+              {
+                "name": "Quiet",
+                "increased": "spatk",
+                "decreased": "spe"
+              },
+            "gender": "Male",
+            "rarity": "Uncommon",
+            "captured": false,
+            "level": 43,
+            "items": [],
+            "ivs": {
+              "hp": 3,
+              "atk": 29,
+              "def": 15,
+              "spatk": 20,
+              "spdef": 17,
+              "spe": 25
+            }
+          }
+        ]
+      },
+      {
+        "id": 32,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Shadow Ball",
+          "Hypnosis",
+          "Hypnosis",
+          "Hypnosis",
+          "[1] Haunter | Skip Destiny Bond",
+          "Poké Ball"
+        ],
+        "shop": "Super Potion → Haunter",
+        "biome": "Lake",
+        "pokemon": [
+          {
+            "id": 284,
+            "name": "Masquerain",
+            "ability": "Intimidate",
+            "isHiddenAbility": false,
+            "passive": "Water Bubble",
+            "nature": 
+              {
+                "name": "Impish",
+                "increased": "def",
+                "decreased": "spatk"
+              },
+            "gender": "Female",
+            "rarity": "Uncommon",
+            "captured": false,
+            "level": 46,
+            "items": [],
+            "ivs": {
+              "hp": 19,
+              "atk": 18,
+              "def": 12,
+              "spatk": 23,
+              "spdef": 29,
+              "spe": 8
+            }
+          }
+        ]
+      },
+      {
+        "id": 33,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Shadow Ball",
+          "Hypnosis",
+          "[4] Marowak | Replace Headbutt with Thrash",
+          "Poké Ball"
+        ],
+        "shop": "5x Great Ball",
+        "biome": "Lake",
+        "pokemon": [
+          {
+            "id": 55,
+            "name": "Golduck",
+            "ability": "Cloud Nine",
+            "isHiddenAbility": false,
+            "passive": "Simple",
+            "nature": 
+              {
+                "name": "Bashful",
+                "increased": "",
+                "decreased": ""
+              },
+            "gender": "Female",
+            "rarity": "Common",
+            "captured": false,
+            "level": 45,
+            "items": [
+              {
+                "id": "Berry:SITRUS",
+                "name": "Sitrus Berry",
+                "quantity": 1
+              },            {
+                "id": "StatBooster:HP",
+                "name": "HP Up",
+                "quantity": 1
+              }
+            ],
+            "ivs": {
+              "hp": 29,
+              "atk": 0,
+              "def": 21,
+              "spatk": 28,
+              "spdef": 14,
+              "spe": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": 34,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Shadow Ball",
+          "[6] Crobat | Skip Confuse Ray",
+          "Great Ball",
+          "Reroll"
+        ],
+        "shop": "5x Poké Ball",
+        "biome": "Lake",
+        "pokemon": [
+          {
+            "id": 119,
+            "name": "Seaking",
+            "ability": "Swift Swim",
+            "isHiddenAbility": false,
+            "passive": "Multiscale",
+            "nature": 
+              {
+                "name": "Rash",
+                "increased": "spatk",
+                "decreased": "spdef"
+              },
+            "gender": "Male",
+            "rarity": "Common",
+            "captured": false,
+            "level": 45,
+            "items": [],
+            "ivs": {
+              "hp": 29,
+              "atk": 21,
+              "def": 5,
+              "spatk": 22,
+              "spdef": 18,
+              "spe": 14
+            }
+          }
+        ]
+      },
+      {
+        "id": 35,
+        "reload": false,
+        "type": "trainer",
+        "double": false,
+        "actions": [
+          "Switch [1] Haunter to [3] Excadrill",
+          "Earthquake",
+          "Drill Run",
+          "Earthquake",
+          "Switchin [5] Skeledirge",
+          "Shadow Ball",
+          "Torch Song",
+          "Shadow Ball"
+        ],
+        "shop": "Potion → Skeledirge",
+        "biome": "Lake",
+        "trainer": {
+          "id": "16",
+          "name": "Bruce",
+          "type": "Fisherman"
+        }
+      },
+      {
+        "id": 36,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Pre-switch  to [6] Crobat",
+          "Cross Poison",
+          "Air Cutter",
+          "Great Ball",
+          "Switchin [3] Haunter",
+          "[1] Haunter | Skip Dream Eater",
+          "[2] Magmar | Replace Fire Punch with Fire Blast",
+          "Great Ball",
+          "Evolve Haunter",
+          "[1] Gengar | Skip Dream Eater"
+        ],
+        "shop": "Linking Cord → Haunter",
+        "biome": "Lake",
+        "pokemon": [
+          {
+            "id": 130,
+            "name": "Gyarados",
+            "ability": "Intimidate",
+            "isHiddenAbility": false,
+            "passive": "Multiscale",
+            "nature": 
+              {
+                "name": "Serious",
+                "increased": "",
+                "decreased": ""
+              },
+            "gender": "Female",
+            "rarity": "Common",
+            "captured": false,
+            "level": 50,
+            "items": [
+              {
+                "id": "Berry:ENIGMA",
+                "name": "Enigma Berry",
+                "quantity": 1
+              }
+            ],
+            "ivs": {
+              "hp": 25,
+              "atk": 15,
+              "def": 23,
+              "spatk": 10,
+              "spdef": 28,
+              "spe": 21
+            }
+          }
+        ]
+      },
+      {
+        "id": 37,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Hypnosis",
+          "Hypnosis",
+          "Shadow Ball",
+          "[6] Gyarados | Skip Hyper Beam",
+          "Poké Ball"
+        ],
+        "shop": "Revive → Excadrill",
+        "biome": "Lake",
+        "pokemon": [
+          {
+            "id": 834,
+            "name": "Drednaw",
+            "ability": "Shell Armor",
+            "isHiddenAbility": false,
+            "passive": "Rock Head",
+            "nature": 
+              {
+                "name": "Lax",
+                "increased": "def",
+                "decreased": "spdef"
+              },
+            "gender": "Female",
+            "rarity": "Common",
+            "captured": false,
+            "level": 52,
+            "items": [
+              {
+                "id": "Berry:LUM",
+                "name": "Lum Berry",
+                "quantity": 1
+              }
+            ],
+            "ivs": {
+              "hp": 29,
+              "atk": 1,
+              "def": 30,
+              "spatk": 0,
+              "spdef": 29,
+              "spe": 1
+            }
+          }
+        ]
+      },
+      {
+        "id": 38,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Hypnosis",
+          "Shadow Ball",
+          "[3] Marowak | Skip Double-Edge",
+          "[5] Skeledirge | Skip Fire Blast",
+          "Poké Ball",
+          "Reroll"
+        ],
+        "shop": "Big Nugget",
+        "biome": "Lake",
+        "pokemon": [
+          {
+            "id": 195,
+            "name": "Quagsire",
+            "ability": "Water Absorb (P)",
+            "isHiddenAbility": false,
+            "passive": "Comatose",
+            "nature": 
+              {
+                "name": "Hasty",
+                "increased": "spe",
+                "decreased": "def"
+              },
+            "gender": "Male",
+            "rarity": "Uncommon",
+            "captured": false,
+            "level": 53,
+            "items": [
+              {
+                "id": "Berry:ENIGMA",
+                "name": "Enigma Berry",
+                "quantity": 1
+              }
+            ],
+            "ivs": {
+              "hp": 27,
+              "atk": 10,
+              "def": 23,
+              "spatk": 17,
+              "spdef": 27,
+              "spe": 21
+            }
+          }
+        ]
+      },
+      {
+        "id": 39,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Hypnosis",
+          "Sucker Punch",
+          "[4] Excadrill | Skip Fissure",
+          "Great Ball"
+        ],
+        "shop": "Max Potion → Skeledirge",
+        "biome": "Lake",
+        "pokemon": [
+          {
+            "id": 818,
+            "name": "Inteleon",
+            "ability": "Torrent",
+            "isHiddenAbility": false,
+            "passive": "Super Luck (P)",
+            "nature": 
+              {
+                "name": "Calm",
+                "increased": "spdef",
+                "decreased": "atk"
+              },
+            "gender": "Male",
+            "rarity": "Rare",
+            "captured": false,
+            "level": 49,
+            "items": [],
+            "ivs": {
+              "hp": 1,
+              "atk": 19,
+              "def": 24,
+              "spatk": 14,
+              "spdef": 7,
+              "spe": 12
+            }
+          }
+        ]
+      },
+      {
+        "id": 40,
+        "reload": false,
+        "type": "trainer",
+        "double": false,
+        "actions": [
+          "Shadow Ball",
+          "Shadow Ball",
+          "Shadow Ball",
+          "Shadow Ball",
+          "Switch [1] Gengar to [4] Excadrill",
+          "Rock Slide",
+          "Switch [1] Excadrill to [2] Magmar",
+          "Switchin [4] Gengar",
+          "Sucker Punch",
+          "Switch [1] Gengar to [2] Excadrill",
+          "Switchin [5] Skeledirge",
+          "Shadow Ball",
+          "Shadow Ball",
+          "Shadow Ball"
+        ],
+        "shop": "",
+        "biome": "Lake",
+        "trainer": {
+          "id": "228",
+          "name": "",
+          "type": "Crasher Wake"
+        }
+      },
+      {
+        "id": 41,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Pre-switch  to [2] Gengar",
+          "Hypnosis",
+          "Great Ball"
+        ],
+        "shop": "Serious Mint → Quagsire",
+        "biome": "Beach",
+        "pokemon": [
+          {
+            "id": 99,
+            "name": "Kingler",
+            "ability": "Shell Armor",
+            "isHiddenAbility": false,
+            "passive": "Unburden (N)",
+            "nature": 
+              {
+                "name": "Naughty",
+                "increased": "atk",
+                "decreased": "spdef"
+              },
+            "gender": "Female",
+            "rarity": "Common",
+            "captured": false,
+            "level": 57,
+            "items": [
+              {
+                "id": "Berry:ENIGMA",
+                "name": "Enigma Berry",
+                "quantity": 1
+              }
+            ],
+            "ivs": {
+              "hp": 17,
+              "atk": 20,
+              "def": 18,
+              "spatk": 25,
+              "spdef": 11,
+              "spe": 9
+            }
+          }
+        ]
+      },
+      {
+        "id": 42,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Shadow Ball",
+          "Hypnosis",
+          "Hypnosis",
+          "Poké Ball"
+        ],
+        "shop": "Potion → Gengar",
+        "biome": "Beach",
+        "pokemon": [
+          {
+            "id": 693,
+            "name": "Clawitzer",
+            "ability": "Mega Launcher",
+            "isHiddenAbility": false,
+            "passive": "Swift Swim",
+            "nature": 
+              {
+                "name": "Relaxed",
+                "increased": "def",
+                "decreased": "spe"
+              },
+            "gender": "Male",
+            "rarity": "Uncommon",
+            "captured": false,
+            "level": 59,
+            "items": [],
+            "ivs": {
+              "hp": 29,
+              "atk": 28,
+              "def": 4,
+              "spatk": 25,
+              "spdef": 1,
+              "spe": 15
+            }
+          }
+        ]
+      },
+      {
+        "id": 43,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Pre-switch  to [6] Quagsire",
+          "Muddy Water",
+          "Muddy Water",
+          "Muddy Water",
+          "Muddy Water",
+          "Muddy Water",
+          "Muddy Water",
+          "Switch [1] Quagsire to [6] Gengar",
+          "Hypnosis",
+          "Poké Ball"
+        ],
+        "shop": "Super Potion → Gengar",
+        "biome": "Beach",
+        "pokemon": [
+          {
+            "id": 693,
+            "name": "Clawitzer",
+            "ability": "Mega Launcher",
+            "isHiddenAbility": false,
+            "passive": "Swift Swim",
+            "nature": 
+              {
+                "name": "Mild",
+                "increased": "spatk",
+                "decreased": "def"
+              },
+            "gender": "Female",
+            "rarity": "Uncommon",
+            "captured": false,
+            "level": 54,
+            "items": [],
+            "ivs": {
+              "hp": 17,
+              "atk": 30,
+              "def": 19,
+              "spatk": 11,
+              "spdef": 20,
+              "spe": 21
+            }
+          }
+        ]
+      },
+      {
+        "id": 44,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Pre-switch  to [2] Skeledirge",
+          "Yawn",
+          "Shadow Ball",
+          "Shadow Ball",
+          "Poké Ball",
+          "[1] Skeledirge | Skip Overheat",
+          "[4] Magmar | Skip Hyper Beam",
+          "Poké Ball"
+        ],
+        "shop": "Hyper Potion → Quagsire",
+        "biome": "Beach",
+        "pokemon": [
+          {
+            "id": 693,
+            "name": "Clawitzer",
+            "ability": "Mega Launcher",
+            "isHiddenAbility": false,
+            "passive": "Swift Swim",
+            "nature": 
+              {
+                "name": "Gentle",
+                "increased": "spdef",
+                "decreased": "def"
+              },
+            "gender": "Female",
+            "rarity": "Uncommon",
+            "captured": false,
+            "level": 58,
+            "items": [
+              {
+                "id": "Berry:LIECHI",
+                "name": "Liechi Berry",
+                "quantity": 1
+              }
+            ],
+            "ivs": {
+              "hp": 9,
+              "atk": 14,
+              "def": 9,
+              "spatk": 25,
+              "spdef": 28,
+              "spe": 15
+            }
+          }
+        ]
+      },
+      {
+        "id": 45,
+        "reload": false,
+        "type": "trainer",
+        "double": false,
+        "actions": [
+          "Yawn",
+          "Switch [1] Skeledirge to [5] Excadrill",
+          "Swords Dance",
+          "Earthquake",
+          "Switch [1] Excadrill to [6] Quagsire",
+          "Switch [1] Quagsire to [2] Gengar",
+          "Hypnosis",
+          "Switch [1] Gengar to [6] Excadrill",
+          "Rock Slide",
+          "Rock Slide",
+          "Switchin [5] Skeledirge",
+          "Shadow Ball",
+          "Shadow Ball",
+          "Evolve Magmar"
+        ],
+        "shop": "Linking Cord → Magmar",
+        "biome": "Beach",
+        "trainer": {
+          "id": "30",
+          "name": "Tihana",
+          "type": "Parasol Lady"
+        }
+      },
+      {
+        "id": 46,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Shadow Ball",
+          "Switch [1] Skeledirge to [2] Quagsire",
+          "Poké Ball",
+          "Reroll"
+        ],
+        "shop": "Max Revive → Excadrill",
+        "biome": "Beach",
+        "pokemon": [
+          {
+            "id": 99,
+            "name": "Kingler",
+            "ability": "Shell Armor",
+            "isHiddenAbility": false,
+            "passive": "Unburden (N)",
+            "nature": 
+              {
+                "name": "Bashful",
+                "increased": "",
+                "decreased": ""
+              },
+            "gender": "Male",
+            "rarity": "Common",
+            "captured": false,
+            "level": 60,
+            "items": [],
+            "ivs": {
+              "hp": 11,
+              "atk": 28,
+              "def": 11,
+              "spatk": 5,
+              "spdef": 24,
+              "spe": 10
+            }
+          }
+        ]
+      },
+      {
+        "id": 47,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Earthquake",
+          "Muddy Water",
+          "Switch [1] Quagsire to [2] Skeledirge",
+          "Yawn",
+          "Switchin [2] Quagsire",
+          "Amnesia",
+          "Poké Ball",
+          "Reroll"
+        ],
+        "shop": "5x Great Ball",
+        "biome": "Beach",
+        "pokemon": [
+          {
+            "id": 342,
+            "name": "Crawdaunt",
+            "ability": "Hyper Cutter",
+            "isHiddenAbility": false,
+            "passive": "Tough Claws",
+            "nature": 
+              {
+                "name": "Serious",
+                "increased": "",
+                "decreased": ""
+              },
+            "gender": "Female",
+            "rarity": "Common",
+            "captured": false,
+            "level": 58,
+            "items": [],
+            "ivs": {
+              "hp": 23,
+              "atk": 29,
+              "def": 0,
+              "spatk": 5,
+              "spdef": 17,
+              "spe": 12
+            }
+          }
+        ]
+      },
+      {
+        "id": 48,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Pre-switch  to [6] Gengar",
+          "Hypnosis",
+          "Sucker Punch",
+          "Great Ball"
+        ],
+        "shop": "Max Revive → Skeledirge",
+        "biome": "Beach",
+        "pokemon": [
+          {
+            "id": 770,
+            "name": "Palossand",
+            "ability": "Water Compaction",
+            "isHiddenAbility": false,
+            "passive": "Sand Spit",
+            "nature": 
+              {
+                "name": "Mild",
+                "increased": "spatk",
+                "decreased": "def"
+              },
+            "gender": "Female",
+            "rarity": "Uncommon",
+            "captured": false,
+            "level": 59,
+            "items": [],
+            "ivs": {
+              "hp": 1,
+              "atk": 28,
+              "def": 26,
+              "spatk": 17,
+              "spdef": 28,
+              "spe": 27
+            }
+          }
+        ]
+      },
+      {
+        "id": 49,
+        "reload": false,
+        "type": "wild",
+        "double": false,
+        "actions": [
+          "Hypnosis",
+          "Shadow Ball",
+          "[6] Palossand | Replace Bulldoze with Shore Up",
+          "Great Ball"
+        ],
+        "shop": "X Sp. Def",
+        "biome": "Beach",
+        "pokemon": [
+          {
+            "id": 748,
+            "name": "Toxapex",
+            "ability": "Limber",
+            "isHiddenAbility": false,
+            "passive": "Toxic Debris",
+            "nature": 
+              {
+                "name": "Adamant",
+                "increased": "atk",
+                "decreased": "spatk"
+              },
+            "gender": "Female",
+            "rarity": "Common",
+            "captured": false,
+            "level": 60,
+            "items": [],
+            "ivs": {
+              "hp": 13,
+              "atk": 30,
+              "def": 21,
+              "spatk": 22,
+              "spdef": 19,
+              "spe": 12
+            }
+          }
+        ]
+      },
+      {
+        "id": 50,
+        "reload": false,
+        "type": "boss",
+        "double": false,
+        "actions": [
+          "Curse",
+          "Switchin [3] Magmortar",
+          "Protect",
+          "Flamethrower",
+          "Protect",
+          "Protect",
+          "Switchin [4] Excadrill",
+          "Switch [1] Excadrill to [6] Palossand",
+          "Shadow Ball",
+          "Switchin [5] Quagsire"
+        ],
+        "shop": "",
+        "biome": "???",
+        "pokemon": [
+          {
+            "id": 487,
+            "name": "Giratina",
+            "ability": "Pressure",
+            "isHiddenAbility": false,
+            "passive": "Shadow Shield",
+            "nature": 
+              {
+                "name": "Rash",
+                "increased": "spatk",
+                "decreased": "spdef"
+              },
+            "gender": "Genderless",
+            "rarity": "[Unknown]",
+            "captured": false,
+            "level": 70,
+            "items": [
+              {
+                "id": "Berry:SITRUS",
+                "name": "Sitrus Berry",
+                "quantity": 2
+              },            {
+                "id": "StatBooster:SPATK",
+                "name": "Calcium",
+                "quantity": 2
+              },            {
+                "id": "Berry:LUM",
+                "name": "Lum Berry",
+                "quantity": 1
+              },            {
+                "id": "Berry:APICOT",
+                "name": "Apicot Berry",
+                "quantity": 1
+              },            {
+                "id": "StatBooster:HP",
+                "name": "HP Up",
+                "quantity": 1
+              },            {
+                "id": "StatBooster:SPDEF",
+                "name": "Zinc",
+                "quantity": 1
+              },            {
+                "id": "Berry:LIECHI",
+                "name": "Liechi Berry",
+                "quantity": 1
+              },            {
+                "id": "StatBooster:ATK",
+                "name": "Protein",
+                "quantity": 1
+              },            {
+                "id": "StatBooster:SPD",
+                "name": "Carbos",
+                "quantity": 1
+              }
+            ],
+            "ivs": {
+              "hp": 25,
+              "atk": 18,
+              "def": 20,
+              "spatk": 19,
+              "spdef": 16,
+              "spe": 28
+            }
+          }
+        ]
+      }
+    ]
+  }
