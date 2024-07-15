@@ -40,7 +40,7 @@ const config: GatsbyConfig = {
       icon: "src/images/icon.png",
       crossOrigin: `use-credentials`,
     }
-  }]
+  }, "gatsby-plugin-react-helmet"]
 };
 
 export default config;
