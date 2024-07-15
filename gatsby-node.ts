@@ -17,6 +17,8 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
   actions.createTypes(`
     type DrpdJson implements Node @childOf(types: ["File", "Json"]) {
       version: String!
+      uuid: String!
+      label: String!
       title: String
       authors: [String!]
       date: String!
@@ -30,7 +32,7 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       type: String!
       double: Boolean!
       actions: [String!]!
-      shop: String
+      shop: String!
       biome: String!
       trainer: Trainer
       pokemon: [Pokemon!]

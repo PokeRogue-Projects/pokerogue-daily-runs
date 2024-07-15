@@ -1,6 +1,8 @@
 {
-  "version": "1.0.0a",
+  "version": "1.1.0",
   "title": "07/14/24",
+  "uuid": "5604988e-3d9b-4c1a-b2f7-0e58ef0af46c",
+  "label": "main",
   "authors": [
     "DeepDiver"
   ],
