@@ -19,7 +19,7 @@ const RunsPage: React.FC<PageProps<Queries.RunsPageQuery>> = ({
   const date = params.date;
 
   return (
-    <Layout>
+    <Layout date={date}>
       {isMatch(date, "yyyy-MM-dd") ? (
         <div className="container mx-auto py-8">
           <h1 className="text-3xl font-bold mb-6">

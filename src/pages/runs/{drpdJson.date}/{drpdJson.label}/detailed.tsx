@@ -6,8 +6,12 @@ import { Pokemon } from "@/types";
 import { graphql, PageProps } from "gatsby";
 import * as React from "react";
 
-const DetailedPage: React.FC<PageProps<Queries.DetailedPageQuery>> = ({ data }) => {
-  const { drpdJson } = data;
+const DetailedPage: React.FC<PageProps<Queries.DetailedPageQuery>> = ({
+  data,
+  params,
+}) => {
+  const drpdJson = data.drpdJson;
+  const date = params.date;
 
   const renderPokemonCards = (
     pokemon: readonly Pokemon[],
@@ -27,7 +31,7 @@ const DetailedPage: React.FC<PageProps<Queries.DetailedPageQuery>> = ({ data }) 
   );
 
   return (
-    <Layout>
+    <Layout date={date}>
       <div className="container md:w-[1000px] max-w-full mx-auto px-4 py-8">
         {drpdJson.waves.map((wave, waveIndex) => (
           <div key={waveIndex} className="mb-12">

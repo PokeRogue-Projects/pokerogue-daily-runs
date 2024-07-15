@@ -29,21 +29,14 @@ const IndexPage: React.FC<{ data: { allDrpdJson: { edges: DrpdEdge[] } } }> = ({
     data,
 }) => {
     const drpdPages = data.allDrpdJson.edges;
-    const [date, setDate] = useState<Date>(
-        toZonedTime(new Date(Date.now()), "UTC")
-    );
+    const date = formatDate(toZonedTime(new Date(Date.now()), "UTC"), "yyyy-MM-dd");
 
     return (
-        <Layout>
+        <Layout date={date}>
             <div className="container mx-auto py-8">
                 <h1 className="text-3xl font-bold mb-6">
                     Available DRPD Pages
                 </h1>
-                <DatePicker
-                    className="min-w-[300px] w-1/5 mb-3"
-                    date={date}
-                    onDateChange={setDate}
-                />
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                     {drpdPages
                         .filter(
