@@ -1,4 +1,4 @@
-import { format, isMatch } from "date-fns";
+import { formatDate, isMatch, isValid } from "date-fns";
 import { Link, navigate } from "gatsby";
 import React from "react";
 import DatePicker from "./DatePicker";
@@ -6,7 +6,8 @@ import { ModeToggle } from "./ModeToggle";
 
 export default function Header({ date }: { date: string }) {
   const handleDateChange = (newDate: Date) => {
-    navigate(`/runs/${format(newDate, "yyyy-MM-dd")}`);
+    if (isValid(newDate))
+      navigate(`/runs/${formatDate(newDate, "yyyy-MM-dd")}`);
   };
 
   return (
