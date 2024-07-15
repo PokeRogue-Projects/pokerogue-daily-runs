@@ -82,28 +82,3 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
     }
   `);
   };
-
-export const createPages: GatsbyNode["createPages"] = async function ({
-  actions,
-  graphql,
-}) {
-  const {
-    data: {
-      allDrpdJson: { distinct },
-    },
-  } = await graphql<Queries.DistinctDateQuery>(`
-    query DistinctDate {
-      allDrpdJson {
-        distinct(field: { date: SELECT })
-      }
-    }
-  `);
-
-  distinct.forEach((date) => {
-    actions.createPage({
-      path: `/runs/${date}`,
-      component: path.resolve(`./src/templates/runs.tsx`),
-      context: { date: date },
-    });
-  });
-};
