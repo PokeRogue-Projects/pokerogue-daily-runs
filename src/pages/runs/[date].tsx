@@ -11,18 +11,20 @@ import { isMatch } from "date-fns";
 import { graphql, Link, PageProps } from "gatsby";
 import * as React from "react";
 
-const RunsPage: React.FC<PageProps<Queries.RunsPageQuery, { date: string }>> = ({
+const RunsPage: React.FC<PageProps<Queries.RunsPageQuery>> = ({
   data,
-  pageContext
+  params,
 }) => {
   const drpdPages = data.allDrpdJson.edges;
-  const { date } = pageContext;
+  const date = params.date;
 
   return (
     <Layout>
       {isMatch(date, "yyyy-MM-dd") ? (
         <div className="container mx-auto py-8">
-          <h1 className="text-3xl font-bold mb-6">Available DRPD Pages for {date}</h1>
+          <h1 className="text-3xl font-bold mb-6">
+            Available DRPD Pages for {date}
+          </h1>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {drpdPages
               .filter(({ node }) => node.date === date)
@@ -61,8 +63,8 @@ const RunsPage: React.FC<PageProps<Queries.RunsPageQuery, { date: string }>> = (
 };
 
 export const query = graphql`
-  query RunsPage($date: String!) {
-    allDrpdJson(filter: {date: {eq: $date}}) {
+  query RunsPage {
+    allDrpdJson {
       edges {
         node {
           title
