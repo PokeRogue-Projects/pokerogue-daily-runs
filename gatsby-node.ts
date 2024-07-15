@@ -13,8 +13,9 @@ export const onCreateWebpackConfig = ({ actions }) => {
   });
 };
 
-export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({ actions }) => {
-  actions.createTypes(`
+export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] =
+  ({ actions }) => {
+    actions.createTypes(`
     type DrpdJson implements Node @childOf(types: ["File", "Json"]) {
       version: String!
       uuid: String!
@@ -79,5 +80,30 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       name: String!
       type: String!
     }
-  `)
-}
+  `);
+  };
+
+export const createPages: GatsbyNode["createPages"] = async function ({
+  actions,
+  graphql,
+}) {
+  const {
+    data: {
+      allDrpdJson: { distinct },
+    },
+  } = await graphql<Queries.DistinctDateQuery>(`
+    query DistinctDate {
+      allDrpdJson {
+        distinct(field: { date: SELECT })
+      }
+    }
+  `);
+
+  distinct.forEach((date) => {
+    actions.createPage({
+      path: `/runs/${date}`,
+      component: path.resolve(`./src/templates/runs.tsx`),
+      context: { date: date },
+    });
+  });
+};
