@@ -1,5 +1,7 @@
 export interface DrpdJson {
     readonly version: string;
+    readonly uuid: string;
+    readonly label: string;
     readonly title?: string;
     readonly authors?: readonly string[];
     readonly date: string;
@@ -13,7 +15,7 @@ export interface Wave {
     readonly type: string;
     readonly double: boolean;
     readonly actions: readonly string[];
-    readonly shop?: string;
+    readonly shop: string;
     readonly biome: string;
     readonly trainer?: Trainer;
     readonly pokemon?: readonly Pokemon[];
