@@ -8,7 +8,7 @@ export default function Layout({
   date,
 }: {
   children: React.ReactNode;
-  date: string;
+  date?: string;
 }) {
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">

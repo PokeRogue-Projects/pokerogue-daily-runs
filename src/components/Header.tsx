@@ -4,7 +4,7 @@ import React from "react";
 import DatePicker from "./DatePicker";
 import { ModeToggle } from "./ModeToggle";
 
-export default function Header({ date }: { date: string }) {
+export default function Header({ date }: { date?: string }) {
   const handleDateChange = (newDate: Date) => {
     if (isValid(newDate))
       navigate(`/runs/${formatDate(newDate, "yyyy-MM-dd")}`);
