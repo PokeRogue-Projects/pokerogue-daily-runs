@@ -13,8 +13,9 @@ export const onCreateWebpackConfig = ({ actions }) => {
   });
 };
 
-export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] = ({ actions }) => {
-  actions.createTypes(`
+export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] =
+  ({ actions }) => {
+    actions.createTypes(`
     type DrpdJson implements Node @childOf(types: ["File", "Json"]) {
       version: String!
       uuid: String!
@@ -79,5 +80,5 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       name: String!
       type: String!
     }
-  `)
-}
+  `);
+  };

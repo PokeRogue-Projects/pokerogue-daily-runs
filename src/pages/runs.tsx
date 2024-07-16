@@ -5,7 +5,7 @@ import { PageProps } from "gatsby";
 import React from "react";
 import { Helmet } from "react-helmet";
 
-const IndexPage: React.FC<PageProps<null>> = () => {
+const RunsPage: React.FC<PageProps<null>> = () => {
   const currentDate = formatDate(
     toZonedTime(new Date(Date.now()), "UTC"),
     "yyyy-MM-dd"
@@ -20,4 +20,4 @@ const IndexPage: React.FC<PageProps<null>> = () => {
     </div>
   );
 };
-export default IndexPage;
+export default RunsPage;
