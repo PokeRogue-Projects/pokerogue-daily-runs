@@ -42,18 +42,13 @@ const RunsPage: React.FC<PageProps<Queries.RunsPageQuery>> = ({
                 </CardContent>
                 <CardFooter className="flex justify-between">
                   <Button asChild variant="outline">
-                    <Link to={`./${node.label}/summary`}>Summary</Link>
+                    <Link to={`./${node.label}/detailed`}>Detailed</Link>
                   </Button>
-                  <div className="space-x-3">
-                    <Button asChild variant="outline">
-                      <Link to={`./${node.label}/detailed`}>Detailed</Link>
-                    </Button>
-                    <Button asChild variant="outline">
-                      <Link to={`./${node.label}/follow-along`}>
-                        Follow Along
-                      </Link>
-                    </Button>
-                  </div>
+                  <Button asChild variant="outline">
+                    <Link to={`./${node.label}/follow-along`}>
+                      Follow Along
+                    </Link>
+                  </Button>
                 </CardFooter>
               </Card>
             ))}
