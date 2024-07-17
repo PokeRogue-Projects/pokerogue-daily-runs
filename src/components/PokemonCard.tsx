@@ -1,17 +1,39 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Pokemon } from "@/types";
+import { Stat, statToDisplayString } from "@/utils/stat";
 import * as React from "react";
 import capturedImage from "../images/captured.png";
 import uncapturedImage from "../images/uncaptured.png";
-import { cn } from "./lib/utils";
 import IvChart from "./IvChart";
-import { toEnumValue } from "@/utils/enumUtils";
-import { Stat, statToDisplayString } from "@/utils/stat";
 
 export enum PokemonGender {
     MALE = "Male",
     FEMALE = "Female",
+    GENDERLESS = "Genderless",
 }
+
+const getGenderDisplay = (gender: PokemonGender) => {
+    switch (gender) {
+        case PokemonGender.MALE:
+            return (
+                <div className="w-8 h-8 ml-2 rounded-full flex items-center justify-center bg-blue-500">
+                    <p className="text-white font-medium mb-1">♂</p>
+                </div>
+            );
+        case PokemonGender.FEMALE:
+            return (
+                <div className="w-8 h-8 ml-2 rounded-full flex items-center justify-center bg-pink-500">
+                    <p className="text-white font-medium mb-1">♀</p>
+                </div>
+            );
+        case PokemonGender.GENDERLESS:
+            return (
+                <div className="w-8 h-8 ml-2 rounded-full flex items-center justify-center bg-gray-500">
+                    <p className="text-white font-medium mb-1">-</p>
+                </div>
+            );
+    }
+};
 
 const PokemonCard: React.FC<{
     pokemon: Pokemon;
@@ -32,20 +54,7 @@ const PokemonCard: React.FC<{
                 <CardTitle className="text-2xl font-bold">
                     <div className="flex gap-3 items-center">
                         <div>{pokemon.name}</div>
-                        <div
-                            className={cn(
-                                "w-8 h-8 ml-2 rounded-full flex items-center justify-center",
-                                pokemon.gender === PokemonGender.MALE
-                                    ? "bg-blue-500"
-                                    : "bg-pink-500"
-                            )}
-                        >
-                            {pokemon.gender === PokemonGender.MALE ? (
-                                <p className="text-white font-medium mb-1">♂</p>
-                            ) : (
-                                <p className="text-white font-medium mb-2">♀</p>
-                            )}
-                        </div>
+                        {getGenderDisplay(pokemon.gender as PokemonGender)}
                         <img
                             src={
                                 pokemon.captured
