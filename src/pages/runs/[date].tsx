@@ -20,7 +20,7 @@ const RunsPage: React.FC<PageProps<Queries.RunsPageQuery>> = ({
   const drpdPages = data.allDrpdJson.edges;
   const date = params.date;
 
-  return isMatch(date, "yyyy-MM-dd") ? (
+  return (date !== undefined && isMatch(date, "yyyy-MM-dd")) ? (
     <Layout date={date}>
       <div className="container mx-auto py-8">
         <h1 className="text-3xl font-bold mb-6">
