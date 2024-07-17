@@ -41,14 +41,12 @@ const WaveInfoCard: React.FC<{
                     )}
                 </div>
             </div>
-        </CardContent>
-        <CardFooter>
             {wave.shop && (
                 <p className="whitespace-pre-line">
                     <ShopActionText shop={wave.shop} />
                 </p>
             )}
-        </CardFooter>
+        </CardContent>
     </Card>
 );
 

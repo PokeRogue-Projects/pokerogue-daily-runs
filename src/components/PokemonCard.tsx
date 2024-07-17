@@ -24,7 +24,7 @@ const PokemonCard: React.FC<{
     return (
         <Card className="w-full max-w-3xl relative">
             {waveNumber !== undefined && (
-                <div className="absolute top-2 right-2 text-primary font-bold">
+                <div className="absolute top-2 right-2 bg-primary text-primary-foreground rounded-full w-8 h-8 flex items-center justify-center font-bold">
                     {waveNumber}
                 </div>
             )}
