@@ -19,7 +19,7 @@ export interface Wave {
     readonly biome: string;
     readonly trainer?: Trainer;
     readonly pokemon?: readonly Pokemon[];
-};
+}
 
 export interface Pokemon {
     readonly id: string;
@@ -34,7 +34,7 @@ export interface Pokemon {
     readonly level: number;
     readonly items: readonly Item[];
     readonly ivs: Ivs;
-};
+}
 
 export interface Nature {
     readonly name: string;
@@ -49,16 +49,16 @@ export interface Ivs {
     readonly spatk: number;
     readonly spdef: number;
     readonly spe: number;
-};
+}
 
 export type Trainer = {
     readonly id: string;
     readonly name: string;
     readonly type: string;
-}
+};
 
 export type Item = {
     readonly id: string;
     readonly name: string;
     readonly quantity: string;
-}
+};
