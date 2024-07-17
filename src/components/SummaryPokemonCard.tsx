@@ -27,22 +27,22 @@ const SummaryPokemonCard: React.FC<SummaryPokemonCardProps> = ({
         </div>
       )}
       <CardHeader className="pb-2 pt-4">
-        <CardTitle className="text-2xl font-bold">
+        <CardTitle className="text-md md:text-2xl font-bold">
           <div className="flex items-center">
             <div>{pokemon.name}</div>
           </div>
         </CardTitle>
       </CardHeader>
-      <CardContent className="pb-4 flex-grow flex justify-around">
+      <CardContent className="pb-4 flex-grow flex flex-col md:flex-row gap-4 md:gap-0 justify-around">
         <img
           src={`https://wiki.pokerogue.net/_media/starters:sprites:${pokemon.id}.png`}
           alt={pokemon.name}
-          className="w-1/5 aspect-square object-contain self-center"
+          className="w-2/5 md:w-1/5 aspect-square object-contain self-center"
         />
-        <Card className="self-stretch w-3/5">
+        <Card className="self-stretch md:w-3/5">
           <div className="p-4 w-full h-full flex flex-col items-start justify-center">
             {notableReasons.map((reason) => (
-              <div>{reason}</div>
+              <div className="text-xs md:text-sm">{reason}</div>
             ))}
           </div>
         </Card>

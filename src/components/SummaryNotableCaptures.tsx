@@ -7,7 +7,8 @@ type SummaryNotableCapturesProp = React.HTMLAttributes<HTMLDivElement> & {
   drpdJson: Queries.SummaryPageQuery["drpdJson"];
 };
 
-const ITEM_MIN_WIDTH = 250;
+const ITEM_MIN_WIDTH_SM = 160;
+const ITEM_MIN_WIDTH_MD = 250;
 const GAP = 16;
 const MAX_IV = 31;
 const NOTABLE_RARITIES: readonly string[] = [
@@ -24,7 +25,8 @@ const SummaryNotableCaptures: React.FC<SummaryNotableCapturesProp> = ({
   const [itemFlexBasis, setItemFlexBasis] = useState("");
 
   const adjustItemWidths = (containerWidth: number) => {
-    const itemsPerRow = Math.floor(containerWidth / ITEM_MIN_WIDTH);
+    const itemMinWidth = window.innerWidth < 768 ? ITEM_MIN_WIDTH_SM : ITEM_MIN_WIDTH_MD;
+    const itemsPerRow = Math.floor(containerWidth / itemMinWidth);
     setItemFlexBasis(
       `calc(${100 / itemsPerRow}% - ${
         (GAP * (itemsPerRow - 1)) / itemsPerRow
