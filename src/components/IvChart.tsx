@@ -14,6 +14,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "./ui/chart";
+import { TAILWIND_RESPONSIVE_MIN_WIDTH } from "@/utils/styleUtils";
 
 type CustomTickProps = React.SVGProps<SVGTextElement> & {
   payload: {
@@ -68,7 +69,7 @@ const PokemonChartLabel: React.FC<PokemonChartLabelProps> = ({
   // Recharts only let us send string or number values to label
 
   return (
-    <text x={x} y={y} textAnchor={textAnchor}>
+    <text className="text-2xs xs:text-xs md:max-lg:text-2xs" x={x} y={y} textAnchor={textAnchor}>
       <tspan fill={getStatNameFill(stat as Stat, statIncreased, statDecreased)}>
         {statToDisplayString(stat as Stat)}
       </tspan>
@@ -84,30 +85,33 @@ const IvChart: React.FC<IvChartProps> = ({
   statIncreased,
   statDecreased,
   className,
-}) => (
-  <ChartContainer config={chartConfig} className={className}>
-    <RadarChart
-      data={stats.map((stat: Stat) => ({
-        labelData: `${stat},${getStatIv(stat, ivs)}`,
-        value: getStatIv(stat, ivs),
-      }))}
-    >
-      <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
-      <PolarAngleAxis
-        dataKey="labelData"
-        tick={(props: CustomTickProps) => (
-          <PokemonChartLabel
-            {...props}
-            statIncreased={statIncreased}
-            statDecreased={statDecreased}
-          />
-        )}
-      />
-      <PolarRadiusAxis className="hidden" domain={[0, 31]} />
-      <PolarGrid />
-      <Radar dataKey="value" fill="hsl(var(--primary))" fillOpacity={0.7} />
-    </RadarChart>
-  </ChartContainer>
-);
+}) => {
+  return (
+    <ChartContainer config={chartConfig} className={className}>
+      <RadarChart
+        data={stats.map((stat: Stat) => ({
+          labelData: `${stat},${getStatIv(stat, ivs)}`,
+          value: getStatIv(stat, ivs),
+        }))}
+        outerRadius="60%"
+      >
+        <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+        <PolarAngleAxis
+          dataKey="labelData"
+          tick={(props: CustomTickProps) => (
+            <PokemonChartLabel
+              {...props}
+              statIncreased={statIncreased}
+              statDecreased={statDecreased}
+            />
+          )}
+        />
+        <PolarRadiusAxis className="hidden" domain={[0, 31]} />
+        <PolarGrid />
+        <Radar dataKey="value" fill="hsl(var(--primary))" fillOpacity={0.7} />
+      </RadarChart>
+    </ChartContainer>
+  );
+};
 
 export default IvChart;
