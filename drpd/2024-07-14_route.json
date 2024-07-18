@@ -3,9 +3,7 @@
   "title": "07/14/24",
   "uuid": "5604988e-3d9b-4c1a-b2f7-0e58ef0af46c",
   "label": "main",
-  "authors": [
-    "DeepDiver"
-  ],
+  "authors": ["DeepDiver"],
   "date": "2024-07-14",
   "starters": [],
   "waves": [
@@ -14,11 +12,7 @@
       "reload": true,
       "type": "wild",
       "double": false,
-      "actions": [
-        "Swift",
-        "Magnet Rise",
-        "Poké Ball"
-      ],
+      "actions": ["Swift", "Magnet Rise", "Poké Ball"],
       "shop": "Lock Capsule",
       "biome": "Beach",
       "pokemon": [
@@ -95,10 +89,7 @@
       "reload": true,
       "type": "wild",
       "double": false,
-      "actions": [
-        "Magnet Rise",
-        "Poké Ball"
-      ],
+      "actions": ["Magnet Rise", "Poké Ball"],
       "shop": "5x Ultra Ball",
       "biome": "Beach",
       "pokemon": [
@@ -134,12 +125,7 @@
       "reload": false,
       "type": "wild",
       "double": false,
-      "actions": [
-        "Psybeam",
-        "Psybeam",
-        "Poké Ball",
-        "Release [6] Mareanie"
-      ],
+      "actions": ["Psybeam", "Psybeam", "Poké Ball", "Release [6] Mareanie"],
       "shop": "Potion → Porygon-Z",
       "biome": "Beach",
       "pokemon": [
@@ -202,10 +188,7 @@
       "reload": false,
       "type": "wild",
       "double": false,
-      "actions": [
-        "Poké Ball",
-        "Release Staryu"
-      ],
+      "actions": ["Poké Ball", "Release Staryu"],
       "shop": "Potion → Porygon-Z",
       "biome": "Beach",
       "pokemon": [
@@ -282,10 +265,7 @@
       "reload": false,
       "type": "wild",
       "double": false,
-      "actions": [
-        "Poké Ball",
-        "Do Not Keep"
-      ],
+      "actions": ["Poké Ball", "Do Not Keep"],
       "shop": "5x Poké Ball",
       "biome": "Beach",
       "pokemon": [
@@ -536,11 +516,7 @@
       "reload": true,
       "type": "wild",
       "double": false,
-      "actions": [
-        "Pre-switch  to [5] Porygon-Z",
-        "Poké Ball",
-        "Do Not Keep"
-      ],
+      "actions": ["Pre-switch  to [5] Porygon-Z", "Poké Ball", "Do Not Keep"],
       "shop": "Potion → Porygon-Z",
       "biome": "Island",
       "pokemon": [
@@ -576,11 +552,7 @@
       "reload": false,
       "type": "wild",
       "double": false,
-      "actions": [
-        "Psybeam",
-        "Poké Ball",
-        "Release Bruxish"
-      ],
+      "actions": ["Psybeam", "Poké Ball", "Release Bruxish"],
       "shop": "Hyper Potion → Quaxwell",
       "biome": "Island",
       "pokemon": [
@@ -1095,10 +1067,7 @@
       "reload": true,
       "type": "wild",
       "double": false,
-      "actions": [
-        "Ultra Ball",
-        "Do Not Keep"
-      ],
+      "actions": ["Ultra Ball", "Do Not Keep"],
       "shop": "Nugget",
       "biome": "Sea",
       "pokemon": [
@@ -1359,12 +1328,7 @@
       "reload": true,
       "type": "wild",
       "double": false,
-      "actions": [
-        "Poison Jab",
-        "Poké Ball",
-        "Poké Ball",
-        "Do Not Keep"
-      ],
+      "actions": ["Poison Jab", "Poké Ball", "Poké Ball", "Do Not Keep"],
       "shop": "Potion → Toxapex",
       "biome": "Seabed",
       "pokemon": [
@@ -1554,12 +1518,7 @@
       "reload": true,
       "type": "wild",
       "double": false,
-      "actions": [
-        "Acrobatics",
-        "Acrobatics",
-        "Poké Ball",
-        "Do Not Keep"
-      ],
+      "actions": ["Acrobatics", "Acrobatics", "Poké Ball", "Do Not Keep"],
       "shop": "Big Nugget",
       "biome": "Seabed",
       "pokemon": [
@@ -1643,11 +1602,7 @@
       "reload": false,
       "type": "wild",
       "double": false,
-      "actions": [
-        "Poké Ball",
-        "Poké Ball",
-        "Do Not Keep"
-      ],
+      "actions": ["Poké Ball", "Poké Ball", "Do Not Keep"],
       "shop": "Multi Lens → Quaquaval",
       "biome": "Seabed",
       "pokemon": [
@@ -2122,11 +2077,7 @@
       "reload": true,
       "type": "wild",
       "double": false,
-      "actions": [
-        "Sucker Punch",
-        "Rogue Ball",
-        "Do Not Keep"
-      ],
+      "actions": ["Sucker Punch", "Rogue Ball", "Do Not Keep"],
       "shop": "Super Potion → Rapidash",
       "biome": "Cave",
       "pokemon": [

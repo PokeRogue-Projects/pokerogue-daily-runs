@@ -34,7 +34,7 @@ const FollowAlongWave: React.FC<FollowAlongWaveProps> = ({
   setWaveOpen,
 }) => {
   const [actionChecks, setActionChecks] = useState<readonly boolean[]>(
-    new Array(wave.actions.length).fill(false)
+    new Array(wave.actions.length).fill(false),
   );
   const [reloadCheck, setReloadCheck] = useState<boolean>(false);
   const [shopCheck, setShopCheck] = useState<boolean>(false);
@@ -43,7 +43,7 @@ const FollowAlongWave: React.FC<FollowAlongWaveProps> = ({
     (changeIndex: number) => (newCheck: CheckedState) => {
       console.log(newCheck);
       const newActionChecks: readonly boolean[] = actionChecks.map(
-        (check, index) => (index != changeIndex ? check : newCheck === true)
+        (check, index) => (index != changeIndex ? check : newCheck === true),
       );
 
       updateWaveOpen(newActionChecks, reloadCheck, shopCheck);
@@ -67,7 +67,7 @@ const FollowAlongWave: React.FC<FollowAlongWaveProps> = ({
   const updateWaveOpen = (
     newActionChecks: readonly boolean[],
     newReloadCheck: boolean,
-    newShopCheck: boolean
+    newShopCheck: boolean,
   ) => {
     if (
       newActionChecks.every(Boolean) &&
@@ -139,12 +139,12 @@ const FollowAlongWaveGroup: React.FC<FollowAlongWaveGroupProps> = ({
 }) => {
   const [waveGroupOpen, setWaveGroupOpen] = useState(true);
   const [waveOpens, setWaveOpens] = useState<readonly boolean[]>(
-    new Array(waves.length).fill(true)
+    new Array(waves.length).fill(true),
   );
 
   const handleWaveOpenChange = (changeIndex: number) => () => {
     const newWaveOpens = waveOpens.map((waveOpen, index) =>
-      index != changeIndex ? waveOpen : !waveOpen
+      index != changeIndex ? waveOpen : !waveOpen,
     );
 
     setWaveOpens(newWaveOpens);

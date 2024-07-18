@@ -22,7 +22,7 @@ const StarterCard: React.FC<StarterCardProps> = ({ pokemon, className }) => {
             <div
               className={cn(
                 "w-8 h-8 ml-2 rounded-full flex items-center justify-center",
-                pokemon.gender === "male" ? "bg-blue-500" : "bg-pink-500"
+                pokemon.gender === "male" ? "bg-blue-500" : "bg-pink-500",
               )}
             >
               {pokemon.gender === "male" ? (
@@ -52,7 +52,8 @@ const StarterCard: React.FC<StarterCardProps> = ({ pokemon, className }) => {
                   .split("_")
                   .map(
                     (word) =>
-                      word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+                      word.charAt(0).toUpperCase() +
+                      word.slice(1).toLowerCase(),
                   )
                   .join(" ")}
               </p>

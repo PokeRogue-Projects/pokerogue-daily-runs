@@ -1,23 +1,19 @@
-import { Redirect } from "@reach/router";
 import { formatDate } from "date-fns";
 import { toZonedTime } from "date-fns-tz";
-import { PageProps } from "gatsby";
-import React from "react";
+import { navigate, PageProps, withPrefix } from "gatsby";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 
 const RunsPage: React.FC<PageProps<null>> = () => {
   const currentDate = formatDate(
     toZonedTime(new Date(Date.now()), "UTC"),
-    "yyyy-MM-dd"
+    "yyyy-MM-dd",
   );
 
-  return (
-    <div>
-      <Helmet>
-        <meta httpEquiv="refresh" content={`0; /runs/${currentDate}`} />
-      </Helmet>
-      <Redirect noThrow to={`/runs/${currentDate}`} />
-    </div>
-  );
+  useEffect(() => {
+    navigate(`/runs/${currentDate}`);
+  }, []);
+
+  return <div></div>;
 };
 export default RunsPage;

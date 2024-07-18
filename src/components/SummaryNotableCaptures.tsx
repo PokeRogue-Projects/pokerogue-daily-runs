@@ -25,12 +25,13 @@ const SummaryNotableCaptures: React.FC<SummaryNotableCapturesProp> = ({
   const [itemFlexBasis, setItemFlexBasis] = useState("");
 
   const adjustItemWidths = (containerWidth: number) => {
-    const itemMinWidth = window.innerWidth < 768 ? ITEM_MIN_WIDTH_SM : ITEM_MIN_WIDTH_MD;
+    const itemMinWidth =
+      window.innerWidth < 768 ? ITEM_MIN_WIDTH_SM : ITEM_MIN_WIDTH_MD;
     const itemsPerRow = Math.floor(containerWidth / itemMinWidth);
     setItemFlexBasis(
       `calc(${100 / itemsPerRow}% - ${
         (GAP * (itemsPerRow - 1)) / itemsPerRow
-      }px)`
+      }px)`,
     );
   };
 
@@ -59,7 +60,7 @@ const SummaryNotableCaptures: React.FC<SummaryNotableCapturesProp> = ({
 
   useEffect(() => {
     const observer = new ResizeObserver((entries) =>
-      adjustItemWidths(entries[0].contentRect.width)
+      adjustItemWidths(entries[0].contentRect.width),
     );
 
     if (containerRef.current) observer.observe(containerRef.current);
@@ -78,7 +79,7 @@ const SummaryNotableCaptures: React.FC<SummaryNotableCapturesProp> = ({
                 waveNumber: waveIndex + 1,
                 pokemon: pokemonSingle,
                 notableReasons: getNotableReasons(pokemonSingle),
-              })) || []
+              })) || [],
           ) // Seperate waves with multiple pokemon into two entries, along with wave number and notable reasons
           .filter((wave) => wave.notableReasons.length !== 0)
           .map((wave) => (
