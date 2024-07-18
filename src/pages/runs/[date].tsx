@@ -7,11 +7,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Redirect } from "@reach/router";
 import { isMatch } from "date-fns";
-import { graphql, Link, navigate, PageProps, withPrefix } from "gatsby";
+import { graphql, Link, navigate, PageProps } from "gatsby";
 import React, { useEffect } from "react";
-import { Helmet } from "react-helmet";
 
 const RunsPage: React.FC<PageProps<Queries.RunsPageQuery>> = ({
   data,
@@ -30,7 +28,7 @@ const RunsPage: React.FC<PageProps<Queries.RunsPageQuery>> = ({
       <Layout date={date}>
         <div className="container mx-auto py-8">
           <h1 className="text-3xl font-bold mb-6">
-            Available DRPD Pages for {date}
+            Available Runs for {date}
           </h1>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {drpdPages
