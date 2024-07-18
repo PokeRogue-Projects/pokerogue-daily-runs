@@ -1,7 +1,7 @@
 import { formatDate } from "date-fns";
 import { toZonedTime } from "date-fns-tz";
-import { navigate, PageProps } from "gatsby";
-import React from "react";
+import { navigate, PageProps, withPrefix } from "gatsby";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 
 const IndexPage: React.FC<PageProps<null>> = () => {
@@ -10,7 +10,9 @@ const IndexPage: React.FC<PageProps<null>> = () => {
         "yyyy-MM-dd"
     );
 
-    navigate(`/runs/${currentDate}`);
+    useEffect(() => {
+        navigate(withPrefix(`/runs/${currentDate}`));
+    });
 
     return (
         <div>
