@@ -11,8 +11,8 @@ const IndexPage: React.FC<PageProps<null>> = () => {
     );
 
     useEffect(() => {
-        navigate(withPrefix(`/runs/${currentDate}`));
-    });
+        navigate(`/runs/${currentDate}`);
+    }, []);
 
     return (
         <div>
