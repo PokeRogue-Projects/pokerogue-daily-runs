@@ -1,5 +1,5 @@
 import { Ivs } from "@/types";
-import { toEnumValue } from "@/utils/enumUtils";
+import { getStatIv, Stat, stats, statToDisplayString } from "@/utils/stat";
 import * as React from "react";
 import {
   PolarAngleAxis,
@@ -14,14 +14,13 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "./ui/chart";
-import { getStatIv, Stat, stats, statToDisplayString } from "@/utils/stat";
 
 type CustomTickProps = React.SVGProps<SVGTextElement> & {
   payload: {
     readonly coordinate: number;
     readonly index: number;
     readonly offset: number;
-    readonly value: Stat;
+    readonly value: string;
   };
 };
 
@@ -36,7 +35,7 @@ type IvChartProps = React.HTMLAttributes<HTMLDivElement> & {
   readonly statDecreased: Stat;
 };
 
-const getChartLabelFill = (
+const getStatNameFill = (
   stat: Stat,
   statIncreased: Stat,
   statDecreased: Stat,
@@ -47,6 +46,9 @@ const getChartLabelFill = (
       ? "hsl(var(--stat-decrease))"
       : "hsl(var(--stat-neutral))";
 
+const getStatValueFill = (value: string) =>
+  value === "31" ? "hsl(var(--stat-max))" : "hsl(var(--stat-neutral))";
+
 const chartConfig = {
   value: {
     label: "IV",
@@ -55,21 +57,24 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 const PokemonChartLabel: React.FC<PokemonChartLabelProps> = ({
-  payload: { value: stat },
+  payload: { value: labelData },
   x,
   y,
   textAnchor,
   statIncreased,
   statDecreased,
 }) => {
+  const [stat, value] = labelData.split(",");
+  // Recharts only let us send string or number values to label
+
   return (
-    <text
-      x={x}
-      y={y}
-      textAnchor={textAnchor}
-      fill={getChartLabelFill(stat, statIncreased, statDecreased)}
-    >
-      {statToDisplayString(stat)}
+    <text x={x} y={y} textAnchor={textAnchor}>
+      <tspan fill={getStatNameFill(stat as Stat, statIncreased, statDecreased)}>
+        {statToDisplayString(stat as Stat)}
+      </tspan>
+      <tspan dx={5} fill={getStatValueFill(value)}>
+        ({value})
+      </tspan>
     </text>
   );
 };
@@ -83,13 +88,13 @@ const IvChart: React.FC<IvChartProps> = ({
   <ChartContainer config={chartConfig} className={className}>
     <RadarChart
       data={stats.map((stat: Stat) => ({
-        stat: stat,
+        labelData: `${stat},${getStatIv(stat, ivs)}`,
         value: getStatIv(stat, ivs),
       }))}
     >
       <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
       <PolarAngleAxis
-        dataKey="stat"
+        dataKey="labelData"
         tick={(props: CustomTickProps) => (
           <PokemonChartLabel
             {...props}
