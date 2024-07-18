@@ -4,4 +4,4 @@ export const chunkArray = <T>(array: readonly T[], chunkSize: number) => {
     chunks.push(array.slice(i, i + chunkSize));
   }
   return chunks;
-}
+};

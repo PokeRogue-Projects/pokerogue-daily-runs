@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet";
 const RunsPage: React.FC<PageProps<null>> = () => {
   const currentDate = formatDate(
     toZonedTime(new Date(Date.now()), "UTC"),
-    "yyyy-MM-dd"
+    "yyyy-MM-dd",
   );
 
   useEffect(() => {
