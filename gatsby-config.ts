@@ -2,30 +2,10 @@ import type { GatsbyConfig } from "gatsby";
 import "dotenv/config";
 
 const config: GatsbyConfig = {
-<<<<<<< Updated upstream
-  pathPrefix: "/pokerogue-daily-runs",
-  siteMetadata: {
-    title: `PokeRogue Daily Runs`,
-    siteUrl: `https://pokerogue-projects.github.io/pokerogue-daily-runs`
-  },
-  graphqlTypegen: true,
-  plugins: ["gatsby-plugin-remove-serviceworker", 
-  "gatsby-plugin-postcss", {
-    resolve: 'gatsby-plugin-manifest',
-    options: {
-      "icon": "src/images/icon.png"
-    }
-  }, "gatsby-transformer-remark", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "pages",
-      "path": "./src/pages/"
-=======
     pathPrefix: "/pokerogue-daily-runs",
     siteMetadata: {
         title: `PokeRogue Daily Runs`,
         siteUrl: `https://pokerogue-projects.github.io/pokerogue-daily-runs`,
->>>>>>> Stashed changes
     },
     graphqlTypegen: true,
     plugins: [
