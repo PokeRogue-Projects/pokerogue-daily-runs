@@ -1,7 +1,7 @@
 import { Redirect } from "@reach/router";
 import { formatDate } from "date-fns";
 import { toZonedTime } from "date-fns-tz";
-import { PageProps } from "gatsby";
+import { PageProps, withPrefix } from "gatsby";
 import React from "react";
 import { Helmet } from "react-helmet";
 
@@ -16,7 +16,7 @@ const IndexPage: React.FC<PageProps<null>> = () => {
       <Helmet>
         <meta httpEquiv="refresh" content={`0; /runs/${currentDate}`} />
       </Helmet>
-      <Redirect noThrow to={`/runs/${currentDate}`} />
+      <Redirect noThrow to={withPrefix(`/runs/${currentDate}`)} />
     </div>
   );
 };

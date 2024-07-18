@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card";
 import { Redirect } from "@reach/router";
 import { isMatch } from "date-fns";
-import { graphql, Link, PageProps } from "gatsby";
+import { graphql, Link, PageProps, withPrefix } from "gatsby";
 import * as React from "react";
 import { Helmet } from "react-helmet";
 
@@ -60,7 +60,7 @@ const RunsPage: React.FC<PageProps<Queries.RunsPageQuery>> = ({
       <Helmet>
         <meta httpEquiv="refresh" content={`0; /`} />
       </Helmet>
-      <Redirect noThrow to={`/`} />
+      <Redirect noThrow to={withPrefix(`/`)} />
     </div>
   );
 };
