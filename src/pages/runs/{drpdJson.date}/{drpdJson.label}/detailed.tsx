@@ -16,7 +16,7 @@ const DetailedPage: React.FC<PageProps<Queries.DetailedPageQuery>> = ({
   const renderPokemonCards = (
     pokemon: readonly Pokemon[],
     biome: string,
-    waveIndex: number
+    waveIndex: number,
   ) => (
     <div className="space-y-6">
       {pokemon.map((p, index) => (

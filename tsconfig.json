@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "esnext",                                 
-    "lib": ["dom", "esnext"],                                       
-    "jsx": "react",                               
+    "target": "esnext",
+    "lib": ["dom", "esnext"],
+    "jsx": "react",
     "module": "esnext",
     "moduleResolution": "node",
     "esModuleInterop": true,
@@ -13,10 +13,13 @@
     "allowJs": true,
     "checkJs": true,
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     }
   },
-  "include": ["./src/**/*", "./gatsby-node.ts", "./gatsby-config.ts", "./plugins/**/*"]
+  "include": [
+    "./src/**/*",
+    "./gatsby-node.ts",
+    "./gatsby-config.ts",
+    "./plugins/**/*"
+  ]
 }
