@@ -2,7 +2,7 @@ import type { GatsbyConfig } from "gatsby";
 import 'dotenv/config'
 
 const config: GatsbyConfig = {
-  pathPrefix: "pokerogue-daily-runs",
+  pathPrefix: "/pokerogue-daily-runs",
   siteMetadata: {
     title: `PokeRogue Daily Runs`,
     siteUrl: `https://pokerogue-projects.github.io/pokerogue-daily-runs`
