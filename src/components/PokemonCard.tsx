@@ -66,11 +66,10 @@ const PokemonCard: React.FC<{
       <CardContent>
         <div className="flex flex-col space-y-6">
           <div className="flex flex-row items-center md:items-start space-y-4 justify-between md:space-y-0">
-            <div></div>
             <img
               src={`https://wiki.pokerogue.net/_media/starters:sprites:${pokemon.id}.png`}
               alt={pokemon.name}
-              className="w-1/5 object-contain self-center"
+              className="w-1/5 ml-[5%] object-contain self-center"
             />
             <IvChart
               ivs={pokemon.ivs}
