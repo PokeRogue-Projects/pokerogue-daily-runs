@@ -32,6 +32,7 @@
     --stat-neutral: 222.2 47.4% 11.2%;
     --stat-increase: 335 26% 56%;
     --stat-decrease: 190 51% 65%;
+    --stat-max: 60 58.6% 58.26%;
   }
 
   .dark {
@@ -62,6 +63,7 @@
     --stat-neutral: 210 40% 98%;
     --stat-increase: 335 26% 56%;
     --stat-decrease: 190 51% 65%;
+    --stat-max: 60 70% 40%;
   }
 }
 

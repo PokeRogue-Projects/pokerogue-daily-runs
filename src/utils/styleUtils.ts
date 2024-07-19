@@ -7,3 +7,12 @@ export const determineStyle = (content: string) => {
   }
   return style;
 };
+
+
+export const TAILWIND_RESPONSIVE_MIN_WIDTH = {
+  SM: 640,
+  MD: 768,
+  LG: 1024,
+  XL: 1280,
+  TWO_XL: 1536,
+}
