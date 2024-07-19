@@ -48,7 +48,6 @@ const config: GatsbyConfig = {
         crossOrigin: `use-credentials`,
       },
     },
-    "gatsby-plugin-react-helmet",
   ],
 };
 

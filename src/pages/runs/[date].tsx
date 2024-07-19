@@ -35,7 +35,7 @@ const RunsPage: React.FC<PageProps<Queries.RunsPageQuery>> = ({
         <div className="container mx-auto py-8">
           <h1 className="text-3xl font-bold mb-6">Available Runs for {date}</h1>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {drpdPages
+            {drpdJsonsToDisplay
               .filter(({ node }) => node.date === date)
               .map(({ node }) => (
                 <Card key={node.uuid}>
