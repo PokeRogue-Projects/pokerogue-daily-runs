@@ -1,13 +1,10 @@
 import Layout from "@/components/Layout";
-import { NoRefreshHead } from "@/components/NoRefreshHead";
 import PokemonCard from "@/components/PokemonCard";
 import TrainerCard from "@/components/TrainerCard";
 import WaveInfoCard from "@/components/WaveInfoCard";
 import { Pokemon } from "@/types";
 import { graphql, PageProps } from "gatsby";
 import * as React from "react";
-
-export const Head = () => <NoRefreshHead />;
 
 const DetailedPage: React.FC<PageProps<Queries.DetailedPageQuery>> = ({
   data,

@@ -1,6 +1,6 @@
 import { formatDate } from "date-fns";
 import { toZonedTime } from "date-fns-tz";
-import { navigate, PageProps } from "gatsby";
+import { navigate, PageProps, withPrefix } from "gatsby";
 import React, { useEffect } from "react";
 
 const RunsPage: React.FC<PageProps<null>> = () => {

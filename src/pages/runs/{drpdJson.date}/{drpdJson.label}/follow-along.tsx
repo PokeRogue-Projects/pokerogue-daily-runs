@@ -1,12 +1,9 @@
 import { FollowAlongWaveGroup } from "@/components/FollowAlongWave";
 import Layout from "@/components/Layout";
-import { NoRefreshHead } from "@/components/NoRefreshHead";
 import { chunkArray } from "@/utils/arrayUtils";
 import { WAVE_GROUP_SIZE } from "@/utils/constants";
 import { graphql, PageProps } from "gatsby";
 import * as React from "react";
-
-export const Head = () => <NoRefreshHead />;
 
 const FollowAlongPage: React.FC<PageProps<Queries.FollowAlongPageQuery>> = ({
   data,
