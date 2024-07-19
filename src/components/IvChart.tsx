@@ -14,7 +14,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "./ui/chart";
-import { TAILWIND_RESPONSIVE_MIN_WIDTH } from "@/utils/styleUtils";
+import { MAX_IV } from "@/utils/constants";
 
 type CustomTickProps = React.SVGProps<SVGTextElement> & {
   payload: {
@@ -48,7 +48,7 @@ const getStatNameFill = (
       : "hsl(var(--stat-neutral))";
 
 const getStatValueFill = (value: string) =>
-  value === "31" ? "hsl(var(--stat-max))" : "hsl(var(--stat-neutral))";
+  value === MAX_IV.toString() ? "hsl(var(--stat-max))" : "hsl(var(--stat-neutral))";
 
 const chartConfig = {
   value: {
