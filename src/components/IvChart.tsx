@@ -106,7 +106,7 @@ const IvChart: React.FC<IvChartProps> = ({
             />
           )}
         />
-        <PolarRadiusAxis className="hidden" domain={[0, 31]} />
+        <PolarRadiusAxis className="hidden" domain={[0, MAX_IV]} />
         <PolarGrid />
         <Radar dataKey="value" fill="hsl(var(--primary))" fillOpacity={0.7} />
       </RadarChart>
