@@ -47,20 +47,18 @@ const RunsPage: React.FC<PageProps<Queries.RunsPageQuery>> = ({
                         Authors: {node.authors.join(", ")}
                       </p>
                     </CardContent>
-                    <CardFooter className="flex justify-between">
-                      <Button asChild variant="outline">
+                    <CardFooter className="grid grid-cols-2 gap-2">
+                      <Button asChild variant="outline" className="col-span-2">
                         <Link to={`./${node.label}/summary`}>Summary</Link>
                       </Button>
-                      <div className="space-x-3">
-                        <Button asChild variant="outline">
-                          <Link to={`./${node.label}/detailed`}>Detailed</Link>
-                        </Button>
-                        <Button asChild variant="outline">
-                          <Link to={`./${node.label}/follow-along`}>
-                            Follow Along
-                          </Link>
-                        </Button>
-                      </div>
+                      <Button asChild variant="outline">
+                        <Link to={`./${node.label}/detailed`}>Detailed</Link>
+                      </Button>
+                      <Button asChild variant="outline">
+                        <Link to={`./${node.label}/follow-along`}>
+                          Follow Along
+                        </Link>
+                      </Button>
                     </CardFooter>
                   </Card>
                 ))}
