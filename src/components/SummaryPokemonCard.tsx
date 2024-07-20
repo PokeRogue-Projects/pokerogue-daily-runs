@@ -21,7 +21,7 @@ const SummaryPokemonCard: React.FC<SummaryPokemonCardProps> = ({
       style={style}
       className={cn("w-full max-w-3xl relative flex flex-col", className)}
     >
-      {waveNumber !== undefined && (
+      {!!waveNumber && (
         <div className="absolute top-2 right-2 bg-primary text-primary-foreground rounded-full w-8 h-8 flex items-center justify-center font-bold">
           {waveNumber}
         </div>

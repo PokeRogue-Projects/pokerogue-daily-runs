@@ -26,7 +26,7 @@ const RunsPage: React.FC<PageProps<Queries.RunsPageQuery>> = ({
   }, []);
 
   return (
-    date !== undefined &&
+    !!date &&
     isMatch(date, "yyyy-MM-dd") && (
       <Layout date={date}>
         <div className="container mx-auto py-8">
