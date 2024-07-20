@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import { getTrainerSpriteURL } from "@/utils/constants";
 
 const TrainerCard: React.FC<{
   trainerId: string;
@@ -25,7 +26,7 @@ const TrainerCard: React.FC<{
           }`}
         >
           <img
-            src={`https://wiki.pokerogue.net/_media/trainers:${trainerId}.png`}
+            src={getTrainerSpriteURL(name)}
             onError={(e) =>
               (e.currentTarget.src =
                 "https://raw.githubusercontent.com/pagefaultgames/pokerogue/main/public/images/trainer/unknown_m.png")

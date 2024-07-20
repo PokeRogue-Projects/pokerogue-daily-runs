@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Pokemon } from "@/types";
+import { getPokmemonSpriteURL } from "@/utils/constants";
 
 type BossCardProps = React.HTMLAttributes<HTMLDivElement> & {
   pokemon: Pokemon;
@@ -21,7 +22,7 @@ const BossCard: React.FC<BossCardProps> = ({ pokemon, className }) => {
         <p className="text-xl font-bold mb-4">{pokemon.name}</p>
         <div className="rounded-lg p-4 max-w-4/5 aspect-square bg-purple-200">
           <img
-            src={`https://wiki.pokerogue.net/_media/starters:sprites:${pokemon.id}.png`}
+            src={getPokmemonSpriteURL(pokemon.id)}
             alt={pokemon.name}
             className="w-32 max-w-full aspect-square object-contain self-center"
           />

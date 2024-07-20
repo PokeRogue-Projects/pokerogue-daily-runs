@@ -3,6 +3,7 @@ import { Stat } from "@/utils/stat";
 import React from "react";
 import { getGenderDisplay, PokemonGender } from "./PokemonCard";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { getPokmemonSpriteURL } from "@/utils/constants";
 
 type StarterCardProps = React.HTMLAttributes<HTMLDivElement> & {
   pokemon: Pokemon;
@@ -25,7 +26,7 @@ const StarterCard: React.FC<StarterCardProps> = ({ pokemon, className }) => {
       <CardContent>
         <div className="flex flex-row justify-around">
           <img
-            src={`https://wiki.pokerogue.net/_media/starters:sprites:${pokemon.id}.png`}
+            src={getPokmemonSpriteURL(pokemon.id)}
             alt={pokemon.name}
             className="w-1/5 aspect-square object-contain self-center"
           />

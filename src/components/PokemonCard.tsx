@@ -5,6 +5,7 @@ import * as React from "react";
 import capturedImage from "../images/captured.png";
 import uncapturedImage from "../images/uncaptured.png";
 import IvChart from "./IvChart";
+import { getBiomeSpriteURL, getPokmemonSpriteURL } from "@/utils/constants";
 
 export enum PokemonGender {
   MALE = "Male",
@@ -67,7 +68,7 @@ const PokemonCard: React.FC<{
         <div className="flex flex-col space-y-6">
           <div className="flex flex-row items-center md:items-start space-y-4 justify-between md:space-y-0">
             <img
-              src={`https://wiki.pokerogue.net/_media/starters:sprites:${pokemon.id}.png`}
+              src={getPokmemonSpriteURL(pokemon.id)}
               alt={pokemon.name}
               className="w-1/5 ml-[5%] object-contain self-center"
             />
@@ -129,7 +130,7 @@ const PokemonCard: React.FC<{
               <CardContent className="p-3 pt-0 flex-grow flex items-center justify-center">
                 {biome !== "???" ? (
                   <img
-                    src={`https://wiki.pokerogue.net/_media/en:biomes:en_${biome}_bg.png`}
+                    src={getBiomeSpriteURL(biome)}
                     alt={biome}
                     className="w-full object-cover rounded-md"
                   />

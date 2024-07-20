@@ -38,6 +38,7 @@ const SummaryPage: React.FC<PageProps<Queries.SummaryPageQuery>> = ({
                 trainerType="Gym Leader"
                 name={drpdJson.waves[floor - 1].trainer.type}
                 waveNumber={floor}
+                key={floor}
               />
             ))}
             <BossCard pokemon={drpdJson.waves[BOSS_FLOOR - 1].pokemon[0]} />

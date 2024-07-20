@@ -44,7 +44,7 @@ const DetailedPage: React.FC<PageProps<Queries.DetailedPageQuery>> = ({
                   <TrainerCard
                     trainerId={wave.trainer.id}
                     trainerType={wave.trainer.type}
-                    name={wave.trainer.name}
+                    name={wave.trainer.type}
                     waveNumber={waveIndex + 1}
                   />
                 ) : (

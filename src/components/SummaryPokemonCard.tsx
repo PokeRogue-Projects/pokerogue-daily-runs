@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Pokemon } from "@/types";
 import React from "react";
 import { cn } from "./lib/utils";
+import { getPokmemonSpriteURL } from "@/utils/constants";
 
 type SummaryPokemonCardProps = React.HTMLAttributes<HTMLDivElement> & {
   pokemon: Pokemon;
@@ -35,14 +36,16 @@ const SummaryPokemonCard: React.FC<SummaryPokemonCardProps> = ({
       </CardHeader>
       <CardContent className="pb-4 flex-grow flex flex-col md:flex-row gap-4 md:gap-0 justify-around">
         <img
-          src={`https://wiki.pokerogue.net/_media/starters:sprites:${pokemon.id}.png`}
+          src={getPokmemonSpriteURL(pokemon.id)}
           alt={pokemon.name}
           className="w-2/5 md:w-1/5 aspect-square object-contain self-center"
         />
         <Card className="self-stretch md:w-3/5">
           <div className="p-4 w-full h-full flex flex-col items-start justify-center">
-            {notableReasons.map((reason) => (
-              <div className="text-xs md:text-sm">{reason}</div>
+            {notableReasons.map((reason, index) => (
+              <div className="text-xs md:text-sm" key={index}>
+                {reason}
+              </div>
             ))}
           </div>
         </Card>
