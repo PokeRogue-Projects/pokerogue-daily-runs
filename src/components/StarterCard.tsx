@@ -1,9 +1,8 @@
 import { Pokemon } from "@/types";
-import { Stat, statToDisplayString } from "@/utils/stat";
+import { Stat } from "@/utils/stat";
 import React from "react";
+import { getGenderDisplay, PokemonGender } from "./PokemonCard";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { cn } from "./lib/utils";
-import IvChart from "./IvChart";
 
 type StarterCardProps = React.HTMLAttributes<HTMLDivElement> & {
   pokemon: Pokemon;
@@ -19,18 +18,7 @@ const StarterCard: React.FC<StarterCardProps> = ({ pokemon, className }) => {
         <CardTitle className="text-2xl font-bold">
           <div className="flex items-center">
             <div>{pokemon.name}</div>
-            <div
-              className={cn(
-                "w-8 h-8 ml-2 rounded-full flex items-center justify-center",
-                pokemon.gender === "male" ? "bg-blue-500" : "bg-pink-500",
-              )}
-            >
-              {pokemon.gender === "male" ? (
-                <p className="text-white font-medium">♂</p>
-              ) : (
-                <p className="text-white font-medium">♀</p>
-              )}
-            </div>
+            {getGenderDisplay(pokemon.gender as PokemonGender)}
           </div>
         </CardTitle>
       </CardHeader>

@@ -12,7 +12,7 @@ export enum PokemonGender {
   GENDERLESS = "Genderless",
 }
 
-const getGenderDisplay = (gender: PokemonGender) => {
+export const getGenderDisplay = (gender: PokemonGender) => {
   switch (gender) {
     case PokemonGender.MALE:
       return (

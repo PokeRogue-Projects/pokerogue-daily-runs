@@ -3,13 +3,13 @@ import Layout from "@/components/Layout";
 import StarterCard from "@/components/StarterCard";
 import SummaryNotableCaptures from "@/components/SummaryNotableCaptures";
 import TrainerCard from "@/components/TrainerCard";
+import { BOSS_FLOOR, GYM_FLOORS } from "@/utils/constants";
 import { graphql, PageProps } from "gatsby";
 import React from "react";
 
-
 const SummaryPage: React.FC<PageProps<Queries.SummaryPageQuery>> = ({
   data,
-  params
+  params,
 }) => {
   const drpdJson = data.drpdJson;
   const date = params.date;
@@ -32,25 +32,15 @@ const SummaryPage: React.FC<PageProps<Queries.SummaryPageQuery>> = ({
         <div>
           <h2 className="text-2xl font-bold mb-4">Gym Leaders / Boss</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <TrainerCard
-              trainerId={drpdJson.waves[19].trainer.id}
-              trainerType={"Gym Leader"}
-              name={drpdJson.waves[19].trainer.type}
-              waveNumber={20}
-            />
-            <TrainerCard
-              trainerId={drpdJson.waves[29].trainer.id}
-              trainerType={"Gym Leader"}
-              name={drpdJson.waves[29].trainer.type}
-              waveNumber={30}
-            />
-            <TrainerCard
-              trainerId={drpdJson.waves[39].trainer.id}
-              trainerType={"Gym Leader"}
-              name={drpdJson.waves[39].trainer.type}
-              waveNumber={40}
-            />
-            <BossCard pokemon={drpdJson.waves[49].pokemon[0]} />
+            {GYM_FLOORS.map((floor) => (
+              <TrainerCard
+                trainerId={drpdJson.waves[floor - 1].trainer.id}
+                trainerType="Gym Leader"
+                name={drpdJson.waves[floor - 1].trainer.type}
+                waveNumber={floor}
+              />
+            ))}
+            <BossCard pokemon={drpdJson.waves[BOSS_FLOOR - 1].pokemon[0]} />
           </div>
         </div>
       </div>
