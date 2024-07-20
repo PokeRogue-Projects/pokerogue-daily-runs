@@ -5,11 +5,13 @@ export const MAX_IV = 31;
 export const GYM_FLOORS = [20, 30, 40];
 export const BOSS_FLOOR = 50;
 
+const POKEROGUE_MEDIA_URL = "https://wiki.pokerogue.net/_media";
+
 export const getPokmemonSpriteURL = (pokemonId: string) =>
-  `https://wiki.pokerogue.net/_media/starters:sprites:${pokemonId}.png`;
+  `${POKEROGUE_MEDIA_URL}/starters:sprites:${pokemonId}.png`;
 
 export const getBiomeSpriteURL = (biome: string) =>
-  `https://wiki.pokerogue.net/_media/en:biomes:en_${biome}_bg.png`;
+  `${POKEROGUE_MEDIA_URL}/en:biomes:en_${biome}_bg.png`;
 
 export const getTrainerSpriteURL = (trainer: string) =>
-  `https://wiki.pokerogue.net/_media/trainers:${trainer}.png`;
+  `${POKEROGUE_MEDIA_URL}/trainers:${trainer}.png`;
