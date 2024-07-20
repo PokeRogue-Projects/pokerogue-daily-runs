@@ -17,7 +17,7 @@ export default function Header({ date }: { date?: string }) {
         <div className="flex gap-6 items-center">
           <Link to="/">Home</Link>
           <ModeToggle />
-          {isMatch(date, "yyyy-MM-dd") && (
+          {!!date && isMatch(date, "yyyy-MM-dd") && (
             <DatePicker date={new Date(date)} onDateChange={handleDateChange} />
           )}
         </div>

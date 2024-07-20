@@ -18,7 +18,7 @@ const RunsPage: React.FC<PageProps<Queries.RunsPageQuery>> = ({
 }) => {
   const drpdJsons = data.allDrpdJson.edges;
   const date = params.date;
-  
+
   const drpdJsonsToDisplay = drpdJsons.filter(({ node }) => node.date === date);
 
   useEffect(() => {
@@ -26,31 +26,32 @@ const RunsPage: React.FC<PageProps<Queries.RunsPageQuery>> = ({
   }, []);
 
   return (
-    date !== undefined &&
+    !!date &&
     isMatch(date, "yyyy-MM-dd") && (
       <Layout date={date}>
         <div className="container mx-auto py-8">
-          <h1 className="text-3xl font-bold mb-6">
-            Available Runs for {date}
-          </h1>
+          <h1 className="text-3xl font-bold mb-6">Available Runs for {date}</h1>
           <div className="space-y-4">
             {drpdJsonsToDisplay.length !== 0 && (
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                {drpdJsonsToDisplay
-                  .map(({ node }) => (
-                    <Card key={node.uuid}>
-                      <CardHeader>
-                        <CardTitle>{node.title}</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-sm text-muted-foreground">
-                          Date: {date}
-                        </p>
-                        <p className="text-sm text-muted-foreground">
-                          Authors: {node.authors.join(", ")}
-                        </p>
-                      </CardContent>
-                      <CardFooter className="flex justify-between">
+                {drpdJsonsToDisplay.map(({ node }) => (
+                  <Card key={node.uuid}>
+                    <CardHeader>
+                      <CardTitle>{node.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm text-muted-foreground">
+                        Date: {date}
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        Authors: {node.authors.join(", ")}
+                      </p>
+                    </CardContent>
+                    <CardFooter className="flex justify-between">
+                      <Button asChild variant="outline">
+                        <Link to={`./${node.label}/summary`}>Summary</Link>
+                      </Button>
+                      <div className="space-x-3">
                         <Button asChild variant="outline">
                           <Link to={`./${node.label}/detailed`}>Detailed</Link>
                         </Button>
@@ -59,9 +60,10 @@ const RunsPage: React.FC<PageProps<Queries.RunsPageQuery>> = ({
                             Follow Along
                           </Link>
                         </Button>
-                      </CardFooter>
-                    </Card>
-                  ))}
+                      </div>
+                    </CardFooter>
+                  </Card>
+                ))}
               </div>
             )}
             <ReloadAlert />
