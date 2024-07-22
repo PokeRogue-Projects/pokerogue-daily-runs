@@ -1,9 +1,8 @@
-
 # Contributing to Pokerogue Daily Runs
 
 First off, thank you for taking the time to contribute! 🎉
 
-The following is a set of guidelines for contributing to this project on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
+The following is a set of guidelines for contributing to this project on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request. Most of the development takes place in our [Discord server](https://discord.com/invite/XcygEYs9eA). Feel free to join and help us out!
 
 ## Table of Contents
 
