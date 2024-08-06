@@ -1,5 +1,6 @@
 import { FollowAlongWaveGroup } from "@/components/FollowAlongWave";
 import Layout from "@/components/Layout";
+import Navigation from "@/components/Navigation";
 import { chunkArray } from "@/utils/arrayUtils";
 import { WAVE_GROUP_SIZE } from "@/utils/constants";
 import { graphql, PageProps } from "gatsby";
@@ -14,8 +15,8 @@ const FollowAlongPage: React.FC<PageProps<Queries.FollowAlongPageQuery>> = ({
 
   return (
     <Layout date={date}>
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-6">Follow Along</h1>
+      <Navigation />
+      <div className="container mx-auto px-4 pb-8">
         {chunkArray(waves, WAVE_GROUP_SIZE).map((waveGroup, groupIndex) => (
           <FollowAlongWaveGroup
             key={groupIndex}

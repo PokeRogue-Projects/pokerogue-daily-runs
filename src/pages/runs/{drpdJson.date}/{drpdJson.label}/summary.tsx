@@ -1,5 +1,6 @@
 import BossCard from "@/components/BossCard";
 import Layout from "@/components/Layout";
+import Navigation from "@/components/Navigation";
 import StarterCard from "@/components/StarterCard";
 import SummaryNotableCaptures from "@/components/SummaryNotableCaptures";
 import TrainerCard from "@/components/TrainerCard";
@@ -16,8 +17,8 @@ const SummaryPage: React.FC<PageProps<Queries.SummaryPageQuery>> = ({
 
   return (
     <Layout date={date}>
-      <div className="container px-8 py-8 space-y-6">
-        <h1 className="text-3xl font-bold">Summary</h1>
+      <Navigation />
+      <div className="container px-8 pb-8 space-y-6">
         <div className="space-y-4">
           <div>
             <h2 className="text-2xl font-bold mb-4">Starters</h2>
