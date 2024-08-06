@@ -1,4 +1,4 @@
-import { formatDate, isMatch, isValid } from "date-fns";
+import { addMinutes, formatDate, isMatch, isValid, subMinutes } from "date-fns";
 import { Link, navigate } from "gatsby";
 import React from "react";
 import DatePicker from "./DatePicker";
@@ -18,7 +18,9 @@ export default function Header({ date }: { date?: string }) {
           <Link to="/">Home</Link>
           <ModeToggle />
           {!!date && isMatch(date, "yyyy-MM-dd") && (
-            <DatePicker date={new Date(date)} onDateChange={handleDateChange} />
+            <DatePicker date={addMinutes(new Date(date), new Date().getTimezoneOffset())} onDateChange={handleDateChange} />
+            // addMinutes because local timezone is used for display for date picker
+            // This will adjust the date to be 00:00 on the local timezone
           )}
         </div>
       </nav>
