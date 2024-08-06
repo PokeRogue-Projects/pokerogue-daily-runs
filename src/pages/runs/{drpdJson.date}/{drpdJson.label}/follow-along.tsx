@@ -16,7 +16,7 @@ const FollowAlongPage: React.FC<PageProps<Queries.FollowAlongPageQuery>> = ({
   return (
     <Layout date={date}>
       <Navigation />
-      <div className="container mx-auto px-4 pb-8">
+      <div className="container mx-auto px-4 py-8">
         {chunkArray(waves, WAVE_GROUP_SIZE).map((waveGroup, groupIndex) => (
           <FollowAlongWaveGroup
             key={groupIndex}

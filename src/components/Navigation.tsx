@@ -3,8 +3,8 @@ import React from "react";
 
 const Navigation: React.FC = () => {
   return (
-    <div className="mx-auto flex justify-center mb-4">
-      <div className="space-x-10">
+    <div className="mx-auto flex justify-center">
+      <div className="flex w-[90%] md:w-1/2 justify-around">
         <Link
           to="../summary"
           className="text-xl font-bold"
