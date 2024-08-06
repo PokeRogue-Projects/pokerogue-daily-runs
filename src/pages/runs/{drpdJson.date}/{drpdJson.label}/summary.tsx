@@ -18,7 +18,7 @@ const SummaryPage: React.FC<PageProps<Queries.SummaryPageQuery>> = ({
   return (
     <Layout date={date}>
       <Navigation />
-      <div className="container px-8 pb-8 space-y-6">
+      <div className="container px-8 py-8 space-y-6">
         <div className="space-y-4">
           <div>
             <h2 className="text-2xl font-bold mb-4">Starters</h2>

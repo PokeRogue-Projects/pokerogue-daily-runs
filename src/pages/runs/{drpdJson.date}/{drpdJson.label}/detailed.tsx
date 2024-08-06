@@ -34,7 +34,7 @@ const DetailedPage: React.FC<PageProps<Queries.DetailedPageQuery>> = ({
   return (
     <Layout date={date}>
       <Navigation />
-      <div className="container md:w-[1000px] max-w-full mx-auto px-4 pb-8">
+      <div className="container md:w-[1000px] max-w-full mx-auto px-4 py-8">
         {drpdJson.waves.map((wave, waveIndex) => (
           <div key={waveIndex} className="mb-12">
             <div className="flex flex-col md:flex-row gap-6">
