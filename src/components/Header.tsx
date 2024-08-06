@@ -6,6 +6,8 @@ import { ModeToggle } from "./ModeToggle";
 
 export default function Header({ date }: { date?: string }) {
   const handleDateChange = (newDate: Date) => {
+    console.log(newDate);
+
     if (isValid(newDate))
       navigate(`/runs/${formatDate(newDate, "yyyy-MM-dd")}`);
   };
