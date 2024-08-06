@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import Navigation from "@/components/Navigation";
 import PokemonCard from "@/components/PokemonCard";
 import TrainerCard from "@/components/TrainerCard";
 import WaveInfoCard from "@/components/WaveInfoCard";
@@ -32,6 +33,7 @@ const DetailedPage: React.FC<PageProps<Queries.DetailedPageQuery>> = ({
 
   return (
     <Layout date={date}>
+      <Navigation />
       <div className="container md:w-[1000px] max-w-full mx-auto px-4 py-8">
         {drpdJson.waves.map((wave, waveIndex) => (
           <div key={waveIndex} className="mb-12">
