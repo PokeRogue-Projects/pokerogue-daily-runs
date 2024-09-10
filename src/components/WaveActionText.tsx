@@ -9,6 +9,7 @@ type ReloadActionTextProps = React.HTMLAttributes<HTMLSpanElement>;
 
 type ShopActionTextProps = React.HTMLAttributes<HTMLSpanElement> & {
   shop: string;
+  reroll: number;
 };
 
 const WaveActionText: React.FC<WaveActionTextProps> = ({
@@ -23,11 +24,15 @@ const ReloadActionText: React.FC<ReloadActionTextProps> = ({ className }) => (
   />
 );
 
-const ShopActionText: React.FC<ShopActionTextProps> = ({ className, shop }) => (
+const ShopActionText: React.FC<ShopActionTextProps> = ({
+  className,
+  shop,
+  reroll,
+}) => (
   <WaveActionText
     className={cn("font-bold", className)}
-    action={`Shop: ${shop}`}
+    action={`Shop: ${reroll > 0 ? `Reroll ${reroll}x, ` : ""}${shop}`}
   />
 );
 
-export { WaveActionText, ReloadActionText, ShopActionText };
+export { ReloadActionText, ShopActionText, WaveActionText };

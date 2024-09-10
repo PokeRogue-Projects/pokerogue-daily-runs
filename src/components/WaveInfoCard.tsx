@@ -1,17 +1,8 @@
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Wave } from "@/types";
+import { getInstructions } from "@/utils/waveUtils";
 import React from "react";
-import {
-  ReloadActionText,
-  ShopActionText,
-  WaveActionText,
-} from "./WaveActionText";
+import { ReloadActionText, ShopActionText } from "./WaveActionText";
 
 const Step = (props: { text: string; index: number }) => (
   <div
@@ -28,35 +19,35 @@ const Step = (props: { text: string; index: number }) => (
 const WaveInfoCard: React.FC<{
   readonly wave: Wave;
   readonly waveIndex: number;
-}> = ({ wave, waveIndex }) => (
-  <Card className="w-full h-full flex flex-col">
-    <CardHeader>
-      <CardTitle className="text-2xl font-bold">Wave {wave.id}</CardTitle>
-    </CardHeader>
-    <CardContent>
-      <div className="space-y-8 justify-center">
-        {wave.reload && (
-          <p className="whitespace-pre-line">
-            <ReloadActionText />
-          </p>
-        )}
-        <div>
-          {wave.actions.map((action, index) =>
-            action !== "" ? (
+}> = ({ wave, waveIndex }) => {
+  const { reload, actions, shop, reroll } = getInstructions(wave);
+
+  return (
+    <Card className="w-full h-full flex flex-col">
+      <CardHeader>
+        <CardTitle className="text-2xl font-bold">Wave {wave.id}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <div className="space-y-8 justify-center">
+          {reload && (
+            <p className="whitespace-pre-line">
+              <ReloadActionText />
+            </p>
+          )}
+          <div>
+            {actions.map((action, index) => (
               <Step key={index} text={action} index={index} />
-            ) : (
-              <></>
-            ),
+            ))}
+          </div>
+          {shop && (
+            <p className="whitespace-pre-line">
+              <ShopActionText shop={shop} reroll={reroll} />
+            </p>
           )}
         </div>
-        {wave.shop && (
-          <p className="whitespace-pre-line">
-            <ShopActionText shop={wave.shop} />
-          </p>
-        )}
-      </div>
-    </CardContent>
-  </Card>
-);
+      </CardContent>
+    </Card>
+  );
+};
 
 export default WaveInfoCard;
