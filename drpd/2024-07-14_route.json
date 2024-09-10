@@ -8,6 +8,17 @@
   "starters": [],
   "waves": [
     {
+      "id": 0,
+      "reload": false,
+      "type": "boss",
+      "double": false,
+      "actions": [
+        "[No actions?]"
+      ],
+      "shop": "",
+      "biome": "Plains"
+    },
+    {
       "id": 1,
       "reload": true,
       "type": "wild",
