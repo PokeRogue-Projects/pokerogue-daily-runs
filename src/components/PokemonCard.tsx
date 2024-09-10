@@ -68,7 +68,7 @@ const PokemonCard: React.FC<{
         <div className="flex flex-col space-y-6">
           <div className="flex flex-row items-center md:items-start space-y-4 justify-between md:space-y-0">
             <img
-              src={getPokmemonSpriteURL(pokemon.id + 1)}  // 0-index Pokemon id
+              src={getPokmemonSpriteURL(pokemon.id + 1)} // 0-index Pokemon id
               alt={pokemon.name}
               className="w-1/5 ml-[5%] object-contain self-center"
             />
@@ -104,26 +104,34 @@ const PokemonCard: React.FC<{
               </CardContent>
             </Card>
 
-            <Card className="col-span-2">
+            <Card className="flex flex-col max-h-36">
               <CardHeader className="p-3 text-center">
                 <CardTitle className="text-md">Nature</CardTitle>
               </CardHeader>
-              <CardContent className="p-3 pt-0 flex justify-center items-baseline gap-6">
-                <p className="text-md font-medium first-letter:capitalize">
+              <CardContent className="p-3 pt-0 flex-grow flex flex-col justify-start items-center gap-2">
+                <p className="text-sm font-medium first-letter:capitalize">
                   {pokemon.nature.name}
                 </p>
-                <div className="flex gap-2">
-                  <p className="text-xs">
-                    {statToDisplayString(statIncreased)} ▲
-                  </p>
-                  <p className="text-xs">
-                    {statToDisplayString(statDecreased)} ▼
-                  </p>
+                <div className="flex flex-col items-center gap-1">
+                  {statIncreased !== "" && statDecreased !== "" ? (
+                    <>
+                      <p className="text-xs">
+                        {statToDisplayString(statIncreased)} ▲
+                      </p>
+                      <p className="text-xs">
+                        {statToDisplayString(statDecreased)} ▼
+                      </p>
+                    </>
+                  ) : (
+                    <p className="text-xs">
+                      Neutral
+                    </p>
+                  )}
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="flex flex-col col-span-2">
+            <Card className="flex flex-col max-h-36">
               <CardHeader className="p-3 text-center">
                 <CardTitle className="text-md">Biome</CardTitle>
               </CardHeader>
@@ -132,7 +140,7 @@ const PokemonCard: React.FC<{
                   <img
                     src={getBiomeSpriteURL(biome)}
                     alt={biome}
-                    className="w-full object-cover rounded-md"
+                    className="w-1/2 md:w-4/5 object-cover rounded-md"
                   />
                 ) : (
                   <p className="text-center">???</p>
