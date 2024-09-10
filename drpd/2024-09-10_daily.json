@@ -22,7 +22,7 @@
     },
     {
       "id": 1,
-      "reload": false,
+      "reload": true,
       "type": "wild",
       "double": false,
       "actions": [
@@ -469,7 +469,7 @@
     },
     {
       "id": 11,
-      "reload": false,
+      "reload": true,
       "type": "wild",
       "double": false,
       "actions": [
@@ -815,7 +815,7 @@
     },
     {
       "id": 18,
-      "reload": false,
+      "reload": true,
       "type": "wild",
       "double": false,
       "actions": [
@@ -924,7 +924,7 @@
     },
     {
       "id": 21,
-      "reload": false,
+      "reload": true,
       "type": "wild",
       "double": false,
       "actions": [
@@ -1318,7 +1318,7 @@
     },
     {
       "id": 31,
-      "reload": false,
+      "reload": true,
       "type": "wild",
       "double": false,
       "actions": [
@@ -1699,7 +1699,7 @@
     },
     {
       "id": 38,
-      "reload": false,
+      "reload": true,
       "type": "wild",
       "double": false,
       "actions": [
@@ -1804,7 +1804,7 @@
     },
     {
       "id": 41,
-      "reload": false,
+      "reload": true,
       "type": "wild",
       "double": false,
       "actions": [
