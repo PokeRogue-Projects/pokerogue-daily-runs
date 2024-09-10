@@ -7,7 +7,7 @@ export const BOSS_FLOOR = 50;
 
 const POKEROGUE_MEDIA_URL = "https://wiki.pokerogue.net/_media";
 
-export const getPokmemonSpriteURL = (pokemonId: string) =>
+export const getPokmemonSpriteURL = (pokemonId: number) =>
   `${POKEROGUE_MEDIA_URL}/starters:sprites:${pokemonId}.png`;
 
 export const getBiomeSpriteURL = (biome: string) =>

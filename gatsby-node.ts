@@ -40,7 +40,7 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
     }
 
     type Pokemon {
-      id: String!
+      id: Int!
       name: String!
       ability: String!
       isHiddenAbility: Boolean!

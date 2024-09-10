@@ -68,7 +68,7 @@ const PokemonCard: React.FC<{
         <div className="flex flex-col space-y-6">
           <div className="flex flex-row items-center md:items-start space-y-4 justify-between md:space-y-0">
             <img
-              src={getPokmemonSpriteURL(pokemon.id)}
+              src={getPokmemonSpriteURL(pokemon.id + 1)}  // 0-index Pokemon id
               alt={pokemon.name}
               className="w-1/5 ml-[5%] object-contain self-center"
             />

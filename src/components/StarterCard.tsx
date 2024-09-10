@@ -26,7 +26,7 @@ const StarterCard: React.FC<StarterCardProps> = ({ pokemon, className }) => {
       <CardContent>
         <div className="flex flex-row justify-around">
           <img
-            src={getPokmemonSpriteURL(pokemon.id)}
+            src={getPokmemonSpriteURL(pokemon.id + 1)} // 0-index Pokemon id
             alt={pokemon.name}
             className="w-1/5 aspect-square object-contain self-center"
           />

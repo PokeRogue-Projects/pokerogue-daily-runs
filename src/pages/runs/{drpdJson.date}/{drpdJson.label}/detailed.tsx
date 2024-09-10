@@ -12,6 +12,7 @@ const DetailedPage: React.FC<PageProps<Queries.DetailedPageQuery>> = ({
   params,
 }) => {
   const drpdJson = data.drpdJson;
+  const waves = drpdJson.waves.slice(1); // 1-index waves
   const date = params.date;
 
   const renderPokemonCards = (
@@ -35,7 +36,7 @@ const DetailedPage: React.FC<PageProps<Queries.DetailedPageQuery>> = ({
     <Layout date={date}>
       <Navigation />
       <div className="container md:w-[1000px] max-w-full mx-auto px-4 py-8">
-        {drpdJson.waves.map((wave, waveIndex) => (
+        {waves.map((wave, waveIndex) => (
           <div key={waveIndex} className="mb-12">
             <div className="flex flex-col md:flex-row gap-6">
               <div className="md:w-1/2 flex items-center">

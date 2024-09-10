@@ -22,7 +22,7 @@ export interface Wave {
 }
 
 export interface Pokemon {
-  readonly id: string;
+  readonly id: number;
   readonly name: string;
   readonly ability: string;
   readonly isHiddenAbility: boolean;
