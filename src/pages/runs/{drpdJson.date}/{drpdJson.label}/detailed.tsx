@@ -38,11 +38,11 @@ const DetailedPage: React.FC<PageProps<Queries.DetailedPageQuery>> = ({
       <div className="container md:w-[1000px] max-w-full mx-auto px-4 py-8">
         {waves.map((wave, waveIndex) => (
           <div key={waveIndex} className="mb-12">
-            <div className="flex flex-col md:flex-row gap-6">
-              <div className="md:w-1/2 flex items-center">
+            <div className="flex flex-col sm:flex-row gap-6">
+              <div className="sm:w-1/2 flex items-center">
                 <WaveInfoCard wave={wave} waveIndex={waveIndex} />
               </div>
-              <div className="md:w-1/2">
+              <div className="sm:w-1/2">
                 {wave.trainer ? (
                   <TrainerCard
                     trainerId={wave.trainer.id}
