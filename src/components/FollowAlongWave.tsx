@@ -1,6 +1,7 @@
+import { getInstructions } from "@/utils/waveUtils";
 import { CheckedState } from "@radix-ui/react-checkbox";
 import { ChevronDown, ChevronRight } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   AnimatedCollapsible,
   AnimatedCollapsibleContent,
@@ -32,7 +33,7 @@ const FollowAlongWave: React.FC<FollowAlongWaveProps> = ({
   waveOpen,
   setWaveOpen,
 }) => {
-  const actions = wave.actions.filter(action => action !== "");
+  const { reload, actions, shop, reroll } = getInstructions(wave);
 
   const [actionChecks, setActionChecks] = useState<readonly boolean[]>(
     new Array(actions.length).fill(false),
@@ -71,8 +72,8 @@ const FollowAlongWave: React.FC<FollowAlongWaveProps> = ({
   ) => {
     if (
       newActionChecks.every(Boolean) &&
-      (!wave.reload || newReloadCheck) &&
-      (wave.shop === "" || newShopCheck)
+      (!reload || newReloadCheck) &&
+      (shop === "" || newShopCheck)
     )
       setWaveOpen(false);
   };
@@ -91,7 +92,7 @@ const FollowAlongWave: React.FC<FollowAlongWaveProps> = ({
       </AnimatedCollapsibleTrigger>
       <AnimatedCollapsibleContent className="className=data-[state=closed]:animate-[0.2s_50ms_collapsible-up_ease-out]">
         <ul className="space-y-1 my-2 ml-1">
-          {wave.reload && (
+          {reload && (
             <li className="ml-1 space-x-2">
               <Checkbox
                 id={`checkbox-${wave.id}-reload`}
@@ -119,7 +120,7 @@ const FollowAlongWave: React.FC<FollowAlongWaveProps> = ({
               <></>
             ),
           )}
-          {wave.shop !== "" && (
+          {shop !== "" && (
             <li className="ml-1 space-x-2">
               <Checkbox
                 id={`checkbox-${wave.id}-shop`}
@@ -127,7 +128,7 @@ const FollowAlongWave: React.FC<FollowAlongWaveProps> = ({
                 onCheckedChange={handleShopCheckChange}
               />
               <label htmlFor={`checkbox-${wave.id}-shop`}>
-                <ShopActionText shop={wave.shop} />
+                <ShopActionText shop={shop} reroll={reroll} />
               </label>
             </li>
           )}
