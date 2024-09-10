@@ -13,5 +13,8 @@ export const getPokmemonSpriteURL = (pokemonId: number) =>
 export const getBiomeSpriteURL = (biome: string) =>
   `${POKEROGUE_MEDIA_URL}/en:biomes:en_${biome}_bg.png`;
 
-export const getTrainerSpriteURL = (trainer: string) =>
-  `${POKEROGUE_MEDIA_URL}/trainers:${trainer}.png`;
+export const getTrainerSpriteURL = (trainer: string) => {
+  if (trainer === "Crasher Wake")
+      return `${POKEROGUE_MEDIA_URL}/trainers:crasher_wa.png`; // Crasher Wake has a different file name
+  return `${POKEROGUE_MEDIA_URL}/trainers:${trainer}.png`; 
+}
