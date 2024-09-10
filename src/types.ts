@@ -26,7 +26,7 @@ export interface Pokemon {
   readonly name: string;
   readonly ability: string;
   readonly isHiddenAbility: boolean;
-  readonly passive: string;
+  readonly passiveAbility: string;
   readonly nature: Nature;
   readonly gender: string;
   readonly rarity: string;

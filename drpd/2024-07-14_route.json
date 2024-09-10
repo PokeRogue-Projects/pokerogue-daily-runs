@@ -21,7 +21,7 @@
           "name": "Mareanie",
           "ability": "Merciless",
           "isHiddenAbility": false,
-          "passive": "Toxic Debris",
+          "passiveAbility": "Toxic Debris",
           "nature": {
             "name": "Impish",
             "increased": "def",
@@ -62,7 +62,7 @@
           "name": "Staryu",
           "ability": "Natural Cure",
           "isHiddenAbility": false,
-          "passive": "Regenerator",
+          "passiveAbility": "Regenerator",
           "nature": {
             "name": "Quirky",
             "increased": "",
@@ -98,7 +98,7 @@
           "name": "Mareanie",
           "ability": "Limber",
           "isHiddenAbility": false,
-          "passive": "Toxic Debris",
+          "passiveAbility": "Toxic Debris",
           "nature": {
             "name": "Naive",
             "increased": "spe",
@@ -134,7 +134,7 @@
           "name": "Binacle",
           "ability": "Tough Claws",
           "isHiddenAbility": false,
-          "passive": "Sap Sipper",
+          "passiveAbility": "Sap Sipper",
           "nature": {
             "name": "Sassy",
             "increased": "spdef",
@@ -197,7 +197,7 @@
           "name": "Sandygast",
           "ability": "Water Compaction",
           "isHiddenAbility": false,
-          "passive": "Sand Spit",
+          "passiveAbility": "Sand Spit",
           "nature": {
             "name": "Rash",
             "increased": "spatk",
@@ -238,7 +238,7 @@
           "name": "Dwebble",
           "ability": "Shell Armor",
           "isHiddenAbility": false,
-          "passive": "Anger Shell",
+          "passiveAbility": "Anger Shell",
           "nature": {
             "name": "Rash",
             "increased": "spatk",
@@ -274,7 +274,7 @@
           "name": "Clauncher",
           "ability": "Mega Launcher",
           "isHiddenAbility": false,
-          "passive": "Swift Swim",
+          "passiveAbility": "Swift Swim",
           "nature": {
             "name": "Impish",
             "increased": "def",
@@ -315,7 +315,7 @@
           "name": "Wugtrio",
           "ability": "Gooey",
           "isHiddenAbility": false,
-          "passive": "Sturdy",
+          "passiveAbility": "Sturdy",
           "nature": {
             "name": "Relaxed",
             "increased": "def",
@@ -358,7 +358,7 @@
           "name": "Quaxwell",
           "ability": "Torrent",
           "isHiddenAbility": false,
-          "passive": "Defiant",
+          "passiveAbility": "Defiant",
           "nature": {
             "name": "Hasty",
             "increased": "spe",
@@ -417,7 +417,7 @@
           "name": "Bruxish",
           "ability": "Dazzling",
           "isHiddenAbility": false,
-          "passive": "Multiscale",
+          "passiveAbility": "Multiscale",
           "nature": {
             "name": "Adamant",
             "increased": "atk",
@@ -442,7 +442,7 @@
           "name": "Meowth",
           "ability": "Technician",
           "isHiddenAbility": false,
-          "passive": "Dark Aura",
+          "passiveAbility": "Dark Aura",
           "nature": {
             "name": "Bold",
             "increased": "def",
@@ -483,7 +483,7 @@
           "name": "Rattata",
           "ability": "Hustle",
           "isHiddenAbility": false,
-          "passive": "Strong Jaw",
+          "passiveAbility": "Strong Jaw",
           "nature": {
             "name": "Naughty",
             "increased": "atk",
@@ -525,7 +525,7 @@
           "name": "Meowth",
           "ability": "Pickup",
           "isHiddenAbility": false,
-          "passive": "Dark Aura",
+          "passiveAbility": "Dark Aura",
           "nature": {
             "name": "Adamant",
             "increased": "atk",
@@ -561,7 +561,7 @@
           "name": "Vulpix",
           "ability": "Snow Cloak",
           "isHiddenAbility": false,
-          "passive": "Sheer Force (P)",
+          "passiveAbility": "Sheer Force (P)",
           "nature": {
             "name": "Relaxed",
             "increased": "def",
@@ -636,7 +636,7 @@
           "name": "Raticate",
           "ability": "Hustle",
           "isHiddenAbility": false,
-          "passive": "Strong Jaw",
+          "passiveAbility": "Strong Jaw",
           "nature": {
             "name": "Serious",
             "increased": "",
@@ -678,7 +678,7 @@
           "name": "Raticate",
           "ability": "Hustle",
           "isHiddenAbility": false,
-          "passive": "Strong Jaw",
+          "passiveAbility": "Strong Jaw",
           "nature": {
             "name": "Naughty",
             "increased": "atk",
@@ -703,7 +703,7 @@
           "name": "Grimer",
           "ability": "Poison Touch",
           "isHiddenAbility": false,
-          "passive": "Toxic Debris",
+          "passiveAbility": "Toxic Debris",
           "nature": {
             "name": "Rash",
             "increased": "spatk",
@@ -746,7 +746,7 @@
           "name": "Bruxish",
           "ability": "Dazzling",
           "isHiddenAbility": false,
-          "passive": "Multiscale",
+          "passiveAbility": "Multiscale",
           "nature": {
             "name": "Jolly",
             "increased": "spe",
@@ -792,7 +792,7 @@
           "name": "Dugtrio",
           "ability": "Tangling Hair",
           "isHiddenAbility": false,
-          "passive": "Sturdy",
+          "passiveAbility": "Sturdy",
           "nature": {
             "name": "Docile",
             "increased": "",
@@ -817,7 +817,7 @@
           "name": "Sandslash",
           "ability": "Snow Cloak",
           "isHiddenAbility": false,
-          "passive": "Tough Claws",
+          "passiveAbility": "Tough Claws",
           "nature": {
             "name": "Brave",
             "increased": "atk",
@@ -889,7 +889,7 @@
           "name": "Poliwhirl",
           "ability": "Damp",
           "isHiddenAbility": false,
-          "passive": "No Guard",
+          "passiveAbility": "No Guard",
           "nature": {
             "name": "Serious",
             "increased": "",
@@ -930,7 +930,7 @@
           "name": "Tentacruel",
           "ability": "Liquid Ooze",
           "isHiddenAbility": false,
-          "passive": "Toxic Chain",
+          "passiveAbility": "Toxic Chain",
           "nature": {
             "name": "Mild",
             "increased": "spatk",
@@ -977,7 +977,7 @@
           "name": "Malamar",
           "ability": "Suction Cups",
           "isHiddenAbility": false,
-          "passive": "Unnerve",
+          "passiveAbility": "Unnerve",
           "nature": {
             "name": "Mild",
             "increased": "spatk",
@@ -1019,7 +1019,7 @@
           "name": "Slowbro",
           "ability": "Own Tempo",
           "isHiddenAbility": false,
-          "passive": "Unaware",
+          "passiveAbility": "Unaware",
           "nature": {
             "name": "Gentle",
             "increased": "spdef",
@@ -1076,7 +1076,7 @@
           "name": "Lumineon",
           "ability": "Storm Drain",
           "isHiddenAbility": false,
-          "passive": "Drizzle",
+          "passiveAbility": "Drizzle",
           "nature": {
             "name": "Docile",
             "increased": "",
@@ -1117,7 +1117,7 @@
           "name": "Gyarados",
           "ability": "Intimidate",
           "isHiddenAbility": false,
-          "passive": "Multiscale",
+          "passiveAbility": "Multiscale",
           "nature": {
             "name": "Brave",
             "increased": "atk",
@@ -1142,7 +1142,7 @@
           "name": "Floatzel",
           "ability": "Swift Swim",
           "isHiddenAbility": false,
-          "passive": "Moxie",
+          "passiveAbility": "Moxie",
           "nature": {
             "name": "Relaxed",
             "increased": "def",
@@ -1182,7 +1182,7 @@
           "name": "Lumineon",
           "ability": "Storm Drain",
           "isHiddenAbility": false,
-          "passive": "Drizzle",
+          "passiveAbility": "Drizzle",
           "nature": {
             "name": "Adamant",
             "increased": "atk",
@@ -1224,7 +1224,7 @@
           "name": "Lumineon",
           "ability": "Storm Drain",
           "isHiddenAbility": false,
-          "passive": "Drizzle",
+          "passiveAbility": "Drizzle",
           "nature": {
             "name": "Docile",
             "increased": "",
@@ -1295,7 +1295,7 @@
           "name": "Octillery",
           "ability": "Sniper",
           "isHiddenAbility": false,
-          "passive": "Simple",
+          "passiveAbility": "Simple",
           "nature": {
             "name": "Brave",
             "increased": "atk",
@@ -1337,7 +1337,7 @@
           "name": "Octillery",
           "ability": "Suction Cups",
           "isHiddenAbility": false,
-          "passive": "Simple",
+          "passiveAbility": "Simple",
           "nature": {
             "name": "Timid",
             "increased": "spe",
@@ -1381,7 +1381,7 @@
           "name": "Jellicent",
           "ability": "Water Absorb (P)",
           "isHiddenAbility": false,
-          "passive": "Unaware",
+          "passiveAbility": "Unaware",
           "nature": {
             "name": "Calm",
             "increased": "spdef",
@@ -1423,7 +1423,7 @@
           "name": "Octillery",
           "ability": "Suction Cups",
           "isHiddenAbility": false,
-          "passive": "Simple",
+          "passiveAbility": "Simple",
           "nature": {
             "name": "Lonely",
             "increased": "atk",
@@ -1491,7 +1491,7 @@
           "name": "Octillery",
           "ability": "Suction Cups",
           "isHiddenAbility": false,
-          "passive": "Simple",
+          "passiveAbility": "Simple",
           "nature": {
             "name": "Serious",
             "increased": "",
@@ -1527,7 +1527,7 @@
           "name": "Wailord",
           "ability": "Oblivious",
           "isHiddenAbility": false,
-          "passive": "Levitate",
+          "passiveAbility": "Levitate",
           "nature": {
             "name": "Modest",
             "increased": "spatk",
@@ -1575,7 +1575,7 @@
           "name": "Luvdisc",
           "ability": "Swift Swim",
           "isHiddenAbility": false,
-          "passive": "Multiscale",
+          "passiveAbility": "Multiscale",
           "nature": {
             "name": "Adamant",
             "increased": "atk",
@@ -1611,7 +1611,7 @@
           "name": "Clamperl",
           "ability": "Shell Armor",
           "isHiddenAbility": false,
-          "passive": "Drizzle",
+          "passiveAbility": "Drizzle",
           "nature": {
             "name": "Impish",
             "increased": "def",
@@ -1693,7 +1693,7 @@
           "name": "Garganacl",
           "ability": "Sturdy",
           "isHiddenAbility": false,
-          "passive": "Solid Rock",
+          "passiveAbility": "Solid Rock",
           "nature": {
             "name": "Hardy",
             "increased": "",
@@ -1724,7 +1724,7 @@
           "name": "Hariyama",
           "ability": "Guts",
           "isHiddenAbility": false,
-          "passive": "Stamina",
+          "passiveAbility": "Stamina",
           "nature": {
             "name": "Calm",
             "increased": "spdef",
@@ -1765,7 +1765,7 @@
           "name": "Garganacl",
           "ability": "Purifying Salt",
           "isHiddenAbility": false,
-          "passive": "Solid Rock",
+          "passiveAbility": "Solid Rock",
           "nature": {
             "name": "Mild",
             "increased": "spatk",
@@ -1807,7 +1807,7 @@
           "name": "Ursaring",
           "ability": "Quick Feet",
           "isHiddenAbility": false,
-          "passive": "Thick Fat",
+          "passiveAbility": "Thick Fat",
           "nature": {
             "name": "Rash",
             "increased": "spatk",
@@ -1848,7 +1848,7 @@
           "name": "Diggersby",
           "ability": "Cheek Pouch (P)",
           "isHiddenAbility": false,
-          "passive": "Guts",
+          "passiveAbility": "Guts",
           "nature": {
             "name": "Hasty",
             "increased": "spe",
@@ -1922,7 +1922,7 @@
           "name": "Swoobat",
           "ability": "Unaware",
           "isHiddenAbility": false,
-          "passive": "Opportunist",
+          "passiveAbility": "Opportunist",
           "nature": {
             "name": "Relaxed",
             "increased": "def",
@@ -1947,7 +1947,7 @@
           "name": "Ferrothorn",
           "ability": "Iron Barbs",
           "isHiddenAbility": false,
-          "passive": "Rough Skin",
+          "passiveAbility": "Rough Skin",
           "nature": {
             "name": "Hardy",
             "increased": "",
@@ -1998,7 +1998,7 @@
           "name": "Probopass",
           "ability": "Magnet Pull",
           "isHiddenAbility": false,
-          "passive": "Levitate",
+          "passiveAbility": "Levitate",
           "nature": {
             "name": "Relaxed",
             "increased": "def",
@@ -2039,7 +2039,7 @@
           "name": "Carbink",
           "ability": "Clear Body",
           "isHiddenAbility": false,
-          "passive": "Solid Rock",
+          "passiveAbility": "Solid Rock",
           "nature": {
             "name": "Brave",
             "increased": "atk",
@@ -2086,7 +2086,7 @@
           "name": "Crobat",
           "ability": "Inner Focus",
           "isHiddenAbility": false,
-          "passive": "Intimidate",
+          "passiveAbility": "Intimidate",
           "nature": {
             "name": "Bashful",
             "increased": "",
@@ -2138,7 +2138,7 @@
           "name": "Mewtwo",
           "ability": "Pressure",
           "isHiddenAbility": false,
-          "passive": "Neuroforce",
+          "passiveAbility": "Neuroforce",
           "nature": {
             "name": "Quiet",
             "increased": "spatk",

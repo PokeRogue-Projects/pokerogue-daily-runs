@@ -92,7 +92,7 @@ export const query = graphql`
           increased
           decreased
         }
-        passive
+        passiveAbility
         rarity
       }
       title
@@ -128,7 +128,7 @@ export const query = graphql`
             increased
             decreased
           }
-          passive
+          passiveAbility
           rarity
         }
         reload

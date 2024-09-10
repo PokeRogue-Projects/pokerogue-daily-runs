@@ -100,7 +100,7 @@ const PokemonCard: React.FC<{
             <Card>
               <CardContent className="p-2 gap-2 flex flex-col justify-center items-center">
                 <p className="text-md">Passive</p>
-                <p className="text-xs text-center">{pokemon.passive}</p>
+                <p className="text-xs text-center">{pokemon.passiveAbility}</p>
               </CardContent>
             </Card>
 
