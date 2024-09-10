@@ -44,7 +44,7 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       name: String!
       ability: String!
       isHiddenAbility: Boolean!
-      passive: String!
+      passiveAbility: String!
       nature: Nature!
       gender: String!
       rarity: String!

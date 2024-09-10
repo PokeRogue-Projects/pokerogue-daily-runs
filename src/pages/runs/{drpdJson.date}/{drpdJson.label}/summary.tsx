@@ -67,7 +67,7 @@ export const query = graphql`
         rarity
         name
         level
-        passive
+        passiveAbility
         nature {
           decreased
           increased
@@ -104,7 +104,7 @@ export const query = graphql`
           rarity
           name
           level
-          passive
+          passiveAbility
           nature {
             decreased
             increased
