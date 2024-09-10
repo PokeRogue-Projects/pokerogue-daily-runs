@@ -102,18 +102,22 @@ const FollowAlongWave: React.FC<FollowAlongWaveProps> = ({
               </label>
             </li>
           )}
-          {wave.actions.map((action, actionIndex) => (
-            <li key={actionIndex} className="ml-1 space-x-2">
-              <Checkbox
-                id={`checkbox-${wave.id}-${actionIndex}`}
-                checked={actionChecks[actionIndex]}
-                onCheckedChange={handleActionCheckChange(actionIndex)}
-              />
-              <label htmlFor={`checkbox-${wave.id}-${actionIndex}`}>
-                <WaveActionText className="font-semibold" action={action} />
-              </label>
-            </li>
-          ))}
+          {wave.actions.map((action, actionIndex) =>
+            action !== "" ? (
+              <li key={actionIndex} className="ml-1 space-x-2">
+                <Checkbox
+                  id={`checkbox-${wave.id}-${actionIndex}`}
+                  checked={actionChecks[actionIndex]}
+                  onCheckedChange={handleActionCheckChange(actionIndex)}
+                />
+                <label htmlFor={`checkbox-${wave.id}-${actionIndex}`}>
+                  <WaveActionText className="font-semibold" action={action} />
+                </label>
+              </li>
+            ) : (
+              <></>
+            ),
+          )}
           {wave.shop !== "" && (
             <li className="ml-1 space-x-2">
               <Checkbox
