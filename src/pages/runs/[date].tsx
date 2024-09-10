@@ -8,6 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { kebabize } from "@/utils/stringUtils";
 import { isMatch } from "date-fns";
 import { graphql, Link, navigate, PageProps } from "gatsby";
 import React, { useEffect } from "react";
@@ -49,13 +50,13 @@ const RunsPage: React.FC<PageProps<Queries.RunsPageQuery>> = ({
                     </CardContent>
                     <CardFooter className="grid grid-cols-2 gap-2">
                       <Button asChild variant="outline" className="col-span-2">
-                        <Link to={`./${node.label}/summary`}>Summary</Link>
+                        <Link to={`./${kebabize(node.label)}/summary`}>Summary</Link>
                       </Button>
                       <Button asChild variant="outline">
-                        <Link to={`./${node.label}/detailed`}>Detailed</Link>
+                        <Link to={`./${kebabize(node.label)}/detailed`}>Detailed</Link>
                       </Button>
                       <Button asChild variant="outline">
-                        <Link to={`./${node.label}/follow-along`}>
+                        <Link to={`./${kebabize(node.label)}/follow-along`}>
                           Follow Along
                         </Link>
                       </Button>
