@@ -1,4 +1,10 @@
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Wave } from "@/types";
 import React from "react";
 import {
@@ -23,25 +29,32 @@ const WaveInfoCard: React.FC<{
   readonly wave: Wave;
   readonly waveIndex: number;
 }> = ({ wave, waveIndex }) => (
-  <Card className="w-full h-full flex flex-col justify-between">
+  <Card className="w-full h-full flex flex-col">
+    <CardHeader>
+      <CardTitle className="text-2xl font-bold">Wave {wave.id}</CardTitle>
+    </CardHeader>
     <CardContent>
-      <div className="space-y-4 justify-center my-6">
+      <div className="space-y-8 justify-center">
         {wave.reload && (
-          <p className="whitespace-pre-line mb-6">
+          <p className="whitespace-pre-line">
             <ReloadActionText />
           </p>
         )}
-        <div className="pt-4">
-          {wave.actions.map((action, index) => (
-            action !== "" ? <Step key={index} text={action} index={index} /> : <></>
-          ))}
+        <div>
+          {wave.actions.map((action, index) =>
+            action !== "" ? (
+              <Step key={index} text={action} index={index} />
+            ) : (
+              <></>
+            ),
+          )}
         </div>
+        {wave.shop && (
+          <p className="whitespace-pre-line">
+            <ShopActionText shop={wave.shop} />
+          </p>
+        )}
       </div>
-      {wave.shop && (
-        <p className="whitespace-pre-line">
-          <ShopActionText shop={wave.shop} />
-        </p>
-      )}
     </CardContent>
   </Card>
 );
