@@ -36,7 +36,7 @@ const SummaryPokemonCard: React.FC<SummaryPokemonCardProps> = ({
       </CardHeader>
       <CardContent className="pb-4 flex-grow flex flex-col md:flex-row gap-4 md:gap-0 justify-around">
         <img
-          src={getPokmemonSpriteURL(pokemon.id)}
+          src={getPokmemonSpriteURL(pokemon.id + 1)} // 0-index Pokemon id
           alt={pokemon.name}
           className="w-2/5 md:w-1/5 aspect-square object-contain self-center"
         />

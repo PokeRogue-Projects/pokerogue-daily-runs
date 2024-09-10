@@ -10,7 +10,7 @@ const FollowAlongPage: React.FC<PageProps<Queries.FollowAlongPageQuery>> = ({
   data,
   params,
 }) => {
-  const waves = data.drpdJson.waves;
+  const waves = data.drpdJson.waves.slice(1); // 1-index waves
   const date = params.date;
 
   return (

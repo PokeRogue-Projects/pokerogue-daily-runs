@@ -13,6 +13,7 @@ const SummaryPage: React.FC<PageProps<Queries.SummaryPageQuery>> = ({
   params,
 }) => {
   const drpdJson = data.drpdJson;
+  const waves = drpdJson.waves.slice(1); // 1-index waves
   const date = params.date;
 
   return (
@@ -35,14 +36,14 @@ const SummaryPage: React.FC<PageProps<Queries.SummaryPageQuery>> = ({
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {GYM_FLOORS.map((floor) => (
               <TrainerCard
-                trainerId={drpdJson.waves[floor - 1].trainer.id}
-                trainerType="Gym Leader"
-                name={drpdJson.waves[floor - 1].trainer.type}
+                trainerId={waves[floor - 1].trainer.id}
+                trainerType={waves[floor - 1].trainer.type}
+                name={waves[floor - 1].trainer.name}
                 waveNumber={floor}
                 key={floor}
               />
             ))}
-            <BossCard pokemon={drpdJson.waves[BOSS_FLOOR - 1].pokemon[0]} />
+            <BossCard pokemon={waves[BOSS_FLOOR - 1].pokemon[0]} />
           </div>
         </div>
       </div>

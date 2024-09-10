@@ -22,7 +22,7 @@ const BossCard: React.FC<BossCardProps> = ({ pokemon, className }) => {
         <p className="text-xl font-bold mb-4">{pokemon.name}</p>
         <div className="rounded-lg p-4 max-w-4/5 aspect-square bg-purple-200">
           <img
-            src={getPokmemonSpriteURL(pokemon.id)}
+            src={getPokmemonSpriteURL(pokemon.id + 1)} // 0-index Pokemon id
             alt={pokemon.name}
             className="w-32 max-w-full aspect-square object-contain self-center"
           />
