@@ -32,13 +32,9 @@ const WaveInfoCard: React.FC<{
           </p>
         )}
         <div className="pt-4">
-          {Array.isArray(wave.actions) ? (
-            wave.actions.map((action, index) => (
-              <Step text={action} index={index} />
-            ))
-          ) : (
-            <p>{wave.actions}</p>
-          )}
+          {wave.actions.map((action, index) => (
+            action !== "" ? <Step key={index} text={action} index={index} /> : <></>
+          ))}
         </div>
       </div>
       {wave.shop && (
