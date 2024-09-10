@@ -1,18 +1,17 @@
-import React, { useState } from "react";
+import { CheckedState } from "@radix-ui/react-checkbox";
+import { ChevronDown, ChevronRight } from "lucide-react";
+import React, { useEffect, useState } from "react";
 import {
   AnimatedCollapsible,
   AnimatedCollapsibleContent,
   AnimatedCollapsibleTrigger,
 } from "./ui/animatedCollapsible";
 import { Checkbox } from "./ui/checkbox";
-import { Separator } from "./ui/separator";
 import {
   ReloadActionText,
   ShopActionText,
   WaveActionText,
 } from "./WaveActionText";
-import { CheckedState } from "@radix-ui/react-checkbox";
-import { cn } from "./lib/utils";
 
 type FollowAlongWaveProps = React.HTMLAttributes<HTMLDivElement> & {
   wave: Queries.FollowAlongPageQuery["drpdJson"]["waves"][number];
@@ -33,15 +32,16 @@ const FollowAlongWave: React.FC<FollowAlongWaveProps> = ({
   waveOpen,
   setWaveOpen,
 }) => {
+  const actions = wave.actions.filter(action => action !== "");
+
   const [actionChecks, setActionChecks] = useState<readonly boolean[]>(
-    new Array(wave.actions.length).fill(false),
+    new Array(actions.length).fill(false),
   );
   const [reloadCheck, setReloadCheck] = useState<boolean>(false);
   const [shopCheck, setShopCheck] = useState<boolean>(false);
 
   const handleActionCheckChange =
     (changeIndex: number) => (newCheck: CheckedState) => {
-      console.log(newCheck);
       const newActionChecks: readonly boolean[] = actionChecks.map(
         (check, index) => (index != changeIndex ? check : newCheck === true),
       );
@@ -84,8 +84,9 @@ const FollowAlongWave: React.FC<FollowAlongWaveProps> = ({
       onOpenChange={setWaveOpen}
     >
       <AnimatedCollapsibleTrigger asChild>
-        <button>
-          <h3 className="font-bold py-1">Wave {waveIndex + 1}</h3>
+        <button className="flex items-center space-x-1">
+          {waveOpen ? <ChevronDown /> : <ChevronRight />}
+          <h3 className="font-bold py-1"> Wave {waveIndex + 1}</h3>
         </button>
       </AnimatedCollapsibleTrigger>
       <AnimatedCollapsibleContent className="className=data-[state=closed]:animate-[0.2s_50ms_collapsible-up_ease-out]">
@@ -102,7 +103,7 @@ const FollowAlongWave: React.FC<FollowAlongWaveProps> = ({
               </label>
             </li>
           )}
-          {wave.actions.map((action, actionIndex) =>
+          {actions.map((action, actionIndex) =>
             action !== "" ? (
               <li key={actionIndex} className="ml-1 space-x-2">
                 <Checkbox
