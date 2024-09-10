@@ -69,11 +69,11 @@ const PokemonChartLabel: React.FC<PokemonChartLabelProps> = ({
   // Recharts only let us send string or number values to label
 
   return (
-    <text className="text-2xs xs:text-xs md:max-lg:text-2xs" x={x} y={y} textAnchor={textAnchor}>
+    <text className="text-2xs xs:text-xs sm:max-lg:text-2xs" x={x} y={y} textAnchor={textAnchor}>
       <tspan fill={getStatNameFill(stat as Stat, statIncreased, statDecreased)}>
         {statToDisplayString(stat as Stat)}
       </tspan>
-      <tspan dx={5} fill={getStatValueFill(value)}>
+      <tspan dx={3} fill={getStatValueFill(value)}>
         ({value})
       </tspan>
     </text>

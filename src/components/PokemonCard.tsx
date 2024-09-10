@@ -70,7 +70,7 @@ const PokemonCard: React.FC<{
             <img
               src={getPokmemonSpriteURL(pokemon.id + 1)} // 0-index Pokemon id
               alt={pokemon.name}
-              className="w-1/5 ml-[5%] object-contain self-center"
+              className="w-1/5 aspect-square ml-[5%] object-contain self-center"
             />
             <IvChart
               ivs={pokemon.ivs}
@@ -123,9 +123,7 @@ const PokemonCard: React.FC<{
                       </p>
                     </>
                   ) : (
-                    <p className="text-xs">
-                      Neutral
-                    </p>
+                    <p className="text-xs">Neutral</p>
                   )}
                 </div>
               </CardContent>
@@ -135,12 +133,12 @@ const PokemonCard: React.FC<{
               <CardHeader className="p-3 text-center">
                 <CardTitle className="text-md">Biome</CardTitle>
               </CardHeader>
-              <CardContent className="p-3 pt-0 flex-grow flex items-center justify-center">
+              <CardContent className="p-3 pt-0 flex-grow min-h-0 flex items-center justify-center">
                 {biome !== "???" ? (
                   <img
                     src={getBiomeSpriteURL(biome)}
                     alt={biome}
-                    className="w-1/2 md:w-4/5 object-cover rounded-md"
+                    className="h-full object-cover rounded-md"
                   />
                 ) : (
                   <p className="text-center">???</p>

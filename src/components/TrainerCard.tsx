@@ -9,7 +9,7 @@ const TrainerCard: React.FC<{
   waveNumber?: number;
 }> = ({ trainerId, trainerType, name, waveNumber }) => {
   return (
-    <Card className="w-full max-w-sm mx-auto relative">
+    <Card className="w-full h-full mx-auto relative">
       {waveNumber !== undefined && (
         <div className="absolute top-2 right-2 bg-primary text-primary-foreground rounded-full w-8 h-8 flex items-center justify-center font-bold">
           {waveNumber}
