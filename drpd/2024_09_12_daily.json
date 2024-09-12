@@ -1,0 +1,2276 @@
+{
+  "version": "1.1.0b",
+  "seed": "YqSBn4OQm8P31Xp53q3emg==",
+  "title": "Daily Run",
+  "authors": [
+    "gothaminist"
+  ],
+  "date": "2024-09-12",
+  "label": "unnamedRoute",
+  "uuid": "3db75662-eefd-4596-8631-e27fbdafa3dd",
+  "waves": [
+    {
+      "id": 0,
+      "reload": false,
+      "type": "boss",
+      "double": false,
+      "actions": [
+        "[No actions?]"
+      ],
+      "shop": "",
+      "biome": "Plains"
+    },
+    {
+      "id": 1,
+      "reload": true,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        "",
+        "Poké Ball",
+        "Dracovish | Ancient Power → Double Team"
+      ],
+      "shop": "5x Poké Ball",
+      "biome": "Plains",
+      "pokemon": [
+        {
+          "id": 915,
+          "name": "Oinkologne",
+          "ability": "Gluttony",
+          "isHiddenAbility": false,
+          "passiveAbility": "Simple",
+          "nature": {
+            "name": "Careful",
+            "increased": "spdef",
+            "decreased": "spatk"
+          },
+          "gender": "Male",
+          "rarity": "[Unknown]",
+          "captured": true,
+          "level": 20,
+          "items": [],
+          "ivs": {
+            "hp": 15,
+            "atk": 2,
+            "def": 0,
+            "spatk": 27,
+            "spdef": 11,
+            "spe": 28
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "reload": false,
+      "type": "wild",
+      "double": true,
+      "actions": [
+        " x3",
+        "Poké Ball"
+      ],
+      "shop": "5x Great Ball",
+      "biome": "Plains",
+      "pokemon": [
+        {
+          "id": 63,
+          "name": "Kadabra",
+          "ability": "Inner Focus",
+          "isHiddenAbility": false,
+          "passiveAbility": "Psychic Surge",
+          "nature": {
+            "name": "Calm",
+            "increased": "spdef",
+            "decreased": "atk"
+          },
+          "gender": "Male",
+          "rarity": "Rare",
+          "captured": true,
+          "level": 21,
+          "items": [],
+          "ivs": {
+            "hp": 12,
+            "atk": 15,
+            "def": 7,
+            "spatk": 23,
+            "spdef": 20,
+            "spe": 12
+          }
+        },
+        {
+          "id": 399,
+          "name": "Bibarel",
+          "ability": "Unaware",
+          "isHiddenAbility": false,
+          "passiveAbility": "Sap Sipper",
+          "nature": {
+            "name": "Naive",
+            "increased": "spe",
+            "decreased": "spdef"
+          },
+          "gender": "Male",
+          "rarity": "Common",
+          "captured": false,
+          "level": 20,
+          "items": [],
+          "ivs": {
+            "hp": 11,
+            "atk": 1,
+            "def": 1,
+            "spatk": 0,
+            "spdef": 18,
+            "spe": 14
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        "",
+        "Poké Ball",
+        "Armarouge | Flame Charge → Sleep Talk",
+        "Oinkologne | Headbutt → Covet"
+      ],
+      "shop": "Potion → Kadabra",
+      "biome": "Plains",
+      "pokemon": [
+        {
+          "id": 21,
+          "name": "Fearow",
+          "ability": "Keen Eye",
+          "isHiddenAbility": false,
+          "passiveAbility": "Moxie",
+          "nature": {
+            "name": "Docile",
+            "increased": "",
+            "decreased": ""
+          },
+          "gender": "Male",
+          "rarity": "Uncommon",
+          "captured": true,
+          "level": 20,
+          "items": [],
+          "ivs": {
+            "hp": 22,
+            "atk": 7,
+            "def": 2,
+            "spatk": 15,
+            "spdef": 19,
+            "spe": 13
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "reload": true,
+      "type": "wild",
+      "double": true,
+      "actions": [
+        "",
+        "Switch to Delcatty & Switch to Oinkologne x2",
+        "Great Ball",
+        "Add Tauros, replacing Delcatty (Slot 1)"
+      ],
+      "shop": "Potion → Armarouge",
+      "biome": "Plains",
+      "pokemon": [
+        {
+          "id": 21,
+          "name": "Fearow",
+          "ability": "Keen Eye",
+          "isHiddenAbility": false,
+          "passiveAbility": "Moxie",
+          "nature": {
+            "name": "Adamant",
+            "increased": "atk",
+            "decreased": "spatk"
+          },
+          "gender": "Female",
+          "rarity": "Uncommon",
+          "captured": false,
+          "level": 23,
+          "items": [],
+          "ivs": {
+            "hp": 1,
+            "atk": 25,
+            "def": 3,
+            "spatk": 10,
+            "spdef": 28,
+            "spe": 14
+          }
+        },
+        {
+          "id": 1079,
+          "name": "Tauros",
+          "ability": "Anger Point",
+          "isHiddenAbility": false,
+          "passiveAbility": "Adaptability",
+          "nature": {
+            "name": "Bashful",
+            "increased": "",
+            "decreased": ""
+          },
+          "gender": "Male",
+          "rarity": "Rare",
+          "captured": true,
+          "level": 22,
+          "items": [],
+          "ivs": {
+            "hp": 29,
+            "atk": 10,
+            "def": 12,
+            "spatk": 3,
+            "spdef": 5,
+            "spe": 31
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "reload": false,
+      "type": "trainer",
+      "double": true,
+      "actions": [
+        "Switch to Delcatty & Switch to Oinkologne x2",
+        "Skip Take Down x2"
+      ],
+      "shop": "Potion → Armarouge",
+      "biome": "Plains",
+      "trainer": {
+        "id": "46",
+        "name": "Ally & Amy",
+        "type": "Twins"
+      }
+    },
+    {
+      "id": 6,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        "Switch to Delcatty x3",
+        "Poké Ball",
+        "Don't keep Oinkologne",
+        "Armarouge | Incinerate → Helping Hand",
+        "Oinkologne | Yawn → Mud Shot",
+        "Kadabra | Recover → Teleport"
+      ],
+      "shop": "5x Poké Ball",
+      "biome": "Plains",
+      "pokemon": [
+        {
+          "id": 915,
+          "name": "Oinkologne",
+          "ability": "Aroma Veil (N)",
+          "isHiddenAbility": false,
+          "passiveAbility": "Simple",
+          "nature": {
+            "name": "Naughty",
+            "increased": "atk",
+            "decreased": "spdef"
+          },
+          "gender": "Female",
+          "rarity": "Common",
+          "captured": true,
+          "level": 22,
+          "items": [],
+          "ivs": {
+            "hp": 24,
+            "atk": 22,
+            "def": 30,
+            "spatk": 4,
+            "spdef": 31,
+            "spe": 27
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        "Pre-switch Oinkologne to Dracovish",
+        " x2",
+        "Switch to Fearow x2",
+        "Send in Dracovish",
+        "Switch to Fearow x3",
+        "Poké Ball",
+        "Don't keep Greedent",
+        "Dracovish | Bite → Brutal Swing",
+        "Skip Scary Face"
+      ],
+      "shop": "Potion → Dracovish",
+      "biome": "Plains",
+      "pokemon": [
+        {
+          "id": 819,
+          "name": "Greedent",
+          "ability": "Cheek Pouch (P)",
+          "isHiddenAbility": false,
+          "passiveAbility": "Harvest (P)",
+          "nature": {
+            "name": "Quiet",
+            "increased": "spatk",
+            "decreased": "spe"
+          },
+          "gender": "Male",
+          "rarity": "Common",
+          "captured": true,
+          "level": 25,
+          "items": [],
+          "ivs": {
+            "hp": 7,
+            "atk": 23,
+            "def": 19,
+            "spatk": 8,
+            "spdef": 2,
+            "spe": 16
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        "Switch to Fearow x5",
+        "Poké Ball",
+        "Add Linoone, replacing Fearow (Slot 5)"
+      ],
+      "shop": "5x Poké Ball",
+      "biome": "Plains",
+      "pokemon": [
+        {
+          "id": 263,
+          "name": "Linoone",
+          "ability": "Pickup",
+          "isHiddenAbility": false,
+          "passiveAbility": "Run Away",
+          "nature": {
+            "name": "Adamant",
+            "increased": "atk",
+            "decreased": "spatk"
+          },
+          "gender": "Female",
+          "rarity": "Common",
+          "captured": true,
+          "level": 25,
+          "items": [],
+          "ivs": {
+            "hp": 26,
+            "atk": 9,
+            "def": 15,
+            "spatk": 5,
+            "spdef": 23,
+            "spe": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        "Switch to Fearow",
+        "Poké Ball",
+        "Don't keep Furret"
+      ],
+      "shop": "Big Nugget",
+      "biome": "Plains",
+      "pokemon": [
+        {
+          "id": 161,
+          "name": "Furret",
+          "ability": "Keen Eye",
+          "isHiddenAbility": false,
+          "passiveAbility": "Pickup",
+          "nature": {
+            "name": "Bold",
+            "increased": "def",
+            "decreased": "atk"
+          },
+          "gender": "Female",
+          "rarity": "Common",
+          "captured": true,
+          "level": 24,
+          "items": [
+            {
+              "id": "Berry:LANSAT",
+              "name": "Lansat Berry",
+              "quantity": 1
+            }
+          ],
+          "ivs": {
+            "hp": 15,
+            "atk": 17,
+            "def": 16,
+            "spatk": 5,
+            "spdef": 12,
+            "spe": 14
+          }
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "reload": false,
+      "type": "boss",
+      "double": false,
+      "actions": [
+        "Pre-switch Dracovish to Tauros",
+        "Switch to Fearow x3",
+        "Poké Ball",
+        "Don't keep Gumshoos"
+      ],
+      "shop": "",
+      "biome": "Plains",
+      "pokemon": [
+        {
+          "id": 734,
+          "name": "Gumshoos",
+          "ability": "Strong Jaw",
+          "isHiddenAbility": false,
+          "passiveAbility": "Tough Claws",
+          "nature": {
+            "name": "Brave",
+            "increased": "atk",
+            "decreased": "spe"
+          },
+          "gender": "Male",
+          "rarity": "Common",
+          "captured": true,
+          "level": 31,
+          "items": [
+            {
+              "id": "Berry:GANLON",
+              "name": "Ganlon Berry",
+              "quantity": 1
+            },
+            {
+              "id": "Berry:LUM",
+              "name": "Lum Berry",
+              "quantity": 1
+            }
+          ],
+          "ivs": {
+            "hp": 23,
+            "atk": 8,
+            "def": 28,
+            "spatk": 18,
+            "spdef": 9,
+            "spe": 23
+          }
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "reload": true,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        "Pre-switch Tauros to Dracovish",
+        " x2",
+        "Poké Ball",
+        "Don't keep Drednaw",
+        "Kadabra | Psyshock → Psycho Cut",
+        "Skip Take Down"
+      ],
+      "shop": "Nugget",
+      "biome": "Lake",
+      "pokemon": [
+        {
+          "id": 833,
+          "name": "Drednaw",
+          "ability": "Shell Armor",
+          "isHiddenAbility": false,
+          "passiveAbility": "Rocky Payload",
+          "nature": {
+            "name": "Jolly",
+            "increased": "spe",
+            "decreased": "spatk"
+          },
+          "gender": "Female",
+          "rarity": "Common",
+          "captured": true,
+          "level": 29,
+          "items": [],
+          "ivs": {
+            "hp": 8,
+            "atk": 23,
+            "def": 3,
+            "spatk": 16,
+            "spdef": 6,
+            "spe": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        " x2",
+        "Poké Ball",
+        "Don't keep Psyduck",
+        "Armarouge | Lava Plume → Fire Spin",
+        "Tauros | Zen Headbutt → Work Up"
+      ],
+      "shop": "5x Poké Ball",
+      "biome": "Lake",
+      "pokemon": [
+        {
+          "id": 53,
+          "name": "Psyduck",
+          "ability": "Cloud Nine",
+          "isHiddenAbility": false,
+          "passiveAbility": "Simple",
+          "nature": {
+            "name": "Jolly",
+            "increased": "spe",
+            "decreased": "spatk"
+          },
+          "gender": "Female",
+          "rarity": "Common",
+          "captured": true,
+          "level": 30,
+          "items": [],
+          "ivs": {
+            "hp": 20,
+            "atk": 28,
+            "def": 9,
+            "spatk": 17,
+            "spdef": 12,
+            "spe": 17
+          }
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        " x3",
+        "Poké Ball",
+        "Add Ducklett, replacing Linoone (Slot 6)"
+      ],
+      "shop": "5x Poké Ball",
+      "biome": "Lake",
+      "pokemon": [
+        {
+          "id": 579,
+          "name": "Ducklett",
+          "ability": "Keen Eye",
+          "isHiddenAbility": false,
+          "passiveAbility": "Drizzle",
+          "nature": {
+            "name": "Timid",
+            "increased": "spe",
+            "decreased": "atk"
+          },
+          "gender": "Female",
+          "rarity": "Common",
+          "captured": true,
+          "level": 28,
+          "items": [
+            {
+              "id": "Berry:SITRUS",
+              "name": "Sitrus Berry",
+              "quantity": 1
+            }
+          ],
+          "ivs": {
+            "hp": 5,
+            "atk": 0,
+            "def": 20,
+            "spatk": 13,
+            "spdef": 30,
+            "spe": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        "",
+        "Poké Ball",
+        "Don't keep Drednaw"
+      ],
+      "shop": "Potion → Ducklett",
+      "biome": "Lake",
+      "pokemon": [
+        {
+          "id": 833,
+          "name": "Drednaw",
+          "ability": "Shell Armor",
+          "isHiddenAbility": false,
+          "passiveAbility": "Rocky Payload",
+          "nature": {
+            "name": "Relaxed",
+            "increased": "def",
+            "decreased": "spe"
+          },
+          "gender": "Male",
+          "rarity": "Common",
+          "captured": true,
+          "level": 28,
+          "items": [
+            {
+              "id": "Berry:SITRUS",
+              "name": "Sitrus Berry",
+              "quantity": 1
+            }
+          ],
+          "ivs": {
+            "hp": 1,
+            "atk": 15,
+            "def": 3,
+            "spatk": 0,
+            "spdef": 25,
+            "spe": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "reload": false,
+      "type": "trainer",
+      "double": false,
+      "actions": [
+        " x8",
+        "Dracovish | Dragon Breath → Whirlpool",
+        "Skip Work Up",
+        "Ducklett | Roost → Wing Attack",
+        "Reroll",
+        "Evolve Kadabra"
+      ],
+      "shop": "Linking Cord → Kadabra",
+      "biome": "Lake",
+      "trainer": {
+        "id": "16",
+        "name": "Devon",
+        "type": "Fisherman"
+      }
+    },
+    {
+      "id": 16,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        "Pre-switch Dracovish to Alakazam",
+        " x2",
+        "Poké Ball",
+        "Don't keep Flamigo",
+        "Alakazam | Psychic → Psybeam"
+      ],
+      "shop": "Super Potion → Dracovish",
+      "biome": "Lake",
+      "pokemon": [
+        {
+          "id": 972,
+          "name": "Flamigo",
+          "ability": "Scrappy",
+          "isHiddenAbility": false,
+          "passiveAbility": "Moxie",
+          "nature": {
+            "name": "Hardy",
+            "increased": "",
+            "decreased": ""
+          },
+          "gender": "Female",
+          "rarity": "Uncommon",
+          "captured": true,
+          "level": 33,
+          "items": [],
+          "ivs": {
+            "hp": 27,
+            "atk": 1,
+            "def": 17,
+            "spatk": 25,
+            "spdef": 21,
+            "spe": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        "Pre-switch Alakazam to Dracovish",
+        "",
+        "Poké Ball",
+        "Don't keep Drednaw"
+      ],
+      "shop": "X Attack",
+      "biome": "Lake",
+      "pokemon": [
+        {
+          "id": 833,
+          "name": "Drednaw",
+          "ability": "Shell Armor",
+          "isHiddenAbility": false,
+          "passiveAbility": "Rocky Payload",
+          "nature": {
+            "name": "Bashful",
+            "increased": "",
+            "decreased": ""
+          },
+          "gender": "Male",
+          "rarity": "Common",
+          "captured": true,
+          "level": 32,
+          "items": [],
+          "ivs": {
+            "hp": 3,
+            "atk": 14,
+            "def": 1,
+            "spatk": 24,
+            "spdef": 25,
+            "spe": 28
+          }
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        " x5",
+        "Poké Ball",
+        "Add Gyarados, replacing Oinkologne (Slot 3)",
+        "Armarouge | Calm Mind → Flame Charge",
+        "Tauros | Raging Bull → Flame Charge",
+        "Skip Rain Dance"
+      ],
+      "shop": "5x Great Ball",
+      "biome": "Lake",
+      "pokemon": [
+        {
+          "id": 129,
+          "name": "Gyarados",
+          "ability": "Intimidate",
+          "isHiddenAbility": false,
+          "passiveAbility": "Multiscale",
+          "nature": {
+            "name": "Bold",
+            "increased": "def",
+            "decreased": "atk"
+          },
+          "gender": "Female",
+          "rarity": "Common",
+          "captured": true,
+          "level": 33,
+          "items": [],
+          "ivs": {
+            "hp": 26,
+            "atk": 4,
+            "def": 24,
+            "spatk": 19,
+            "spdef": 30,
+            "spe": 28
+          }
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        " x4",
+        "Poké Ball",
+        "Don't keep Blastoise",
+        "Evolve Ducklett"
+      ],
+      "shop": "Super Potion → Gyarados",
+      "biome": "Lake",
+      "pokemon": [
+        {
+          "id": 8,
+          "name": "Blastoise",
+          "ability": "Torrent",
+          "isHiddenAbility": false,
+          "passiveAbility": "Sturdy",
+          "nature": {
+            "name": "Relaxed",
+            "increased": "def",
+            "decreased": "spe"
+          },
+          "gender": "Male",
+          "rarity": "Rare",
+          "captured": true,
+          "level": 37,
+          "items": [],
+          "ivs": {
+            "hp": 28,
+            "atk": 1,
+            "def": 9,
+            "spatk": 5,
+            "spdef": 11,
+            "spe": 11
+          }
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "reload": false,
+      "type": "trainer",
+      "double": false,
+      "actions": [
+        "Switch to Alakazam x6",
+        "Skip Stomp",
+        "Gyarados | Dragon Dance → Rain Dance",
+        "Switch to Alakazam x2",
+        "Send in Gyarados",
+        "Switch to Alakazam x6"
+      ],
+      "shop": "",
+      "biome": "Lake",
+      "trainer": {
+        "id": "228",
+        "name": "Crasher Wake",
+        "type": "Gym Leader"
+      }
+    },
+    {
+      "id": 21,
+      "reload": true,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        "",
+        "Poké Ball",
+        "Don't keep Wormadam",
+        "Skip Role Play"
+      ],
+      "shop": "5x Poké Ball",
+      "biome": "Beach",
+      "pokemon": [
+        {
+          "id": 412,
+          "name": "Wormadam",
+          "ability": "Anticipation",
+          "isHiddenAbility": false,
+          "passiveAbility": "Sturdy",
+          "nature": {
+            "name": "Relaxed",
+            "increased": "def",
+            "decreased": "spe"
+          },
+          "gender": "Female",
+          "rarity": "Uncommon",
+          "captured": true,
+          "level": 38,
+          "items": [],
+          "ivs": {
+            "hp": 23,
+            "atk": 6,
+            "def": 10,
+            "spatk": 1,
+            "spdef": 13,
+            "spe": 26
+          }
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        "",
+        "Poké Ball",
+        "Don't keep Crawdaunt",
+        "Skip Hydro Pump",
+        "Skip Rest",
+        "Skip Tailwind"
+      ],
+      "shop": "Sitrus Berry → Gyarados",
+      "biome": "Beach",
+      "pokemon": [
+        {
+          "id": 341,
+          "name": "Crawdaunt",
+          "ability": "Shell Armor",
+          "isHiddenAbility": false,
+          "passiveAbility": "Tough Claws",
+          "nature": {
+            "name": "Calm",
+            "increased": "spdef",
+            "decreased": "atk"
+          },
+          "gender": "Male",
+          "rarity": "Common",
+          "captured": true,
+          "level": 39,
+          "items": [],
+          "ivs": {
+            "hp": 30,
+            "atk": 24,
+            "def": 11,
+            "spatk": 29,
+            "spdef": 25,
+            "spe": 31
+          }
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        "",
+        "Poké Ball",
+        "Don't keep Crawdaunt",
+        "Skip Ally Switch (N)",
+        "Reroll"
+      ],
+      "shop": "Amulet Coin",
+      "biome": "Beach",
+      "pokemon": [
+        {
+          "id": 341,
+          "name": "Crawdaunt",
+          "ability": "Hyper Cutter",
+          "isHiddenAbility": false,
+          "passiveAbility": "Tough Claws",
+          "nature": {
+            "name": "Brave",
+            "increased": "atk",
+            "decreased": "spe"
+          },
+          "gender": "Male",
+          "rarity": "Common",
+          "captured": true,
+          "level": 36,
+          "items": [
+            {
+              "id": "Berry:SITRUS",
+              "name": "Sitrus Berry",
+              "quantity": 2
+            }
+          ],
+          "ivs": {
+            "hp": 4,
+            "atk": 14,
+            "def": 11,
+            "spatk": 26,
+            "spdef": 16,
+            "spe": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        " x3",
+        "Poké Ball",
+        "Don't keep Sandygast"
+      ],
+      "shop": "Zinc → Alakazam",
+      "biome": "Beach",
+      "pokemon": [
+        {
+          "id": 768,
+          "name": "Sandygast",
+          "ability": "Water Compaction",
+          "isHiddenAbility": false,
+          "passiveAbility": "Sand Spit",
+          "nature": {
+            "name": "Serious",
+            "increased": "",
+            "decreased": ""
+          },
+          "gender": "Female",
+          "rarity": "Uncommon",
+          "captured": true,
+          "level": 36,
+          "items": [],
+          "ivs": {
+            "hp": 24,
+            "atk": 30,
+            "def": 9,
+            "spatk": 16,
+            "spdef": 6,
+            "spe": 11
+          }
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "reload": false,
+      "type": "trainer",
+      "double": false,
+      "actions": [
+        " x7",
+        "Skip Hurricane",
+        " x4",
+        "Skip Future Sight (P)",
+        "",
+        "Skip Thrash",
+        "Skip Swagger"
+      ],
+      "shop": "5x Poké Ball",
+      "biome": "Beach",
+      "trainer": {
+        "id": "9",
+        "name": "Amala",
+        "type": "Breeder"
+      }
+    },
+    {
+      "id": 26,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        "Pre-switch Gyarados to Dracovish",
+        " x4",
+        "Poké Ball",
+        "Don't keep Cloyster"
+      ],
+      "shop": "Potion → Gyarados",
+      "biome": "Beach",
+      "pokemon": [
+        {
+          "id": 90,
+          "name": "Cloyster",
+          "ability": "Shell Armor",
+          "isHiddenAbility": false,
+          "passiveAbility": "Ice Scales",
+          "nature": {
+            "name": "Quirky",
+            "increased": "",
+            "decreased": ""
+          },
+          "gender": "Female",
+          "rarity": "Common",
+          "captured": true,
+          "level": 38,
+          "items": [
+            {
+              "id": "Berry:STARF",
+              "name": "Starf Berry",
+              "quantity": 1
+            }
+          ],
+          "ivs": {
+            "hp": 2,
+            "atk": 30,
+            "def": 27,
+            "spatk": 7,
+            "spdef": 12,
+            "spe": 9
+          }
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        " x3",
+        "Poké Ball",
+        "Don't keep Palossand",
+        "Skip Super Fang",
+        "Skip Brave Bird",
+        "Reroll"
+      ],
+      "shop": "X Attack",
+      "biome": "Beach",
+      "pokemon": [
+        {
+          "id": 769,
+          "name": "Palossand",
+          "ability": "Water Compaction",
+          "isHiddenAbility": false,
+          "passiveAbility": "Sand Spit",
+          "nature": {
+            "name": "Jolly",
+            "increased": "spe",
+            "decreased": "spatk"
+          },
+          "gender": "Male",
+          "rarity": "Uncommon",
+          "captured": true,
+          "level": 43,
+          "items": [],
+          "ivs": {
+            "hp": 23,
+            "atk": 31,
+            "def": 2,
+            "spatk": 16,
+            "spdef": 19,
+            "spe": 13
+          }
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        " x2",
+        "Poké Ball",
+        "Don't keep Crawdaunt",
+        "Armarouge | Flamethrower → Lava Plume"
+      ],
+      "shop": "Potion → Dracovish",
+      "biome": "Beach",
+      "pokemon": [
+        {
+          "id": 341,
+          "name": "Crawdaunt",
+          "ability": "Shell Armor",
+          "isHiddenAbility": false,
+          "passiveAbility": "Tough Claws",
+          "nature": {
+            "name": "Quirky",
+            "increased": "",
+            "decreased": ""
+          },
+          "gender": "Male",
+          "rarity": "Common",
+          "captured": true,
+          "level": 40,
+          "items": [],
+          "ivs": {
+            "hp": 21,
+            "atk": 0,
+            "def": 29,
+            "spatk": 29,
+            "spdef": 16,
+            "spe": 17
+          }
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        " x2",
+        "Poké Ball",
+        "Don't keep Sandygast",
+        "Reroll"
+      ],
+      "shop": "Mega Bracelet",
+      "biome": "Beach",
+      "pokemon": [
+        {
+          "id": 768,
+          "name": "Sandygast",
+          "ability": "Water Compaction",
+          "isHiddenAbility": false,
+          "passiveAbility": "Sand Spit",
+          "nature": {
+            "name": "Bold",
+            "increased": "def",
+            "decreased": "atk"
+          },
+          "gender": "Male",
+          "rarity": "Uncommon",
+          "captured": true,
+          "level": 41,
+          "items": [],
+          "ivs": {
+            "hp": 3,
+            "atk": 28,
+            "def": 7,
+            "spatk": 29,
+            "spdef": 0,
+            "spe": 25
+          }
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "reload": false,
+      "type": "trainer",
+      "double": false,
+      "actions": [
+        " x7",
+        "Skip Hyper Beam",
+        "Alakazam | Calm Mind → Psyshock",
+        " x3",
+        "Skip Thrash",
+        " x2"
+      ],
+      "shop": "",
+      "biome": "Beach",
+      "trainer": {
+        "id": "269",
+        "name": "Kofu",
+        "type": "Gym Leader"
+      }
+    },
+    {
+      "id": 31,
+      "reload": true,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        " x5",
+        "Poké Ball",
+        "Don't keep Primarina"
+      ],
+      "shop": "Potion → Dracovish",
+      "biome": "Sea",
+      "pokemon": [
+        {
+          "id": 729,
+          "name": "Primarina",
+          "ability": "Torrent",
+          "isHiddenAbility": false,
+          "passiveAbility": "Punk Rock",
+          "nature": {
+            "name": "Calm",
+            "increased": "spdef",
+            "decreased": "atk"
+          },
+          "gender": "Male",
+          "rarity": "Rare",
+          "captured": true,
+          "level": 48,
+          "items": [],
+          "ivs": {
+            "hp": 14,
+            "atk": 1,
+            "def": 24,
+            "spatk": 23,
+            "spdef": 24,
+            "spe": 30
+          }
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        " x2",
+        "Poké Ball",
+        "Don't keep Gyarados"
+      ],
+      "shop": "Nugget",
+      "biome": "Sea",
+      "pokemon": [
+        {
+          "id": 129,
+          "name": "Gyarados",
+          "ability": "Intimidate",
+          "isHiddenAbility": false,
+          "passiveAbility": "Multiscale",
+          "nature": {
+            "name": "Impish",
+            "increased": "def",
+            "decreased": "spatk"
+          },
+          "gender": "Female",
+          "rarity": "Common",
+          "captured": true,
+          "level": 48,
+          "items": [],
+          "ivs": {
+            "hp": 13,
+            "atk": 9,
+            "def": 17,
+            "spatk": 2,
+            "spdef": 6,
+            "spe": 25
+          }
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        " x3",
+        "Poké Ball",
+        "Don't keep Tentacruel",
+        "Dracovish | Crunch → Bite"
+      ],
+      "shop": "Sitrus Berry → Swanna",
+      "biome": "Sea",
+      "pokemon": [
+        {
+          "id": 72,
+          "name": "Tentacruel",
+          "ability": "Liquid Ooze",
+          "isHiddenAbility": false,
+          "passiveAbility": "Toxic Chain",
+          "nature": {
+            "name": "Mild",
+            "increased": "spatk",
+            "decreased": "def"
+          },
+          "gender": "Male",
+          "rarity": "Common",
+          "captured": true,
+          "level": 47,
+          "items": [],
+          "ivs": {
+            "hp": 17,
+            "atk": 27,
+            "def": 11,
+            "spatk": 16,
+            "spdef": 10,
+            "spe": 11
+          }
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        " x5",
+        "Poké Ball",
+        "Don't keep Malamar",
+        "Skip Flare Blitz",
+        "Skip Hurricane"
+      ],
+      "shop": "Dynamax Band",
+      "biome": "Sea",
+      "pokemon": [
+        {
+          "id": 686,
+          "name": "Malamar",
+          "ability": "Contrary",
+          "isHiddenAbility": false,
+          "passiveAbility": "Unnerve",
+          "nature": {
+            "name": "Timid",
+            "increased": "spe",
+            "decreased": "atk"
+          },
+          "gender": "Male",
+          "rarity": "Common",
+          "captured": true,
+          "level": 46,
+          "items": [
+            {
+              "id": "MoveBooster:PSYCHIC",
+              "name": "Twisted Spoon",
+              "quantity": 1
+            },
+            {
+              "id": "Berry:LANSAT",
+              "name": "Lansat Berry",
+              "quantity": 1
+            }
+          ],
+          "ivs": {
+            "hp": 18,
+            "atk": 27,
+            "def": 30,
+            "spatk": 10,
+            "spdef": 1,
+            "spe": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "reload": false,
+      "type": "trainer",
+      "double": false,
+      "actions": [
+        "Switch to Tauros",
+        "Switch to Gyarados x7",
+        "Skip Expanding Force"
+      ],
+      "shop": "Hyper Potion → Gyarados",
+      "biome": "Sea",
+      "trainer": {
+        "id": "39",
+        "name": "Damian",
+        "type": "Sailor"
+      }
+    },
+    {
+      "id": 36,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        "Switch to Gyarados x3",
+        "Poké Ball",
+        "Don't keep Slowbro"
+      ],
+      "shop": "Black Belt → Tauros",
+      "biome": "Sea",
+      "pokemon": [
+        {
+          "id": 79,
+          "name": "Slowbro",
+          "ability": "Own Tempo",
+          "isHiddenAbility": false,
+          "passiveAbility": "Unaware",
+          "nature": {
+            "name": "Sassy",
+            "increased": "spdef",
+            "decreased": "spe"
+          },
+          "gender": "Female",
+          "rarity": "Common",
+          "captured": true,
+          "level": 49,
+          "items": [],
+          "ivs": {
+            "hp": 18,
+            "atk": 12,
+            "def": 19,
+            "spatk": 4,
+            "spdef": 15,
+            "spe": 15
+          }
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "reload": false,
+      "type": "wild",
+      "double": true,
+      "actions": [
+        "Pre-switch Armarouge to Alakazam",
+        "Switch to Gyarados",
+        "Switch to Gyarados & Switch to Tauros x2",
+        "Poké Ball",
+        "Don't keep Floatzel"
+      ],
+      "shop": "Gyaradosite → Gyarados",
+      "biome": "Sea",
+      "pokemon": [
+        {
+          "id": 129,
+          "name": "Gyarados",
+          "ability": "Intimidate",
+          "isHiddenAbility": false,
+          "passiveAbility": "Multiscale",
+          "nature": {
+            "name": "Sassy",
+            "increased": "spdef",
+            "decreased": "spe"
+          },
+          "gender": "Female",
+          "rarity": "Common",
+          "captured": false,
+          "level": 49,
+          "items": [],
+          "ivs": {
+            "hp": 23,
+            "atk": 0,
+            "def": 19,
+            "spatk": 11,
+            "spdef": 28,
+            "spe": 18
+          }
+        },
+        {
+          "id": 418,
+          "name": "Floatzel",
+          "ability": "Swift Swim",
+          "isHiddenAbility": false,
+          "passiveAbility": "Moxie",
+          "nature": {
+            "name": "Adamant",
+            "increased": "atk",
+            "decreased": "spatk"
+          },
+          "gender": "Female",
+          "rarity": "Common",
+          "captured": true,
+          "level": 47,
+          "items": [],
+          "ivs": {
+            "hp": 19,
+            "atk": 0,
+            "def": 12,
+            "spatk": 26,
+            "spdef": 29,
+            "spe": 18
+          }
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        "Switch to Gyarados x3",
+        "Poké Ball",
+        "Don't keep Pelipper",
+        "Reroll"
+      ],
+      "shop": "Max Potion → Dracovish",
+      "biome": "Sea",
+      "pokemon": [
+        {
+          "id": 278,
+          "name": "Pelipper",
+          "ability": "Keen Eye",
+          "isHiddenAbility": false,
+          "passiveAbility": "Swift Swim",
+          "nature": {
+            "name": "Lax",
+            "increased": "def",
+            "decreased": "spdef"
+          },
+          "gender": "Male",
+          "rarity": "Common",
+          "captured": true,
+          "level": 52,
+          "items": [],
+          "ivs": {
+            "hp": 3,
+            "atk": 7,
+            "def": 9,
+            "spatk": 25,
+            "spdef": 18,
+            "spe": 18
+          }
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        "Switch to Gyarados x3",
+        "Poké Ball",
+        "Don't keep Slowbro"
+      ],
+      "shop": "Potion → Mega Gyarados",
+      "biome": "Sea",
+      "pokemon": [
+        {
+          "id": 79,
+          "name": "Slowbro",
+          "ability": "Own Tempo",
+          "isHiddenAbility": false,
+          "passiveAbility": "Unaware",
+          "nature": {
+            "name": "Relaxed",
+            "increased": "def",
+            "decreased": "spe"
+          },
+          "gender": "Female",
+          "rarity": "Common",
+          "captured": true,
+          "level": 49,
+          "items": [],
+          "ivs": {
+            "hp": 19,
+            "atk": 29,
+            "def": 31,
+            "spatk": 23,
+            "spdef": 15,
+            "spe": 22
+          }
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "reload": false,
+      "type": "trainer",
+      "double": false,
+      "actions": [
+        "Switch to Gyarados x2",
+        "Tauros | Close Combat → Double Kick",
+        "Switch to Gyarados x5",
+        "Send in Tauros",
+        "Switch to Gyarados x3",
+        "Skip Armor Cannon",
+        "Switch to Gyarados"
+      ],
+      "shop": "",
+      "biome": "Sea",
+      "trainer": {
+        "id": "245",
+        "name": "Marlon",
+        "type": "Gym Leader"
+      }
+    },
+    {
+      "id": 41,
+      "reload": true,
+      "type": "wild",
+      "double": true,
+      "actions": [
+        "",
+        "Switch to Swanna x3",
+        "Switch to Swanna & Switch to Dracovish x3",
+        "Great Ball",
+        "Don't keep Piloswine"
+      ],
+      "shop": "Potion → Mega Gyarados",
+      "biome": "Ice Cave",
+      "pokemon": [
+        {
+          "id": 872,
+          "name": "Frosmoth",
+          "ability": "Shield Dust (P)",
+          "isHiddenAbility": false,
+          "passiveAbility": "Snow Warning",
+          "nature": {
+            "name": "Serious",
+            "increased": "",
+            "decreased": ""
+          },
+          "gender": "Female",
+          "rarity": "Common",
+          "captured": false,
+          "level": 52,
+          "items": [],
+          "ivs": {
+            "hp": 11,
+            "atk": 6,
+            "def": 21,
+            "spatk": 25,
+            "spdef": 14,
+            "spe": 3
+          }
+        },
+        {
+          "id": 220,
+          "name": "Piloswine",
+          "ability": "Snow Cloak",
+          "isHiddenAbility": false,
+          "passiveAbility": "Slush Rush",
+          "nature": {
+            "name": "Quiet",
+            "increased": "spatk",
+            "decreased": "spe"
+          },
+          "gender": "Male",
+          "rarity": "Common",
+          "captured": true,
+          "level": 53,
+          "items": [
+            {
+              "id": "Berry:LEPPA",
+              "name": "Leppa Berry",
+              "quantity": 1
+            }
+          ],
+          "ivs": {
+            "hp": 12,
+            "atk": 30,
+            "def": 11,
+            "spatk": 14,
+            "spdef": 1,
+            "spe": 9
+          }
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        "Switch to Swanna",
+        "Poké Ball",
+        "Don't keep Abomasnow",
+        "Dracovish | Fishious Rend → Ancient Power"
+      ],
+      "shop": "Potion → Swanna",
+      "biome": "Ice Cave",
+      "pokemon": [
+        {
+          "id": 459,
+          "name": "Abomasnow",
+          "ability": "Snow Warning",
+          "isHiddenAbility": false,
+          "passiveAbility": "Thick Fat",
+          "nature": {
+            "name": "Adamant",
+            "increased": "atk",
+            "decreased": "spatk"
+          },
+          "gender": "Male",
+          "rarity": "Common",
+          "captured": true,
+          "level": 58,
+          "items": [
+            {
+              "id": "Berry:LUM",
+              "name": "Lum Berry",
+              "quantity": 1
+            }
+          ],
+          "ivs": {
+            "hp": 25,
+            "atk": 20,
+            "def": 24,
+            "spatk": 13,
+            "spdef": 26,
+            "spe": 16
+          }
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        "Switch to Swanna",
+        "Switch to Tauros",
+        "Switch to Mega Gyarados",
+        "Switch to Dracovish x2",
+        "Poké Ball",
+        "Don't keep Crabominable"
+      ],
+      "shop": "Potion → Mega Gyarados",
+      "biome": "Ice Cave",
+      "pokemon": [
+        {
+          "id": 739,
+          "name": "Crabominable",
+          "ability": "Iron Fist",
+          "isHiddenAbility": false,
+          "passiveAbility": "Water Bubble",
+          "nature": {
+            "name": "Adamant",
+            "increased": "atk",
+            "decreased": "spatk"
+          },
+          "gender": "Female",
+          "rarity": "Common",
+          "captured": true,
+          "level": 55,
+          "items": [
+            {
+              "id": "Berry:LUM",
+              "name": "Lum Berry",
+              "quantity": 1
+            }
+          ],
+          "ivs": {
+            "hp": 31,
+            "atk": 11,
+            "def": 7,
+            "spatk": 25,
+            "spdef": 31,
+            "spe": 16
+          }
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        "Pre-switch Dracovish to Armarouge",
+        " x3",
+        "Poké Ball",
+        "Don't keep Beartic"
+      ],
+      "shop": "Super Potion → Swanna",
+      "biome": "Ice Cave",
+      "pokemon": [
+        {
+          "id": 613,
+          "name": "Beartic",
+          "ability": "Snow Cloak",
+          "isHiddenAbility": false,
+          "passiveAbility": "Tough Claws",
+          "nature": {
+            "name": "Adamant",
+            "increased": "atk",
+            "decreased": "spatk"
+          },
+          "gender": "Female",
+          "rarity": "Common",
+          "captured": true,
+          "level": 54,
+          "items": [
+            {
+              "id": "Berry:SALAC",
+              "name": "Salac Berry",
+              "quantity": 1
+            }
+          ],
+          "ivs": {
+            "hp": 30,
+            "atk": 9,
+            "def": 22,
+            "spatk": 8,
+            "spdef": 21,
+            "spe": 24
+          }
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "reload": false,
+      "type": "trainer",
+      "double": false,
+      "actions": [
+        " x2",
+        "Reroll",
+        "Reroll"
+      ],
+      "shop": "Alakazite → Alakazam",
+      "biome": "Ice Cave",
+      "trainer": {
+        "id": "42",
+        "name": "Pasqual",
+        "type": "Worker"
+      }
+    },
+    {
+      "id": 46,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        "Pre-switch Armarouge to Dracovish",
+        "",
+        "Switch to Armarouge",
+        "Switch to Dracovish x2",
+        "Switch to Armarouge x2",
+        "Poké Ball",
+        "Don't keep Crabominable"
+      ],
+      "shop": "X Defense",
+      "biome": "Ice Cave",
+      "pokemon": [
+        {
+          "id": 739,
+          "name": "Crabominable",
+          "ability": "Hyper Cutter",
+          "isHiddenAbility": false,
+          "passiveAbility": "Water Bubble",
+          "nature": {
+            "name": "Hasty",
+            "increased": "spe",
+            "decreased": "def"
+          },
+          "gender": "Female",
+          "rarity": "Common",
+          "captured": true,
+          "level": 62,
+          "items": [
+            {
+              "id": "Berry:APICOT",
+              "name": "Apicot Berry",
+              "quantity": 1
+            }
+          ],
+          "ivs": {
+            "hp": 12,
+            "atk": 5,
+            "def": 22,
+            "spatk": 3,
+            "spdef": 21,
+            "spe": 30
+          }
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        "Switch to Armarouge",
+        "Poké Ball",
+        "Don't keep Crabominable",
+        "Reroll"
+      ],
+      "shop": "X Attack",
+      "biome": "Ice Cave",
+      "pokemon": [
+        {
+          "id": 739,
+          "name": "Crabominable",
+          "ability": "Hyper Cutter",
+          "isHiddenAbility": false,
+          "passiveAbility": "Water Bubble",
+          "nature": {
+            "name": "Mild",
+            "increased": "spatk",
+            "decreased": "def"
+          },
+          "gender": "Male",
+          "rarity": "Common",
+          "captured": true,
+          "level": 58,
+          "items": [
+            {
+              "id": "StatBooster:ATK",
+              "name": "Protein",
+              "quantity": 1
+            }
+          ],
+          "ivs": {
+            "hp": 26,
+            "atk": 2,
+            "def": 3,
+            "spatk": 11,
+            "spdef": 3,
+            "spe": 22
+          }
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "reload": false,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        "Pre-switch Armarouge to Dracovish",
+        " x2",
+        "Poké Ball",
+        "Don't keep Crabominable",
+        "Reroll"
+      ],
+      "shop": "X Speed",
+      "biome": "Ice Cave",
+      "pokemon": [
+        {
+          "id": 739,
+          "name": "Crabominable",
+          "ability": "Iron Fist",
+          "isHiddenAbility": false,
+          "passiveAbility": "Water Bubble",
+          "nature": {
+            "name": "Naughty",
+            "increased": "atk",
+            "decreased": "spdef"
+          },
+          "gender": "Female",
+          "rarity": "Common",
+          "captured": true,
+          "level": 58,
+          "items": [],
+          "ivs": {
+            "hp": 31,
+            "atk": 28,
+            "def": 30,
+            "spatk": 10,
+            "spdef": 6,
+            "spe": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "reload": true,
+      "type": "wild",
+      "double": false,
+      "actions": [
+        "Pre-switch Dracovish to Armarouge",
+        "",
+        "Switch to Dracovish x2",
+        "Switch to Armarouge",
+        "Switch to Dracovish x2",
+        "Poké Ball",
+        "Don't keep Crabominable"
+      ],
+      "shop": "Potion → Dracovish",
+      "biome": "Ice Cave",
+      "pokemon": [
+        {
+          "id": 739,
+          "name": "Crabominable",
+          "ability": "Hyper Cutter",
+          "isHiddenAbility": false,
+          "passiveAbility": "Water Bubble",
+          "nature": {
+            "name": "Sassy",
+            "increased": "spdef",
+            "decreased": "spe"
+          },
+          "gender": "Female",
+          "rarity": "Common",
+          "captured": true,
+          "level": 65,
+          "items": [],
+          "ivs": {
+            "hp": 12,
+            "atk": 23,
+            "def": 12,
+            "spatk": 30,
+            "spdef": 13,
+            "spe": 31
+          }
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "reload": false,
+      "type": "boss",
+      "double": false,
+      "actions": [
+        " x3",
+        "Skip Dragon Pulse"
+      ],
+      "shop": "",
+      "biome": "???",
+      "pokemon": [
+        {
+          "id": 484,
+          "name": "Heatran",
+          "ability": "Flash Fire",
+          "isHiddenAbility": false,
+          "passiveAbility": "Earth Eater (P)",
+          "nature": {
+            "name": "Hardy",
+            "increased": "",
+            "decreased": ""
+          },
+          "gender": "Male",
+          "rarity": "[Unknown]",
+          "captured": false,
+          "level": 70,
+          "items": [
+            {
+              "id": "StatBooster:SPDEF",
+              "name": "Zinc",
+              "quantity": 2
+            },
+            {
+              "id": "Berry:LEPPA",
+              "name": "Leppa Berry",
+              "quantity": 1
+            },
+            {
+              "id": "Berry:SITRUS",
+              "name": "Sitrus Berry",
+              "quantity": 1
+            },
+            {
+              "id": "Berry:ENIGMA",
+              "name": "Enigma Berry",
+              "quantity": 2
+            },
+            {
+              "id": "StatBooster:SPD",
+              "name": "Carbos",
+              "quantity": 1
+            },
+            {
+              "id": "StatBooster:ATK",
+              "name": "Protein",
+              "quantity": 1
+            },
+            {
+              "id": "StatBooster:DEF",
+              "name": "Iron",
+              "quantity": 1
+            },
+            {
+              "id": "StatBooster:SPATK",
+              "name": "Calcium",
+              "quantity": 1
+            },
+            {
+              "id": "Berry:SALAC",
+              "name": "Salac Berry",
+              "quantity": 1
+            }
+          ],
+          "ivs": {
+            "hp": 25,
+            "atk": 16,
+            "def": 27,
+            "spatk": 12,
+            "spdef": 27,
+            "spe": 28
+          }
+        }
+      ]
+    }
+  ],
+  "starters": [
+    {
+      "id": 935,
+      "name": "Armarouge",
+      "ability": "Flash Fire",
+      "isHiddenAbility": false,
+      "passiveAbility": "Prism Armor",
+      "nature": {
+        "name": "Adamant",
+        "increased": "atk",
+        "decreased": "spatk"
+      },
+      "gender": "Male",
+      "rarity": "undefined",
+      "captured": false,
+      "level": 20,
+      "items": [
+        {
+          "id": "MoveBooster:FIRE",
+          "name": "Charcoal",
+          "quantity": 2
+        },
+        {
+          "id": "StatBooster:SPDEF",
+          "name": "Zinc",
+          "quantity": 1
+        }
+      ],
+      "ivs": {
+        "hp": 24,
+        "atk": 1,
+        "def": 20,
+        "spatk": 11,
+        "spdef": 15,
+        "spe": 27
+      }
+    },
+    {
+      "id": 881,
+      "name": "Dracovish",
+      "ability": "Strong Jaw",
+      "isHiddenAbility": false,
+      "passiveAbility": "Swift Swim",
+      "nature": {
+        "name": "Hasty",
+        "increased": "spe",
+        "decreased": "def"
+      },
+      "gender": "Genderless",
+      "rarity": "undefined",
+      "captured": false,
+      "level": 20,
+      "items": [
+        {
+          "id": "MoveBooster:PSYCHIC",
+          "name": "Twisted Spoon",
+          "quantity": 1
+        },
+        {
+          "id": "StatBooster:DEF",
+          "name": "Iron",
+          "quantity": 1
+        },
+        {
+          "id": "StatBooster:SPD",
+          "name": "Carbos",
+          "quantity": 1
+        }
+      ],
+      "ivs": {
+        "hp": 17,
+        "atk": 26,
+        "def": 31,
+        "spatk": 7,
+        "spdef": 27,
+        "spe": 2
+      }
+    },
+    {
+      "id": 300,
+      "name": "Delcatty",
+      "ability": "Cute Charm",
+      "isHiddenAbility": false,
+      "passiveAbility": "Scrappy",
+      "nature": {
+        "name": "Naive",
+        "increased": "spe",
+        "decreased": "spdef"
+      },
+      "gender": "Female",
+      "rarity": "undefined",
+      "captured": false,
+      "level": 20,
+      "items": [
+        {
+          "id": "StatBooster:SPATK",
+          "name": "Calcium",
+          "quantity": 1
+        },
+        {
+          "id": "HeldItem:BATON",
+          "name": "Baton",
+          "quantity": 1
+        },
+        {
+          "id": "Berry:LUM",
+          "name": "Lum Berry",
+          "quantity": 1
+        }
+      ],
+      "ivs": {
+        "hp": 10,
+        "atk": 6,
+        "def": 0,
+        "spatk": 1,
+        "spdef": 9,
+        "spe": 1
+      }
+    }
+  ]
+}
